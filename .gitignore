@@ -69,3 +69,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /Chapeau/[Aa]ssets/[Ss]treamingAssets/aa.meta
 /Chapeau/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Blender backup files
+*.blend[0-9]
