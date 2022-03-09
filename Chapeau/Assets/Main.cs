@@ -4,9 +4,5 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        Time.timeScale /= 10.0f;
-    }
+
 }
