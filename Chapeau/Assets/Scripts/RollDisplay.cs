@@ -39,28 +39,28 @@ namespace Seacore
         {
             for (int i = 0; i < chapeau.roll.Values.Length; i++)
             {
-                Die.DieValues value = chapeau.roll.Values[i];
+                Die.Faces value = chapeau.roll.Values[i];
                 switch (value)
                 {
-                    case Die.DieValues.None:
+                    case Die.Faces.None:
                         images[i].sprite = none;
                         break;
-                    case Die.DieValues.Nine:
+                    case Die.Faces.Nine:
                         images[i].sprite = nine;
                         break;
-                    case Die.DieValues.Ten:
+                    case Die.Faces.Ten:
                         images[i].sprite = ten;
                         break;
-                    case Die.DieValues.Jack:
+                    case Die.Faces.Jack:
                         images[i].sprite = jack;
                         break;
-                    case Die.DieValues.Queen:
+                    case Die.Faces.Queen:
                         images[i].sprite = queen;
                         break;
-                    case Die.DieValues.King:
+                    case Die.Faces.King:
                         images[i].sprite = king;
                         break;
-                    case Die.DieValues.Ace:
+                    case Die.Faces.Ace:
                         images[i].sprite = ace;
                         break;
                     default:

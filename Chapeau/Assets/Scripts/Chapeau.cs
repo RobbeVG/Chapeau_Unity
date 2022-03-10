@@ -27,6 +27,22 @@ namespace Seacore
             if (_currentDieIndex == Roll.c_amountDie)
             {
                 roll.Sort();
+                roll.CalculateResult();
+
+                Debug.Log(roll.Result.ToString());
+            }
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                roll.Clear();
+                _currentDieIndex = 0;
+                foreach (var item in GetComponentsInChildren<Die>())
+                {
+                    item.Throw(Random.insideUnitSphere * 1000, Random.insideUnitSphere * 50);
+                }    
             }
         }
     }

@@ -6,7 +6,8 @@ namespace Seacore
 {
     public class RoundManager : MonoBehaviour
     {
-        private Die.DieValues[] currentHighestRoll = new Die.DieValues[5];
+        private Roll previousRoll = new Roll();
+        private Roll passRoll = new Roll();
 
         // Start is called before the first frame update
         void Start()

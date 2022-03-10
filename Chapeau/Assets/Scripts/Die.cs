@@ -7,18 +7,18 @@ namespace Seacore
     [RequireComponent(typeof(Rigidbody))]
     public class Die : MonoBehaviour
     {
-        public enum DieValues { None, Nine, Ten, Jack, Queen, King, Ace }
+        public enum Faces { None, Nine, Ten, Jack, Queen, King, Ace }
         public static readonly Vector3[] s_directions = { Vector3.up, Vector3.right, Vector3.forward, Vector3.down, Vector3.left, Vector3.back }; //All the directions of the die's faces (Custom editor also uses this)
 
         public delegate void Roll(Die die);
         public static event Roll OnRoll;
 
         [SerializeField]
-        private DieValues[] faces = new DieValues[s_directions.Length]; //Coresponding faces to s_directions
+        private Faces[] faces = new Faces[s_directions.Length]; //Coresponding faces to s_directions
         [SerializeField]
         private float sleepThreshold = 0.005f; // Default value of sleep threshold
 
-        public DieValues RolledValue { get; private set; } = DieValues.None;
+        public Faces RolledValue { get; private set; } = Faces.None;
         private Rigidbody _rigidbody = null;
 
 
@@ -33,7 +33,7 @@ namespace Seacore
 
         private void Update()
         {
-            if (_rigidbody.IsSleeping() && RolledValue == DieValues.None)
+            if (_rigidbody.IsSleeping() && RolledValue == Faces.None)
             {
                 float highestDot = -1.0f;
                 int face = 0;
@@ -55,12 +55,12 @@ namespace Seacore
             }
         }
 
-        //public void Roll(Vector3 force, Vector3 torque)
-        //{
-        //    _rigidbody.AddForce(force);
-        //    _rigidbody.AddTorque(torque);
+        public void Throw(Vector3 force, Vector3 torque)
+        {
+            _rigidbody.AddForce(force);
+            _rigidbody.AddTorque(torque);
 
-        //    RolledValue = DieValues.None;
-        //}
+            RolledValue = Faces.None;
+        }
     }
 }
