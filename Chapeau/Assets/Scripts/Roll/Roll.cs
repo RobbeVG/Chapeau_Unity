@@ -1,15 +1,22 @@
 using UnityEngine.Assertions;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace Seacore
 {
-    public partial class Roll
+    [CreateAssetMenu(fileName = "Roll", menuName = "ScriptableObjects/Roll")]
+    public class Roll : ScriptableObject
     {
         public const ushort c_amountDie = 5;
+        [SerializeField] 
+        private Die.Faces[] values;
+        //[ReadOnly]
+        [SerializeField]
+        private RollResult result;
 
-        public Die.Faces[] Values { get; private set; }
-        public RollResult Result { get; private set; }
+        public Die.Faces[] Values { get => values; private set => values = value; }
+        public RollResult Result { get => result; private set => result = value; }
 
         public Roll()
         {
@@ -20,13 +27,13 @@ namespace Seacore
         {
             Assert.IsNotNull(values);
             Assert.IsTrue(values.Length == c_amountDie, $"Values given in constructor have lenght {values.Length} while max-length is {c_amountDie}");
-            
+
             Values = values;
             if (calculateResult)
                 CalculateResult();
         }
 
-        public void Clear() 
+        public void Clear()
         {
             Values = new Die.Faces[c_amountDie] { Die.Faces.None, Die.Faces.None, Die.Faces.None, Die.Faces.None, Die.Faces.None };
         }
@@ -39,7 +46,7 @@ namespace Seacore
 
         public void Sort()
         {
-            System.Array.Sort(Values);            
+            System.Array.Sort(Values);
         }
 
         public void CalculateResult()

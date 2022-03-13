@@ -9,7 +9,7 @@ namespace Seacore
     public class RollDisplay : MonoBehaviour
     {
         [SerializeField]
-        Chapeau chapeau = null;
+        private Roll physicalRoll;
 
         [SerializeField]
         private Sprite none = null;        
@@ -32,14 +32,14 @@ namespace Seacore
         private void Start()
         {
             images = GetComponentsInChildren<Image>();
-            Assert.IsTrue(images.Length == chapeau.roll.Values.Length, $"Roll display: images found = { images.Length } and roll values = { chapeau.roll.Values.Length }");
+            Assert.IsTrue(images.Length == physicalRoll.Values.Length, $"Roll display: images found = { images.Length } and roll values = { physicalRoll.Values.Length }");
         }
 
         private void Update()
         {
-            for (int i = 0; i < chapeau.roll.Values.Length; i++)
+            for (int i = 0; i < physicalRoll.Values.Length; i++)
             {
-                Die.Faces value = chapeau.roll.Values[i];
+                Die.Faces value = physicalRoll.Values[i];
                 switch (value)
                 {
                     case Die.Faces.None:

@@ -1,49 +1,57 @@
 using System.Collections;
-using System.Collections.Generic;
+
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Seacore
 {
     public class Chapeau : MonoBehaviour
     {
-        public Roll roll = new Roll();
+        [SerializeField]
+        Animator liftingAnimationController = null;
 
-        private int _currentDieIndex = 0;
-
-        private void OnEnable()
+        private void Start()
         {
-            Die.OnRoll += OnDieRoll;
+            Assert.IsNotNull(liftingAnimationController, $"Chapeau script does not have animation Controller");
         }
 
-        private void OnDisable()
+        private bool IsClosed()
         {
-            Die.OnRoll -= OnDieRoll;
+            return liftingAnimationController.GetCurrentAnimatorStateInfo(0).IsName("Closed");
+        }
+        private bool IsOpened()
+        {
+            return !IsClosed();
         }
 
-        private void OnDieRoll(Die die)
+        public IEnumerator Open()
         {
-            roll.ChangeValue(_currentDieIndex++, die.RolledValue);
-            
-            if (_currentDieIndex == Roll.c_amountDie)
+            Debug.Log("Started Task Open");
+            if (!IsOpened())
             {
-                roll.Sort();
-                roll.CalculateResult();
-
-                Debug.Log(roll.Result.ToString());
-            }
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                roll.Clear();
-                _currentDieIndex = 0;
-                foreach (var item in GetComponentsInChildren<Die>())
+                liftingAnimationController.SetTrigger("Open");
+                do
                 {
-                    item.Throw(Random.insideUnitSphere * 1000, Random.insideUnitSphere * 50);
-                }    
+                    yield return null;
+                }
+                while (!IsOpened());
             }
+            Debug.Log("Finished Task Open");
+        }
+        public IEnumerator Close()
+        {
+            Debug.Log("Started Task Close");
+            if (!IsClosed())
+            {
+                liftingAnimationController.SetTrigger("Close");
+                do
+                {
+                    yield return null;
+                }
+                while (!IsClosed());
+            }
+            Debug.Log("Finished Task Close");
         }
     }
 }

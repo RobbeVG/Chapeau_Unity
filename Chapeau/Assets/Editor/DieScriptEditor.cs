@@ -1,43 +1,45 @@
-using Seacore;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(Die))]
-public class DieScriptEditor : Editor
-{
-    SerializedProperty facesProp;
-    private bool _toggleFaces = false;
-
-    private void OnEnable()
+namespace Seacore 
+{ 
+    [CustomEditor(typeof(Die))]
+    public class DieScriptEditor : Editor
     {
-        facesProp = serializedObject.FindProperty("faces");
-        if (!facesProp.isArray)
-        {
-            Debug.LogError("Faces in die is not an array");
-        }
-    }
+        SerializedProperty facesProp;
+        private bool _toggleFaces = false;
 
-    public override void OnInspectorGUI()
-    {
-        DrawPropertiesExcluding(serializedObject, "faces");
-
-        serializedObject.Update();
-        if (facesProp.arraySize == 0)
+        private void OnEnable()
         {
-            facesProp.arraySize = 6;
-        }
-        Die die = target as Die;
-
-        _toggleFaces = EditorGUILayout.BeginFoldoutHeaderGroup(_toggleFaces, "Faces");
-        if (_toggleFaces)
-        {
-            for(int i = 0; i < Die.s_directions.Length; i++)
+            facesProp = serializedObject.FindProperty("faces");
+            if (!facesProp.isArray)
             {
-                EditorGUILayout.PropertyField(facesProp.GetArrayElementAtIndex(i), new GUIContent("Face of direction: " + Die.s_directions[i].ToString()));
+                Debug.LogError("Faces in die is not an array");
             }
         }
-        EditorGUILayout.EndFoldoutHeaderGroup();
+
+        public override void OnInspectorGUI()
+        {
+            DrawPropertiesExcluding(serializedObject, "faces");
+
+            serializedObject.Update();
+            if (facesProp.arraySize == 0)
+            {
+                facesProp.arraySize = 6;
+            }
+            Die die = target as Die;
+
+            _toggleFaces = EditorGUILayout.BeginFoldoutHeaderGroup(_toggleFaces, "Faces");
+            if (_toggleFaces)
+            {
+                for(int i = 0; i < Die.s_directions.Length; i++)
+                {
+                    EditorGUILayout.PropertyField(facesProp.GetArrayElementAtIndex(i), new GUIContent("Face of direction: " + Die.s_directions[i].ToString()));
+                }
+            }
+            EditorGUILayout.EndFoldoutHeaderGroup();
         
-        serializedObject.ApplyModifiedProperties();
+            serializedObject.ApplyModifiedProperties();
+        }
     }
 }
