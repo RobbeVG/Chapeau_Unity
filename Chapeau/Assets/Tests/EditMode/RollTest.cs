@@ -29,7 +29,8 @@ public class RollTest
         //No calculation result
         Assert.IsTrue(roll.Values.SequenceEqual(new Die.Faces[] { Die.Faces.Ten, Die.Faces.Nine, Die.Faces.Jack, Die.Faces.King, Die.Faces.Ten }));
 
-        roll = new Roll(new Die.Faces[] { Die.Faces.Ten, Die.Faces.Nine, Die.Faces.Jack, Die.Faces.King, Die.Faces.Ten }, true);
+        roll = new Roll(new Die.Faces[] { Die.Faces.Ten, Die.Faces.Nine, Die.Faces.Jack, Die.Faces.King, Die.Faces.Ten });
+        roll.CalculateResult();
         Assert.IsTrue(roll.Result.Type == RollType.Pair); 
     }
 

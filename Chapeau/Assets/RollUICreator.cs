@@ -1,23 +1,41 @@
-
+using System;
 using UnityEngine;
 using UnityEngine.Assertions;
-using TMPro;
+using UnityEngine.UI;
 
 
 namespace Seacore
 {
+
     public class RollUICreator : MonoBehaviour
     {
         [SerializeField]
         private Roll declaredRoll;
 
-        private TMP_Dropdown[] _dropDowns = null;
+        private Dropdown[] _dropDowns;
 
-
-        void Awake() 
+        private void Awake()
         {
-            _dropDowns = GetComponentsInChildren<TMP_Dropdown>();
-            Assert.IsTrue(_dropDowns.Length == Roll.c_amountDie, $"{_dropDowns.Length}");
+            _dropDowns = GetComponentsInChildren<Dropdown>();
+
+            Assert.IsTrue(_dropDowns.Length == Globals.c_amountDie, $"Amount of dropdowns = {_dropDowns.Length}, amount of rolled dice = {Globals.c_amountDie}");
+            Assert.IsNotNull(declaredRoll);
+        }
+
+        void OnEnable()
+        {
+            for (int i = 0; i < _dropDowns.Length; i++)
+            {
+                Dropdown dropdown = _dropDowns[i];
+                dropdown.value = (int)declaredRoll.Values[i];
+                dropdown.onValueChanged.AddListener(delegate { UpdateDeclaredRoll(dropdown); });
+            }
+        }
+
+        private void OnDisable()
+        {
+            foreach (var dropdown in _dropDowns)
+                dropdown.onValueChanged.RemoveListener(delegate { UpdateDeclaredRoll(dropdown); });
         }
 
         void Start()
@@ -26,14 +44,10 @@ namespace Seacore
                 Debug.LogError("No declared roll assigned");
         }
 
-        public void UpdateDeclaredRoll()
+        private void UpdateDeclaredRoll(Dropdown dropdown)
         {
-            for (int i = 0; i < _dropDowns.Length; i++)
-            {
-                TMP_Dropdown dropdown = _dropDowns[i];
-
-                declaredRoll.ChangeValue(i, (Die.Faces)dropdown.value);
-            }
+            declaredRoll.ChangeValue(Array.IndexOf(_dropDowns, dropdown), (Die.Faces)dropdown.value);     
+            declaredRoll.CalculateResult(); //Calculate new result
         }
     }
 }

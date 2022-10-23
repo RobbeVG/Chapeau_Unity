@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Seacore
 {
@@ -8,73 +9,99 @@ namespace Seacore
         public enum Faces { None, Nine, Ten, Jack, Queen, King, Ace }
         public static readonly Vector3[] s_directions = { Vector3.up, Vector3.right, Vector3.forward, Vector3.down, Vector3.left, Vector3.back }; //All the directions of the die's faces (Custom editor also uses this)
 
-        public delegate void Sleep(Die die);
-        public static event Sleep OnSleep;
+        public delegate void Roll(Die die);
+        public static event Roll OnRoll;
+        public static event Roll OnUnroll;
 
-        public delegate void WakeUp(Die die);
-        public static event WakeUp OnAwake;
+        [ReadOnly][SerializeField]
+        private Faces _rolledValue = Faces.None;
+        public Faces RolledValue { get { return _rolledValue; } private set { _rolledValue = value; } }
 
-        private bool _sleep;
-        public bool Sleeping { 
-            get 
-            { 
-                return _sleep; 
-            } 
-            private set 
-            { 
-                _sleep = value; 
-                if (_sleep) 
-                    OnSleep?.Invoke(this);
-                else 
-                    OnAwake?.Invoke(this); 
-            } 
-        }
+        [ReadOnly]
+        [SerializeField]
+        private Vector3 upvec;
+
+        //public Faces RolledValue { 
+        //    get 
+        //    { 
+        //        return _rolledValue; 
+        //    } 
+        //    private set 
+        //    { 
+        //        if (_rolledValue != value)
+        //        {
+        //            _rolledValue = value;
+        //            if (_rolledValue != Faces.None)
+        //                OnRoll?.Invoke(this);
+        //            else
+        //                OnUnroll?.Invoke(this);
+        //        }
+        //    }
+        //}
+        //public bool Rolled { get => _rolledValue != Faces.None; }
 
         [SerializeField]
         private Faces[] faces = new Faces[s_directions.Length]; //Coresponding faces to s_directions
-        [SerializeField]
-        private float sleepThreshold = 0.005f; // Default value of sleep threshold
 
         //private Transform sleepTransform =
 
-        public Faces RolledValue { get; private set; } = Faces.None;
         private Rigidbody _rigidbody = null;
+        public bool Kinematic { get { return _rigidbody.isKinematic; } set { _rigidbody.isKinematic = value; } }
 
+        #region Event functions
+        //Initialization
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
-            _rigidbody.sleepThreshold = sleepThreshold;
+            if (_rigidbody == null)
+                Log.Warning("No rigidbody found on dice");
         }
 
+        //Updating
         private void Update()
         {
-            if (_rigidbody.IsSleeping())
+            ////Log.Debug($"{name} => sleep: {_rigidbody.IsSleeping()}");
+            //if (_rigidbody.IsSleeping())
+            //{
+            //    if (RolledValue == Faces.None)
+            //    {
+            //        float highestDot = -1.0f;
+            //        int face = 0;
+            //        for (int i = 0; i < s_directions.Length; i++)
+            //        {
+            //            Vector3 direction = s_directions[i];
+            //            Vector3 worldSpaceDirection = transform.localToWorldMatrix.MultiplyVector(direction);
+            //            float dot = Vector3.Dot(worldSpaceDirection, Vector3.up);
+            //            if (dot > highestDot)
+            //            {
+            //                highestDot = dot;
+            //                face = i;
+            //            }
+            //        }
+            //        RolledValue = faces[face]; //Invokes -> On Sleep
+            //    }
+            //}
+            //else
+            //    RolledValue = Faces.None; //Invokes -> On Awake
+        }
+        #endregion
+
+        
+
+        public void SetRolledValue(Faces face)
+        {
+            if (face != Faces.None)
             {
-                if (RolledValue == Faces.None)
+                RolledValue = face;
+
+
+                for (int i = 0; i < faces.Length; i++)
                 {
-                    float highestDot = -1.0f;
-                    int face = 0;
-                    for (int i = 0; i < s_directions.Length; i++)
-                    {
-                        Vector3 direction = s_directions[i];
-                        Vector3 worldSpaceDirection = transform.localToWorldMatrix.MultiplyVector(direction);
-                        float dot = Vector3.Dot(worldSpaceDirection, Vector3.up);
-                        if (dot > highestDot)
-                        {
-                            highestDot = dot;
-                            face = i;
-                        }
-                    }
-                    RolledValue = faces[face];
-                    Sleeping = true; //Invokes -> On Sleep
-                }
-            }
-            else
-            {
-                if (RolledValue != Faces.None)
-                {
-                    RolledValue = Faces.None;
-                    Sleeping = false; //Invokes -> On Awake
+                    if (faces[i] != face)
+                        continue;
+                    transform.rotation = Quaternion.FromToRotation(s_directions[i], Vector3.up);
+                    
+                    break;
                 }
             }
         }
@@ -85,6 +112,11 @@ namespace Seacore
             _rigidbody.AddTorque(torque);
 
             RolledValue = Faces.None;
+        }
+
+        public void TriggerSleep()
+        {
+            _rigidbody.Sleep();
         }
     }
 }

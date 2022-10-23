@@ -1,20 +1,20 @@
 using System;
 using UnityEngine;
 
+[Serializable]
 public class GameEventCodedListener : IGameEventListener
 {
     [SerializeField]
     private GameEvent @event;
-    [SerializeField]
     private Action _response;
 
-    private void OnEnable(Action response)
+    public void OnEnable(Action response)
     {
         @event?.RegisterListener(this);
         _response = response;
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         @event?.UnregisterListener(this);
         _response = null;

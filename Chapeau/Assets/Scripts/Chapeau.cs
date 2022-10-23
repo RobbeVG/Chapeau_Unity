@@ -11,6 +11,38 @@ namespace Seacore
         [SerializeField]
         Animator liftingAnimationController = null;
 
+        [SerializeField]
+        Material material = null;
+
+        [SerializeField]
+        [Range(0.0f, 1.0f)]
+        float seethroughOpacity = 0.5f;
+
+        public void OnValidate()
+        {
+            if (material != null)
+            {
+                Color current = material.color;
+                current.a = seethroughOpacity;
+                material.color = current;
+            }
+        }
+
+        /// <summary>
+        /// Setting the transparacy of the material being used
+        /// </summary>
+        /// <param name="value">0 is transparent, 1 is opaque</param>
+        public void SetTransparancy(float value) 
+        {
+            Assert.IsTrue(value >= 0.0f && value <= 1.0f);
+            if (material != null)
+            {
+                Color current = material.color;
+                current.a = value;
+                material.color = current;
+            }
+        }
+
         private void Start()
         {
             Assert.IsNotNull(liftingAnimationController, $"Chapeau script does not have animation Controller");
@@ -27,7 +59,6 @@ namespace Seacore
 
         public IEnumerator Open()
         {
-            Debug.Log("Started Task Open");
             if (!IsOpened())
             {
                 liftingAnimationController.SetTrigger("Open");
@@ -37,11 +68,9 @@ namespace Seacore
                 }
                 while (!IsOpened());
             }
-            Debug.Log("Finished Task Open");
         }
         public IEnumerator Close()
         {
-            Debug.Log("Started Task Close");
             if (!IsClosed())
             {
                 liftingAnimationController.SetTrigger("Close");
@@ -51,7 +80,18 @@ namespace Seacore
                 }
                 while (!IsClosed());
             }
-            Debug.Log("Finished Task Close");
+        }
+        public IEnumerator Lift()
+        {
+            if (!IsClosed())
+            {
+                liftingAnimationController.SetTrigger("Rise");
+                do
+                {
+                    yield return null;
+                }
+                while (!IsClosed());
+            }
         }
     }
 }

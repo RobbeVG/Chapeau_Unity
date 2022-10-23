@@ -20,9 +20,10 @@ namespace Seacore
 
         public override void OnInspectorGUI()
         {
+            serializedObject.Update();
+
             DrawPropertiesExcluding(serializedObject, "faces");
 
-            serializedObject.Update();
             if (facesProp.arraySize == 0)
             {
                 facesProp.arraySize = 6;

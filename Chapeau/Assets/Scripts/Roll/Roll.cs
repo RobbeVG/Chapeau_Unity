@@ -2,46 +2,103 @@ using UnityEngine.Assertions;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using System;
 
 namespace Seacore
 {
     [CreateAssetMenu(fileName = "Roll", menuName = "ScriptableObjects/Roll")]
     public class Roll : ScriptableObject
     {
-        public const ushort c_amountDie = 5;
         [SerializeField] 
         private Die.Faces[] values;
         //[ReadOnly]
         [SerializeField]
         private RollResult result;
 
-        public Die.Faces[] Values { get => values; private set => values = value; }
-        public RollResult Result { get => result; private set => result = value; }
+        public Die.Faces[] Values { get => values; }
+        public RollResult Result { get => result; }
 
         public Roll()
         {
             Clear();
         }
-
-        public Roll(Die.Faces[] values, bool calculateResult = false)
+        public Roll(Die.Faces[] values)
         {
             Assert.IsNotNull(values);
-            Assert.IsTrue(values.Length == c_amountDie, $"Values given in constructor have lenght {values.Length} while max-length is {c_amountDie}");
-
-            Values = values;
-            if (calculateResult)
-                CalculateResult();
+            Assert.IsTrue(values.Length == Globals.c_amountDie, $"Values given in constructor have lenght {values.Length} while max-length is {Globals.c_amountDie}");
+            this.values = values;
         }
+
+        #region Equality Operators/Methods override
+        public static bool operator <= (Roll r1, Roll r2)
+        {
+            return r1.result.Score <= r2.result.Score;
+        }
+        public static bool operator >= (Roll r1, Roll r2)
+        {
+            return r1.result.Score >= r2.result.Score;
+        }
+        public static bool operator == (Roll r1, Roll r2)
+        {
+            if (r1 is Roll && r2 is Roll)
+                return r1.result.Score == r2.result.Score;
+            return ReferenceEquals(r1, r2);
+        }
+        public static bool operator != (Roll r1, Roll r2)
+        {
+            return !(r1 == r2);
+        }
+        public static bool operator < (Roll r1, Roll r2)
+        {
+            return !(r1 >= r2);
+        }
+        public static bool operator > (Roll r1, Roll r2)
+        {
+            return !(r1 <= r2);
+        }
+        //Generated
+        public override bool Equals(object obj)
+        {
+            return obj is Roll roll &&
+                   base.Equals(obj) &&
+                   name == roll.name &&
+                   hideFlags == roll.hideFlags &&
+                   EqualityComparer<Die.Faces[]>.Default.Equals(values, roll.values) &&
+                   EqualityComparer<RollResult>.Default.Equals(result, roll.result);
+        }
+        public override int GetHashCode()
+        {
+            int hashCode = -1435252889;
+            hashCode = hashCode * -1521134295 + base.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(name);
+            hashCode = hashCode * -1521134295 + hideFlags.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<Die.Faces[]>.Default.GetHashCode(values);
+            hashCode = hashCode * -1521134295 + result.GetHashCode();
+            return hashCode;
+        }
+        #endregion Equality Operators/Methods override
 
         public void Clear()
         {
-            Values = new Die.Faces[c_amountDie] { Die.Faces.None, Die.Faces.None, Die.Faces.None, Die.Faces.None, Die.Faces.None };
+            values = new Die.Faces[Globals.c_amountDie] { Die.Faces.None, Die.Faces.None, Die.Faces.None, Die.Faces.None, Die.Faces.None };
+            result.Clear();
         }
 
         public void ChangeValue(int index, Die.Faces value)
         {
-            Assert.IsTrue(index < c_amountDie, $"Changed roll value at index {index} while length is {c_amountDie}");
-            Values[index] = value;
+            Assert.IsTrue(index < Globals.c_amountDie, $"Changed roll value at index {index} while length is {Globals.c_amountDie}");
+            values[index] = value;
+        }
+
+        public void ChangeValue(int index, int value)
+        {
+            ChangeValue(index, (Die.Faces)value);
+        }
+
+        public void ChangeValueTo(Roll other)
+        {
+            other.values.CopyTo(values, 0);
+            result = other.result;
         }
 
         public void Sort()
@@ -51,15 +108,18 @@ namespace Seacore
 
         public void CalculateResult()
         {
-            Result = GetRollResult();
+            result = GetRollResult();
+        }
+
+        public bool IsEmpty()
+        {
+            return Values.All(value => value == Die.Faces.None);
         }
 
         //Caclulating the throw
         private RollResult GetRollResult()
         {
-            Assert.IsFalse(Values.Length > c_amountDie, $"Roll calculater get combination given value array was of lenght {Values.Length} while it should be smaller than {c_amountDie}");
-
-            Sort();
+            Assert.IsFalse(Values.Length > Globals.c_amountDie, $"Roll calculater get combination given value array was of lenght {Values.Length} while it should be smaller than {Globals.c_amountDie}");
 
             Dictionary<ushort, List<Die.Faces>> countValueFaces = new Dictionary<ushort, List<Die.Faces>>()
                 {
@@ -131,6 +191,19 @@ namespace Seacore
                 highCardsScore += GetScoreHighFace(face);
             }
             return highCardsScore;
+        }
+
+        public override string ToString()
+        {
+            string temp = base.ToString() + '\n';
+            for (int i = 0; i < Values.Length; i++)
+            {
+                Die.Faces face = Values[i];
+                temp += i + ": " + face.ToString() + '\t';
+            }
+            temp += '\n' + "Result = " + result.ToString();
+            return temp;
+
         }
     }
 }

@@ -19,6 +19,12 @@ namespace Seacore
         [ReadOnly][UnityEngine.SerializeField]
         private float score;
 
+        public void Clear()
+        {
+            type = RollType.Nothing;
+            score = 0;
+        }
+
         public override string ToString()
         {
             return $"({Type} with a score of: {Score})";

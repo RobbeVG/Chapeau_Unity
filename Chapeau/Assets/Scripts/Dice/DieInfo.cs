@@ -1,12 +1,14 @@
+using System;
 using UnityEngine;
 
 namespace Seacore
 {
     public class DieInfo
     {
-        public Transform RolledTransform { get; set; }
-        public Material DieMateriel { get; set; }
-        public bool IsInside { get; set; }
-        public bool IsPrimedToRoll { get; set; }
+        //public Material DieMateriel { get; set; }
+        public bool IsOutside { get; set; } = false;
+        public Outline Outline { get; set; }
+        public Vector3 RolledPosition{ get; set; }
+        public int Index { get; set; }
     }
 }

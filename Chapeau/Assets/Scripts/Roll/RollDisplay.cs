@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Assertions;
@@ -9,7 +7,7 @@ namespace Seacore
     public class RollDisplay : MonoBehaviour
     {
         [SerializeField]
-        private Roll physicalRoll;
+        private Roll roll;
 
         [SerializeField]
         private Sprite none = null;        
@@ -32,36 +30,39 @@ namespace Seacore
         private void Start()
         {
             images = GetComponentsInChildren<Image>();
-            Assert.IsTrue(images.Length == physicalRoll.Values.Length, $"Roll display: images found = { images.Length } and roll values = { physicalRoll.Values.Length }");
+            Assert.IsTrue(images.Length == roll.Values.Length, $"Roll display: images found = { images.Length } and roll values = { roll.Values.Length }");
         }
 
         private void Update()
         {
-            for (int i = 0; i < physicalRoll.Values.Length; i++)
+            for (int i = 0; i < roll.Values.Length; i++)
             {
-                Die.Faces value = physicalRoll.Values[i];
+                Image image = images[i];
+                image.gameObject.SetActive(true);
+                Die.Faces value = roll.Values[i];
                 switch (value)
                 {
                     case Die.Faces.None:
-                        images[i].sprite = none;
+                        image.gameObject.SetActive(false);
+                        image.sprite = none;
                         break;
                     case Die.Faces.Nine:
-                        images[i].sprite = nine;
+                        image.sprite = nine;
                         break;
                     case Die.Faces.Ten:
-                        images[i].sprite = ten;
+                        image.sprite = ten;
                         break;
                     case Die.Faces.Jack:
-                        images[i].sprite = jack;
+                        image.sprite = jack;
                         break;
                     case Die.Faces.Queen:
-                        images[i].sprite = queen;
+                        image.sprite = queen;
                         break;
                     case Die.Faces.King:
-                        images[i].sprite = king;
+                        image.sprite = king;
                         break;
                     case Die.Faces.Ace:
-                        images[i].sprite = ace;
+                        image.sprite = ace;
                         break;
                     default:
                         break;
