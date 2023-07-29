@@ -3,6 +3,7 @@ Chapeau_Unity
 
 
 # Chapeau
+A dice game based on Poker
 
 ## Unity
 
