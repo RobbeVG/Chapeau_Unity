@@ -17,6 +17,9 @@ namespace Seacore
         [SerializeField]
         private float liftYOffset = 0.25f;
 
+        [SerializeField]
+        private CircleInAreaController _circleInAreaController;
+
         void Update()
         {
             if (Input.GetMouseButtonDown(0)) //Pick up
@@ -50,6 +53,8 @@ namespace Seacore
 
                     colliderSelected.enabled = true;
                     rigidbodySelected.useGravity = true;
+
+                    Debug.Log(_circleInAreaController.IsInsideCircle(Input.mousePosition / new Vector2 (Screen.width, Screen.height)));
 
                     Selected = null;
                     Cursor.visible = true;
