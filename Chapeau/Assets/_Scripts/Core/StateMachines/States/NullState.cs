@@ -6,12 +6,14 @@ namespace Seacore
 {
     public class NullState<T> : IState<T> where T : StateMachine<T>
     {
-        public void Enter(T stateMachine)
+        public IEnumerator Enter(T stateMachine)
         {
+            yield break;
         }
 
-        public void Exit(T stateMachine)
+        public IEnumerator Exit(T stateMachine)
         {
+            yield break;
         }
     }
 }

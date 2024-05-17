@@ -7,8 +7,6 @@ namespace Seacore
     public class InOutState : RoundState
     {
         public InOutState() : base(RoundStateType.InOut)
-        {
-
-        }
+        {}
     }
 }

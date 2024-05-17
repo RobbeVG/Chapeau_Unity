@@ -8,7 +8,7 @@ namespace Seacore
     {
         public ChapeauState() : base(RoundStateType.Chapeau) { }
 
-        public override void Enter(RoundStateMachineController roundSM)
+        public override IEnumerator Enter(RoundStateMachineController roundSM)
         {
             base.Enter(roundSM);
             if (roundSM.DeclaredRoll >= roundSM.PhysicalRoll)
@@ -17,7 +17,8 @@ namespace Seacore
                 Debug.Log("You Won");
 
             roundSM.ResetRound();
-            roundSM.ChangeRoundStateNextFrame(RoundStateType.Roll);
+            roundSM.ChangeRoundState(RoundStateType.Roll);
+            yield break;
         }
     }
 }

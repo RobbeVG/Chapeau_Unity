@@ -64,20 +64,12 @@ namespace Seacore
         {
             if (roundStateType == RoundStateType.Roll)
                 AmountRolled += 1;
-
-            SetState(RoundStateHolder[roundStateType]);
-            OnRoundStateChange?.Invoke(CurrentRoundState.Type);
+            StartCoroutine(ChangeRoundStateAndFireEvent(roundStateType));
         } 
-
-        public void ChangeRoundStateNextFrame(RoundStateType roundStateType)
+        private IEnumerator ChangeRoundStateAndFireEvent(RoundStateType roundStateType)
         {
-            StartCoroutine(WaitOneFrameToChangeState(roundStateType));
+            yield return StartCoroutine(SetState(RoundStateHolder[roundStateType]));
+            OnRoundStateChange?.Invoke(CurrentRoundState.Type);
         }
-
-        private IEnumerator WaitOneFrameToChangeState(RoundStateType roundStateType)
-        {
-            yield return null;
-            ChangeRoundState(roundStateType);
-;        }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -17,29 +18,19 @@ namespace Seacore
 
         protected void Start()
         {
-            currentState.Enter(this as T);
+            StartCoroutine(currentState.Enter(this as T));
         }
 
-        //protected void Update()
-        //{
-        //    //currentState.
-        //}
-
-        //protected void OnDestroy()
-        //{
-        //    //currentState.Exit(); //->Needed?
-        //}
-
-        protected void SetState(IState<T> newState)
+        protected IEnumerator SetState(IState<T> newState)
         {
             Assert.IsNotNull(newState, "New State is null and cannot be set");
             Debug.Log("Changed to State: " + newState.ToString());
-
-            currentState.Exit(this as T); //Always a state (NullState)
+            yield return StartCoroutine(currentState.Exit(this as T)); //Always a state (NullState)
             previousState = currentState;
             currentState = newState;
-            currentState.Enter(this as T);
+            yield return StartCoroutine(currentState.Enter(this as T));
         }
+
 
         public void ChangeToPreviousState()
         {

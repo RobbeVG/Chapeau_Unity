@@ -8,16 +8,11 @@ namespace Seacore
     {
         public LookState() : base(RoundStateType.Look) {}
 
-        public override void Enter(RoundStateMachineController roundSM)
+        public override IEnumerator Enter(RoundStateMachineController roundSM)
         {
-            base.Enter(roundSM);
             if (roundSM.PreviousRoundState.Type == RoundStateType.Roll)
-                roundSM.ChangeRoundStateNextFrame(RoundStateType.Declare);
-        }
-
-        public override void Exit(RoundStateMachineController roundSM)
-        {
-            base.Exit(roundSM);
+                roundSM.ChangeRoundState(RoundStateType.Declare);
+            yield break;
         }
     }
 }

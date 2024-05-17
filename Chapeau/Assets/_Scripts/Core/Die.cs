@@ -34,6 +34,7 @@ namespace Seacore
         public Faces DieValue { get => _dieValue; private set => _dieValue = value; }
 
         private Rigidbody _rigidbody = null;
+        public Rigidbody Rigidbody { get => _rigidbody; private set => _rigidbody = value; }
 
         public bool Kinematic { get { return _rigidbody.isKinematic; } set { _rigidbody.isKinematic = value; } }
 
@@ -96,15 +97,15 @@ namespace Seacore
 
         public void Roll()
         {
-            _isRolling = true;
+            SetRolledValue((Faces)UnityEngine.Random.Range((int)Faces.Nine, (int)Faces.Ace) + 1);
+            OnRolledValue?.Invoke(DieValue);
         }
 
         public void Throw(Vector3 force, Vector3 torque)
         {
             _rigidbody.AddForce(force);
             _rigidbody.AddTorque(torque);
-
-            Roll();
+            _isRolling = true;
         }
     }
 }

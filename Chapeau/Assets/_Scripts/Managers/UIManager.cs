@@ -37,7 +37,7 @@ namespace Seacore
         {
             background.SetActive(stateType == RoundStateType.Roll || stateType == RoundStateType.PassOn ||
                 (stateType == RoundStateType.Declare && (roundSM.PreviousRoundState.Type == RoundStateType.Roll || roundSM.PreviousRoundState.Type == RoundStateType.PassOn)));
-            chooseActionMenu.SetActive(stateType == RoundStateType.Roll || stateType == RoundStateType.PassOn || stateType == RoundStateType.Look);
+            chooseActionMenu.SetActive(stateType == RoundStateType.Roll || stateType == RoundStateType.PassOn);
             declareMenu.SetActive(stateType == RoundStateType.Declare);
         }
     }

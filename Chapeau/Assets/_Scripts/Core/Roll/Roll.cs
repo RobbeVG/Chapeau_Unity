@@ -2,7 +2,6 @@ using UnityEngine.Assertions;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using System;
 
 namespace Seacore
 {
@@ -80,7 +79,7 @@ namespace Seacore
 
         public void Clear()
         {
-            values = new Die.Faces[Globals.c_amountDie] { Die.Faces.None, Die.Faces.None, Die.Faces.None, Die.Faces.None, Die.Faces.None };
+            values = Enumerable.Repeat(Die.Faces.None, Globals.c_amountDie).ToArray();
             result.Clear();
         }
 

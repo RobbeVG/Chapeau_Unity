@@ -46,7 +46,7 @@ Material:
     - _Intensity: 0.36
     - _Interpolation: 3.65
     - _OuterFade: 1
-    - _OuterFadeOffset: 0.2
+    - _OuterFadeOffset: 0.091
     - _Radius: 0.55
     - _RadiusOfScreenDiameter: 0.535
     - _RadiusPercentageOfScreenDiameter: 0.5

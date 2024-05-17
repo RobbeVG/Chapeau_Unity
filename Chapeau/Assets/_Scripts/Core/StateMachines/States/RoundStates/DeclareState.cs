@@ -8,10 +8,10 @@ namespace Seacore
     {
         public DeclareState() : base(RoundStateType.Declare) {}
 
-        public override void Exit(RoundStateMachineController roundSM)
-        {
-            base.Exit(roundSM);
+        public override IEnumerator Exit(RoundStateMachineController roundSM)
+        { 
             roundSM.CurrentRoll.ChangeValueTo(roundSM.DeclaredRoll);
+            yield break;
         }
     }
 }
