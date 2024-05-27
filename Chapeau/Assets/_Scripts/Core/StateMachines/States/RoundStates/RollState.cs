@@ -10,7 +10,7 @@ namespace Seacore
 
         public override IEnumerator Enter(RoundStateMachineController roundSM)
         {
-            roundSM.DiceManager.Roll();
+            roundSM.DiceRoller.RollDice();
             roundSM.PhysicalRoll.CalculateResult();
             Debug.Log(roundSM.PhysicalRoll.ToString());
             yield break;

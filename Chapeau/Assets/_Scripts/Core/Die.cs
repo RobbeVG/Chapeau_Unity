@@ -24,9 +24,9 @@ namespace Seacore
             { Faces.Ace, Vector3.left}
         }; //All the directions of the die's faces
 
-        public static event Action<Faces> OnRolledValue;
+        public event Action<Die> OnRolledValue;
 
-        private bool _isRolling = false; // Value to check if the die is still rolling
+        private bool _isRolling = true; // Value to check if the die is still rolling
 
         //Ful property to show dieValue in the inspector
         [ReadOnly][SerializeField]
@@ -50,6 +50,7 @@ namespace Seacore
         private void Start()
         {
             CalculateDieValue();
+
         }
 
         //Updating
@@ -63,7 +64,7 @@ namespace Seacore
                 if (_rigidbody.IsSleeping())
                 {
                     _isRolling = false;
-                    OnRolledValue?.Invoke(DieValue);
+                    OnRolledValue?.Invoke(this);
                 }
             }
         }
@@ -95,10 +96,13 @@ namespace Seacore
             transform.rotation = Quaternion.FromToRotation(s_facedirections[face], Vector3.up);
         }
 
+        /// <summary>
+        /// Manual roll function that has nothing todo with physics like the above
+        /// </summary>
         public void Roll()
         {
             SetRolledValue((Faces)UnityEngine.Random.Range((int)Faces.Nine, (int)Faces.Ace) + 1);
-            OnRolledValue?.Invoke(DieValue);
+            OnRolledValue?.Invoke(this);
         }
 
         public void Throw(Vector3 force, Vector3 torque)

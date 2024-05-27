@@ -5,7 +5,7 @@ using UnityEngine.Assertions;
 
 namespace Seacore
 {
-    [RequireComponent(typeof(DragAndDropController))]
+    [RequireComponent(typeof(PickupDragController))]
     public class CircleAreaFadeController : MonoBehaviour
     {
         [SerializeField]
@@ -33,14 +33,14 @@ namespace Seacore
 
         private void OnEnable()
         {
-            GetComponent<DragAndDropController>().OnGameObjectDropped += OnGameObjectDropped;
-            GetComponent<DragAndDropController>().OnGameObjectSelected += OnGameObjectSelected;
+            GetComponent<PickupDragController>().ObjectDropped += OnGameObjectDropped;
+            GetComponent<PickupDragController>().ObjectPickedUp += OnGameObjectSelected;
         }
 
         private void OnDisable()
         {
-            GetComponent<DragAndDropController>().OnGameObjectDropped -= OnGameObjectDropped;
-            GetComponent<DragAndDropController>().OnGameObjectSelected -= OnGameObjectSelected;
+            GetComponent<PickupDragController>().ObjectDropped -= OnGameObjectDropped;
+            GetComponent<PickupDragController>().ObjectPickedUp -= OnGameObjectSelected;
         }
 
         // Start is called before the first frame update

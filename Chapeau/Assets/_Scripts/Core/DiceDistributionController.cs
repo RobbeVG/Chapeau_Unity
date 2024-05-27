@@ -13,6 +13,7 @@ namespace Seacore
     {
         [Header("Steering Variables")]
         [SerializeField] private DiceManager diceManager;
+        [SerializeField] private CircleController circle;
 
         [Space]
 
@@ -25,7 +26,6 @@ namespace Seacore
         [SerializeField][Range(0.0f, 1.0f)] private float borderWeight = 0.6f;
         [SerializeField][Range(0.0f, 1.0f)] private float chapeauCircleWeight = 0.3f;
 
-        [SerializeField] private Circle circle;
 
         private const ushort Size = 4;
         private readonly Vector3[] cornerPointsLineSegments = new Vector3[Size];
@@ -136,9 +136,12 @@ namespace Seacore
 
         private void AddCircleTransposition(Die die, Vector3 diePos, List<TranspositionInfo> transposeVecs)
         {
-            Vector3 circlePoint = CalculatePointTowardsCircle(circle.center, circle.radius, diePos);
+            Vector3 circlePos = circle.Position;
+            circlePos.y = densitySegmentHeight;
 
-            bool isInside = ((circle.center - diePos).sqrMagnitude <= circle.radius * circle.radius);
+            Vector3 circlePoint = CalculatePointTowardsCircle(circlePos, circle.Radius, diePos);
+
+            bool isInside = ((circle.Position - diePos).sqrMagnitude <= circle.Radius * circle.Radius);
             bool shouldBeInside = (diceManager.DiceContainers[die].Location == RollLocation.Inside);
 
             Vector3 transposeVec = diePos - circlePoint;
@@ -262,7 +265,7 @@ namespace Seacore
 
         private void DrawCircle()
         {
-            Handles.DrawWireDisc(circle.center, Vector3.up, circle.radius);
+            Handles.DrawWireDisc(circle.Position, Vector3.up, circle.Radius);
         }
 
         private void DrawDiceGizmos()
@@ -282,13 +285,15 @@ namespace Seacore
             Handles.color = color;
             Handles.DrawWireDisc(diePos, Vector3.up, densityMinDistance);
 
-            Vector3 circlePoint = CalculatePointTowardsCircle(circle.center, circle.radius, diePos);
-            Handles.DrawSolidDisc(circlePoint, Vector3.up, 0.3f);
+            Vector3 circlePos = circle.Position;
+            circlePos.y = densitySegmentHeight;
+            Vector3 circlePoint = CalculatePointTowardsCircle(circlePos, circle.Radius, diePos);
+            Handles.DrawSolidDisc(circlePoint, Vector3.up, Mathf.Lerp(0.1f, 0.4f, chapeauCircleWeight));
 
             for (int j = 0; j < Size; j++)
             {
                 Vector3 x = CalculatePerpendicularPointTowardsLine(cornerPointsLineSegments[j], cornerPointsLineSegments[(j + 1) % Size], diePos);
-                Handles.DrawSolidDisc(x, Vector3.up, 0.2f);
+                Handles.DrawSolidDisc(x, Vector3.up, Mathf.Lerp(0.1f, 0.4f, borderWeight));
             }
         }
         #endregion EditorOnly

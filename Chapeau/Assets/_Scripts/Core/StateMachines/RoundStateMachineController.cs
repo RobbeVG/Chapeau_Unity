@@ -20,7 +20,7 @@ namespace Seacore
             : base(RoundStateHolder[RoundStateType.Roll]) {}
 
         [SerializeField]
-        private DiceManager _diceManager = null;
+        private DiceRoller _diceRoller = null;
 
         [Header("Rolls")]
         [SerializeField]
@@ -33,7 +33,7 @@ namespace Seacore
         public Roll PhysicalRoll { get { return physicalRoll; } }
         public Roll CurrentRoll { get { return currentRoll; } }
         public Roll DeclaredRoll { get { return declaredRoll; } }
-        public DiceManager DiceManager { get { return _diceManager; } }
+        public DiceRoller DiceRoller { get { return _diceRoller; } }
 
         public RoundState CurrentRoundState { get { return currentState as RoundState; } }
         public RoundState PreviousRoundState { get { return previousState as RoundState; } }

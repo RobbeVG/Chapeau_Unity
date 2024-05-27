@@ -1,3 +1,16 @@
 {
-	"name": "X_Archive"
+    "name": "X_Archive",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4c0858fde4830ed40be4a83d2fa6f2d4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
