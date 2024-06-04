@@ -26,7 +26,7 @@ namespace Seacore
 
         public event Action<Die> OnRolledValue;
 
-        private bool _isRolling = true; // Value to check if the die is still rolling
+        private bool _isRolling = false; // Value to check if the die is still rolling
 
         //Ful property to show dieValue in the inspector
         [ReadOnly][SerializeField]

@@ -1,40 +1,60 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace Seacore
 {
-    [DisallowMultipleComponent]
-    public abstract class StateMachine<T> : MonoBehaviour where T : StateMachine<T>
+    /// <summary>
+    /// A Generic Statemachine class that uses enum states for easy 
+    /// </summary>
+    /// <typeparam name="EState">An enum typed state key A</typeparam>
+    /// <typeparam name="TStateMachine">The Derived statemachine name to ensure methods access derived state</typeparam>
+    public abstract class StateMachine<EState, TStateMachine> : MonoBehaviour where EState : Enum where TStateMachine : StateMachine<EState, TStateMachine>
     {
-        protected IState<T> previousState = new NullState<T>();
-        protected IState<T> currentState; //Can never be null.
+        private Dictionary<EState, BaseState<EState, TStateMachine>> _states;
+        protected bool _isTransitioningState = false;
+        protected BaseState<EState, TStateMachine> _currentState;
 
-        protected StateMachine(IState<T> startState)
+        public EState CurrentStateKey { get => _currentState.StateKey; }
+        protected IReadOnlyDictionary<EState, BaseState<EState, TStateMachine>> States => _states;
+
+        public event Action OnStateChanged;
+
+        protected StateMachine(Dictionary<EState, BaseState<EState, TStateMachine>> states, EState currentStateKey)
         {
-            currentState = startState;
+            _states = states;
+            Assert.IsTrue(_states.ContainsKey(currentStateKey), "The CurrentStateKey was not found in the given states for this State Machine");
+            _currentState = _states[currentStateKey];
         }
 
-        protected void Start()
+        private void Start()
         {
-            StartCoroutine(currentState.Enter(this as T));
+            _currentState.EnterState((TStateMachine)this);
         }
 
-        protected IEnumerator SetState(IState<T> newState)
+        private void Update()
         {
-            Assert.IsNotNull(newState, "New State is null and cannot be set");
-            Debug.Log("Changed to State: " + newState.ToString());
-            yield return StartCoroutine(currentState.Exit(this as T)); //Always a state (NullState)
-            previousState = currentState;
-            currentState = newState;
-            yield return StartCoroutine(currentState.Enter(this as T));
+            if (!_isTransitioningState)
+            {
+                EState nextStateKey = _currentState.GetNextState((TStateMachine)this);
+                if (nextStateKey.Equals(_currentState.StateKey))
+                    _currentState.UpdateState((TStateMachine)this);
+                else
+                    TransitionToState(nextStateKey);
+            }
         }
 
-
-        public void ChangeToPreviousState()
+        protected void TransitionToState(EState stateKey)
         {
-            SetState(previousState);
+            _isTransitioningState = true;
+            _currentState.ExitState((TStateMachine)this);
+            _currentState = States[stateKey];
+            _currentState.EnterState((TStateMachine)this);
+            _isTransitioningState = false;
+            OnStateChanged?.Invoke();
+            Debug.Log("New State: " + stateKey.ToString());
         }
     }
 }

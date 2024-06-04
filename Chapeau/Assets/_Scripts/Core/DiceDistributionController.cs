@@ -9,16 +9,15 @@ namespace Seacore
     /// <summary>
     /// Calculates the density and adjusts the position of dice objects within a defined area, considering border constraints, proximity to other dice, and a central circle.
     /// </summary>
+    [RequireComponent(typeof(DiceManager))]
     public class DiceDistributionController : MonoBehaviour
     {
         [Header("Steering Variables")]
-        [SerializeField] private DiceManager diceManager;
         [SerializeField] private CircleController circle;
 
         [Space]
 
         [SerializeField] private float densityMinDistance = 2.5f;
-
         [SerializeField] private float densitySegmentHeight;
         [SerializeField] private Camera mainCamera;
 
@@ -27,16 +26,10 @@ namespace Seacore
         [SerializeField][Range(0.0f, 1.0f)] private float chapeauCircleWeight = 0.3f;
 
 
+        private DiceManager _diceManager;
         private const ushort Size = 4;
         private readonly Vector3[] cornerPointsLineSegments = new Vector3[Size];
         private Vector3 centerLineSegment = Vector3.zero;
-
-        [Serializable]
-        private struct Circle
-        {
-            public Vector3 center;
-            public float radius;
-        }
 
         private struct TranspositionInfo
         {
@@ -56,16 +49,22 @@ namespace Seacore
         private readonly List<Color> diceColors = new List<Color>();
 #endif
 
+        private void Awake()
+        {
+            _diceManager = GetComponent<DiceManager>();
+        }
+
         private void Start()
         {
-            if (diceManager == null)
+
+            if (_diceManager == null)
             {
                 Debug.LogError("DiceManager is null in DiceDistributionController.");
                 enabled = false; // Disable this component if diceManager is null
                 return;
             }
 
-            foreach (Die die in diceManager.Dice)
+            foreach (Die die in _diceManager.Dice)
             {
                 if (die == null)
                 {
@@ -84,7 +83,7 @@ namespace Seacore
 
         private void FixedUpdate()
         {
-            foreach (Die die in diceManager.Dice)
+            foreach (Die die in _diceManager.Dice)
             {
                 TransposeDiePosition(die);
             }
@@ -93,7 +92,6 @@ namespace Seacore
         private void TransposeDiePosition(Die die)
         {
             Vector3 diePos = die.transform.position;
-            diePos.y = densitySegmentHeight;
 
             List<TranspositionInfo> transposeVecs = new List<TranspositionInfo>();
 
@@ -101,8 +99,14 @@ namespace Seacore
             AddDiceTranspositions(die, diePos, transposeVecs);
             AddCircleTransposition(die, diePos, transposeVecs);
 
+            //Cancelling out any y movement
+            foreach (TranspositionInfo transposeVec in transposeVecs)
+            {
+                transposeVec.TransposeVec.Scale(new Vector3(1.0f, 0.0f, 1.0f));
+            }
+
+
             Vector3 newPos = TransposePosition(diePos, transposeVecs, densityMinDistance);
-            newPos.y = die.transform.position.y;
             die.transform.position = newPos;
         }
 
@@ -123,7 +127,7 @@ namespace Seacore
 
         private void AddDiceTranspositions(Die die, Vector3 diePos, List<TranspositionInfo> transposeVecs)
         {
-            foreach (Die otherDie in diceManager.Dice)
+            foreach (Die otherDie in _diceManager.Dice)
             {
                 if (die == otherDie) continue;
 
@@ -140,13 +144,11 @@ namespace Seacore
             circlePos.y = densitySegmentHeight;
 
             Vector3 circlePoint = CalculatePointTowardsCircle(circlePos, circle.Radius, diePos);
-
-            bool isInside = ((circle.Position - diePos).sqrMagnitude <= circle.Radius * circle.Radius);
-            bool shouldBeInside = (diceManager.DiceContainers[die].Location == RollLocation.Inside);
+            bool shouldBeInside = (_diceManager.DiceContainers[die].Location == RollLocation.Inside);
 
             Vector3 transposeVec = diePos - circlePoint;
             // If the die is not where it should be, reverse the transpose vector
-            if (isInside != shouldBeInside)
+            if (circle.IsPositionInCircle(diePos) != shouldBeInside)
             {
                 transposeVec *= -1;
 
@@ -220,6 +222,7 @@ namespace Seacore
         private void OnValidate()
         {
             if (mainCamera == null) return;
+            _diceManager = GetComponent<DiceManager>();
 
             CalculateLineSegments();
             diceColors.Clear();
@@ -271,7 +274,7 @@ namespace Seacore
         private void DrawDiceGizmos()
         {
             int count = 0;
-            foreach (var die in diceManager.Dice)
+            foreach (var die in _diceManager.Dice)
             {
                 DrawDieGizmos(die, diceColors[count++]);
             }

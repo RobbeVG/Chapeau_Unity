@@ -44,10 +44,10 @@ namespace Seacore
             _radius = material.GetFloat("_C_Radius");
         }
 
-        //private void Update()
-        //{
-        //    //GetPropertiesMaterial();
-        //}
+        public bool IsPositionInCircle(Vector3 position)
+        {
+            return (Position - position).sqrMagnitude <= Radius * Radius;
+        }
     }
 }
 //10.44

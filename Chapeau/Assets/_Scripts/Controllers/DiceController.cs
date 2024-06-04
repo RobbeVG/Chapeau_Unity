@@ -11,12 +11,18 @@ namespace Seacore
         private PickupDragController _pickupDragController;
 
         [SerializeField]
+        private CircleController _circleController;
+
         private DiceManager _diceManager;
 
         private void Awake()
         {
             if (_pickupDragController == null)
                 Debug.LogError("No pickup Controller attached");
+            if (_circleController == null)
+                Debug.LogError("No circle Controller attached");
+
+            _diceManager = GetComponent<DiceManager>();
         }
 
         private void OnEnable()
@@ -49,7 +55,7 @@ namespace Seacore
             Die die = objectDie.GetComponent<Die>();
             //die.Rigidbody.isKinematic = false;
 
-            Debug.Log("Die picked up");
+            //Debug.Log("Die picked up");
         }
 
         private void DieDrop(GameObject objectDie)
@@ -57,8 +63,14 @@ namespace Seacore
             Die die = objectDie.GetComponent<Die>();
             //die.Rigidbody.isKinematic = true;
 
-            Debug.Log("Die dropped");
-
+            if (_circleController.IsPositionInCircle(objectDie.transform.position))
+            {
+                _diceManager.DiceContainers[die].Location = RollLocation.Inside;
+            }
+            else
+            {
+                _diceManager.DiceContainers[die].Location = RollLocation.Outside;
+            }
         }
     }
 }

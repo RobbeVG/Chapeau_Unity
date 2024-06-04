@@ -991,11 +991,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 375098663847269277, guid: 95b6da217e9a97a4d8ed676e62439fc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.56
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 375098663847269277, guid: 95b6da217e9a97a4d8ed676e62439fc3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.96
+      value: 5.62
       objectReference: {fileID: 0}
     - target: {fileID: 375098663847269277, guid: 95b6da217e9a97a4d8ed676e62439fc3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1353,6 +1353,8 @@ MonoBehaviour:
   _pickupLayerMask:
     serializedVersion: 2
     m_Bits: 8
+  _snapSpeed: 10
+  _dropDuration: 0.5
 --- !u!114 &1760462976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,6 +1368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pickupDragController: {fileID: 1760462975}
+  _circleController: {fileID: 90502555}
   _diceManager: {fileID: 1760462973}
 --- !u!1 &1783528685
 GameObject:
