@@ -50,5 +50,3 @@ namespace Seacore
         }
     }
 }
-//10.44
-//8.38

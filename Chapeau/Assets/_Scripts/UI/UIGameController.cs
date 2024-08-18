@@ -13,20 +13,29 @@ namespace Seacore
         [Serializable]
         public enum ButtonTypes
         {
-            Reveal, Chapeau, DeclareConfirm, Roll
+            Reveal,
+            Chapeau,
+            DeclareConfirm, 
+            Roll
         }
+
 
         [SerializeField]
         RoundStateMachine roundSM = null;
 
         [SerializeField]
-        private GameObject background;
+        private GameObject background = null;
 
         [SerializeField]
         private DeclareMenu declareMenu = null;
 
         [SerializeField]
         public UIButtonManager<ButtonTypes> buttonManager = new UIButtonManager<ButtonTypes>();
+
+        [SerializeField]
+        private CircleController circleController = null;
+
+
 
         private void Awake()
         {
@@ -71,11 +80,14 @@ namespace Seacore
                     buttonManager[ButtonTypes.Roll].onClick.RemoveListener(roundSM.TransitionToDeclare);
                     buttonManager[ButtonTypes.Reveal].onClick.RemoveListener(roundSM.TransitionToRollSetup);
 
+                    buttonManager[ButtonTypes.Reveal].gameObject.SetActive(true);
+
                     SetUpDeclareUI();
                     break;
                 case RoundStateMachine.RoundState.Received:
                     //Remove previous onClick events if there
                     buttonManager[ButtonTypes.DeclareConfirm].onClick.RemoveListener(roundSM.TransitionToReceived);
+                    buttonManager[ButtonTypes.Reveal].gameObject.SetActive(true);
 
                     SetUpReceivedUI();
                     SetDeclareConfirmButtonInteractable();
@@ -86,6 +98,7 @@ namespace Seacore
                     buttonManager[ButtonTypes.Reveal].onClick.RemoveListener(roundSM.TransitionToRollSetup);
 
                     buttonManager[ButtonTypes.Roll].gameObject.SetActive(true); //Which can be inside or outside
+                    SetUpDeclareUI();
                     //Show view choice menu
                     //Unshow dice
                     break;
@@ -117,7 +130,6 @@ namespace Seacore
             //Set onClick event
             buttonManager[ButtonTypes.DeclareConfirm].onClick.AddListener(roundSM.TransitionToReceived);
 
-            buttonManager[ButtonTypes.Reveal].gameObject.SetActive(true);
             buttonManager[ButtonTypes.DeclareConfirm].gameObject.SetActive(true);
             declareMenu.gameObject.SetActive(true);
         }
@@ -125,6 +137,12 @@ namespace Seacore
         private void SetDeclareConfirmButtonInteractable()
         {
             buttonManager[ButtonTypes.DeclareConfirm].interactable = roundSM.DeclaredRoll > roundSM.CurrentRoll;
+        }
+
+        private bool IsMousePositionInsideChapeau()
+        {
+            Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            return circleController.IsPositionInCircle(position);
         }
     }
 }
