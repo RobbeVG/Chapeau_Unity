@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Seacore
 {
+    /// <summary>
+    /// Dice Controller
+    /// </summary>
     [RequireComponent(typeof(DiceManager))]
     public class DiceController : MonoBehaviour
     {

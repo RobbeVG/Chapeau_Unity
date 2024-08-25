@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Seacore
 {
+    /// <summary>
+    /// A child statemachine that specifically is used to progress a round
+    /// </summary>
     public class RoundStateMachine : StateMachine<RoundStateMachine.RoundState, RoundStateMachine>
     {
         [Serializable]
@@ -52,6 +55,9 @@ namespace Seacore
             _pickupDragController.enabled = false;
         }
 
+        /// <summary>
+        /// Reset all Round parameters
+        /// </summary>
         public void ResetRound()
         {
             physicalRoll.Clear();

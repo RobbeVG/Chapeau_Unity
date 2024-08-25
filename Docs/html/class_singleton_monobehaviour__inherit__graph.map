@@ -1,0 +1,7 @@
+<map id="SingletonMonobehaviour&lt; T &gt;" name="SingletonMonobehaviour&lt; T &gt;">
+<area shape="rect" id="Node000001" title="This transforms the static instance into a basic singleton. This will destroy any new versions create..." alt="" coords="21,155,216,181"/>
+<area shape="rect" id="Node000002" href="$class_static_instance_mono_behaviour.html" title="A static instance is similar to a singleton, but instead of destroying any new instances,..." alt="" coords="5,80,232,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,122,121,154,116,154,116,122"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="63,5,174,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="121,48,121,80,116,80,116,48"/>
+</map>

@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Seacore
 {
+    /// <summary>
+    /// A controller script that allows the user to pick up objects
+    /// </summary>
     public class PickupDragController : MonoBehaviour
     {
         private Camera _mainCamera;
@@ -77,6 +80,12 @@ namespace Seacore
             }
         }
 
+        /// <summary>
+        /// A smooth dropdown of the selected object
+        /// </summary>
+        /// <remarks>This function does not set the selevtedOBject to null </remarks>
+        /// <param name="gameObject"></param>
+        /// <returns></returns>
         IEnumerator DropObjectToHeight(GameObject gameObject)
         {
             float timeElapsed = 0;

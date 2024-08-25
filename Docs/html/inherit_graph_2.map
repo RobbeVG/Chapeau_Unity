@@ -1,0 +1,47 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$interface_i_game_event_listener.html" title=" " alt="" coords="5,31,146,57"/>
+<area shape="rect" id="Node000001" href="$class_game_event_coded_listener.html" title=" " alt="" coords="220,5,394,32"/>
+<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="161,32,219,26,219,31,161,37"/>
+<area shape="rect" id="Node000002" href="$class_game_event_unity_listener.html" title=" " alt="" coords="223,56,390,83"/>
+<area shape="poly" id="edge7_Node000000_Node000002" title=" " alt="" coords="161,51,223,58,223,63,161,56"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="20,528,131,555"/>
+<area shape="poly" id="edge8_Node000003_Node000002" title=" " alt="" coords="78,512,92,417,116,292,131,229,149,171,169,125,192,93,221,75,224,79,195,97,174,127,154,173,137,230,121,293,97,418,83,513"/>
+<area shape="rect" id="Node000004" href="$class_scene_manager.html" title=" " alt="" coords="253,107,361,133"/>
+<area shape="poly" id="edge9_Node000003_Node000004" title=" " alt="" coords="73,512,77,438,92,339,107,286,128,234,156,185,192,143,220,126,252,118,253,123,222,131,195,147,160,189,132,236,112,287,97,340,82,439,79,513"/>
+<area shape="rect" id="Node000005" href="$class_seacore_1_1_circle_area_fade_controller.html" title=" " alt="" coords="197,157,416,184"/>
+<area shape="poly" id="edge10_Node000003_Node000005" title=" " alt="" coords="75,512,81,447,99,361,114,315,134,271,160,230,192,194,209,182,212,187,195,198,164,233,138,273,119,317,104,362,86,448,80,513"/>
+<area shape="rect" id="Node000006" href="$class_seacore_1_1_circle_controller.html" title=" " alt="" coords="225,208,388,235"/>
+<area shape="poly" id="edge11_Node000003_Node000006" title=" " alt="" coords="77,512,86,455,106,383,121,345,140,308,163,274,192,245,223,227,226,232,195,249,168,278,144,311,126,347,111,385,91,456,82,513"/>
+<area shape="rect" id="Node000007" href="$class_seacore_1_1_declare_menu.html" title=" " alt="" coords="232,259,382,285"/>
+<area shape="poly" id="edge12_Node000003_Node000007" title=" " alt="" coords="79,512,92,465,113,406,146,346,167,319,192,295,210,284,230,276,232,281,213,289,195,299,171,322,150,349,118,408,97,466,85,514"/>
+<area shape="rect" id="Node000008" href="$class_seacore_1_1_dice_controller.html" title="Dice Controller." alt="" coords="229,309,385,336"/>
+<area shape="poly" id="edge13_Node000003_Node000008" title=" " alt="" coords="83,512,98,474,121,429,152,384,192,346,227,329,230,334,195,350,156,387,126,432,103,476,88,514"/>
+<area shape="rect" id="Node000009" href="$class_seacore_1_1_dice_distribution_controller.html" title="Calculates the density and adjusts the position of dice objects within a defined area,..." alt="" coords="224,360,390,403"/>
+<area shape="poly" id="edge14_Node000003_Node000009" title=" " alt="" coords="92,513,134,462,162,435,192,412,222,398,224,403,195,417,165,439,138,466,96,517"/>
+<area shape="rect" id="Node000010" href="$class_seacore_1_1_dice_manager.html" title="Manages dice objects, their state, and their interactions." alt="" coords="232,427,382,453"/>
+<area shape="poly" id="edge15_Node000003_Node000010" title=" " alt="" coords="105,516,145,488,193,463,231,450,232,455,195,468,148,493,108,520"/>
+<area shape="rect" id="Node000011" href="$class_seacore_1_1_dice_roller.html" title=" " alt="" coords="240,477,374,504"/>
+<area shape="poly" id="edge16_Node000003_Node000011" title=" " alt="" coords="146,523,242,502,243,507,147,529"/>
+<area shape="rect" id="Node000012" href="$class_seacore_1_1_die.html" title=" " alt="" coords="260,528,354,555"/>
+<area shape="poly" id="edge17_Node000003_Node000012" title=" " alt="" coords="147,539,260,539,260,544,147,544"/>
+<area shape="rect" id="Node000013" href="$class_seacore_1_1_draw_renderer_bounds.html" title=" " alt="" coords="206,579,408,605"/>
+<area shape="poly" id="edge18_Node000003_Node000013" title=" " alt="" coords="147,554,243,575,242,581,146,559"/>
+<area shape="rect" id="Node000014" href="$class_seacore_1_1_pickup_drag_controller.html" title="A controller script that allows the user to pick up objects." alt="" coords="208,629,406,656"/>
+<area shape="poly" id="edge19_Node000003_Node000014" title=" " alt="" coords="108,562,148,590,195,615,228,626,227,631,193,620,145,594,105,567"/>
+<area shape="rect" id="Node000015" href="$class_seacore_1_1_roll_display.html" title=" " alt="" coords="237,680,377,707"/>
+<area shape="poly" id="edge20_Node000003_Node000015" title=" " alt="" coords="96,566,137,618,164,644,195,666,237,682,235,687,192,670,161,648,133,621,92,569"/>
+<area shape="rect" id="Node000016" href="$class_seacore_1_1_roll_u_i_creator.html" title=" " alt="" coords="230,731,384,757"/>
+<area shape="poly" id="edge21_Node000003_Node000016" title=" " alt="" coords="90,568,105,602,128,643,158,683,195,716,231,733,229,738,192,721,154,687,124,646,101,605,85,570"/>
+<area shape="rect" id="Node000017" href="$class_seacore_1_1_state_machine.html" title="A Generic Statemachine class that uses enum states for easy." alt="" coords="217,781,397,824"/>
+<area shape="poly" id="edge22_Node000003_Node000017" title=" " alt="" coords="86,569,100,613,122,666,153,721,173,746,195,767,218,781,215,786,192,771,169,749,149,724,117,669,95,615,81,571"/>
+<area shape="rect" id="Node000018" href="$class_seacore_1_1_u_i_game_controller.html" title=" " alt="" coords="218,848,396,875"/>
+<area shape="poly" id="edge23_Node000003_Node000018" title=" " alt="" coords="82,570,91,626,111,698,126,736,144,772,168,805,195,834,219,848,216,852,192,838,163,809,140,775,121,738,106,700,86,627,77,571"/>
+<area shape="rect" id="Node000019" href="$class_static_instance_mono_behaviour.html" title="A static instance is similar to a singleton, but instead of destroying any new instances,..." alt="" coords="194,899,420,925"/>
+<area shape="poly" id="edge24_Node000003_Node000019" title=" " alt="" coords="80,570,86,635,104,721,119,766,138,809,164,850,195,885,212,896,209,900,192,889,160,853,134,812,114,767,99,722,81,636,75,570"/>
+<area shape="rect" id="Node000021" href="$class_u_i_game_states.html" title=" " alt="" coords="253,949,361,976"/>
+<area shape="poly" id="edge26_Node000003_Node000021" title=" " alt="" coords="79,570,82,644,97,743,112,795,132,847,160,894,195,935,222,952,253,959,252,964,220,956,192,939,156,897,128,849,107,797,92,744,77,644,73,570"/>
+<area shape="rect" id="Node000022" href="$classtemp_outline_1_1_outline.html" title=" " alt="" coords="239,1000,375,1027"/>
+<area shape="poly" id="edge27_Node000003_Node000022" title=" " alt="" coords="83,570,97,664,121,790,137,853,154,909,174,955,196,986,215,1000,239,1008,237,1013,213,1004,192,990,169,958,149,911,131,854,116,791,92,665,78,571"/>
+<area shape="rect" id="Node000020" href="$class_singleton_monobehaviour.html" title="This transforms the static instance into a basic singleton. This will destroy any new versions create..." alt="" coords="468,899,662,925"/>
+<area shape="poly" id="edge25_Node000019_Node000020" title=" " alt="" coords="435,909,467,909,467,915,435,915"/>
+</map>
