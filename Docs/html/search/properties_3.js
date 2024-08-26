@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['image_0',['image',['../class_seacore_1_1_image_dropdown_1_1_option_data.html#ad0140a6a1eda5f3a56a55c109c309244',1,'Seacore::ImageDropdown::OptionData']]],
-  ['index_1',['Index',['../class_seacore_1_1_die_info.html#a62f2d7d422dcdb5e266ede6144248a1d',1,'Seacore::DieInfo']]],
-  ['instance_2',['Instance',['../class_scene_manager.html#ac05b3b785a4cedf4e2a5943b0fe328cf',1,'SceneManager.Instance'],['../class_static_instance_mono_behaviour.html#afd77b65034e4618176295ca59c5755b9',1,'StaticInstanceMonoBehaviour.Instance']]],
-  ['itemimage_3',['itemImage',['../class_seacore_1_1_image_dropdown.html#a7596d467f4c2a5adf489d0e7fdaffa4b',1,'Seacore::ImageDropdown']]]
+  ['declaredroll_0',['DeclaredRoll',['../class_seacore_1_1_round_state_machine.html#ac74c351d48506d50762d0bdc45bb2469',1,'Seacore::RoundStateMachine']]],
+  ['devices_1',['devices',['../class_seacore_1_1_chapeau_input_actions.html#a9a5b9da19d3b457162a3b685a086b1b5',1,'Seacore::ChapeauInputActions']]],
+  ['dice_2',['Dice',['../class_seacore_1_1_dice_manager.html#a975057ac53ede93886bbe98bb106166a',1,'Seacore::DiceManager']]],
+  ['dicecontainers_3',['DiceContainers',['../class_seacore_1_1_dice_manager.html#a37e88cb33d676d8d8a2dc3e9c1ab9087',1,'Seacore::DiceManager']]],
+  ['dicecontroller_4',['DiceController',['../class_seacore_1_1_round_state_machine.html#aa12cb19573900177ad1d143f4e1f88fd',1,'Seacore::RoundStateMachine']]],
+  ['diceroller_5',['DiceRoller',['../class_seacore_1_1_round_state_machine.html#a4b3ea42fda0b18c497ddf58a099bf144',1,'Seacore::RoundStateMachine']]],
+  ['dievalue_6',['DieValue',['../class_seacore_1_1_die.html#ad92291d05686fdbbe32e8f215539df8c',1,'Seacore::Die']]]
 ];

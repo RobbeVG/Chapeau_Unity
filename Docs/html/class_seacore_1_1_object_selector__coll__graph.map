@@ -1,0 +1,5 @@
+<map id="Seacore.ObjectSelector" name="Seacore.ObjectSelector">
+<area shape="rect" id="Node000001" title="A component script that allows the user to select an object on the screen, depending on their layerMa..." alt="" coords="5,80,165,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="29,5,141,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,48,88,80,82,80,82,48"/>
+</map>
