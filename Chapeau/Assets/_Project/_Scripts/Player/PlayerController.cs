@@ -76,7 +76,7 @@ namespace Seacore
         /// <param name="context"><inheritdoc cref="InputAction.CallbackContext"/> </param>
         private void Tap(InputAction.CallbackContext context)
         {
-            GameObject selectedObject = _objectSelector.SelectObjectFromScreen(GetInputLocation());
+            GameObject selectedObject = _objectSelector.SelectObject();
             if (selectedObject == null)
                 return;
 
@@ -96,7 +96,7 @@ namespace Seacore
         /// <param name="context"><inheritdoc cref="InputAction.CallbackContext"/> </param>
         private void HoldPerformed(InputAction.CallbackContext context)
         {
-            GameObject selectedObject = _objectSelector.SelectObjectFromScreen(GetInputLocation());
+            GameObject selectedObject = _objectSelector.SelectObject();
             if (selectedObject == null)
                 return;
             
@@ -117,9 +117,9 @@ namespace Seacore
             _hold.canceled -= HoldCanceled;
         }
 
-        private ref readonly Vector2 GetInputLocation()
-        {
-            return ref Pointer.current.position.value;
-        }
+        //private ref readonly Vector2 GetInputLocation()
+        //{
+        //    return ref Pointer.current.position.value;
+        //}
     }
 }

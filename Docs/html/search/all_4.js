@@ -24,7 +24,7 @@ var searchData=
   ['dicerollereditor_2ecs_21',['DiceRollerEditor.cs',['../_dice_roller_editor_8cs.html',1,'']]],
   ['die_22',['Die',['../class_seacore_1_1_die.html',1,'Seacore']]],
   ['die_2ecs_23',['Die.cs',['../_die_8cs.html',1,'']]],
-  ['dieinfo_24',['DieInfo',['../class_seacore_1_1_die_info.html',1,'Seacore.DieInfo'],['../class_seacore_1_1_die_info.html#aaa54c5f76881a5c6bd77cbc6f50352f4',1,'Seacore.DieInfo.DieInfo()']]],
+  ['dieinfo_24',['DieInfo',['../class_seacore_1_1_die_info.html',1,'Seacore.DieInfo'],['../class_seacore_1_1_die_info.html#a1f6b187a76a1ab23607faf7b283c08ab',1,'Seacore.DieInfo.DieInfo()']]],
   ['diestate_25',['DieState',['../namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bb',1,'Seacore']]],
   ['dievalue_26',['DieValue',['../class_seacore_1_1_die.html#ad92291d05686fdbbe32e8f215539df8c',1,'Seacore::Die']]],
   ['disable_27',['Disable',['../class_seacore_1_1_chapeau_input_actions.html#a7906233997d79b182d283606cefd2c76',1,'Seacore.ChapeauInputActions.Disable()'],['../struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html#a769d3f38670f46234fc7973d8e2a5afd',1,'Seacore.ChapeauInputActions.InGameActions.Disable()'],['../struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#a269a9083821c73901730e17f3053cd07',1,'Seacore.ChapeauInputActions.UIActions.Disable()']]],

@@ -1,0 +1,7 @@
+<map id="Seacore.RoundStateMachine.ResetRound" name="Seacore.RoundStateMachine.ResetRound">
+<area shape="rect" id="Node000001" title="Reset all Round parameters." alt="" coords="5,5,201,48"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_roll.html#a47f041733bd942c3684a8dcfff93649c" title=" " alt="" coords="249,13,380,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,24,233,24,233,29,201,29"/>
+<area shape="rect" id="Node000003" href="$struct_seacore_1_1_roll_result.html#a8125289fa3ff2be8aa1831176a8f79c6" title=" " alt="" coords="428,13,597,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="380,24,412,24,412,29,380,29"/>
+</map>

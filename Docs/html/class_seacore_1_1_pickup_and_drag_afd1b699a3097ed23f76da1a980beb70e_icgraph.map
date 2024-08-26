@@ -1,0 +1,5 @@
+<map id="Seacore.PickupAndDrag.DropObjectToHeight" name="Seacore.PickupAndDrag.DropObjectToHeight">
+<area shape="rect" id="Node000001" title="A smooth dropdown of the selected object." alt="" coords="291,5,487,48"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_pickup_and_drag.html#a8088890599a266882ab8814b6991a722" title="Drops the selected object to the ground." alt="" coords="5,13,243,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="275,29,243,29,243,24,275,24"/>
+</map>

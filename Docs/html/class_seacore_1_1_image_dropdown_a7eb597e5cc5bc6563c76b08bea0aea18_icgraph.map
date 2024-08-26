@@ -1,0 +1,9 @@
+<map id="Seacore.ImageDropdown.CreateDropdownList" name="Seacore.ImageDropdown.CreateDropdownList">
+<area shape="rect" id="Node000001" title="Create the dropdown list to be shown when the dropdown is clicked. The dropdown list should correspon..." alt="" coords="496,39,707,81"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_image_dropdown.html#a749585924d9e985e2b499c8efb21d49b" title="Show the dropdown." alt="" coords="243,47,448,73"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="481,63,449,63,449,57,481,57"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_image_dropdown.html#af338f75803ca1b0e97c5903208944543" title="Handling for when the dropdown is initially &#39;clicked&#39;. Typically shows the dropdown." alt="" coords="5,5,195,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="227,47,195,42,196,37,227,41"/>
+<area shape="rect" id="Node000004" href="$class_seacore_1_1_image_dropdown.html#a3c70016787a997d605a97958f7ad7f86" title="Handling for when the dropdown is selected and a submit event is processed. Typically shows the dropd..." alt="" coords="5,72,195,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="227,79,196,83,195,78,227,73"/>
+</map>

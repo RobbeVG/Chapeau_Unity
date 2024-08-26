@@ -1,0 +1,25 @@
+<map id="Seacore.ChapeauInputActions.UIActions.SetCallbacks" name="Seacore.ChapeauInputActions.UIActions.SetCallbacks">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,305,208,348"/>
+<area shape="rect" id="Node000002" href="$struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#a0667b46a892794645acf38d0dd86ac61" title=" " alt="" coords="256,305,458,348"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,324,240,324,240,329,208,329"/>
+<area shape="rect" id="Node000003" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#a82160c7fbe75df79cb30a1a21af77d3a" title=" " alt="" coords="532,5,735,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="361,304,378,253,406,187,448,117,474,85,504,58,517,49,520,54,508,62,478,89,452,120,411,189,383,255,366,306"/>
+<area shape="rect" id="Node000004" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#adc65baaaa2d8d6222859699f19b8943a" title=" " alt="" coords="532,72,735,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="366,304,386,265,416,216,456,167,504,125,517,117,520,121,508,129,460,170,421,219,391,267,370,306"/>
+<area shape="rect" id="Node000005" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#a109a92f60b55fa9ef1f2d893c6fab9c1" title=" " alt="" coords="532,139,735,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="374,303,429,247,465,217,505,191,517,185,519,190,507,196,468,221,432,251,378,307"/>
+<area shape="rect" id="Node000006" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#a54c8c21a8ecdb327fae9b2f523de15b1" title=" " alt="" coords="532,205,735,248"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="400,302,505,258,527,250,528,255,507,262,402,307"/>
+<area shape="rect" id="Node000007" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#a41b7ca49180ff51bf4335ef0339bbe4a" title=" " alt="" coords="532,272,735,315"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="458,312,517,305,518,310,459,317"/>
+<area shape="rect" id="Node000008" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#acbe64590abb959941dac336db2104476" title=" " alt="" coords="532,339,735,381"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="459,336,518,343,517,349,458,341"/>
+<area shape="rect" id="Node000009" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#af6e3730038825c12acbaf565b3ca4feb" title=" " alt="" coords="532,405,735,448"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="402,346,507,391,528,398,527,403,505,396,400,351"/>
+<area shape="rect" id="Node000010" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#aa4f5d17ff2bc81b33395cf21d0c5d8e8" title=" " alt="" coords="532,472,735,515"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="378,347,432,403,468,432,507,458,519,463,517,468,505,462,465,437,429,406,374,350"/>
+<area shape="rect" id="Node000011" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#a35f2677a9edb48889b752b8078e6b259" title=" " alt="" coords="506,539,761,581"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="370,347,391,386,421,434,460,483,508,525,515,529,512,534,504,529,456,487,416,437,386,389,366,350"/>
+<area shape="rect" id="Node000012" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#a451665a6b48f64eff4e3737c070d79c8" title=" " alt="" coords="514,605,753,648"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="366,348,383,398,411,464,452,533,478,564,508,591,512,595,509,599,504,595,474,568,448,536,406,467,378,400,361,349"/>
+</map>

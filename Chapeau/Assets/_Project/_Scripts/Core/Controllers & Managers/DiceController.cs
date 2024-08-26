@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Seacore
 {
@@ -11,6 +10,9 @@ namespace Seacore
     [RequireComponent(typeof(DiceManager))]
     public class DiceController : MonoBehaviour
     {
+        [SerializeField]
+        private ObjectSelector _objectSelector;
+
         [SerializeField]
         private PickupAndDrag _pickupDragController;
 
@@ -39,6 +41,7 @@ namespace Seacore
         {
             _pickupDragController.ObjectPickedUp += DiePickUp;
             _pickupDragController.ObjectDropped += DieDrop;
+            _objectSelector.OnHover += OnDieHover;
             foreach (Die die in _diceManager.Dice) //Werkt niet want sommige dice moeten nog worden ingesteld
             {
                 die.OnRolledValue += OnDieRolled;
@@ -63,6 +66,12 @@ namespace Seacore
             {
                 die.OnRolledValue -= OnDieRolled;
             }
+        }
+
+        private void OnDieHover(GameObject dieGameObject)
+        {
+            Die die = dieGameObject.GetComponent<Die>();
+            _diceManager.DiceContainers[die].Outline.enabled = false;
         }
 
         private void OnDieRolled(Die die)
@@ -96,6 +105,7 @@ namespace Seacore
 
         public void SelectDieForRoll(Die die)
         {
+
             Debug.Log("Implement Select Die for Roll");
         }
 

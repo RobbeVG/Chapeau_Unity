@@ -1,0 +1,7 @@
+<map id="Seacore.ReceivedState.EnterState" name="Seacore.ReceivedState.EnterState">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,27,200,69"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_roll.html#a53da3e9bf3552743347e6b02eefd03b9" title=" " alt="" coords="248,5,439,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,34,232,30,232,35,200,39"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_dice_controller.html#a35b617b0e1a818cdd15678f7feb91efd" title=" " alt="" coords="250,56,437,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,57,235,61,234,67,200,62"/>
+</map>

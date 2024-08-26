@@ -11,9 +11,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace tempOutline
-{
-
 
 [DisallowMultipleComponent]
 public class Outline : MonoBehaviour
@@ -348,5 +345,4 @@ public class Outline : MonoBehaviour
                 break;
         }
     }
-}
 }

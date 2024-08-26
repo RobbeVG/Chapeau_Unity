@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Seacore
 {
     public sealed class RollSetupState : BaseState<RoundStateMachine.RoundState, RoundStateMachine>
@@ -10,14 +8,14 @@ namespace Seacore
         {
             //stateMachine.AddListenerToUIButton(UIGameController.ButtonTypes.Roll, stateMachine.TransitionToDeclare);
 
-            stateMachine.SetEnableDiceDragAndDrop(true);
+            //stateMachine.SetEnableDiceDragAndDrop(true);
         }
 
         public override void ExitState(RoundStateMachine stateMachine)
         {
             //stateMachine.RemoveListenerFromUIButton(UIGameController.ButtonTypes.Roll, stateMachine.TransitionToDeclare);
 
-            stateMachine.SetEnableDiceDragAndDrop(false);
+            //stateMachine.SetEnableDiceDragAndDrop(false);
         }
 
         //TODO Decide if it stays or it goes

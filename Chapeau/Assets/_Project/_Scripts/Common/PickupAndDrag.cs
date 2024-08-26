@@ -27,6 +27,11 @@ namespace Seacore
         //Internal
         private const float _pickupHeightOffset = 0.4f;
 
+        private void Update()
+        {
+            
+        }
+
         private void FixedUpdate()
         {
             HandleDrag();

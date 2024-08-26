@@ -1,0 +1,11 @@
+<map id="Seacore.ImageDropdown.Show" name="Seacore.ImageDropdown.Show">
+<area shape="rect" id="Node000001" title="Show the dropdown." alt="" coords="5,47,211,73"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_image_dropdown.html#aa87b132e0233858b027cc42defc7ec63" title="Create a blocker that blocks clicks to other controls while the dropdown list is open." alt="" coords="259,5,470,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,44,243,40,244,45,211,49"/>
+<area shape="rect" id="Node000005" href="$class_seacore_1_1_image_dropdown.html#a7eb597e5cc5bc6563c76b08bea0aea18" title="Create the dropdown list to be shown when the dropdown is clicked. The dropdown list should correspon..." alt="" coords="259,72,470,115"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="211,71,244,75,243,80,211,76"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_image_dropdown.html#a5c76881f81d129531504a33cd2dadeb1" title="Hide the dropdown list. I.e. close it." alt="" coords="518,13,717,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="471,24,502,24,502,29,471,29"/>
+<area shape="rect" id="Node000004" href="$class_seacore_1_1_image_dropdown.html#a2a9928a212736c177765093d6bea51ad" title="Convenience method to explicitly destroy the previously generated blocker object." alt="" coords="765,5,984,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="718,24,750,24,750,29,718,29"/>
+</map>

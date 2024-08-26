@@ -90,12 +90,13 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_seacore_1_1_object_selector-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Seacore.ObjectSelector Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>A component script that allows the user to select an object on the screen, depending on their layerMask.  
+<p>A component script that allows the user to select an object on the screen, depending on their layerMask. When enabled the script will update every frame so you can retrieve the hovered object.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Seacore.ObjectSelector:</div>
@@ -120,16 +121,22 @@ Collaboration diagram for Seacore.ObjectSelector:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a434c852661c88ec4d651d5d236c365e9" id="r_a434c852661c88ec4d651d5d236c365e9"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a434c852661c88ec4d651d5d236c365e9">SelectObjectFromScreen</a> (Vector3 mousePosition)</td></tr>
-<tr class="memdesc:a434c852661c88ec4d651d5d236c365e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to select object from position on screen.  <br /></td></tr>
-<tr class="separator:a434c852661c88ec4d651d5d236c365e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fbc49620f3adbc48e2c597785ba1501" id="r_a4fbc49620f3adbc48e2c597785ba1501"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fbc49620f3adbc48e2c597785ba1501">SelectObject</a> ()</td></tr>
+<tr class="separator:a4fbc49620f3adbc48e2c597785ba1501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a38938c3648ea93a95ab6f9ff128771b1" id="r_a38938c3648ea93a95ab6f9ff128771b1"><td class="memItemLeft" align="right" valign="top">Action&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38938c3648ea93a95ab6f9ff128771b1">OnHover</a></td></tr>
+<tr class="separator:a38938c3648ea93a95ab6f9ff128771b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad6086cac224973ff26a8fe17d4cac72" id="r_aad6086cac224973ff26a8fe17d4cac72"><td class="memItemLeft" align="right" valign="top">Action&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad6086cac224973ff26a8fe17d4cac72">OnExit</a></td></tr>
+<tr class="separator:aad6086cac224973ff26a8fe17d4cac72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A component script that allows the user to select an object on the screen, depending on their layerMask. </p>
+<div class="textblock"><p>A component script that allows the user to select an object on the screen, depending on their layerMask. When enabled the script will update every frame so you can retrieve the hovered object. </p>
 <p>Does not handle the input; this should be handled separately. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a434c852661c88ec4d651d5d236c365e9" name="a434c852661c88ec4d651d5d236c365e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a434c852661c88ec4d651d5d236c365e9">&#9670;&#160;</a></span>SelectObjectFromScreen()</h2>
+<a id="a4fbc49620f3adbc48e2c597785ba1501" name="a4fbc49620f3adbc48e2c597785ba1501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fbc49620f3adbc48e2c597785ba1501">&#9670;&#160;</a></span>SelectObject()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,9 +145,9 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">GameObject Seacore.ObjectSelector.SelectObjectFromScreen </td>
+          <td class="memname">GameObject Seacore.ObjectSelector.SelectObject </td>
           <td>(</td>
-          <td class="paramtype">Vector3</td>          <td class="paramname"><span class="paramname"><em>mousePosition</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -151,13 +158,34 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Try to select object from position on screen. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mousePosition</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aad6086cac224973ff26a8fe17d4cac72" name="aad6086cac224973ff26a8fe17d4cac72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad6086cac224973ff26a8fe17d4cac72">&#9670;&#160;</a></span>OnExit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action&lt;GameObject&gt; Seacore.ObjectSelector.OnExit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38938c3648ea93a95ab6f9ff128771b1" name="a38938c3648ea93a95ab6f9ff128771b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38938c3648ea93a95ab6f9ff128771b1">&#9670;&#160;</a></span>OnHover</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action&lt;GameObject&gt; Seacore.ObjectSelector.OnHover</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -6,5 +6,5 @@ var searchData=
   ['transitiontodeclare_3',['TransitionToDeclare',['../class_seacore_1_1_round_state_machine.html#a899f46197f55b7fd08380b08add09014',1,'Seacore::RoundStateMachine']]],
   ['transitiontoreceived_4',['TransitionToReceived',['../class_seacore_1_1_round_state_machine.html#ae3f640b50c07efda195961d1286be929',1,'Seacore::RoundStateMachine']]],
   ['transitiontorollsetup_5',['TransitionToRollSetup',['../class_seacore_1_1_round_state_machine.html#a9396ffb02fa7ee328d05c3b77262af7c',1,'Seacore::RoundStateMachine']]],
-  ['transitiontostate_6',['TransitionToState',['../class_seacore_1_1_state_machine.html#a65d846e7f20713469bab4f4fcdff6695',1,'Seacore::StateMachine']]]
+  ['transitiontostate_6',['TransitionToState',['../class_seacore_1_1_state_machine.html#a65d846e7f20713469bab4f4fcdff6695',1,'Seacore.StateMachine.TransitionToState()'],['../class_seacore_1_1_round_state_machine.html#aca23e416ec8e3f3c77e0feb97c877368',1,'Seacore.RoundStateMachine.TransitionToState()']]]
 ];

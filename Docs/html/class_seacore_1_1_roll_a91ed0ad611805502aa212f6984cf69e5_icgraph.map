@@ -1,0 +1,13 @@
+<map id="Seacore.Roll.ChangeValue" name="Seacore.Roll.ChangeValue">
+<area shape="rect" id="Node000001" title=" " alt="" coords="501,64,678,91"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_roll.html#ac178e2dedf016a55924629c1b5addfb9" title=" " alt="" coords="253,5,430,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="517,62,452,47,403,35,405,30,454,41,518,57"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_declare_menu.html#ad2cef061267fe46d86ab44846240a90e" title=" " alt="" coords="230,56,453,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="485,80,454,80,454,75,485,75"/>
+<area shape="rect" id="Node000004" href="$class_seacore_1_1_dice_roller.html#a9d2e67cb363687fb16f25c28c892e524" title="Rolls the dice that are located at the current roll location." alt="" coords="247,123,436,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="518,98,454,113,405,125,403,120,452,108,517,92"/>
+<area shape="rect" id="Node000005" href="$class_seacore_1_1_roll_declare_state.html#a2da3260759bd46e13c30863b093b4009" title=" " alt="" coords="5,81,182,124"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="231,124,182,117,183,112,232,119"/>
+<area shape="rect" id="Node000006" href="$class_seacore_1_1_dice_roller_editor.html#a0cc380fe897d46bc01d833d44d9fc596" title=" " alt="" coords="7,148,180,191"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="232,153,181,160,180,155,231,148"/>
+</map>

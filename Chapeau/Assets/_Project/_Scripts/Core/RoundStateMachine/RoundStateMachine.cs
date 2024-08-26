@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,6 +33,7 @@ namespace Seacore
         public Roll PhysicalRoll { get { return physicalRoll; } }
         public Roll CurrentRoll { get { return currentRoll; } }
         public Roll DeclaredRoll { get { return declaredRoll; } }
+
         public DiceRoller DiceRoller { get { return _diceRoller; } }
         public PickupAndDrag PickUpDragController { get { return _pickupDragController; } }
         public DiceController DiceController { get { return _diceController; } }
@@ -50,7 +50,7 @@ namespace Seacore
         private void Awake()
         {
             ResetRound();
-            _pickupDragController.enabled = false;
+            //_pickupDragController.enabled = false;
         }
 
         /// <summary>
@@ -63,11 +63,13 @@ namespace Seacore
             declaredRoll.Clear();
         }
 
-        public void SetEnableDiceDragAndDrop(bool value)
+        public new void TransitionToState(RoundState state)
         {
-            _pickupDragController.enabled = value;
+            base.TransitionToState(state);
         }
 
+
+        //Get rid of these methods
         public void TransitionToRollSetup()
         {
             TransitionToState(RoundState.RollSetup);
@@ -76,12 +78,10 @@ namespace Seacore
         {
             TransitionToState(RoundState.Declare);
         }
-
         public void TransitionToChapeau()
         {
             // Implement as last
         }
-
         public void TransitionToReceived()
         {
             TransitionToState(RoundState.Received);

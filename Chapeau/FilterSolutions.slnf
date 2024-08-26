@@ -1,0 +1,18 @@
+{
+  "solution": {
+    "path": "Chapeau.sln",
+    "projects": [
+      "Assembly-CSharp-firstpass.csproj",
+      "Attributes.csproj",
+      "Common.csproj",
+      "EditMode.csproj",
+      "EditorScripts.csproj",
+      "Input.csproj",
+      "Player.csproj",
+      "Scripts.csproj",
+      "Systems.csproj",
+      "UI.csproj",
+      "X_Archive.csproj"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+<map id="Seacore.ImageDropdown.OnSubmit" name="Seacore.ImageDropdown.OnSubmit">
+<area shape="rect" id="Node000001" title="Handling for when the dropdown is selected and a submit event is processed. Typically shows the dropd..." alt="" coords="5,39,195,81"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_image_dropdown.html#a749585924d9e985e2b499c8efb21d49b" title="Show the dropdown." alt="" coords="243,47,448,73"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,57,227,57,227,63,195,63"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_image_dropdown.html#aa87b132e0233858b027cc42defc7ec63" title="Create a blocker that blocks clicks to other controls while the dropdown list is open." alt="" coords="496,5,707,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="448,44,480,40,481,45,449,49"/>
+<area shape="rect" id="Node000006" href="$class_seacore_1_1_image_dropdown.html#a7eb597e5cc5bc6563c76b08bea0aea18" title="Create the dropdown list to be shown when the dropdown is clicked. The dropdown list should correspon..." alt="" coords="496,72,707,115"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="449,71,481,75,480,80,448,76"/>
+<area shape="rect" id="Node000004" href="$class_seacore_1_1_image_dropdown.html#a5c76881f81d129531504a33cd2dadeb1" title="Hide the dropdown list. I.e. close it." alt="" coords="755,13,955,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="708,24,740,24,740,29,708,29"/>
+<area shape="rect" id="Node000005" href="$class_seacore_1_1_image_dropdown.html#a2a9928a212736c177765093d6bea51ad" title="Convenience method to explicitly destroy the previously generated blocker object." alt="" coords="1003,5,1221,48"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="955,24,987,24,987,29,955,29"/>
+</map>

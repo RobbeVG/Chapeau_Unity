@@ -47,6 +47,8 @@ namespace Seacore
                     dieGameObject.name = "Die_" + i.ToString();
                     dieGameObject.layer = _spawnInLayer;
 
+                    dieGameObject.AddComponent<Outline>();
+
                     Die die = dieGameObject.GetComponent<Die>();
                     
                     AddDie(die);
@@ -68,9 +70,10 @@ namespace Seacore
         {
             if (!_diceContainers.ContainsKey(die))
             {
-                _diceContainers.Add(die, new DieInfo( 
-                    index: _diceContainers.Count, 
-                    meshRenderer: die.GetComponent<MeshRenderer>()
+                _diceContainers.Add(die, new DieInfo(
+                    index: _diceContainers.Count,
+                    meshRenderer: die.GetComponent<MeshRenderer>(),
+                    outline: die.GetComponent<Outline>()
                 ));
             }
         }
@@ -117,12 +120,13 @@ namespace Seacore
     public class DieInfo
     {
         private DieInfo() { }
-        public DieInfo(int index, MeshRenderer meshRenderer)
+        public DieInfo(int index, MeshRenderer meshRenderer, Outline outline)
         {
             Index = index;
             State = DieState.ToRoll | DieState.Inside;
             MeshRenderer = meshRenderer;
             MaterialPropertyBlock = new MaterialPropertyBlock();
+            Outline = outline;
         }
 
         public int Index { get; private set; }
@@ -130,5 +134,6 @@ namespace Seacore
          // Add other properties as needed.
         public MeshRenderer MeshRenderer { get; private set; }
         public MaterialPropertyBlock MaterialPropertyBlock { get; private set; }
+        public Outline Outline { get; private set; }
     }
 }

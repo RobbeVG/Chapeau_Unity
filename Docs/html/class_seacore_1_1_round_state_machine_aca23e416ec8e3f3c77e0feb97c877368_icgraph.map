@@ -1,0 +1,9 @@
+<map id="Seacore.RoundStateMachine.TransitionToState" name="Seacore.RoundStateMachine.TransitionToState">
+<area shape="rect" id="Node000001" title=" " alt="" coords="249,72,444,115"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_round_state_machine.html#a899f46197f55b7fd08380b08add09014" title=" " alt="" coords="5,5,201,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="251,70,183,51,184,46,252,65"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_round_state_machine.html#ae3f640b50c07efda195961d1286be929" title=" " alt="" coords="5,72,201,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="233,96,201,96,201,91,233,91"/>
+<area shape="rect" id="Node000004" href="$class_seacore_1_1_round_state_machine.html#a9396ffb02fa7ee328d05c3b77262af7c" title=" " alt="" coords="5,139,201,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="252,122,184,141,183,135,251,117"/>
+</map>

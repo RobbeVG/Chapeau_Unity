@@ -1,0 +1,9 @@
+<map id="Seacore.DiceRoller.RollDice" name="Seacore.DiceRoller.RollDice">
+<area shape="rect" id="Node000001" title="Rolls the dice that are located at the current roll location." alt="" coords="5,31,194,57"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_roll.html#a91ed0ad611805502aa212f6984cf69e5" title=" " alt="" coords="242,5,419,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,31,226,27,227,33,195,36"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_die.html#a614e10abb4c519172c5782043a861651" title="Manual roll function that has nothing todo with physics like the above." alt="" coords="270,56,390,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,52,255,58,254,64,194,57"/>
+<area shape="rect" id="Node000004" href="$class_seacore_1_1_die.html#a6d8936238b0d8506dcccfd184ed8c541" title=" " alt="" coords="467,56,653,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="391,67,451,67,451,72,391,72"/>
+</map>
