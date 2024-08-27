@@ -47,7 +47,9 @@ namespace Seacore
                     dieGameObject.name = "Die_" + i.ToString();
                     dieGameObject.layer = _spawnInLayer;
 
-                    dieGameObject.AddComponent<Outline>();
+                    Outline outline = dieGameObject.AddComponent<Outline>();
+                    outline.enabled = false;
+                    outline.OutlineMode = Outline.Mode.OutlineVisible;
 
                     Die die = dieGameObject.GetComponent<Die>();
                     

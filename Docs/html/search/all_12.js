@@ -34,7 +34,8 @@ var searchData=
   ['rolltype_31',['RollType',['../namespace_seacore.html#a385dce04599d45f300059cd912a455d5',1,'Seacore']]],
   ['rolluicreator_32',['RollUICreator',['../class_seacore_1_1_roll_u_i_creator.html',1,'Seacore']]],
   ['rolluicreator_2ecs_33',['RollUICreator.cs',['../_roll_u_i_creator_8cs.html',1,'']]],
-  ['roundstate_34',['RoundState',['../class_seacore_1_1_round_state_machine.html#ac499ba4c97b567ee1fb72013b622cb37',1,'Seacore::RoundStateMachine']]],
-  ['roundstatemachine_35',['RoundStateMachine',['../class_seacore_1_1_round_state_machine.html',1,'Seacore.RoundStateMachine'],['../class_seacore_1_1_round_state_machine.html#a7056ad5fce6f4e936db479113b3095e9',1,'Seacore.RoundStateMachine.RoundStateMachine()']]],
-  ['roundstatemachine_2ecs_36',['RoundStateMachine.cs',['../_round_state_machine_8cs.html',1,'']]]
+  ['round_34',['Round',['../class_min_max_slider_attribute.html#a0309d65a61ba1e979ea27adf54865f58',1,'MinMaxSliderAttribute']]],
+  ['roundstate_35',['RoundState',['../class_seacore_1_1_round_state_machine.html#ac499ba4c97b567ee1fb72013b622cb37',1,'Seacore::RoundStateMachine']]],
+  ['roundstatemachine_36',['RoundStateMachine',['../class_seacore_1_1_round_state_machine.html',1,'Seacore.RoundStateMachine'],['../class_seacore_1_1_round_state_machine.html#a7056ad5fce6f4e936db479113b3095e9',1,'Seacore.RoundStateMachine.RoundStateMachine()']]],
+  ['roundstatemachine_2ecs_37',['RoundStateMachine.cs',['../_round_state_machine_8cs.html',1,'']]]
 ];

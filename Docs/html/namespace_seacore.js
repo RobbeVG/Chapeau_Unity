@@ -1,0 +1,56 @@
+var namespace_seacore =
+[
+    [ "UI", "namespace_seacore_1_1_u_i.html", "namespace_seacore_1_1_u_i" ],
+    [ "AudioManager", "class_seacore_1_1_audio_manager.html", null ],
+    [ "BaseState", "class_seacore_1_1_base_state.html", "class_seacore_1_1_base_state" ],
+    [ "ChapeauInputActions", "class_seacore_1_1_chapeau_input_actions.html", "class_seacore_1_1_chapeau_input_actions" ],
+    [ "ChapeauState", "class_seacore_1_1_chapeau_state.html", "class_seacore_1_1_chapeau_state" ],
+    [ "CircleController", "class_seacore_1_1_circle_controller.html", "class_seacore_1_1_circle_controller" ],
+    [ "CreateFrustumCollidersWizard", "class_seacore_1_1_create_frustum_colliders_wizard.html", null ],
+    [ "DeclareMenu", "class_seacore_1_1_declare_menu.html", "class_seacore_1_1_declare_menu" ],
+    [ "DiceController", "class_seacore_1_1_dice_controller.html", "class_seacore_1_1_dice_controller" ],
+    [ "DiceDistributionController", "class_seacore_1_1_dice_distribution_controller.html", null ],
+    [ "DiceManager", "class_seacore_1_1_dice_manager.html", "class_seacore_1_1_dice_manager" ],
+    [ "DiceRoller", "class_seacore_1_1_dice_roller.html", "class_seacore_1_1_dice_roller" ],
+    [ "DiceRollerEditor", "class_seacore_1_1_dice_roller_editor.html", "class_seacore_1_1_dice_roller_editor" ],
+    [ "Die", "class_seacore_1_1_die.html", "class_seacore_1_1_die" ],
+    [ "DieInfo", "class_seacore_1_1_die_info.html", "class_seacore_1_1_die_info" ],
+    [ "DrawRendererBounds", "class_seacore_1_1_draw_renderer_bounds.html", "class_seacore_1_1_draw_renderer_bounds" ],
+    [ "ImageDropdown", "class_seacore_1_1_image_dropdown.html", "class_seacore_1_1_image_dropdown" ],
+    [ "ImageDropdownEditor", "class_seacore_1_1_image_dropdown_editor.html", "class_seacore_1_1_image_dropdown_editor" ],
+    [ "ObjectSelector", "class_seacore_1_1_object_selector.html", "class_seacore_1_1_object_selector" ],
+    [ "PickupAndDrag", "class_seacore_1_1_pickup_and_drag.html", "class_seacore_1_1_pickup_and_drag" ],
+    [ "PlayerInputController", "class_seacore_1_1_player_input_controller.html", null ],
+    [ "ReceivedState", "class_seacore_1_1_received_state.html", "class_seacore_1_1_received_state" ],
+    [ "Roll", "class_seacore_1_1_roll.html", "class_seacore_1_1_roll" ],
+    [ "RollDeclareState", "class_seacore_1_1_roll_declare_state.html", "class_seacore_1_1_roll_declare_state" ],
+    [ "RollDisplay", "class_seacore_1_1_roll_display.html", null ],
+    [ "RollResult", "struct_seacore_1_1_roll_result.html", "struct_seacore_1_1_roll_result" ],
+    [ "RollSetupState", "class_seacore_1_1_roll_setup_state.html", "class_seacore_1_1_roll_setup_state" ],
+    [ "RollUICreator", "class_seacore_1_1_roll_u_i_creator.html", null ],
+    [ "RoundStateMachine", "class_seacore_1_1_round_state_machine.html", "class_seacore_1_1_round_state_machine" ],
+    [ "StateMachine", "class_seacore_1_1_state_machine.html", "class_seacore_1_1_state_machine" ],
+    [ "UIButtonManager", "class_seacore_1_1_u_i_button_manager.html", "class_seacore_1_1_u_i_button_manager" ],
+    [ "UIGameController", "class_seacore_1_1_u_i_game_controller.html", "class_seacore_1_1_u_i_game_controller" ],
+    [ "DiceLocation", "namespace_seacore.html#abe781f2eec405196324b2b1f87da5ecf", [
+      [ "Inside", "namespace_seacore.html#abe781f2eec405196324b2b1f87da5ecfa9b6d3000134648fc9f1e71094ae0847d", null ],
+      [ "Outside", "namespace_seacore.html#abe781f2eec405196324b2b1f87da5ecfa76fbf0ccd7fcd64879c2ff2119dc15a4", null ]
+    ] ],
+    [ "DieState", "namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bb", [
+      [ "None", "namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bba6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "ToRoll", "namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bba5a7dcc9b4276bbab8e0aaa633121a23c", null ],
+      [ "Visible", "namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bbaec24d78ce33048dc73a2b6b1a0690192", null ],
+      [ "Inside", "namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bba9b6d3000134648fc9f1e71094ae0847d", null ]
+    ] ],
+    [ "RollType", "namespace_seacore.html#a385dce04599d45f300059cd912a455d5", [
+      [ "Nothing", "namespace_seacore.html#a385dce04599d45f300059cd912a455d5af80a4ad87fee7c9fdc19b7769495fdb5", null ],
+      [ "Pair", "namespace_seacore.html#a385dce04599d45f300059cd912a455d5ad0bd662806a73209a1c6fbe55591fbff", null ],
+      [ "TwoPair", "namespace_seacore.html#a385dce04599d45f300059cd912a455d5a2971b3edb9bcb3a650781ce9807d2590", null ],
+      [ "ThreeOfAKind", "namespace_seacore.html#a385dce04599d45f300059cd912a455d5ac945075a2d3a657e2fd70320bcfdbff9", null ],
+      [ "LowStraight", "namespace_seacore.html#a385dce04599d45f300059cd912a455d5a03529010fdc06b3d229b19145db676cb", null ],
+      [ "FullHouse", "namespace_seacore.html#a385dce04599d45f300059cd912a455d5a920b516c34c58b9ce69fcc1704bfc00f", null ],
+      [ "HighStraight", "namespace_seacore.html#a385dce04599d45f300059cd912a455d5afe915307be2bd02344c01e33a8a4885c", null ],
+      [ "FourOfAKind", "namespace_seacore.html#a385dce04599d45f300059cd912a455d5abba2f14211e2b6eab1232df7905103d0", null ],
+      [ "FiveOfAKind", "namespace_seacore.html#a385dce04599d45f300059cd912a455d5ae1549efcfd599977bd920eafebea42e5", null ]
+    ] ]
+];

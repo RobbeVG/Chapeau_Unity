@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using DG.Tweening;
+using System;
 
 namespace Seacore
 {
@@ -10,6 +12,23 @@ namespace Seacore
     [RequireComponent(typeof(DiceManager))]
     public class DiceController : MonoBehaviour
     {
+        [Header("Settings for dice outline")]
+        [SerializeField]
+        private Color _toRollColor = Color.cyan;
+
+        [SerializeField]
+        private Color _toSelectOutline = Color.white;
+
+        [SerializeField, MinMaxSlider(1.0f, 10.0f)]
+        private Vector2 _OutlineOscillatingWidthValues = new Vector2(2.0f, 4.0f);
+
+        [SerializeField, Range(1.0f, 20.0f), Tooltip("The frequency of the breathing effect per second")]
+        private float _breathingFrequency = 1.0f;
+
+        [SerializeField, Min(float.MinValue)]
+        public float _durationRevealDice;
+
+        [Header("References")]
         [SerializeField]
         private ObjectSelector _objectSelector;
 
@@ -27,6 +46,9 @@ namespace Seacore
 
         private DiceManager _diceManager;
 
+        private Tweener _oscillationTween;
+
+
         private void Awake()
         {
             if (_pickupDragController == null)
@@ -39,12 +61,30 @@ namespace Seacore
 
         private void OnEnable()
         {
-            _pickupDragController.ObjectPickedUp += DiePickUp;
-            _pickupDragController.ObjectDropped += DieDrop;
+            _pickupDragController.ObjectPickedUp += OnDiePickUp;
+            _pickupDragController.ObjectDropped += OnDieDrop;
+
             _objectSelector.OnHover += OnDieHover;
+            _objectSelector.OnExit += OnDieExit;
             foreach (Die die in _diceManager.Dice) //Werkt niet want sommige dice moeten nog worden ingesteld
             {
                 die.OnRolledValue += OnDieRolled;
+            }
+        }
+
+
+
+        private void OnDisable()
+        {
+            _pickupDragController.ObjectPickedUp -= OnDiePickUp;
+            _pickupDragController.ObjectDropped -= OnDieDrop;
+
+            _objectSelector.OnHover -= OnDieHover;
+            _objectSelector.OnExit -= OnDieExit;
+
+            foreach (Die die in _diceManager.Dice)
+            {
+                die.OnRolledValue -= OnDieRolled;
             }
         }
 
@@ -56,22 +96,36 @@ namespace Seacore
                 dieInfo.MeshRenderer.material = _fadeMaterialDice;
                 HideInsideDieImmediatly(dieInfo);
             }
-        }
 
-        private void OnDisable()
-        {
-            _pickupDragController.ObjectPickedUp -= DiePickUp;
-            _pickupDragController.ObjectDropped -= DieDrop;
-            foreach (Die die in _diceManager.Dice)
-            {
-                die.OnRolledValue -= OnDieRolled;
-            }
+            DOTween.Init();
         }
 
         private void OnDieHover(GameObject dieGameObject)
         {
             Die die = dieGameObject.GetComponent<Die>();
-            _diceManager.DiceContainers[die].Outline.enabled = false;
+
+            Outline outline = _diceManager.DiceContainers[die].Outline;
+            outline.enabled = true;
+
+            _oscillationTween = DOVirtual.Float(_OutlineOscillatingWidthValues.x, _OutlineOscillatingWidthValues.y, 1.0f / _breathingFrequency, value =>
+            {
+                outline.OutlineWidth = value;
+            }).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine).Play();
+        }
+
+        private void OnDieExit(GameObject dieGameObject)
+        {
+            Die die = dieGameObject.GetComponent<Die>();
+            DieInfo info = _diceManager.DiceContainers[die];
+
+            if (!info.State.HasFlag(DieState.ToRoll))
+            {
+                Outline outline = _diceManager.DiceContainers[die].Outline;
+                outline.enabled = false;
+            }
+
+            _oscillationTween.Kill(true);
+            _oscillationTween = null;   
         }
 
         private void OnDieRolled(Die die)
@@ -80,7 +134,7 @@ namespace Seacore
             HideInsideDieImmediatly(_diceManager.DiceContainers[die]);
         }
 
-        private void DiePickUp(GameObject objectDie)
+        private void OnDiePickUp(GameObject objectDie)
         {
             Die die = objectDie.GetComponent<Die>();
             //die.Rigidbody.isKinematic = false;
@@ -88,7 +142,7 @@ namespace Seacore
             //Debug.Log("Die picked up");
         }
 
-        private void DieDrop(GameObject objectDie)
+        private void OnDieDrop(GameObject objectDie)
         {
             Die die = objectDie.GetComponent<Die>();
             //die.Rigidbody.isKinematic = true;
@@ -103,10 +157,19 @@ namespace Seacore
             }
         }
 
-        public void SelectDieForRoll(Die die)
+        public void ToggleDieForRoll(Die die)
         {
+            DieInfo dieInfo = _diceManager.DiceContainers[die];
 
-            Debug.Log("Implement Select Die for Roll");
+            dieInfo.State ^= DieState.ToRoll; //Flip bit
+            if (dieInfo.State.HasFlag(DieState.ToRoll))
+            {
+                dieInfo.Outline.OutlineColor = _toRollColor;
+            }
+            else
+            {
+                dieInfo.Outline.OutlineColor = _toSelectOutline;
+            }
         }
 
         public void RevealDice()
@@ -116,7 +179,12 @@ namespace Seacore
                 DieInfo dieInfo = _diceManager.DiceContainers[die];
                 if (!dieInfo.State.HasFlag(DieState.Visible))
                 {
-                    StartCoroutine(TransitionMaterialDieTo(dieInfo));
+                    DOVirtual.Float(1.0f, 0.0f, _durationRevealDice, value =>
+                    {
+                        UpdateMeshRendererPropertyBlock(dieInfo.MaterialPropertyBlock, dieInfo.MeshRenderer, value);
+
+                    }).SetEase(Ease.InOutQuad);
+
                     dieInfo.State |= DieState.Visible;
                 }
             }
@@ -136,26 +204,6 @@ namespace Seacore
                 UpdateMeshRendererPropertyBlock(dieInfo, 1.0f);
                 dieInfo.State &= ~DieState.Visible;
             }
-        }
-
-        private IEnumerator TransitionMaterialDieTo(DieInfo dieInfo, bool ToVisible = true, float duration = 2.0f)
-        {
-            float timeElapsed = 0f;
-
-            MaterialPropertyBlock currentBlock = dieInfo.MaterialPropertyBlock;
-            MeshRenderer meshRenderer = dieInfo.MeshRenderer;
-
-            while (timeElapsed < duration)
-            {
-                float t = timeElapsed / duration;
-                float newvalue = ToVisible ? 1.0f - t : t;
-                UpdateMeshRendererPropertyBlock(currentBlock, meshRenderer, EasingFunction.EaseInOutQuad(0, 1.0f, newvalue));
-
-                timeElapsed += Time.deltaTime;
-                yield return null;
-            }
-
-            UpdateMeshRendererPropertyBlock(currentBlock, meshRenderer, ToVisible ? 0.0f : 1.0f);
         }
 
         private void UpdateMeshRendererPropertyBlock(DieInfo dieInfo, float value) 

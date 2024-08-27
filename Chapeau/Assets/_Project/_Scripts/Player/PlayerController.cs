@@ -27,7 +27,6 @@ namespace Seacore
 
         private ChapeauInputActions _inputActions = null;
 
-
         private InputAction _tap = null;
         private InputAction _hold = null;
         private InputAction _location = null;
@@ -61,8 +60,6 @@ namespace Seacore
             _location.Enable();
         }
 
-
-
         private void OnDisable()
         {
             _tap.Disable();
@@ -84,7 +81,7 @@ namespace Seacore
             if (die == null)
                 return;
 
-            _diceController.SelectDieForRoll(die);
+            _diceController.ToggleDieForRoll(die);
         }
 
         /// <summary>

@@ -1,12 +1,17 @@
 var searchData=
 [
-  ['selectdieforroll_0',['SelectDieForRoll',['../class_seacore_1_1_dice_controller.html#a22b4fbfc44161128da6cff2e397f0ec7',1,'Seacore::DiceController']]],
-  ['selectobject_1',['SelectObject',['../class_seacore_1_1_object_selector.html#a4fbc49620f3adbc48e2c597785ba1501',1,'Seacore::ObjectSelector']]],
-  ['setcallbacks_2',['SetCallbacks',['../struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html#a3df78a3c13b54f1357763d6a352a5faa',1,'Seacore.ChapeauInputActions.InGameActions.SetCallbacks()'],['../struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#a3f83d7b2b2f45a19d123db11c52386d7',1,'Seacore.ChapeauInputActions.UIActions.SetCallbacks()']]],
-  ['setrolledvalue_3',['SetRolledValue',['../class_seacore_1_1_die.html#a6d8936238b0d8506dcccfd184ed8c541',1,'Seacore::Die']]],
-  ['setvaluewithoutnotify_4',['SetValueWithoutNotify',['../class_seacore_1_1_image_dropdown.html#a1eb109376f8e422466a013366483c655',1,'Seacore::ImageDropdown']]],
-  ['show_5',['Show',['../class_seacore_1_1_image_dropdown.html#a749585924d9e985e2b499c8efb21d49b',1,'Seacore::ImageDropdown']]],
-  ['sort_6',['Sort',['../class_seacore_1_1_roll.html#ad214673af3f2fd762fff1f3583c8270a',1,'Seacore::Roll']]],
-  ['start_7',['Start',['../class_seacore_1_1_image_dropdown.html#a46f08632f4c426cd727efe448a973b1a',1,'Seacore::ImageDropdown']]],
-  ['statemachine_8',['StateMachine',['../class_seacore_1_1_state_machine.html#a071b1ac4e85f431451502025021dcef6',1,'Seacore::StateMachine']]]
+  ['recalculatedeclaredroll_0',['RecalculateDeclaredRoll',['../class_seacore_1_1_declare_menu.html#ad2cef061267fe46d86ab44846240a90e',1,'Seacore::DeclareMenu']]],
+  ['receivedstate_1',['ReceivedState',['../class_seacore_1_1_received_state.html#ad661c18e1de1d9d654122a08e078be1d',1,'Seacore::ReceivedState']]],
+  ['refreshshownvalue_2',['RefreshShownValue',['../class_seacore_1_1_image_dropdown.html#ae25d3f522b87c4fe8b634b0d2f8f4b11',1,'Seacore::ImageDropdown']]],
+  ['removealllistenersfromallbuttons_3',['RemoveAllListenersFromAllButtons',['../class_seacore_1_1_u_i_button_manager.html#a41d27e839d00a0015e1eb878fc5f1883',1,'Seacore::UIButtonManager']]],
+  ['removecallbacks_4',['RemoveCallbacks',['../struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html#a8647c313b57b5de0f7083b12ad0fe635',1,'Seacore.ChapeauInputActions.InGameActions.RemoveCallbacks()'],['../struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#ac7483fcc96ea7b5f7ca727c25a627117',1,'Seacore.ChapeauInputActions.UIActions.RemoveCallbacks()']]],
+  ['removelistenerfromallbuttons_5',['RemoveListenerFromAllButtons',['../class_seacore_1_1_u_i_button_manager.html#a4b7601a709860a3524b19982a72cb61a',1,'Seacore::UIButtonManager']]],
+  ['resetround_6',['ResetRound',['../class_seacore_1_1_round_state_machine.html#aa545b45a5ed2edd3f23c6082ccfc25d4',1,'Seacore::RoundStateMachine']]],
+  ['revealdice_7',['RevealDice',['../class_seacore_1_1_dice_controller.html#a1900cabb7dffd7fa8e2864b40b83c9b1',1,'Seacore::DiceController']]],
+  ['roll_8',['Roll',['../class_seacore_1_1_die.html#a614e10abb4c519172c5782043a861651',1,'Seacore.Die.Roll()'],['../class_seacore_1_1_roll.html#a9a5188a16988fcc7415aac03a984d848',1,'Seacore.Roll.Roll()'],['../class_seacore_1_1_roll.html#afa5d29096622301a6d534f3725b482b9',1,'Seacore.Roll.Roll(Die.Faces[] values)']]],
+  ['rolldeclarestate_9',['RollDeclareState',['../class_seacore_1_1_roll_declare_state.html#aea270b259df1c8a4f24cd0c9b041fcf5',1,'Seacore::RollDeclareState']]],
+  ['rolldice_10',['RollDice',['../class_seacore_1_1_dice_roller.html#a9d2e67cb363687fb16f25c28c892e524',1,'Seacore::DiceRoller']]],
+  ['rollresult_11',['RollResult',['../struct_seacore_1_1_roll_result.html#a356183e114d67dd22f003d9975129a07',1,'Seacore::RollResult']]],
+  ['rollsetupstate_12',['RollSetupState',['../class_seacore_1_1_roll_setup_state.html#a2fd5b53c6432f514d2ecfdb7e51ca93c',1,'Seacore::RollSetupState']]],
+  ['roundstatemachine_13',['RoundStateMachine',['../class_seacore_1_1_round_state_machine.html#a7056ad5fce6f4e936db479113b3095e9',1,'Seacore::RoundStateMachine']]]
 ];

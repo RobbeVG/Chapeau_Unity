@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['location_0',['Location',['../struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html#af1b15d0844a12d601c5f90d58d875b8c',1,'Seacore::ChapeauInputActions::InGameActions']]]
+  ['kinematic_0',['Kinematic',['../class_seacore_1_1_die.html#a10466e4eaee5e61e3e1bf3109ffc3e11',1,'Seacore::Die']]]
 ];

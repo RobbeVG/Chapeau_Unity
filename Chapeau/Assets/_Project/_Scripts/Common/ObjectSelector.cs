@@ -16,8 +16,17 @@ namespace Seacore
     {
         [SerializeField]
         private Camera _mainCamera;
-        private GameObject _hoveredObject;
 
+        [SerializeField]
+        [ReadOnly]
+        private GameObject _hoveredObject = null;
+
+        /// <summary>
+        /// Invokes when new Object is hovered
+        /// </summary>
+        /// <remarks>
+        /// The passed gameObject is always the new object
+        /// </remarks>
         public Action<GameObject> OnHover;
         public Action<GameObject> OnExit;
 
@@ -28,12 +37,23 @@ namespace Seacore
         private void Update()
         {
             GameObject hoveredObject = GetObjectFromScreen(Input.mousePosition);
+            if (hoveredObject == _hoveredObject)
+                return;
+
             if (hoveredObject != null)
             {
                 if (_hoveredObject != null)
-                OnHover?.Invoke(_hoveredObject);
+                {
+                    OnExit?.Invoke(_hoveredObject); //Exit previous hoveredObject
+                }
+                _hoveredObject = hoveredObject;
+                OnHover?.Invoke(hoveredObject);
             }
-            //else ()
+            else //hoveredObject == null thus _hoveredObject is not null
+            {
+                OnExit?.Invoke(_hoveredObject);
+                _hoveredObject = null;
+            }
         }
 
         /// <summary>
