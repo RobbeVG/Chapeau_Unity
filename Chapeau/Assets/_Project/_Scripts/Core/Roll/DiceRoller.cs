@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,14 +12,14 @@ namespace Seacore
     [RequireComponent(typeof(DiceManager))]
     public class DiceRoller : MonoBehaviour
     {
-        [SerializeField]
-        private Roll physicalRoll;
-
+        private Roll _physicalRoll;
         private DiceManager diceManager;
+        public event Action OnDiceRolled;
 
         private void Awake()
         {
             diceManager = GetComponent<DiceManager>(); //Component is required
+            _physicalRoll = Resources.Load<Roll>("Rolls/PhysicalRoll");
         }
 
         /// <summary>
@@ -37,11 +38,12 @@ namespace Seacore
                 if (info.State.HasFlag(DieState.ToRoll))
                 {
                     die.Roll();
-                    physicalRoll.ChangeValue(info.Index, die.DieValue);
+                    _physicalRoll.ChangeValue(info.Index, die.DieValue);
 
                     info.State &= ~DieState.ToRoll; // Get rid of To Roll flag
                 }
             }
+            OnDiceRolled?.Invoke();
         }
     }
 }

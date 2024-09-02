@@ -2,10 +2,12 @@ using UnityEngine.Assertions;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using System;
 
 namespace Seacore
 {
     [CreateAssetMenu(fileName = "Roll", menuName = "ScriptableObjects/Roll")]
+    [Serializable]
     public class Roll : ScriptableObject
     {
         [SerializeField] 

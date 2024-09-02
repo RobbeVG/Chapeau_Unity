@@ -45,7 +45,6 @@ namespace Seacore
         readonly int _fadeMaterialDiceTransitionID = Shader.PropertyToID("_Transition"); 
 
         private DiceManager _diceManager;
-
         private Tweener _oscillationTween;
 
 
@@ -61,7 +60,6 @@ namespace Seacore
 
         private void OnEnable()
         {
-            _pickupDragController.ObjectPickedUp += OnDiePickUp;
             _pickupDragController.ObjectDropped += OnDieDrop;
 
             _objectSelector.OnHover += OnDieHover;
@@ -72,11 +70,8 @@ namespace Seacore
             }
         }
 
-
-
         private void OnDisable()
         {
-            _pickupDragController.ObjectPickedUp -= OnDiePickUp;
             _pickupDragController.ObjectDropped -= OnDieDrop;
 
             _objectSelector.OnHover -= OnDieHover;
@@ -94,12 +89,13 @@ namespace Seacore
             {
                 DieInfo dieInfo = _diceManager.DiceContainers[die];
                 dieInfo.MeshRenderer.material = _fadeMaterialDice;
-                HideInsideDieImmediatly(dieInfo);
             }
 
             DOTween.Init();
         }
 
+
+        //OUTLINE
         private void OnDieHover(GameObject dieGameObject)
         {
             Die die = dieGameObject.GetComponent<Die>();
@@ -112,7 +108,7 @@ namespace Seacore
                 outline.OutlineWidth = value;
             }).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine).Play();
         }
-
+        //OUTLINE
         private void OnDieExit(GameObject dieGameObject)
         {
             Die die = dieGameObject.GetComponent<Die>();
@@ -128,20 +124,14 @@ namespace Seacore
             _oscillationTween = null;   
         }
 
+        //LOGIC + HIDE
         private void OnDieRolled(Die die)
         {
             die.Rigidbody.isKinematic = true;
             HideInsideDieImmediatly(_diceManager.DiceContainers[die]);
         }
 
-        private void OnDiePickUp(GameObject objectDie)
-        {
-            Die die = objectDie.GetComponent<Die>();
-            //die.Rigidbody.isKinematic = false;
-
-            //Debug.Log("Die picked up");
-        }
-
+        //Logic
         private void OnDieDrop(GameObject objectDie)
         {
             Die die = objectDie.GetComponent<Die>();
@@ -157,6 +147,7 @@ namespace Seacore
             }
         }
 
+        //LOGIC + OUTLINE
         public void ToggleDieForRoll(Die die)
         {
             DieInfo dieInfo = _diceManager.DiceContainers[die];
@@ -172,6 +163,7 @@ namespace Seacore
             }
         }
 
+        //Revealing the Dice
         public void RevealDice()
         {
             foreach (Die die in _diceManager.Dice)

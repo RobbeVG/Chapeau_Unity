@@ -8,15 +8,16 @@ namespace Seacore
     public class DeclareMenu : MonoBehaviour
     {
         [SerializeField]
-        RoundStateMachine roundSM = null;
-        [SerializeField]
         Dropdown[] dropdowns = new Dropdown[Globals.c_amountDie];
+
+        Roll _declaredRoll = null;
 
         public event Action OnEditDeclareRoll;
 
         private void Awake()
         {
-            Assert.IsNotNull(roundSM, "Round State Machine Controller in the Declare Menu cannot be null");
+            _declaredRoll = Resources.Load<Roll>("Rolls/DeclaredRoll");
+            Assert.IsNotNull(_declaredRoll, "Declared Roll in the Declare Menu cannot be null");
 
             foreach (Dropdown item in dropdowns)
             {
@@ -28,9 +29,9 @@ namespace Seacore
         {
             for (int i = 0; i < Globals.c_amountDie; i++)
             {
-                roundSM.DeclaredRoll.ChangeValue(i, dropdowns[i].value);
+                _declaredRoll.ChangeValue(i, dropdowns[i].value);
             }
-            roundSM.DeclaredRoll.CalculateResult();
+            _declaredRoll.CalculateResult();
 
             OnEditDeclareRoll?.Invoke();
         } 

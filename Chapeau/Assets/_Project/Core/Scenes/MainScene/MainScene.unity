@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 161303978}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -644,7 +644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &613237702
 Transform:
   m_ObjectHideFlags: 0
@@ -1254,7 +1254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be22fb4d9a76c684397ec832c4f4aa71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  physicalRoll: {fileID: 11400000, guid: 4a1faa0ac4f0c3d40a191674fd3ef7b3, type: 2}
 --- !u!114 &1129885323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1986,7 +1985,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1788875848}
   - {fileID: 1705534085}
   - {fileID: 617036061}
   m_Father: {fileID: 0}
@@ -2174,8 +2172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05662544bab6ab749b0d127c908506d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundSM: {fileID: 1795126529}
-  _background: {fileID: 1788875847}
+  roundManager: {fileID: 1795126531}
   _declareMenu: {fileID: 1670063015}
   buttonManager:
     _buttons:
@@ -2188,7 +2185,6 @@ MonoBehaviour:
         Value: {fileID: 857626675}
       - Key: 3
         Value: {fileID: 213090721}
-  _circleController: {fileID: 390725920}
   _diceController: {fileID: 1129885321}
 --- !u!1 &1733864929
 GameObject:
@@ -2419,81 +2415,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1133175858}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1788875847
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1788875848}
-  - component: {fileID: 1788875850}
-  - component: {fileID: 1788875849}
-  m_Layer: 5
-  m_Name: Background Panel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1788875848
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788875847}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1473797715}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1788875849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788875847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.28741118, g: 0.2924528, b: 0.28555533, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1788875850
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788875847}
-  m_CullTransparentMesh: 1
 --- !u!1 &1795126528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,32 +2424,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1795126530}
-  - component: {fileID: 1795126529}
+  - component: {fileID: 1795126531}
   m_Layer: 0
-  m_Name: Round State Machine
+  m_Name: Round Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1795126529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1795126528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1b2c4779731dd84f9def820caaec075, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _diceRoller: {fileID: 1129885322}
-  _diceController: {fileID: 1129885321}
-  _pickupDragController: {fileID: 613237703}
-  physicalRoll: {fileID: 11400000, guid: 4a1faa0ac4f0c3d40a191674fd3ef7b3, type: 2}
-  currentRoll: {fileID: 11400000, guid: a4981e8169e3e69459577518b9d6bbda, type: 2}
-  declaredRoll: {fileID: 11400000, guid: b53fad108214aa04cb7b9120f5d8876e, type: 2}
 --- !u!4 &1795126530
 Transform:
   m_ObjectHideFlags: 0
@@ -2544,6 +2447,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 593699587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1795126531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795126528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908ff6c8f64c16649ae282899705bffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _diceRoller: {fileID: 1129885322}
+  _diceController: {fileID: 1129885321}
+  _selectAndPickupGameObject: {fileID: 613237701}
 --- !u!1 &1809351460
 GameObject:
   m_ObjectHideFlags: 0
@@ -3166,7 +3084,7 @@ PrefabInstance:
     - target: {fileID: 5801798839989957943, guid: 1f5dac34373e3084e99ccb521fe0a813, type: 3}
       propertyPath: roundSM
       value: 
-      objectReference: {fileID: 1795126529}
+      objectReference: {fileID: 0}
     - target: {fileID: 5801798839989957943, guid: 1f5dac34373e3084e99ccb521fe0a813, type: 3}
       propertyPath: m_Enabled
       value: 1

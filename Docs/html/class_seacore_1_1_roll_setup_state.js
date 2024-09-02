@@ -1,7 +1,7 @@
 var class_seacore_1_1_roll_setup_state =
 [
-    [ "RollSetupState", "class_seacore_1_1_roll_setup_state.html#a2fd5b53c6432f514d2ecfdb7e51ca93c", null ],
-    [ "EnterState", "class_seacore_1_1_roll_setup_state.html#ad4f127669c2226c0072e667f976ec627", null ],
-    [ "ExitState", "class_seacore_1_1_roll_setup_state.html#a02e2f04d0d183a127b414f14aeb0829d", null ],
-    [ "GetNextState", "class_seacore_1_1_roll_setup_state.html#a6bc16b564c9eabeb5c30d311c0d55945", null ]
+    [ "RollSetupState", "class_seacore_1_1_roll_setup_state.html#a56d4ad24c578923ae6e70f913a3ac8c7", null ],
+    [ "EnterState", "class_seacore_1_1_roll_setup_state.html#a8f7a3407d4a435f7224d25e2df413c57", null ],
+    [ "ExitState", "class_seacore_1_1_roll_setup_state.html#acadb3a8439e1b790df1decb3103b980f", null ],
+    [ "GetNextState", "class_seacore_1_1_roll_setup_state.html#a9d75d0a823ed8ff562161faa8aedb39c", null ]
 ];

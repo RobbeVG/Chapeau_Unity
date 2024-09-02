@@ -1,29 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Seacore.Common.Statemachine;
 
 namespace Seacore
 {
-    public class RollDeclareState : BaseState<RoundStateMachine.RoundState, RoundStateMachine>
+    public class DeclareState : BaseState<RoundStateMachine.RoundState>
     {
-        public RollDeclareState() : base(RoundStateMachine.RoundState.Declare) { }
+        private readonly Roll _physicalRoll;
+        private readonly DiceRoller _diceRoller;
 
-        public int AmountRolled { get; private set; } = 0;
-
+        public DeclareState(RoundContext context, DiceRoller diceRoller) 
+            : base(RoundStateMachine.RoundState.Declare) 
+        {
+            _physicalRoll = context.PhysicalRoll;
+            _diceRoller = diceRoller;
+        }
         // Create listener to alert other players if he looked
 
-        public override void EnterState(RoundStateMachine stateMachine)
+        public override void EnterState()
         {
             //Remove previous onClick events if there
             //stateMachine.AddListenerToUIButton(UIGameController.ButtonTypes.DeclareConfirm, stateMachine.TransitionToReceived);
 
-            stateMachine.DiceRoller.RollDice();
-            AmountRolled++;
-            stateMachine.PhysicalRoll.CalculateResult();
-            Debug.Log(stateMachine.PhysicalRoll.ToString());
+            _diceRoller.RollDice(); //_diceController.HideInsideDiceImmediatly(); //Happens automatically when die is rolled inside!
+            _physicalRoll.CalculateResult();
+
+            //Debug.Log(stateMachine.PhysicalRoll.ToString());
         }
 
-        public override void ExitState(RoundStateMachine stateMachine)
+        public override void ExitState()
         {
             //stateMachine.RemoveListenerFromUIButton(UIGameController.ButtonTypes.DeclareConfirm, stateMachine.TransitionToReceived);
 
@@ -31,9 +35,8 @@ namespace Seacore
 
         }
 
-        public override RoundStateMachine.RoundState GetNextState(RoundStateMachine stateMachine)
+        public override RoundStateMachine.RoundState GetNextState()
         {
-            //Check if passOn button is pressed.
             return RoundStateMachine.RoundState.Declare;
         }
 

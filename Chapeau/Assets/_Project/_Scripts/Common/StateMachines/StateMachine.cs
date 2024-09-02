@@ -1,46 +1,47 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Seacore
+namespace Seacore.Common.Statemachine
 {
     /// <summary>
     /// A Generic Statemachine class that uses enum states for easy 
     /// </summary>
     /// <typeparam name="EState">An enum typed state key A</typeparam>
     /// <typeparam name="TStateMachine">The Derived statemachine name to ensure methods access derived state</typeparam>
-    public abstract class StateMachine<EState, TStateMachine> : MonoBehaviour where EState : Enum where TStateMachine : StateMachine<EState, TStateMachine>
+    public abstract class StateMachine<EState> where EState : Enum
     {
-        private Dictionary<EState, BaseState<EState, TStateMachine>> _states;
+        private Dictionary<EState, BaseState<EState>> _states;
         protected bool _isTransitioningState = false;
-        protected BaseState<EState, TStateMachine> _currentState;
+        protected BaseState<EState> _currentState;
 
         public EState CurrentStateKey { get => _currentState.StateKey; }
-        protected IReadOnlyDictionary<EState, BaseState<EState, TStateMachine>> States => _states;
+        protected IReadOnlyDictionary<EState, BaseState<EState>> States => _states;
 
-        public event Action OnStateChanged;
+        public event Action<EState> OnStateEnter;
+        public event Action<EState> OnStateExit;
 
-        protected StateMachine(Dictionary<EState, BaseState<EState, TStateMachine>> states, EState currentStateKey)
+        protected StateMachine(Dictionary<EState, BaseState<EState>> states, EState currentStateKey)
         {
             _states = states;
             Assert.IsTrue(_states.ContainsKey(currentStateKey), "The CurrentStateKey was not found in the given states for this State Machine");
             _currentState = _states[currentStateKey];
         }
 
-        private void Start()
+        public void Start()
         {
-            _currentState.EnterState((TStateMachine)this);
+            _currentState.EnterState();
+            Debug.Log("Starting " + _currentState);
         }
 
-        private void Update()
+        public void Update()
         {
             if (!_isTransitioningState)
             {
-                EState nextStateKey = _currentState.GetNextState((TStateMachine)this);
+                EState nextStateKey = _currentState.GetNextState();
                 if (nextStateKey.Equals(_currentState.StateKey))
-                    _currentState.UpdateState((TStateMachine)this);
+                    _currentState.UpdateState();
                 else
                     TransitionToState(nextStateKey);
             }
@@ -49,12 +50,37 @@ namespace Seacore
         protected void TransitionToState(EState stateKey)
         {
             _isTransitioningState = true;
-            _currentState.ExitState((TStateMachine)this);
-            _currentState = States[stateKey];
-            _currentState.EnterState((TStateMachine)this);
+            {
+                ExitState();
+                _currentState = States[stateKey];
+                EnterState();
+            }
             _isTransitioningState = false;
-            OnStateChanged?.Invoke();
-            Debug.Log("New State: " + stateKey.ToString());
+
+            Debug.Log("Transitioned to " + _currentState);
+        }
+
+        protected void ForcedNewCurrentState(EState stateKey,  bool invokePreviousExit = false)
+        {
+            if (invokePreviousExit)
+                ExitState();
+
+            _currentState = _states[stateKey];
+        }
+
+        private void EnterState()
+        {
+            _currentState.EnterState();
+            //Async?
+            OnStateEnter?.Invoke(_currentState.StateKey);
+        }
+
+        private void ExitState()
+        {
+            _currentState.ExitState();
+            //Async?
+
+            OnStateExit?.Invoke(_currentState.StateKey);
         }
     }
 }

@@ -1,0 +1,5 @@
+<map id="Seacore.RoundStateMachine.Reset" name="Seacore.RoundStateMachine.Reset">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,13,201,56"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a1f625f208767706fbdfe23880e0534c7" title=" " alt="" coords="249,5,500,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,32,233,32,233,37,201,37"/>
+</map>

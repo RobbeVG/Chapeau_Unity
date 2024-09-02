@@ -99,9 +99,8 @@ $(function(){initNavTree('class_seacore_1_1_round_state_machine.html',''); initR
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#properties">Properties</a> &#124;
 <a href="class_seacore_1_1_round_state_machine-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Seacore.RoundStateMachine Class Reference</div></div>
+  <div class="headertitle"><div class="title">Seacore.RoundStateMachine Class Reference<span class="mlabels"><span class="mlabel">sealed</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -112,9 +111,9 @@ Inheritance diagram for Seacore.RoundStateMachine:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_seacore_1_1_round_state_machine__inherit__graph.png" border="0" usemap="#a_seacore_8_round_state_machine_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_seacore_8_round_state_machine_inherit__map" id="a_seacore_8_round_state_machine_inherit__map">
-<area shape="rect" title="A child statemachine that specifically is used to progress a round." alt="" coords="20,112,211,139"/>
-<area shape="rect" href="class_seacore_1_1_state_machine.html" title=" " alt="" coords="5,5,226,64"/>
-<area shape="poly" title=" " alt="" coords="118,79,118,111,113,111,113,79"/>
+<area shape="rect" title="A child statemachine that specifically is used to progress a round." alt="" coords="5,96,197,123"/>
+<area shape="rect" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html" title=" " alt="" coords="10,5,192,48"/>
+<area shape="poly" title=" " alt="" coords="104,64,104,95,98,95,98,64"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -122,9 +121,9 @@ Collaboration diagram for Seacore.RoundStateMachine:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_seacore_1_1_round_state_machine__coll__graph.png" border="0" usemap="#a_seacore_8_round_state_machine_coll__map" alt="Collaboration graph"/></div>
 <map name="a_seacore_8_round_state_machine_coll__map" id="a_seacore_8_round_state_machine_coll__map">
-<area shape="rect" title="A child statemachine that specifically is used to progress a round." alt="" coords="20,112,211,139"/>
-<area shape="rect" href="class_seacore_1_1_state_machine.html" title=" " alt="" coords="5,5,226,64"/>
-<area shape="poly" title=" " alt="" coords="118,79,118,111,113,111,113,79"/>
+<area shape="rect" title="A child statemachine that specifically is used to progress a round." alt="" coords="5,96,197,123"/>
+<area shape="rect" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html" title=" " alt="" coords="10,5,192,48"/>
+<area shape="poly" title=" " alt="" coords="104,64,104,95,98,95,98,64"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -135,61 +134,48 @@ Public Types</h2></td></tr>
 , <a class="el" href="#ac499ba4c97b567ee1fb72013b622cb37aac5bb077c33753116b5e91ff1766e7bc">Received</a>
 , <a class="el" href="#ac499ba4c97b567ee1fb72013b622cb37a9f0b242323e578ebf32677f1e917cca1">Chapeau</a>
  }</td></tr>
+<tr class="memdesc:ac499ba4c97b567ee1fb72013b622cb37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the possible states of a round.  <a href="#ac499ba4c97b567ee1fb72013b622cb37">More...</a><br /></td></tr>
 <tr class="separator:ac499ba4c97b567ee1fb72013b622cb37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7056ad5fce6f4e936db479113b3095e9" id="r_a7056ad5fce6f4e936db479113b3095e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7056ad5fce6f4e936db479113b3095e9">RoundStateMachine</a> ()</td></tr>
-<tr class="separator:a7056ad5fce6f4e936db479113b3095e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa545b45a5ed2edd3f23c6082ccfc25d4" id="r_aa545b45a5ed2edd3f23c6082ccfc25d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa545b45a5ed2edd3f23c6082ccfc25d4">ResetRound</a> ()</td></tr>
-<tr class="memdesc:aa545b45a5ed2edd3f23c6082ccfc25d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all Round parameters.  <br /></td></tr>
-<tr class="separator:aa545b45a5ed2edd3f23c6082ccfc25d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef96baabac9b403c43aebd5f92f36ce0" id="r_aef96baabac9b403c43aebd5f92f36ce0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef96baabac9b403c43aebd5f92f36ce0">RoundStateMachine</a> (<a class="el" href="class_round_context.html">RoundContext</a> context, <a class="el" href="class_seacore_1_1_dice_roller.html">DiceRoller</a> diceRoller, <a class="el" href="class_seacore_1_1_dice_controller.html">DiceController</a> diceController, GameObject gameObjectSelectAndPickup)</td></tr>
+<tr class="separator:aef96baabac9b403c43aebd5f92f36ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca23e416ec8e3f3c77e0feb97c877368" id="r_aca23e416ec8e3f3c77e0feb97c877368"><td class="memItemLeft" align="right" valign="top">new void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca23e416ec8e3f3c77e0feb97c877368">TransitionToState</a> (<a class="el" href="#ac499ba4c97b567ee1fb72013b622cb37">RoundState</a> state)</td></tr>
+<tr class="memdesc:aca23e416ec8e3f3c77e0feb97c877368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transition to the state given.  <br /></td></tr>
 <tr class="separator:aca23e416ec8e3f3c77e0feb97c877368"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9396ffb02fa7ee328d05c3b77262af7c" id="r_a9396ffb02fa7ee328d05c3b77262af7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9396ffb02fa7ee328d05c3b77262af7c">TransitionToRollSetup</a> ()</td></tr>
-<tr class="separator:a9396ffb02fa7ee328d05c3b77262af7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a899f46197f55b7fd08380b08add09014" id="r_a899f46197f55b7fd08380b08add09014"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a899f46197f55b7fd08380b08add09014">TransitionToDeclare</a> ()</td></tr>
-<tr class="separator:a899f46197f55b7fd08380b08add09014"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c3f6ee2b83f4d9502e6d1879f7190ea" id="r_a7c3f6ee2b83f4d9502e6d1879f7190ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c3f6ee2b83f4d9502e6d1879f7190ea">TransitionToChapeau</a> ()</td></tr>
-<tr class="separator:a7c3f6ee2b83f4d9502e6d1879f7190ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3f640b50c07efda195961d1286be929" id="r_ae3f640b50c07efda195961d1286be929"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3f640b50c07efda195961d1286be929">TransitionToReceived</a> ()</td></tr>
-<tr class="separator:ae3f640b50c07efda195961d1286be929"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
-Properties</h2></td></tr>
-<tr class="memitem:a1abff41d57a7084537ed7f9eeefc0eb9" id="r_a1abff41d57a7084537ed7f9eeefc0eb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_seacore_1_1_roll.html">Roll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1abff41d57a7084537ed7f9eeefc0eb9">PhysicalRoll</a><code> [get]</code></td></tr>
-<tr class="separator:a1abff41d57a7084537ed7f9eeefc0eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a829c27b10d3edfe98d492c8cae5bc04a" id="r_a829c27b10d3edfe98d492c8cae5bc04a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_seacore_1_1_roll.html">Roll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a829c27b10d3edfe98d492c8cae5bc04a">CurrentRoll</a><code> [get]</code></td></tr>
-<tr class="separator:a829c27b10d3edfe98d492c8cae5bc04a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac74c351d48506d50762d0bdc45bb2469" id="r_ac74c351d48506d50762d0bdc45bb2469"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_seacore_1_1_roll.html">Roll</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac74c351d48506d50762d0bdc45bb2469">DeclaredRoll</a><code> [get]</code></td></tr>
-<tr class="separator:ac74c351d48506d50762d0bdc45bb2469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b3ea42fda0b18c497ddf58a099bf144" id="r_a4b3ea42fda0b18c497ddf58a099bf144"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_seacore_1_1_dice_roller.html">DiceRoller</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b3ea42fda0b18c497ddf58a099bf144">DiceRoller</a><code> [get]</code></td></tr>
-<tr class="separator:a4b3ea42fda0b18c497ddf58a099bf144"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3978d37583f3818be0fe7be868e400fc" id="r_a3978d37583f3818be0fe7be868e400fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_seacore_1_1_pickup_and_drag.html">PickupAndDrag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3978d37583f3818be0fe7be868e400fc">PickUpDragController</a><code> [get]</code></td></tr>
-<tr class="separator:a3978d37583f3818be0fe7be868e400fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa12cb19573900177ad1d143f4e1f88fd" id="r_aa12cb19573900177ad1d143f4e1f88fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_seacore_1_1_dice_controller.html">DiceController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa12cb19573900177ad1d143f4e1f88fd">DiceController</a><code> [get]</code></td></tr>
-<tr class="separator:aa12cb19573900177ad1d143f4e1f88fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header properties_class_seacore_1_1_state_machine"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_seacore_1_1_state_machine')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_seacore_1_1_state_machine.html">Seacore.StateMachine&lt; RoundStateMachine.RoundState, RoundStateMachine &gt;</a></td></tr>
-<tr class="memitem:a092ccef5c7ec8d2942fc6aadf1951d56 inherit properties_class_seacore_1_1_state_machine" id="r_a092ccef5c7ec8d2942fc6aadf1951d56"><td class="memItemLeft" align="right" valign="top">EState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_state_machine.html#a092ccef5c7ec8d2942fc6aadf1951d56">CurrentStateKey</a><code> [get]</code></td></tr>
-<tr class="separator:a092ccef5c7ec8d2942fc6aadf1951d56 inherit properties_class_seacore_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23498440907c257147a3feff20347dc0 inherit properties_class_seacore_1_1_state_machine" id="r_a23498440907c257147a3feff20347dc0"><td class="memItemLeft" align="right" valign="top">IReadOnlyDictionary&lt; EState, <a class="el" href="class_seacore_1_1_base_state.html">BaseState</a>&lt; EState, TStateMachine &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_state_machine.html#a23498440907c257147a3feff20347dc0">States</a><code> [get]</code></td></tr>
-<tr class="separator:a23498440907c257147a3feff20347dc0 inherit properties_class_seacore_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d04d34e93b2a318057d6dea391fd456" id="r_a3d04d34e93b2a318057d6dea391fd456"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d04d34e93b2a318057d6dea391fd456">Reset</a> ()</td></tr>
+<tr class="separator:a3d04d34e93b2a318057d6dea391fd456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html">Seacore.Common.Statemachine.StateMachine&lt; RoundStateMachine.RoundState &gt;</a></td></tr>
+<tr class="memitem:a079a8e962e1a01e6f2750c7d27a63301 inherit pub_methods_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine" id="r_a079a8e962e1a01e6f2750c7d27a63301"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a079a8e962e1a01e6f2750c7d27a63301">Start</a> ()</td></tr>
+<tr class="separator:a079a8e962e1a01e6f2750c7d27a63301 inherit pub_methods_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d8656356d8b50394779d9b17957ac1f inherit pub_methods_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine" id="r_a1d8656356d8b50394779d9b17957ac1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a1d8656356d8b50394779d9b17957ac1f">Update</a> ()</td></tr>
+<tr class="separator:a1d8656356d8b50394779d9b17957ac1f inherit pub_methods_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_class_seacore_1_1_state_machine"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_seacore_1_1_state_machine')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_seacore_1_1_state_machine.html">Seacore.StateMachine&lt; RoundStateMachine.RoundState, RoundStateMachine &gt;</a></td></tr>
-<tr class="memitem:a071b1ac4e85f431451502025021dcef6 inherit pro_methods_class_seacore_1_1_state_machine" id="r_a071b1ac4e85f431451502025021dcef6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_state_machine.html#a071b1ac4e85f431451502025021dcef6">StateMachine</a> (Dictionary&lt; EState, <a class="el" href="class_seacore_1_1_base_state.html">BaseState</a>&lt; EState, TStateMachine &gt; &gt; states, EState currentStateKey)</td></tr>
-<tr class="separator:a071b1ac4e85f431451502025021dcef6 inherit pro_methods_class_seacore_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65d846e7f20713469bab4f4fcdff6695 inherit pro_methods_class_seacore_1_1_state_machine" id="r_a65d846e7f20713469bab4f4fcdff6695"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_state_machine.html#a65d846e7f20713469bab4f4fcdff6695">TransitionToState</a> (EState stateKey)</td></tr>
-<tr class="separator:a65d846e7f20713469bab4f4fcdff6695 inherit pro_methods_class_seacore_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_class_seacore_1_1_state_machine"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_seacore_1_1_state_machine')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_seacore_1_1_state_machine.html">Seacore.StateMachine&lt; RoundStateMachine.RoundState, RoundStateMachine &gt;</a></td></tr>
-<tr class="memitem:ab34f0482cfb28b68179a5df1356fc869 inherit pro_attribs_class_seacore_1_1_state_machine" id="r_ab34f0482cfb28b68179a5df1356fc869"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_state_machine.html#ab34f0482cfb28b68179a5df1356fc869">_isTransitioningState</a></td></tr>
-<tr class="separator:ab34f0482cfb28b68179a5df1356fc869 inherit pro_attribs_class_seacore_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc16b4e1fe27e8082c0185e63c2d836a inherit pro_attribs_class_seacore_1_1_state_machine" id="r_abc16b4e1fe27e8082c0185e63c2d836a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_seacore_1_1_base_state.html">BaseState</a>&lt; EState, TStateMachine &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_state_machine.html#abc16b4e1fe27e8082c0185e63c2d836a">_currentState</a></td></tr>
-<tr class="separator:abc16b4e1fe27e8082c0185e63c2d836a inherit pro_attribs_class_seacore_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header events_class_seacore_1_1_state_machine"><td colspan="2" onclick="javascript:dynsection.toggleInherit('events_class_seacore_1_1_state_machine')"><img src="closed.png" alt="-"/>&#160;Events inherited from <a class="el" href="class_seacore_1_1_state_machine.html">Seacore.StateMachine&lt; RoundStateMachine.RoundState, RoundStateMachine &gt;</a></td></tr>
-<tr class="memitem:aae41eebe01735a5511438141dda9c5c2 inherit events_class_seacore_1_1_state_machine" id="r_aae41eebe01735a5511438141dda9c5c2"><td class="memItemLeft" align="right" valign="top">Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_state_machine.html#aae41eebe01735a5511438141dda9c5c2">OnStateChanged</a></td></tr>
-<tr class="separator:aae41eebe01735a5511438141dda9c5c2 inherit events_class_seacore_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html">Seacore.Common.Statemachine.StateMachine&lt; RoundStateMachine.RoundState &gt;</a></td></tr>
+<tr class="memitem:a951d7f91b4da79d96e092bf98a195326 inherit pro_methods_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine" id="r_a951d7f91b4da79d96e092bf98a195326"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a951d7f91b4da79d96e092bf98a195326">StateMachine</a> (Dictionary&lt; EState, <a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html">BaseState</a>&lt; EState &gt; &gt; states, EState currentStateKey)</td></tr>
+<tr class="separator:a951d7f91b4da79d96e092bf98a195326 inherit pro_methods_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4ad04744ef595a6135caef8a08fa53c inherit pro_methods_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine" id="r_af4ad04744ef595a6135caef8a08fa53c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#af4ad04744ef595a6135caef8a08fa53c">TransitionToState</a> (EState stateKey)</td></tr>
+<tr class="separator:af4ad04744ef595a6135caef8a08fa53c inherit pro_methods_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f625f208767706fbdfe23880e0534c7 inherit pro_methods_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine" id="r_a1f625f208767706fbdfe23880e0534c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a1f625f208767706fbdfe23880e0534c7">ForcedNewCurrentState</a> (EState stateKey, bool invokePreviousExit=false)</td></tr>
+<tr class="separator:a1f625f208767706fbdfe23880e0534c7 inherit pro_methods_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html">Seacore.Common.Statemachine.StateMachine&lt; RoundStateMachine.RoundState &gt;</a></td></tr>
+<tr class="memitem:a0aacb91fb0fc43893872b792e7d0ee5f inherit pro_attribs_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine" id="r_a0aacb91fb0fc43893872b792e7d0ee5f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a0aacb91fb0fc43893872b792e7d0ee5f">_isTransitioningState</a></td></tr>
+<tr class="separator:a0aacb91fb0fc43893872b792e7d0ee5f inherit pro_attribs_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82ff145cc2059fc2b0229fbbc0eaba1c inherit pro_attribs_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine" id="r_a82ff145cc2059fc2b0229fbbc0eaba1c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html">BaseState</a>&lt; EState &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a82ff145cc2059fc2b0229fbbc0eaba1c">_currentState</a></td></tr>
+<tr class="separator:a82ff145cc2059fc2b0229fbbc0eaba1c inherit pro_attribs_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html">Seacore.Common.Statemachine.StateMachine&lt; RoundStateMachine.RoundState &gt;</a></td></tr>
+<tr class="memitem:acb784292300918eb9f05ec1b195dd078 inherit properties_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine" id="r_acb784292300918eb9f05ec1b195dd078"><td class="memItemLeft" align="right" valign="top">EState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#acb784292300918eb9f05ec1b195dd078">CurrentStateKey</a><code> [get]</code></td></tr>
+<tr class="separator:acb784292300918eb9f05ec1b195dd078 inherit properties_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f77e660ee593040ad8a1b3b5ca55d7d inherit properties_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine" id="r_a3f77e660ee593040ad8a1b3b5ca55d7d"><td class="memItemLeft" align="right" valign="top">IReadOnlyDictionary&lt; EState, <a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html">BaseState</a>&lt; EState &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a3f77e660ee593040ad8a1b3b5ca55d7d">States</a><code> [get]</code></td></tr>
+<tr class="separator:a3f77e660ee593040ad8a1b3b5ca55d7d inherit properties_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header events_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td colspan="2" onclick="javascript:dynsection.toggleInherit('events_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine')"><img src="closed.png" alt="-"/>&#160;Events inherited from <a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html">Seacore.Common.Statemachine.StateMachine&lt; RoundStateMachine.RoundState &gt;</a></td></tr>
+<tr class="memitem:adb64893116e718fc10e4250a98e8a867 inherit events_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine" id="r_adb64893116e718fc10e4250a98e8a867"><td class="memItemLeft" align="right" valign="top">Action&lt; EState &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#adb64893116e718fc10e4250a98e8a867">OnStateEnter</a></td></tr>
+<tr class="separator:adb64893116e718fc10e4250a98e8a867 inherit events_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4a4395a32de6eff8330cf6b9d1caf9b inherit events_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine" id="r_af4a4395a32de6eff8330cf6b9d1caf9b"><td class="memItemLeft" align="right" valign="top">Action&lt; EState &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#af4a4395a32de6eff8330cf6b9d1caf9b">OnStateExit</a></td></tr>
+<tr class="separator:af4a4395a32de6eff8330cf6b9d1caf9b inherit events_class_seacore_1_1_common_1_1_statemachine_1_1_state_machine"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A child statemachine that specifically is used to progress a round. </p>
@@ -205,6 +191,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enum representing the possible states of a round. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac499ba4c97b567ee1fb72013b622cb37a8a85e698472e02827eee008898de4c06" name="ac499ba4c97b567ee1fb72013b622cb37a8a85e698472e02827eee008898de4c06"></a>RollSetup&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ac499ba4c97b567ee1fb72013b622cb37a2709046ed364cc54b91f908e85e512ed" name="ac499ba4c97b567ee1fb72013b622cb37a2709046ed364cc54b91f908e85e512ed"></a>Declare&#160;</td><td class="fielddoc"></td></tr>
@@ -215,8 +203,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a7056ad5fce6f4e936db479113b3095e9" name="a7056ad5fce6f4e936db479113b3095e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7056ad5fce6f4e936db479113b3095e9">&#9670;&#160;</a></span>RoundStateMachine()</h2>
+<a id="aef96baabac9b403c43aebd5f92f36ce0" name="aef96baabac9b403c43aebd5f92f36ce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef96baabac9b403c43aebd5f92f36ce0">&#9670;&#160;</a></span>RoundStateMachine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -227,8 +215,22 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">Seacore.RoundStateMachine.RoundStateMachine </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_round_context.html">RoundContext</a></td>          <td class="paramname"><span class="paramname"><em>context</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_seacore_1_1_dice_roller.html">DiceRoller</a></td>          <td class="paramname"><span class="paramname"><em>diceRoller</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_seacore_1_1_dice_controller.html">DiceController</a></td>          <td class="paramname"><span class="paramname"><em>diceController</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GameObject</td>          <td class="paramname"><span class="paramname"><em>gameObjectSelectAndPickup</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -241,8 +243,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa545b45a5ed2edd3f23c6082ccfc25d4" name="aa545b45a5ed2edd3f23c6082ccfc25d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa545b45a5ed2edd3f23c6082ccfc25d4">&#9670;&#160;</a></span>ResetRound()</h2>
+<a id="a3d04d34e93b2a318057d6dea391fd456" name="a3d04d34e93b2a318057d6dea391fd456"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d04d34e93b2a318057d6dea391fd456">&#9670;&#160;</a></span>Reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -251,7 +253,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Seacore.RoundStateMachine.ResetRound </td>
+          <td class="memname">void Seacore.RoundStateMachine.Reset </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -263,148 +265,24 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Reset all Round parameters. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_seacore_1_1_round_state_machine_aa545b45a5ed2edd3f23c6082ccfc25d4_cgraph.png" border="0" usemap="#aclass_seacore_1_1_round_state_machine_aa545b45a5ed2edd3f23c6082ccfc25d4_cgraph" alt=""/></div>
-<map name="aclass_seacore_1_1_round_state_machine_aa545b45a5ed2edd3f23c6082ccfc25d4_cgraph" id="aclass_seacore_1_1_round_state_machine_aa545b45a5ed2edd3f23c6082ccfc25d4_cgraph">
-<area shape="rect" title="Reset all Round parameters." alt="" coords="5,5,201,48"/>
-<area shape="rect" href="class_seacore_1_1_roll.html#a47f041733bd942c3684a8dcfff93649c" title=" " alt="" coords="249,13,380,40"/>
-<area shape="poly" title=" " alt="" coords="201,24,233,24,233,29,201,29"/>
-<area shape="rect" href="struct_seacore_1_1_roll_result.html#a8125289fa3ff2be8aa1831176a8f79c6" title=" " alt="" coords="428,13,597,40"/>
-<area shape="poly" title=" " alt="" coords="380,24,412,24,412,29,380,29"/>
+<div class="center"><img src="class_seacore_1_1_round_state_machine_a3d04d34e93b2a318057d6dea391fd456_cgraph.png" border="0" usemap="#aclass_seacore_1_1_round_state_machine_a3d04d34e93b2a318057d6dea391fd456_cgraph" alt=""/></div>
+<map name="aclass_seacore_1_1_round_state_machine_a3d04d34e93b2a318057d6dea391fd456_cgraph" id="aclass_seacore_1_1_round_state_machine_a3d04d34e93b2a318057d6dea391fd456_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,201,56"/>
+<area shape="rect" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a1f625f208767706fbdfe23880e0534c7" title=" " alt="" coords="249,5,500,64"/>
+<area shape="poly" title=" " alt="" coords="201,32,233,32,233,37,201,37"/>
 </map>
 </div>
-
-</div>
-</div>
-<a id="a7c3f6ee2b83f4d9502e6d1879f7190ea" name="a7c3f6ee2b83f4d9502e6d1879f7190ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c3f6ee2b83f4d9502e6d1879f7190ea">&#9670;&#160;</a></span>TransitionToChapeau()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Seacore.RoundStateMachine.TransitionToChapeau </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a899f46197f55b7fd08380b08add09014" name="a899f46197f55b7fd08380b08add09014"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a899f46197f55b7fd08380b08add09014">&#9670;&#160;</a></span>TransitionToDeclare()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Seacore.RoundStateMachine.TransitionToDeclare </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 <div class="dynheader">
-Here is the call graph for this function:</div>
+Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_seacore_1_1_round_state_machine_a899f46197f55b7fd08380b08add09014_cgraph.png" border="0" usemap="#aclass_seacore_1_1_round_state_machine_a899f46197f55b7fd08380b08add09014_cgraph" alt=""/></div>
-<map name="aclass_seacore_1_1_round_state_machine_a899f46197f55b7fd08380b08add09014_cgraph" id="aclass_seacore_1_1_round_state_machine_a899f46197f55b7fd08380b08add09014_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,201,48"/>
-<area shape="rect" href="class_seacore_1_1_round_state_machine.html#aca23e416ec8e3f3c77e0feb97c877368" title=" " alt="" coords="249,5,444,48"/>
-<area shape="poly" title=" " alt="" coords="201,24,233,24,233,29,201,29"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ae3f640b50c07efda195961d1286be929" name="ae3f640b50c07efda195961d1286be929"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3f640b50c07efda195961d1286be929">&#9670;&#160;</a></span>TransitionToReceived()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Seacore.RoundStateMachine.TransitionToReceived </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_seacore_1_1_round_state_machine_ae3f640b50c07efda195961d1286be929_cgraph.png" border="0" usemap="#aclass_seacore_1_1_round_state_machine_ae3f640b50c07efda195961d1286be929_cgraph" alt=""/></div>
-<map name="aclass_seacore_1_1_round_state_machine_ae3f640b50c07efda195961d1286be929_cgraph" id="aclass_seacore_1_1_round_state_machine_ae3f640b50c07efda195961d1286be929_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,201,48"/>
-<area shape="rect" href="class_seacore_1_1_round_state_machine.html#aca23e416ec8e3f3c77e0feb97c877368" title=" " alt="" coords="249,5,444,48"/>
-<area shape="poly" title=" " alt="" coords="201,24,233,24,233,29,201,29"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a9396ffb02fa7ee328d05c3b77262af7c" name="a9396ffb02fa7ee328d05c3b77262af7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9396ffb02fa7ee328d05c3b77262af7c">&#9670;&#160;</a></span>TransitionToRollSetup()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Seacore.RoundStateMachine.TransitionToRollSetup </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_seacore_1_1_round_state_machine_a9396ffb02fa7ee328d05c3b77262af7c_cgraph.png" border="0" usemap="#aclass_seacore_1_1_round_state_machine_a9396ffb02fa7ee328d05c3b77262af7c_cgraph" alt=""/></div>
-<map name="aclass_seacore_1_1_round_state_machine_a9396ffb02fa7ee328d05c3b77262af7c_cgraph" id="aclass_seacore_1_1_round_state_machine_a9396ffb02fa7ee328d05c3b77262af7c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,201,48"/>
-<area shape="rect" href="class_seacore_1_1_round_state_machine.html#aca23e416ec8e3f3c77e0feb97c877368" title=" " alt="" coords="249,5,444,48"/>
-<area shape="poly" title=" " alt="" coords="201,24,233,24,233,29,201,29"/>
+<div class="center"><img src="class_seacore_1_1_round_state_machine_a3d04d34e93b2a318057d6dea391fd456_icgraph.png" border="0" usemap="#aclass_seacore_1_1_round_state_machine_a3d04d34e93b2a318057d6dea391fd456_icgraph" alt=""/></div>
+<map name="aclass_seacore_1_1_round_state_machine_a3d04d34e93b2a318057d6dea391fd456_icgraph" id="aclass_seacore_1_1_round_state_machine_a3d04d34e93b2a318057d6dea391fd456_icgraph">
+<area shape="rect" title=" " alt="" coords="254,5,449,48"/>
+<area shape="rect" href="class_seacore_1_1_round_manager.html#aa76c10bfb0a0845eb8ffff48bdc33775" title="Resets the state of the round, clearing or reinitializing round&#45;specific data and components...." alt="" coords="5,5,206,48"/>
+<area shape="poly" title=" " alt="" coords="238,29,206,29,206,24,238,24"/>
 </map>
 </div>
 
@@ -432,158 +310,19 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_seacore_1_1_round_state_machine_aca23e416ec8e3f3c77e0feb97c877368_icgraph.png" border="0" usemap="#aclass_seacore_1_1_round_state_machine_aca23e416ec8e3f3c77e0feb97c877368_icgraph" alt=""/></div>
-<map name="aclass_seacore_1_1_round_state_machine_aca23e416ec8e3f3c77e0feb97c877368_icgraph" id="aclass_seacore_1_1_round_state_machine_aca23e416ec8e3f3c77e0feb97c877368_icgraph">
-<area shape="rect" title=" " alt="" coords="249,72,444,115"/>
-<area shape="rect" href="class_seacore_1_1_round_state_machine.html#a899f46197f55b7fd08380b08add09014" title=" " alt="" coords="5,5,201,48"/>
-<area shape="poly" title=" " alt="" coords="251,70,183,51,184,46,252,65"/>
-<area shape="rect" href="class_seacore_1_1_round_state_machine.html#ae3f640b50c07efda195961d1286be929" title=" " alt="" coords="5,72,201,115"/>
-<area shape="poly" title=" " alt="" coords="233,96,201,96,201,91,233,91"/>
-<area shape="rect" href="class_seacore_1_1_round_state_machine.html#a9396ffb02fa7ee328d05c3b77262af7c" title=" " alt="" coords="5,139,201,181"/>
-<area shape="poly" title=" " alt="" coords="252,122,184,141,183,135,251,117"/>
-</map>
-</div>
 
-</div>
-</div>
-<h2 class="groupheader">Property Documentation</h2>
-<a id="a829c27b10d3edfe98d492c8cae5bc04a" name="a829c27b10d3edfe98d492c8cae5bc04a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a829c27b10d3edfe98d492c8cae5bc04a">&#9670;&#160;</a></span>CurrentRoll</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_seacore_1_1_roll.html">Roll</a> Seacore.RoundStateMachine.CurrentRoll</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac74c351d48506d50762d0bdc45bb2469" name="ac74c351d48506d50762d0bdc45bb2469"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac74c351d48506d50762d0bdc45bb2469">&#9670;&#160;</a></span>DeclaredRoll</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_seacore_1_1_roll.html">Roll</a> Seacore.RoundStateMachine.DeclaredRoll</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa12cb19573900177ad1d143f4e1f88fd" name="aa12cb19573900177ad1d143f4e1f88fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa12cb19573900177ad1d143f4e1f88fd">&#9670;&#160;</a></span>DiceController</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_seacore_1_1_dice_controller.html">DiceController</a> Seacore.RoundStateMachine.DiceController</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4b3ea42fda0b18c497ddf58a099bf144" name="a4b3ea42fda0b18c497ddf58a099bf144"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b3ea42fda0b18c497ddf58a099bf144">&#9670;&#160;</a></span>DiceRoller</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_seacore_1_1_dice_roller.html">DiceRoller</a> Seacore.RoundStateMachine.DiceRoller</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1abff41d57a7084537ed7f9eeefc0eb9" name="a1abff41d57a7084537ed7f9eeefc0eb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1abff41d57a7084537ed7f9eeefc0eb9">&#9670;&#160;</a></span>PhysicalRoll</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_seacore_1_1_roll.html">Roll</a> Seacore.RoundStateMachine.PhysicalRoll</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3978d37583f3818be0fe7be868e400fc" name="a3978d37583f3818be0fe7be868e400fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3978d37583f3818be0fe7be868e400fc">&#9670;&#160;</a></span>PickUpDragController</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_seacore_1_1_pickup_and_drag.html">PickupAndDrag</a> Seacore.RoundStateMachine.PickUpDragController</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Transition to the state given. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Of type <a class="el" href="class_seacore_1_1_round_state.html">RoundState</a></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Chapeau/Assets/_Project/_Scripts/Core/RoundStateMachine/<a class="el" href="_round_state_machine_8cs.html">RoundStateMachine.cs</a></li>
+<li>Chapeau/Assets/_Project/_Scripts/Core/Round/RoundStateMachine/<a class="el" href="_round_state_machine_8cs.html">RoundStateMachine.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

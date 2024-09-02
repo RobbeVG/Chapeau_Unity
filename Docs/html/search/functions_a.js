@@ -20,13 +20,14 @@ var searchData=
   ['ontap_17',['OnTap',['../interface_seacore_1_1_chapeau_input_actions_1_1_i_in_game_actions.html#a0744cfd7ab5f68c917b8e6b6ec0bf69d',1,'Seacore::ChapeauInputActions::IInGameActions']]],
   ['ontrackeddeviceorientation_18',['OnTrackedDeviceOrientation',['../interface_seacore_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#a35f2677a9edb48889b752b8078e6b259',1,'Seacore::ChapeauInputActions::IUIActions']]],
   ['ontrackeddeviceposition_19',['OnTrackedDevicePosition',['../interface_seacore_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#a451665a6b48f64eff4e3737c070d79c8',1,'Seacore::ChapeauInputActions::IUIActions']]],
-  ['operator_20inputactionmap_20',['operator InputActionMap',['../struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html#a81f4fcf0073c48fcf70336bc27c2f37a',1,'Seacore.ChapeauInputActions.InGameActions.operator InputActionMap()'],['../struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#ae7e6e27a9263734b37ae04e980d933b2',1,'Seacore.ChapeauInputActions.UIActions.operator InputActionMap()']]],
-  ['operator_21_3d_21',['operator!=',['../class_seacore_1_1_roll.html#a4519a715121ade04090b3ff68900d4cf',1,'Seacore::Roll']]],
-  ['operator_3c_22',['operator&lt;',['../class_seacore_1_1_roll.html#ac606eddb0263f7a913849b8474110851',1,'Seacore::Roll']]],
-  ['operator_3c_3d_23',['operator&lt;=',['../class_seacore_1_1_roll.html#a13d564bd945525d4106e1f6f3025b370',1,'Seacore::Roll']]],
-  ['operator_3d_3d_24',['operator==',['../class_seacore_1_1_roll.html#a4071f6b38a95143203d255d6cc6a011e',1,'Seacore::Roll']]],
-  ['operator_3e_25',['operator&gt;',['../class_seacore_1_1_roll.html#ad24173973659d0c35a705e01875da78d',1,'Seacore::Roll']]],
-  ['operator_3e_3d_26',['operator&gt;=',['../class_seacore_1_1_roll.html#a170c3ffad616a60b1364b71d92a378dc',1,'Seacore::Roll']]],
-  ['optiondata_27',['OptionData',['../class_seacore_1_1_image_dropdown_1_1_option_data.html#a069fd18b1a58450b44a62972a19d7c50',1,'Seacore.ImageDropdown.OptionData.OptionData()'],['../class_seacore_1_1_image_dropdown_1_1_option_data.html#a6e7172083c51f2b25f2341d7e91cf1de',1,'Seacore.ImageDropdown.OptionData.OptionData(Sprite image)']]],
-  ['optiondatalist_28',['OptionDataList',['../class_seacore_1_1_image_dropdown_1_1_option_data_list.html#ac15326e94f5595008584bdb63e8b726c',1,'Seacore::ImageDropdown::OptionDataList']]]
+  ['operator_20estate_20',['operator EState',['../class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html#af177293b9cbe386101933189724d7ee6',1,'Seacore::Common::Statemachine::BaseState']]],
+  ['operator_20inputactionmap_21',['operator InputActionMap',['../struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html#a81f4fcf0073c48fcf70336bc27c2f37a',1,'Seacore.ChapeauInputActions.InGameActions.operator InputActionMap()'],['../struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#ae7e6e27a9263734b37ae04e980d933b2',1,'Seacore.ChapeauInputActions.UIActions.operator InputActionMap()']]],
+  ['operator_21_3d_22',['operator!=',['../class_seacore_1_1_roll.html#a4519a715121ade04090b3ff68900d4cf',1,'Seacore::Roll']]],
+  ['operator_3c_23',['operator&lt;',['../class_seacore_1_1_roll.html#ac606eddb0263f7a913849b8474110851',1,'Seacore::Roll']]],
+  ['operator_3c_3d_24',['operator&lt;=',['../class_seacore_1_1_roll.html#a13d564bd945525d4106e1f6f3025b370',1,'Seacore::Roll']]],
+  ['operator_3d_3d_25',['operator==',['../class_seacore_1_1_roll.html#a4071f6b38a95143203d255d6cc6a011e',1,'Seacore::Roll']]],
+  ['operator_3e_26',['operator&gt;',['../class_seacore_1_1_roll.html#ad24173973659d0c35a705e01875da78d',1,'Seacore::Roll']]],
+  ['operator_3e_3d_27',['operator&gt;=',['../class_seacore_1_1_roll.html#a170c3ffad616a60b1364b71d92a378dc',1,'Seacore::Roll']]],
+  ['optiondata_28',['OptionData',['../class_seacore_1_1_image_dropdown_1_1_option_data.html#a069fd18b1a58450b44a62972a19d7c50',1,'Seacore.ImageDropdown.OptionData.OptionData()'],['../class_seacore_1_1_image_dropdown_1_1_option_data.html#a6e7172083c51f2b25f2341d7e91cf1de',1,'Seacore.ImageDropdown.OptionData.OptionData(Sprite image)']]],
+  ['optiondatalist_29',['OptionDataList',['../class_seacore_1_1_image_dropdown_1_1_option_data_list.html#ac15326e94f5595008584bdb63e8b726c',1,'Seacore::ImageDropdown::OptionDataList']]]
 ];

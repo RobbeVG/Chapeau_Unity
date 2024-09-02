@@ -1,5 +1,5 @@
 <map id="Seacore.RoundStateMachine" name="Seacore.RoundStateMachine">
-<area shape="rect" id="Node000001" title="A child statemachine that specifically is used to progress a round." alt="" coords="20,112,211,139"/>
-<area shape="rect" id="Node000002" href="$class_seacore_1_1_state_machine.html" title=" " alt="" coords="5,5,226,64"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,79,118,111,113,111,113,79"/>
+<area shape="rect" id="Node000001" title="A child statemachine that specifically is used to progress a round." alt="" coords="5,96,197,123"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html" title=" " alt="" coords="10,5,192,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,64,104,95,98,95,98,64"/>
 </map>

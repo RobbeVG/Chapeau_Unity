@@ -79,7 +79,7 @@ namespace Seacore
 
             Die die = selectedObject.GetComponent<Die>();
             if (die == null)
-                return;
+                return; 
 
             _diceController.ToggleDieForRoll(die);
         }

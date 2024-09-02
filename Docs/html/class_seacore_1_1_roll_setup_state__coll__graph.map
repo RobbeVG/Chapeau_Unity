@@ -1,5 +1,5 @@
 <map id="Seacore.RollSetupState" name="Seacore.RollSetupState">
-<area shape="rect" id="Node000001" title=" " alt="" coords="39,96,200,123"/>
-<area shape="rect" id="Node000002" href="$class_seacore_1_1_base_state.html" title=" " alt="" coords="5,5,234,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,64,122,95,117,95,117,64"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="33,96,194,123"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html" title=" " alt="" coords="5,5,222,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,64,116,95,111,95,111,64"/>
 </map>

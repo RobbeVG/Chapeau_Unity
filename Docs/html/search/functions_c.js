@@ -6,6 +6,7 @@ var searchData=
   ['setvaluewithoutnotify_3',['SetValueWithoutNotify',['../class_seacore_1_1_image_dropdown.html#a1eb109376f8e422466a013366483c655',1,'Seacore::ImageDropdown']]],
   ['show_4',['Show',['../class_seacore_1_1_image_dropdown.html#a749585924d9e985e2b499c8efb21d49b',1,'Seacore::ImageDropdown']]],
   ['sort_5',['Sort',['../class_seacore_1_1_roll.html#ad214673af3f2fd762fff1f3583c8270a',1,'Seacore::Roll']]],
-  ['start_6',['Start',['../class_seacore_1_1_image_dropdown.html#a46f08632f4c426cd727efe448a973b1a',1,'Seacore::ImageDropdown']]],
-  ['statemachine_7',['StateMachine',['../class_seacore_1_1_state_machine.html#a071b1ac4e85f431451502025021dcef6',1,'Seacore::StateMachine']]]
+  ['start_6',['Start',['../class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a079a8e962e1a01e6f2750c7d27a63301',1,'Seacore.Common.Statemachine.StateMachine.Start()'],['../class_seacore_1_1_image_dropdown.html#a46f08632f4c426cd727efe448a973b1a',1,'Seacore.ImageDropdown.Start()']]],
+  ['startnewround_7',['StartNewRound',['../class_seacore_1_1_round_manager.html#a5d82a2f7425277337d9c7e6ad43c2dfd',1,'Seacore::RoundManager']]],
+  ['statemachine_8',['StateMachine',['../class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a951d7f91b4da79d96e092bf98a195326',1,'Seacore::Common::Statemachine::StateMachine']]]
 ];

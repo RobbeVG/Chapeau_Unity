@@ -1,13 +1,19 @@
 var annotated_dup =
 [
     [ "Seacore", "namespace_seacore.html", [
+      [ "Common", "namespace_seacore_1_1_common.html", [
+        [ "Statemachine", "namespace_seacore_1_1_common_1_1_statemachine.html", [
+          [ "BaseState", "class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html", "class_seacore_1_1_common_1_1_statemachine_1_1_base_state" ],
+          [ "StateMachine", "class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html", "class_seacore_1_1_common_1_1_statemachine_1_1_state_machine" ]
+        ] ]
+      ] ],
       [ "AudioManager", "class_seacore_1_1_audio_manager.html", null ],
-      [ "BaseState", "class_seacore_1_1_base_state.html", "class_seacore_1_1_base_state" ],
       [ "ChapeauInputActions", "class_seacore_1_1_chapeau_input_actions.html", "class_seacore_1_1_chapeau_input_actions" ],
       [ "ChapeauState", "class_seacore_1_1_chapeau_state.html", "class_seacore_1_1_chapeau_state" ],
       [ "CircleController", "class_seacore_1_1_circle_controller.html", "class_seacore_1_1_circle_controller" ],
       [ "CreateFrustumCollidersWizard", "class_seacore_1_1_create_frustum_colliders_wizard.html", null ],
       [ "DeclareMenu", "class_seacore_1_1_declare_menu.html", "class_seacore_1_1_declare_menu" ],
+      [ "DeclareState", "class_seacore_1_1_declare_state.html", "class_seacore_1_1_declare_state" ],
       [ "DiceController", "class_seacore_1_1_dice_controller.html", "class_seacore_1_1_dice_controller" ],
       [ "DiceDistributionController", "class_seacore_1_1_dice_distribution_controller.html", null ],
       [ "DiceManager", "class_seacore_1_1_dice_manager.html", "class_seacore_1_1_dice_manager" ],
@@ -23,13 +29,13 @@ var annotated_dup =
       [ "PlayerInputController", "class_seacore_1_1_player_input_controller.html", null ],
       [ "ReceivedState", "class_seacore_1_1_received_state.html", "class_seacore_1_1_received_state" ],
       [ "Roll", "class_seacore_1_1_roll.html", "class_seacore_1_1_roll" ],
-      [ "RollDeclareState", "class_seacore_1_1_roll_declare_state.html", "class_seacore_1_1_roll_declare_state" ],
       [ "RollDisplay", "class_seacore_1_1_roll_display.html", null ],
       [ "RollResult", "struct_seacore_1_1_roll_result.html", "struct_seacore_1_1_roll_result" ],
       [ "RollSetupState", "class_seacore_1_1_roll_setup_state.html", "class_seacore_1_1_roll_setup_state" ],
       [ "RollUICreator", "class_seacore_1_1_roll_u_i_creator.html", null ],
+      [ "RoundManager", "class_seacore_1_1_round_manager.html", "class_seacore_1_1_round_manager" ],
+      [ "RoundState", "class_seacore_1_1_round_state.html", "class_seacore_1_1_round_state" ],
       [ "RoundStateMachine", "class_seacore_1_1_round_state_machine.html", "class_seacore_1_1_round_state_machine" ],
-      [ "StateMachine", "class_seacore_1_1_state_machine.html", "class_seacore_1_1_state_machine" ],
       [ "UIButtonManager", "class_seacore_1_1_u_i_button_manager.html", "class_seacore_1_1_u_i_button_manager" ],
       [ "UIGameController", "class_seacore_1_1_u_i_game_controller.html", "class_seacore_1_1_u_i_game_controller" ]
     ] ],
@@ -37,6 +43,7 @@ var annotated_dup =
     [ "Outline", "class_outline.html", "class_outline" ],
     [ "ReadOnlyAttribute", "class_read_only_attribute.html", null ],
     [ "ReadOnlyDrawer", "class_read_only_drawer.html", "class_read_only_drawer" ],
+    [ "RoundContext", "class_round_context.html", "class_round_context" ],
     [ "SceneManager", "class_scene_manager.html", "class_scene_manager" ],
     [ "SingletonMonobehaviour", "class_singleton_monobehaviour.html", "class_singleton_monobehaviour" ],
     [ "StaticInstanceMonoBehaviour", "class_static_instance_mono_behaviour.html", "class_static_instance_mono_behaviour" ]

@@ -1,11 +1,12 @@
 var hierarchy =
 [
-    [ "Seacore.BaseState< EState, TStateMachine >", "class_seacore_1_1_base_state.html", null ],
-    [ "Seacore.BaseState< RoundStateMachine.RoundState, RoundStateMachine >", "class_seacore_1_1_base_state.html", [
+    [ "Seacore.Common.Statemachine.BaseState< EState >", "class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html", null ],
+    [ "Seacore.Common.Statemachine.BaseState< RoundStateMachine.RoundState >", "class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html", [
       [ "Seacore.ChapeauState", "class_seacore_1_1_chapeau_state.html", null ],
+      [ "Seacore.DeclareState", "class_seacore_1_1_declare_state.html", null ],
       [ "Seacore.ReceivedState", "class_seacore_1_1_received_state.html", null ],
-      [ "Seacore.RollDeclareState", "class_seacore_1_1_roll_declare_state.html", null ],
-      [ "Seacore.RollSetupState", "class_seacore_1_1_roll_setup_state.html", null ]
+      [ "Seacore.RollSetupState", "class_seacore_1_1_roll_setup_state.html", null ],
+      [ "Seacore.RoundState", "class_seacore_1_1_round_state.html", null ]
     ] ],
     [ "Seacore.DieInfo", "class_seacore_1_1_die_info.html", null ],
     [ "Editor", null, [
@@ -45,7 +46,7 @@ var hierarchy =
       [ "Seacore.PlayerInputController", "class_seacore_1_1_player_input_controller.html", null ],
       [ "Seacore.RollDisplay", "class_seacore_1_1_roll_display.html", null ],
       [ "Seacore.RollUICreator", "class_seacore_1_1_roll_u_i_creator.html", null ],
-      [ "Seacore.StateMachine< EState, TStateMachine >", "class_seacore_1_1_state_machine.html", null ],
+      [ "Seacore.RoundManager", "class_seacore_1_1_round_manager.html", null ],
       [ "Seacore.UIGameController", "class_seacore_1_1_u_i_game_controller.html", null ],
       [ "StaticInstanceMonoBehaviour< T >", "class_static_instance_mono_behaviour.html", [
         [ "SingletonMonobehaviour< T >", "class_singleton_monobehaviour.html", null ]
@@ -61,6 +62,7 @@ var hierarchy =
       [ "ReadOnlyDrawer", "class_read_only_drawer.html", null ]
     ] ],
     [ "Seacore.RollResult", "struct_seacore_1_1_roll_result.html", null ],
+    [ "RoundContext", "class_round_context.html", null ],
     [ "ScriptableObject", null, [
       [ "Seacore.Roll", "class_seacore_1_1_roll.html", null ]
     ] ],
@@ -76,7 +78,8 @@ var hierarchy =
     [ "SingletonMonobehaviour< AudioManager >", "class_singleton_monobehaviour.html", [
       [ "Seacore.AudioManager", "class_seacore_1_1_audio_manager.html", null ]
     ] ],
-    [ "Seacore.StateMachine< RoundStateMachine.RoundState, RoundStateMachine >", "class_seacore_1_1_state_machine.html", [
+    [ "Seacore.Common.Statemachine.StateMachine< EState >", "class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html", null ],
+    [ "Seacore.Common.Statemachine.StateMachine< RoundStateMachine.RoundState >", "class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html", [
       [ "Seacore.RoundStateMachine", "class_seacore_1_1_round_state_machine.html", null ]
     ] ],
     [ "Seacore.ChapeauInputActions.UIActions", "struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html", null ],
