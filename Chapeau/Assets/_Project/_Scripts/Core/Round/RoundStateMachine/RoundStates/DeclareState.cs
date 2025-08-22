@@ -1,18 +1,18 @@
 using UnityEngine;
 using Seacore.Common.Statemachine;
 
-namespace Seacore
+namespace Seacore.Game.RoundStates
 {
     public class DeclareState : BaseState<RoundStateMachine.RoundState>
     {
         private readonly Roll _physicalRoll;
-        private readonly DiceRoller _diceRoller;
+        private readonly DiceController _diceController;
 
-        public DeclareState(RoundContext context, DiceRoller diceRoller) 
+        public DeclareState(RoundContext context, DiceController diceRoller) 
             : base(RoundStateMachine.RoundState.Declare) 
         {
             _physicalRoll = context.PhysicalRoll;
-            _diceRoller = diceRoller;
+            _diceController = diceRoller;
         }
         // Create listener to alert other players if he looked
 
@@ -21,7 +21,7 @@ namespace Seacore
             //Remove previous onClick events if there
             //stateMachine.AddListenerToUIButton(UIGameController.ButtonTypes.DeclareConfirm, stateMachine.TransitionToReceived);
 
-            _diceRoller.RollDice(); //_diceController.HideInsideDiceImmediatly(); //Happens automatically when die is rolled inside!
+            _diceController.RollDice(); //_diceController.HideInsideDiceImmediatly(); //Happens automatically when die is rolled inside!
             _physicalRoll.CalculateResult();
 
             //Debug.Log(stateMachine.PhysicalRoll.ToString());

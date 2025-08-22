@@ -1,6 +1,7 @@
+using Seacore.Common;
 using UnityEngine;
 
-namespace Seacore
+namespace Seacore.Game
 {
     /// <summary>
     /// Manages the logic and coordination of a round in the game.
@@ -13,12 +14,9 @@ namespace Seacore
         private RoundStateMachine _stateMachine;
 
         [SerializeField]
-        private DiceRoller _diceRoller = null;
-        [SerializeField]
         private DiceController _diceController = null;
-        [SerializeField]
-        private GameObject _selectAndPickupGameObject = null;
 
+        public RoundStateMachine.RoundState CurrentState => _stateMachine.CurrentStateKey;
         public RoundStateMachine RoundStateMachine { get { return _stateMachine; } }
         public RoundContext Context { get { return _context; } }
 
@@ -32,7 +30,7 @@ namespace Seacore
                 Resources.Load<Roll>("Rolls/PhysicalRoll")
             );
 
-            _stateMachine = new RoundStateMachine(_context, _diceRoller, _diceController, _selectAndPickupGameObject);
+            _stateMachine = new RoundStateMachine(_context, _diceController);
         }
 
         /// <summary>
@@ -47,12 +45,17 @@ namespace Seacore
 
         private void OnEnable()
         {
-            _diceRoller.OnDiceRolled += _context.IncrementAmountRolled;
+            _diceController.OnAllDiceRolled += _context.IncrementAmountRolled;
         }
 
         private void OnDisable()
         {
-            _diceRoller.OnDiceRolled -= _context.IncrementAmountRolled;
+            _diceController.OnAllDiceRolled -= _context.IncrementAmountRolled;
+        }
+
+        private void OnDestroy()
+        {
+            _context.Clear();
         }
 
         /// <summary>

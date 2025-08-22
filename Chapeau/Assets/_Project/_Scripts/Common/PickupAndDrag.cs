@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Seacore
+namespace Seacore.Common
 {
     /// <summary>
     /// A component script that allows the user to pick up objects and drag them around on the screen.
@@ -12,12 +12,9 @@ namespace Seacore
     /// </remarks>
     public class PickupAndDrag : MonoBehaviour
     {
-        private GameObject _selectedObject;
+        public GameObject SelectedObject { get; private set; }
         private Vector3 _offset;
         private float _originalHeightvalue;
-
-        public event Action<GameObject> ObjectPickedUp;
-        public event Action<GameObject> ObjectDropped;
 
         [SerializeField]
         private float _snapSpeed = 10f; // Speed at which the object will snap to the mouse position
@@ -38,11 +35,10 @@ namespace Seacore
         /// <param name="gameObject"></param>
         public void HandlePickup(GameObject gameObject)
         {            
-            _selectedObject = gameObject;
-            _originalHeightvalue = _selectedObject.transform.position.y;
-            _offset = _selectedObject.transform.position - GetMouseWorldPosition();
+            SelectedObject = gameObject;
+            _originalHeightvalue = SelectedObject.transform.position.y;
+            _offset = SelectedObject.transform.position - GetMouseWorldPosition();
             _offset.y += _pickupHeightOffset;
-            ObjectPickedUp?.Invoke(_selectedObject);
         }
 
         /// <summary>
@@ -50,24 +46,25 @@ namespace Seacore
         /// </summary>
         public void HandleDrag()
         {
-            if (_selectedObject != null)
+            if (SelectedObject != null)
             {
                 Vector3 targetPosition = GetMouseWorldPosition() + _offset;
-                _selectedObject.transform.position = Vector3.Lerp(_selectedObject.transform.position, targetPosition, _snapSpeed * Time.fixedDeltaTime);
+                SelectedObject.transform.position = Vector3.Lerp(SelectedObject.transform.position, targetPosition, _snapSpeed * Time.fixedDeltaTime);
             }
         }
 
         /// <summary>
         /// Drops the selected object to the ground
         /// </summary>
-        public void HandleDrop()
+        public GameObject HandleDrop()
         {
-            if (_selectedObject != null)
+            GameObject droppedGameObject = SelectedObject;
+            if (SelectedObject != null)
             {
-                ObjectDropped?.Invoke(_selectedObject);
-                StartCoroutine(DropObjectToHeight(_selectedObject));
-                _selectedObject = null;
+                StartCoroutine(DropObjectToHeight(SelectedObject));
+                SelectedObject = null;
             }
+            return droppedGameObject;
         }
 
         /// <summary>

@@ -1,7 +1,6 @@
 using Seacore.Common.Statemachine;
 
-
-namespace Seacore
+namespace Seacore.Game.RoundStates
 {
     public class ChapeauState : BaseState<RoundStateMachine.RoundState>
     {

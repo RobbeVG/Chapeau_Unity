@@ -1,9 +1,13 @@
-using System.Collections;
-using UnityEngine;
 using DG.Tweening;
+using Seacore.Common;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.Assertions;
 
-namespace Seacore
+namespace Seacore.Game
 {
     /// <summary>
     /// Controls the behaviour of the dice.
@@ -12,70 +16,56 @@ namespace Seacore
     [RequireComponent(typeof(DiceManager))]
     public class DiceController : MonoBehaviour
     {
-        [Header("Settings for dice outline")]
-        [SerializeField]
-        private Color _toRollColor = Color.cyan;
-
-        [SerializeField]
-        private Color _toSelectOutline = Color.white;
-
-        [SerializeField, MinMaxSlider(1.0f, 10.0f)]
-        private Vector2 _OutlineOscillatingWidthValues = new Vector2(2.0f, 4.0f);
-
-        [SerializeField, Range(1.0f, 20.0f), Tooltip("The frequency of the breathing effect per second")]
-        private float _breathingFrequency = 1.0f;
-
-        [SerializeField, Min(float.MinValue)]
-        public float _durationRevealDice;
-
-        [Header("References")]
-        [SerializeField]
-        private ObjectSelector _objectSelector;
-
-        [SerializeField]
-        private PickupAndDrag _pickupDragController;
-
         [SerializeField]
         private CircleController _circleController;
 
         [SerializeField]
-        private Material _fadeMaterialDice;
-
-        //No instance has to be created of the dice's material
-        readonly int _fadeMaterialDiceTransitionID = Shader.PropertyToID("_Transition"); 
+        private DieVisualHandler _dieVisualHandler = null;
 
         private DiceManager _diceManager;
-        private Tweener _oscillationTween;
-
+        private Roll _physicalRoll;
+        public event Action OnAllDiceRolled;
 
         private void Awake()
         {
-            if (_pickupDragController == null)
-                Debug.LogError("No pickup Controller attached");
             if (_circleController == null)
                 Debug.LogError("No circle Controller attached");
 
             _diceManager = GetComponent<DiceManager>();
+            _physicalRoll = Resources.Load<Roll>("Rolls/PhysicalRoll");
+
         }
 
         private void OnEnable()
         {
-            _pickupDragController.ObjectDropped += OnDieDrop;
+            PlayerInputManager IM = PlayerInputManager.Instance;
+            IM.OnDieHoldEnter += HandleDieSelecting;
+            IM.OnDieHoldExit += HandleDieDeselecting;
+            IM.OnDieHoldExit += HandleDieDrop;
+            IM.OnDieTapped += HandleDieTappedForRoll;
+            IM.OnDieHoverEnter += HandleDieSelecting;
+            IM.OnDieHoverExit += HandleDieDeselecting;
+            
 
-            _objectSelector.OnHover += OnDieHover;
-            _objectSelector.OnExit += OnDieExit;
             foreach (Die die in _diceManager.Dice) //Werkt niet want sommige dice moeten nog worden ingesteld
             {
                 die.OnRolledValue += OnDieRolled;
             }
+
         }
 
         private void OnDisable()
         {
-            _pickupDragController.ObjectDropped -= OnDieDrop;
-
-            _objectSelector.OnHover -= OnDieHover;
-            _objectSelector.OnExit -= OnDieExit;
+            PlayerInputManager IM = PlayerInputManager.Instance;
+            if (IM)
+            {
+                IM.OnDieHoldEnter -= HandleDieSelecting;
+                IM.OnDieHoldExit -= HandleDieDrop;
+                IM.OnDieHoldExit -= HandleDieDeselecting;
+                IM.OnDieTapped -= HandleDieTappedForRoll;
+                IM.OnDieHoverEnter -= HandleDieSelecting;
+                IM.OnDieHoverExit -= HandleDieDeselecting;
+            }
 
             foreach (Die die in _diceManager.Dice)
             {
@@ -83,87 +73,26 @@ namespace Seacore
             }
         }
 
-        private void Start()
+        public void RollDice()
         {
-            foreach (Die die in _diceManager.Dice)
+            Assert.IsNotNull(_diceManager, "DiceManager is not set in the DiceController while required.");
+
+            //Roll the dice that are in the ToRoll state
+            foreach (KeyValuePair<Die, DieInfo> dieInfoPair in _diceManager.DiceContainers)
             {
-                DieInfo dieInfo = _diceManager.DiceContainers[die];
-                dieInfo.MeshRenderer.material = _fadeMaterialDice;
+                Die die = dieInfoPair.Key;
+                DieInfo info = dieInfoPair.Value;
+
+                if (info.State.HasFlag(DieState.ToRoll))
+                {
+                    die.Roll();
+                    _physicalRoll.ChangeValue(info.Index, die.DieValue);
+
+                    info.State &= ~DieState.ToRoll; // Get rid of To Roll flag
+                }
             }
-
-            DOTween.Init();
+            OnAllDiceRolled?.Invoke();
         }
-
-
-        //OUTLINE
-        private void OnDieHover(GameObject dieGameObject)
-        {
-            Die die = dieGameObject.GetComponent<Die>();
-
-            Outline outline = _diceManager.DiceContainers[die].Outline;
-            outline.enabled = true;
-
-            _oscillationTween = DOVirtual.Float(_OutlineOscillatingWidthValues.x, _OutlineOscillatingWidthValues.y, 1.0f / _breathingFrequency, value =>
-            {
-                outline.OutlineWidth = value;
-            }).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine).Play();
-        }
-        //OUTLINE
-        private void OnDieExit(GameObject dieGameObject)
-        {
-            Die die = dieGameObject.GetComponent<Die>();
-            DieInfo info = _diceManager.DiceContainers[die];
-
-            if (!info.State.HasFlag(DieState.ToRoll))
-            {
-                Outline outline = _diceManager.DiceContainers[die].Outline;
-                outline.enabled = false;
-            }
-
-            _oscillationTween.Kill(true);
-            _oscillationTween = null;   
-        }
-
-        //LOGIC + HIDE
-        private void OnDieRolled(Die die)
-        {
-            die.Rigidbody.isKinematic = true;
-            HideInsideDieImmediatly(_diceManager.DiceContainers[die]);
-        }
-
-        //Logic
-        private void OnDieDrop(GameObject objectDie)
-        {
-            Die die = objectDie.GetComponent<Die>();
-            //die.Rigidbody.isKinematic = true;
-
-            if (_circleController.IsPositionInCircle(objectDie.transform.position))
-            {
-                _diceManager.DiceContainers[die].State |= DieState.Inside;
-            }
-            else
-            {
-                _diceManager.DiceContainers[die].State &= ~DieState.Inside;
-            }
-        }
-
-        //LOGIC + OUTLINE
-        public void ToggleDieForRoll(Die die)
-        {
-            DieInfo dieInfo = _diceManager.DiceContainers[die];
-
-            dieInfo.State ^= DieState.ToRoll; //Flip bit
-            if (dieInfo.State.HasFlag(DieState.ToRoll))
-            {
-                dieInfo.Outline.OutlineColor = _toRollColor;
-            }
-            else
-            {
-                dieInfo.Outline.OutlineColor = _toSelectOutline;
-            }
-        }
-
-        //Revealing the Dice
         public void RevealDice()
         {
             foreach (Die die in _diceManager.Dice)
@@ -171,43 +100,103 @@ namespace Seacore
                 DieInfo dieInfo = _diceManager.DiceContainers[die];
                 if (!dieInfo.State.HasFlag(DieState.Visible))
                 {
-                    DOVirtual.Float(1.0f, 0.0f, _durationRevealDice, value =>
-                    {
-                        UpdateMeshRendererPropertyBlock(dieInfo.MaterialPropertyBlock, dieInfo.MeshRenderer, value);
-
-                    }).SetEase(Ease.InOutQuad);
-
                     dieInfo.State |= DieState.Visible;
+                    _dieVisualHandler.RevealDie(dieInfo);
                 }
             }
         }
-
-        public void HideInsideDiceImmediatly()
-        {
+        public void HideAllDie() 
+        { 
             foreach (Die die in _diceManager.Dice)
-            {
-                HideInsideDieImmediatly(_diceManager.DiceContainers[die]);
-            }
+                HideDie(die);
         }
-        private void HideInsideDieImmediatly(DieInfo dieInfo)
+        public void HideDie(Die die)
         {
+            DieInfo dieInfo = _diceManager.DiceContainers[die];
             if (dieInfo.State.HasFlag(DieState.Inside))
             {
-                UpdateMeshRendererPropertyBlock(dieInfo, 1.0f);
                 dieInfo.State &= ~DieState.Visible;
+                _dieVisualHandler.HideDieImmediatly(dieInfo);
             }
         }
 
-        private void UpdateMeshRendererPropertyBlock(DieInfo dieInfo, float value) 
+        //Event handlers
+        private void OnDieRolled(Die die)
         {
-            MaterialPropertyBlock currentBlock = dieInfo.MaterialPropertyBlock;
-            MeshRenderer meshRenderer = dieInfo.MeshRenderer;
-            UpdateMeshRendererPropertyBlock(currentBlock, meshRenderer, value);
+            die.Rigidbody.isKinematic = true;
+            HideDie(die);
         }
-        private void UpdateMeshRendererPropertyBlock(MaterialPropertyBlock materialPropertyBlock, MeshRenderer meshRenderer, float value)
+        private void HandleDieDrop(Die die)
         {
-            materialPropertyBlock.SetFloat(_fadeMaterialDiceTransitionID, value);
-            meshRenderer.SetPropertyBlock(materialPropertyBlock);
+            DieInfo info = _diceManager.DiceContainers[die];
+            
+            // When a die is dropped, we check if it is inside the circle and update its state accordingly
+            DieState originalState = info.State;
+            (Die[] inside, Die[] outside) = _diceManager.SplitDiceInfoBy(DieState.Inside);
+            bool insideRollActive = inside.All(insideDie => _diceManager.DiceContainers[insideDie].State.HasFlag(DieState.ToRoll));
+            bool inCircle = _circleController.IsPositionInCircle(die.transform.position);
+
+            if (originalState.HasFlag(DieState.Inside) == inCircle)
+                return; // No state change, exit early
+
+            if (inCircle)
+            {
+                info.State |= DieState.Inside;
+                if (originalState.HasFlag(DieState.ToRoll) != insideRollActive)
+                    info.State ^= DieState.ToRoll; // If the die was toggled to roll, we toggle it off when it is dropped inside the circle and it came from outside
+            }
+            else
+            {
+                info.State &= ~DieState.Inside;
+                if (originalState.HasFlag(DieState.ToRoll))
+                    info.State ^= DieState.ToRoll; // If the die was toggled to roll, we toggle it off when it is dropped outside the circle and it came from inside
+            }
+        }
+        private void HandleDieTappedForRoll(Die die)
+        {
+            (Die[] inside, Die[] outside) = _diceManager.SplitDiceInfoBy(DieState.Inside);
+            DieInfo selectedDieInfo = _diceManager.DiceContainers[die];
+
+            // Set dice to roll state depending if the die is inside or outside the circle
+
+            // If the die is inside, we toggle all inside dice to the toggled selectedDie and detoggle the outside dice
+            if (selectedDieInfo.State.HasFlag(DieState.Inside))
+            {
+                // Toggle all inside dice to the selected die's toggled state
+                DieState selectedDieToggledRollState = (selectedDieInfo.State & ~DieState.Selecting) ^ DieState.ToRoll;
+                foreach (Die d in inside)
+                {
+                    DieInfo info = _diceManager.DiceContainers[d];
+                    
+                    info.State = selectedDieToggledRollState; // Set the state to the selected die's state
+                }
+                // Detoggle outside dice
+                foreach (Die d in outside)
+                {
+                    DieInfo info = _diceManager.DiceContainers[d];
+                    info.State &= ~DieState.ToRoll; // Remove ToRoll flag
+                }
+            }
+            // If the die is outside, we toggle only the selected die and detoggle the inside dice
+            else
+            {
+                // Toggle the selected die to the toggled state
+                selectedDieInfo.State ^= DieState.ToRoll; // Flip the ToRoll bit
+                // Detoggle all inside dice
+                foreach (Die d in inside)
+                {
+                    DieInfo info = _diceManager.DiceContainers[d];
+                    info.State &= ~DieState.ToRoll; // Remove ToRoll flag
+                }
+            }
+        }
+        private void HandleDieSelecting(Die die)
+        {
+            _diceManager.DiceContainers[die].State |= DieState.Selecting;
+        }
+        private void HandleDieDeselecting(Die die)
+        {
+            _diceManager.DiceContainers[die].State &= ~DieState.Selecting;
         }
     }
 }

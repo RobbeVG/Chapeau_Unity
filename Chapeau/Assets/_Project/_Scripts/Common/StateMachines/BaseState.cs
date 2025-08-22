@@ -1,16 +1,19 @@
-using System.Collections;
-using UnityEngine.Assertions;
 using System;
-
 namespace Seacore.Common.Statemachine
-{    
+{
     /// <summary>
     /// Represents the base class for a state in a state machine.
     /// </summary>
     /// <typeparam name="EState">The enumeration representing the states.</typeparam>
     /// <typeparam name="TStateMachine">The type of the state machine this state belongs to.</typeparam>
+    [Serializable]
     public abstract class BaseState<EState> where EState : Enum
     {
+        /// <summary>
+        /// Gets the key representing this state.
+        /// </summary>
+        public EState StateKey { get; protected set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseState{EState, TStateMachine}"/> class with the specified state key.
         /// </summary>
@@ -20,12 +23,11 @@ namespace Seacore.Common.Statemachine
             StateKey = key;
         }
 
-        public static explicit operator EState(BaseState<EState> state) => state.StateKey;
-
         /// <summary>
-        /// Gets the key representing this state.
+        /// Converts a <see cref="BaseState{T}"/> instance to its corresponding <see cref="EState"/> value.
         /// </summary>
-        public EState StateKey { get; private set; }
+        /// <param name="state">The <see cref="BaseState{EState}"/> instance to convert. Must not be <c>null</c>.</param>
+        public static explicit operator EState(BaseState<EState> state) => state.StateKey;
 
         /// <summary>
         /// Called when the state is entered.

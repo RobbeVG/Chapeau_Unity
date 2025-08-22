@@ -1,6 +1,6 @@
 {
     "name": "Common",
-    "rootNamespace": "",
+    "rootNamespace": "Seacore.Common",
     "references": [
         "GUID:09318e10af0a9fe4dbedd5dcf48d9d96",
         "GUID:75469ad4d38634e559750d17036d5f7c"

@@ -1,8 +1,6 @@
 using Seacore;
 using UnityEngine;
 
-
-
 public class RoundContext
 {
     public Roll CurrentRoll { get; }

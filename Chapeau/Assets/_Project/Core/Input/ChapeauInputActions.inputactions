@@ -6,6 +6,15 @@
             "id": "b6c2b162-ea26-40a8-b80b-9d9a173fabcc",
             "actions": [
                 {
+                    "name": "Point",
+                    "type": "PassThrough",
+                    "id": "359c32ed-fef6-4f15-b213-3d2d0ce762ba",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Tap",
                     "type": "Button",
                     "id": "cc3ed79a-ca73-4c62-b38e-3fe45c3d9cc0",
@@ -22,15 +31,6 @@
                     "processors": "",
                     "interactions": "Hold(duration=0.1)",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Location",
-                    "type": "Value",
-                    "id": "359c32ed-fef6-4f15-b213-3d2d0ce762ba",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -85,7 +85,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Pointer",
-                    "action": "Location",
+                    "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

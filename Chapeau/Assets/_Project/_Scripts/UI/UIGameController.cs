@@ -1,8 +1,10 @@
 using System;
+using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Seacore
+namespace Seacore.Game
 {
     [RequireComponent(typeof(UIButtonManager<ButtonTypes>))]
     public class UIGameController : MonoBehaviour
@@ -28,8 +30,10 @@ namespace Seacore
         [SerializeField]
         private DiceController _diceController = null;
 
+        [SerializeField]
+        private DiceManager _diceManager = null;
 
-        private RoundStateMachine _roundSM = null;
+        private RoundStateMachine _roundSM;
         private RoundContext _roundContext = null;
 
         private void Awake()
@@ -41,8 +45,10 @@ namespace Seacore
 
         private void Start()
         {
+            Debug.Log("Start");
+
             DisableAll();
-            OnRoundStateEnter(_roundSM.CurrentStateKey);
+            OnRoundStateEnter(roundManager.CurrentState);
             SetDeclareConfirmButtonInteractable();
         }
 
@@ -56,9 +62,16 @@ namespace Seacore
         {
             _roundSM.OnStateEnter += OnRoundStateEnter;
             _roundSM.OnStateExit += OnRoundStateExit;
+            
+            StartCoroutine(SetInputEvents());
+            IEnumerator SetInputEvents()
+            {
+                yield return new WaitUntil(() => PlayerInputManager.Instance != null);
+                PlayerInputManager.Instance.OnDieTapped += SetRollButtonInteractable;
+                PlayerInputManager.Instance.OnDieHoldExit += SetRollButtonInteractable;
+            }
 
             buttonManager[ButtonTypes.Reveal].onClick.AddListener(OnRevealButtonClick);
-
             buttonManager[ButtonTypes.DeclareConfirm].onClick.AddListener(ToStateReceived); 
             buttonManager[ButtonTypes.Roll].onClick.AddListener(ToStateDeclare);
 
@@ -69,6 +82,13 @@ namespace Seacore
         {
             _roundSM.OnStateEnter -= OnRoundStateEnter;
             _roundSM.OnStateExit -= OnRoundStateExit;
+            PlayerInputManager IM = PlayerInputManager.Instance;
+            if (IM)
+            {
+                IM.OnDieTapped -= SetRollButtonInteractable;
+                IM.OnDieHoldExit -= SetRollButtonInteractable;
+            }
+
 
             buttonManager[ButtonTypes.Reveal].onClick.RemoveListener(OnRevealButtonClick);
 
@@ -133,6 +153,11 @@ namespace Seacore
         {
             _diceController.RevealDice();
             buttonManager[ButtonTypes.Reveal].gameObject.SetActive(false);
+            if (roundManager.CurrentState.HasFlag(RoundStateMachine.RoundState.Received))
+            {
+                buttonManager[ButtonTypes.Roll].gameObject.SetActive(true); 
+                buttonManager[ButtonTypes.Roll].interactable = false; 
+            }
         }
 
         private void ToStateRollSetup()
@@ -142,10 +167,16 @@ namespace Seacore
         private void ToStateReceived()
         {
             _roundSM.TransitionToState(RoundStateMachine.RoundState.Received);
+            buttonManager[ButtonTypes.Roll].gameObject.SetActive(false); 
         }
         private void ToStateDeclare()
         {
             _roundSM.TransitionToState(RoundStateMachine.RoundState.Declare);
+        }
+
+        private void SetRollButtonInteractable(Die _)
+        {
+            buttonManager[ButtonTypes.Roll].interactable = _diceManager.DiceContainers.Values.Any(info => info.State.HasFlag(DieState.ToRoll));
         }
 
         private void SetDeclareConfirmButtonInteractable()

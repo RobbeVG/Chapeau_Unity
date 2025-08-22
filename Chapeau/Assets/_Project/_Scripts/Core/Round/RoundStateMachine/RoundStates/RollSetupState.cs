@@ -1,25 +1,24 @@
+using Seacore.Common;
 using Seacore.Common.Statemachine;
 using UnityEngine;
 
-namespace Seacore
+namespace Seacore.Game.RoundStates
 {
     public sealed class RollSetupState : BaseState<RoundStateMachine.RoundState>
     {
-        GameObject _selectAndPickup = null;
-
-        public RollSetupState(GameObject gameObjectSelectAndPickup) : base(RoundStateMachine.RoundState.RollSetup) 
-        {
-            _selectAndPickup = gameObjectSelectAndPickup;
-        }
+        public RollSetupState() : base(RoundStateMachine.RoundState.RollSetup) 
+        {}
 
         public override void EnterState() 
         {
-            _selectAndPickup.SetActive(true);
+            PlayerInputManager.Instance.Pointing = true;
+            PlayerInputManager.Instance.Grabbing = true;
         }
 
         public override void ExitState() 
         {
-            _selectAndPickup.SetActive(false);
+            PlayerInputManager.Instance.Pointing = false;
+            PlayerInputManager.Instance.Grabbing = false;  
         }
 
         //TODO Decide if it stays or it goes

@@ -10,7 +10,7 @@ namespace Seacore
     /// Calculates the density and adjusts the position of dice objects within a defined area, considering border constraints, proximity to other dice, and a central circle.
     /// </summary>
     [RequireComponent(typeof(DiceManager))]
-    public class DiceDistributionController : MonoBehaviour
+    public class DiceDistribution : MonoBehaviour
     {
         [Header("Steering Variables")]
         [SerializeField] private CircleController circle;

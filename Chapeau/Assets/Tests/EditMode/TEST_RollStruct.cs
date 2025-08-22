@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-public class RollTest
+public class Test_RollStruct
 {
     static IEnumerable<IEnumerable<T>>
         GetKCombsWithRept<T>(IEnumerable<T> list, int length) where T : IComparable

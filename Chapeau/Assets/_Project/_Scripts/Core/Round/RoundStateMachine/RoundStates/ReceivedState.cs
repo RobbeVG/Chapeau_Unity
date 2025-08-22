@@ -1,6 +1,8 @@
 using Seacore.Common.Statemachine;
+using Seacore.Game.RoundStates;
+using UnityEngine;
 
-namespace Seacore
+namespace Seacore.Game
 {
     public class ReceivedState : BaseState<RoundStateMachine.RoundState>
     {
@@ -17,7 +19,7 @@ namespace Seacore
         public override void EnterState()
         {
             _roundContext.CurrentRoll.ChangeValueTo(_roundContext.DeclaredRoll);
-            _diceController.HideInsideDiceImmediatly();
+            _diceController.HideAllDie();
         }
 
         public override void ExitState() {}

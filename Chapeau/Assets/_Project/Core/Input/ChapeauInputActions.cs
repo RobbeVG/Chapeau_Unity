@@ -30,6 +30,15 @@ namespace Seacore
             ""id"": ""b6c2b162-ea26-40a8-b80b-9d9a173fabcc"",
             ""actions"": [
                 {
+                    ""name"": ""Point"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""359c32ed-fef6-4f15-b213-3d2d0ce762ba"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""Tap"",
                     ""type"": ""Button"",
                     ""id"": ""cc3ed79a-ca73-4c62-b38e-3fe45c3d9cc0"",
@@ -46,15 +55,6 @@ namespace Seacore
                     ""processors"": """",
                     ""interactions"": ""Hold(duration=0.1)"",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Location"",
-                    ""type"": ""Value"",
-                    ""id"": ""359c32ed-fef6-4f15-b213-3d2d0ce762ba"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -109,7 +109,7 @@ namespace Seacore
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Pointer"",
-                    ""action"": ""Location"",
+                    ""action"": ""Point"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -582,9 +582,9 @@ namespace Seacore
 }");
             // In-Game
             m_InGame = asset.FindActionMap("In-Game", throwIfNotFound: true);
+            m_InGame_Point = m_InGame.FindAction("Point", throwIfNotFound: true);
             m_InGame_Tap = m_InGame.FindAction("Tap", throwIfNotFound: true);
             m_InGame_Hold = m_InGame.FindAction("Hold", throwIfNotFound: true);
-            m_InGame_Location = m_InGame.FindAction("Location", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -658,16 +658,16 @@ namespace Seacore
         // In-Game
         private readonly InputActionMap m_InGame;
         private List<IInGameActions> m_InGameActionsCallbackInterfaces = new List<IInGameActions>();
+        private readonly InputAction m_InGame_Point;
         private readonly InputAction m_InGame_Tap;
         private readonly InputAction m_InGame_Hold;
-        private readonly InputAction m_InGame_Location;
         public struct InGameActions
         {
             private @ChapeauInputActions m_Wrapper;
             public InGameActions(@ChapeauInputActions wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Point => m_Wrapper.m_InGame_Point;
             public InputAction @Tap => m_Wrapper.m_InGame_Tap;
             public InputAction @Hold => m_Wrapper.m_InGame_Hold;
-            public InputAction @Location => m_Wrapper.m_InGame_Location;
             public InputActionMap Get() { return m_Wrapper.m_InGame; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -677,28 +677,28 @@ namespace Seacore
             {
                 if (instance == null || m_Wrapper.m_InGameActionsCallbackInterfaces.Contains(instance)) return;
                 m_Wrapper.m_InGameActionsCallbackInterfaces.Add(instance);
+                @Point.started += instance.OnPoint;
+                @Point.performed += instance.OnPoint;
+                @Point.canceled += instance.OnPoint;
                 @Tap.started += instance.OnTap;
                 @Tap.performed += instance.OnTap;
                 @Tap.canceled += instance.OnTap;
                 @Hold.started += instance.OnHold;
                 @Hold.performed += instance.OnHold;
                 @Hold.canceled += instance.OnHold;
-                @Location.started += instance.OnLocation;
-                @Location.performed += instance.OnLocation;
-                @Location.canceled += instance.OnLocation;
             }
 
             private void UnregisterCallbacks(IInGameActions instance)
             {
+                @Point.started -= instance.OnPoint;
+                @Point.performed -= instance.OnPoint;
+                @Point.canceled -= instance.OnPoint;
                 @Tap.started -= instance.OnTap;
                 @Tap.performed -= instance.OnTap;
                 @Tap.canceled -= instance.OnTap;
                 @Hold.started -= instance.OnHold;
                 @Hold.performed -= instance.OnHold;
                 @Hold.canceled -= instance.OnHold;
-                @Location.started -= instance.OnLocation;
-                @Location.performed -= instance.OnLocation;
-                @Location.canceled -= instance.OnLocation;
             }
 
             public void RemoveCallbacks(IInGameActions instance)
@@ -854,9 +854,9 @@ namespace Seacore
         }
         public interface IInGameActions
         {
+            void OnPoint(InputAction.CallbackContext context);
             void OnTap(InputAction.CallbackContext context);
             void OnHold(InputAction.CallbackContext context);
-            void OnLocation(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

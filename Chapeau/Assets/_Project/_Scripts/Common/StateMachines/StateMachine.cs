@@ -10,10 +10,14 @@ namespace Seacore.Common.Statemachine
     /// </summary>
     /// <typeparam name="EState">An enum typed state key A</typeparam>
     /// <typeparam name="TStateMachine">The Derived statemachine name to ensure methods access derived state</typeparam>
+    
+    [Serializable]
     public abstract class StateMachine<EState> where EState : Enum
     {
         private Dictionary<EState, BaseState<EState>> _states;
+        [field: SerializeField, ReadOnly]
         protected bool _isTransitioningState = false;
+
         protected BaseState<EState> _currentState;
 
         public EState CurrentStateKey { get => _currentState.StateKey; }
@@ -47,7 +51,7 @@ namespace Seacore.Common.Statemachine
             }
         }
 
-        protected void TransitionToState(EState stateKey)
+        public void TransitionToState(EState stateKey)
         {
             _isTransitioningState = true;
             {

@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Seacore.Common.Statemachine;
+using Seacore.Game.RoundStates;
+using Seacore.Common;
 
-namespace Seacore
+namespace Seacore.Game
 {
     /// <summary>
     /// A child statemachine that specifically is used to progress a round
@@ -19,24 +21,15 @@ namespace Seacore
             RollSetup, Declare, Received, Chapeau
         }
 
-        public RoundStateMachine(RoundContext context, DiceRoller diceRoller, DiceController diceController, GameObject gameObjectSelectAndPickup)
+        public RoundStateMachine(RoundContext context, DiceController diceController)
             : base(new Dictionary<RoundState, BaseState<RoundState>>()
             {
-                { RoundState.RollSetup,  new RollSetupState(gameObjectSelectAndPickup) },
-                { RoundState.Declare,  new DeclareState(context, diceRoller) },
+                { RoundState.RollSetup,  new RollSetupState() },
+                { RoundState.Declare,  new DeclareState(context, diceController) },
                 { RoundState.Received,  new ReceivedState(context, diceController) },
                 { RoundState.Chapeau,  new ChapeauState() },
             }, currentStateKey: RoundState.Declare)
         { }
-
-        /// <summary>
-        /// Transition to the state given.
-        /// </summary>
-        /// <param name="state">Of type <see cref="RoundState"/></param>
-        public new void TransitionToState(RoundState state)
-        {
-            base.TransitionToState(state);
-        }
 
         public void Reset()
         {

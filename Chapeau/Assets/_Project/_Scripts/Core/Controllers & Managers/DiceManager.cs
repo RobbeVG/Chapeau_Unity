@@ -35,6 +35,36 @@ namespace Seacore
             // Automatically add children with Die components to the dictionary
             AddDiceFromChildren();
         }
+        
+        /// <summary>
+        /// Splits the dice information into two groups based on the specified state.
+        /// </summary>
+        /// <param name="state">The <see cref="DieState"/> flag used to determine the grouping of dice.</param>
+        /// <returns>A tuple containing two arrays of <see cref="DieInfo"/> objects: <list type="bullet"> <item> <description>The
+        /// first array contains dice that match the specified state.</description> </item> <item> <description>The
+        /// second array contains dice that do not match the specified state.</description> </item> </list> Both arrays
+        /// are of fixed size, with unused elements set to <see langword="null"/>.</returns>
+        public (Die[], Die[]) SplitDiceInfoBy(DieState state)
+        {
+            List<Die> validDice = new List<Die>(Globals.c_amountDie);
+            List<Die> unvalidDice = new List<Die>(Globals.c_amountDie);
+
+            foreach (var dieInfoPair in _diceContainers)
+            {
+                Die die = dieInfoPair.Key;
+                DieInfo info = dieInfoPair.Value;
+                if (info.State.HasFlag(state))
+                {
+                    validDice.Add(die);
+                }
+                else
+                {
+                    unvalidDice.Add(die);
+                }
+            }
+            
+            return (validDice.ToArray(), unvalidDice.ToArray());
+        }
 
         private void InitializeDice()
         {
@@ -102,23 +132,26 @@ namespace Seacore
 
             return dieSpawnPoints;
         }
+
+        
     }
-
-
     
     [Flags]
+    [Serializable]
     public enum DieState : byte
     {
-        None    = 0b_0000_0000, //0
-        ToRoll  = 0b_0000_0001, //1
-        Visible = 0b_0000_0010, //2  -> NotVis when flag is off
-        Inside  = 0b_0001_0000, //16 -> Outside when flag is off
+        None        = 0b_0000_0000, //0
+        ToRoll      = 0b_0000_0001, //1
+        Visible     = 0b_0000_0010, //2  -> NotVis when flag is off
+        Selecting   = 0b_0000_0100, // 4
+        Inside      = 0b_0001_0000, //16 -> Outside when flag is off
     }
 
     /// <summary>
     /// Holds additional information for each die. 
     /// Is class because it uses reference semantics
     /// </summary>
+    [Serializable]
     public class DieInfo
     {
         private DieInfo() { }
@@ -132,6 +165,7 @@ namespace Seacore
         }
 
         public int Index { get; private set; }
+        [field:SerializeField, ReadOnly]
         public DieState State { get; set; }
          // Add other properties as needed.
         public MeshRenderer MeshRenderer { get; private set; }
