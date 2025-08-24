@@ -1,0 +1,9 @@
+<map id="Seacore.Game.DiceController.RollDice" name="Seacore.Game.DiceController.RollDice">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,205,65"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_roll.html#a91ed0ad611805502aa212f6984cf69e5" title=" " alt="" coords="253,5,430,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,31,237,27,238,32,205,36"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_die.html#a614e10abb4c519172c5782043a861651" title="Manual roll function that has nothing todo with physics like the above." alt="" coords="281,56,402,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,52,266,59,265,64,205,57"/>
+<area shape="rect" id="Node000004" href="$class_seacore_1_1_die.html#a6d8936238b0d8506dcccfd184ed8c541" title=" " alt="" coords="478,56,664,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="402,67,462,67,462,72,402,72"/>
+</map>

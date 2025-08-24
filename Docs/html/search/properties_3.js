@@ -5,5 +5,6 @@ var searchData=
   ['devices_2',['devices',['../class_seacore_1_1_chapeau_input_actions.html#a9a5b9da19d3b457162a3b685a086b1b5',1,'Seacore::ChapeauInputActions']]],
   ['dice_3',['Dice',['../class_seacore_1_1_dice_manager.html#a975057ac53ede93886bbe98bb106166a',1,'Seacore::DiceManager']]],
   ['dicecontainers_4',['DiceContainers',['../class_seacore_1_1_dice_manager.html#a37e88cb33d676d8d8a2dc3e9c1ab9087',1,'Seacore::DiceManager']]],
-  ['dievalue_5',['DieValue',['../class_seacore_1_1_die.html#ad92291d05686fdbbe32e8f215539df8c',1,'Seacore::Die']]]
+  ['dievalue_5',['DieValue',['../class_seacore_1_1_die.html#ad92291d05686fdbbe32e8f215539df8c',1,'Seacore::Die']]],
+  ['durationrevealdice_6',['DurationRevealDice',['../class_seacore_1_1_game_1_1_dice_visuals_config.html#ad82a8466506277a2b9e23c9e71da8b47',1,'Seacore::Game::DiceVisualsConfig']]]
 ];

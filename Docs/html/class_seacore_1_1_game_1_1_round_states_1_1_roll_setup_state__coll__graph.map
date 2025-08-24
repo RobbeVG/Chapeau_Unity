@@ -1,0 +1,5 @@
+<map id="Seacore.Game.RoundStates.RollSetupState" name="Seacore.Game.RoundStates.RollSetupState">
+<area shape="rect" id="Node000001" title=" " alt="" coords="17,96,210,139"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html" title=" " alt="" coords="5,5,222,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,64,116,96,111,96,111,64"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Seacore.Game.DiceController.HideAllDie" name="Seacore.Game.DiceController.HideAllDie">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,205,48"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_game_1_1_dice_controller.html#a79253d47a1d737e2d75a9e5931300c4b" title=" " alt="" coords="253,5,452,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,24,237,24,237,29,205,29"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_game_1_1_die_visual_handler.html#a4acd5ebd6b5d84a798d711218e3cff43" title=" " alt="" coords="500,5,717,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="452,24,484,24,484,29,452,29"/>
+</map>

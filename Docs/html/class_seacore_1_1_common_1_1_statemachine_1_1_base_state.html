@@ -131,11 +131,12 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af177293b9cbe386101933189724d7ee6" id="r_af177293b9cbe386101933189724d7ee6"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af177293b9cbe386101933189724d7ee6">operator EState</a> (<a class="el" href="class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html">BaseState</a>&lt; EState &gt; state)</td></tr>
+<tr class="memdesc:af177293b9cbe386101933189724d7ee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a <a class="el" href="#a7fa0e5508cdf2d82060e5d4b258bb867" title="Initializes a new instance of the BaseState&lt;EState, TStateMachine&gt; class with the specified state key...">BaseState&lt;T&gt;</a> instance to its corresponding EState value.  <br /></td></tr>
 <tr class="separator:af177293b9cbe386101933189724d7ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a45ee000876d7ef44736bbdf6ef58ba69" id="r_a45ee000876d7ef44736bbdf6ef58ba69"><td class="memItemLeft" align="right" valign="top">EState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45ee000876d7ef44736bbdf6ef58ba69">StateKey</a><code> [get]</code></td></tr>
+<tr class="memitem:a45ee000876d7ef44736bbdf6ef58ba69" id="r_a45ee000876d7ef44736bbdf6ef58ba69"><td class="memItemLeft" align="right" valign="top">EState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45ee000876d7ef44736bbdf6ef58ba69">StateKey</a><code> [get, protected set]</code></td></tr>
 <tr class="memdesc:a45ee000876d7ef44736bbdf6ef58ba69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the key representing this state.  <br /></td></tr>
 <tr class="separator:a45ee000876d7ef44736bbdf6ef58ba69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -314,6 +315,14 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Converts a <a class="el" href="#a7fa0e5508cdf2d82060e5d4b258bb867" title="Initializes a new instance of the BaseState&lt;EState, TStateMachine&gt; class with the specified state key...">BaseState&lt;T&gt;</a> instance to its corresponding EState value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>The <a class="el" href="#a7fa0e5508cdf2d82060e5d4b258bb867" title="Initializes a new instance of the BaseState&lt;EState, TStateMachine&gt; class with the specified state key...">BaseState&lt;EState&gt;</a> instance to convert. Must not be <code>null</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="abd1115d53428e5cf90979874d126af79" name="abd1115d53428e5cf90979874d126af79"></a>
@@ -390,7 +399,7 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

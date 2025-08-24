@@ -1,7 +1,43 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="38,5,129,32"/>
-<area shape="rect" id="Node000001" href="$class_seacore_1_1_chapeau_input_actions.html" title=" " alt="" coords="210,31,408,57"/>
-<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="144,23,210,30,209,35,143,28"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,56,162,83"/>
-<area shape="poly" id="edge7_Node000002_Node000001" title=" " alt="" coords="177,56,209,53,210,58,178,61"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,452,117,479"/>
+<area shape="rect" id="Node000001" href="$class_outline.html" title=" " alt="" coords="247,5,309,32"/>
+<area shape="poly" id="edge7_Node000000_Node000001" title=" " alt="" coords="63,436,74,346,95,228,124,116,142,72,163,42,182,29,203,20,246,15,247,20,205,26,184,33,167,46,147,75,129,118,100,230,80,347,68,437"/>
+<area shape="rect" id="Node000002" href="$class_scene_manager.html" title=" " alt="" coords="224,56,332,83"/>
+<area shape="poly" id="edge8_Node000000_Node000002" title=" " alt="" coords="64,436,77,356,99,253,127,156,144,119,163,93,191,75,223,67,224,73,193,80,166,97,149,121,132,158,104,255,82,357,69,437"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_circle_controller.html" title=" " alt="" coords="196,107,360,133"/>
+<area shape="poly" id="edge9_Node000000_Node000003" title=" " alt="" coords="60,436,65,375,80,296,93,254,111,214,134,176,163,143,194,125,197,130,166,147,138,179,115,216,98,256,85,297,70,376,65,437"/>
+<area shape="rect" id="Node000004" href="$class_seacore_1_1_common_1_1_object_selector.html" title="A component script that allows the user to select an object on the screen, depending on their layerMa..." alt="" coords="170,157,386,184"/>
+<area shape="poly" id="edge10_Node000000_Node000004" title=" " alt="" coords="62,436,70,384,87,318,100,284,117,251,138,221,163,194,181,182,184,187,166,198,142,224,121,254,105,286,92,320,75,385,67,437"/>
+<area shape="rect" id="Node000006" href="$class_seacore_1_1_common_1_1_pickup_and_drag.html" title="A component script that allows the user to pick up objects and drag them around on the screen." alt="" coords="167,208,388,235"/>
+<area shape="poly" id="edge12_Node000000_Node000006" title=" " alt="" coords="65,436,76,393,94,341,123,289,141,265,163,245,182,233,185,237,166,249,145,269,127,292,99,344,81,395,70,438"/>
+<area shape="rect" id="Node000007" href="$class_seacore_1_1_common_1_1_services_1_1_audio_manager.html" title=" " alt="" coords="185,259,370,301"/>
+<area shape="poly" id="edge13_Node000000_Node000007" title=" " alt="" coords="71,436,106,373,132,340,163,311,183,299,186,304,166,315,136,343,111,376,76,439"/>
+<area shape="rect" id="Node000008" href="$class_seacore_1_1_declare_menu.html" title=" " alt="" coords="203,325,353,352"/>
+<area shape="poly" id="edge14_Node000000_Node000008" title=" " alt="" coords="79,438,115,398,138,378,163,362,201,347,203,352,166,366,141,383,119,402,83,441"/>
+<area shape="rect" id="Node000009" href="$class_seacore_1_1_dice_distribution.html" title="Calculates the density and adjusts the position of dice objects within a defined area,..." alt="" coords="195,376,361,403"/>
+<area shape="poly" id="edge15_Node000000_Node000009" title=" " alt="" coords="99,442,164,412,203,401,204,406,166,417,101,446"/>
+<area shape="rect" id="Node000010" href="$class_seacore_1_1_dice_manager.html" title="Manages dice objects, their state, and their interactions." alt="" coords="203,427,353,453"/>
+<area shape="poly" id="edge16_Node000000_Node000010" title=" " alt="" coords="132,454,202,446,203,451,132,460"/>
+<area shape="rect" id="Node000011" href="$class_seacore_1_1_die.html" title=" " alt="" coords="231,477,324,504"/>
+<area shape="poly" id="edge17_Node000000_Node000011" title=" " alt="" coords="132,471,231,483,230,488,132,476"/>
+<area shape="rect" id="Node000012" href="$class_seacore_1_1_draw_renderer_bounds.html" title=" " alt="" coords="177,528,378,555"/>
+<area shape="poly" id="edge18_Node000000_Node000012" title=" " alt="" coords="101,484,166,514,204,525,203,530,164,518,99,489"/>
+<area shape="rect" id="Node000013" href="$class_seacore_1_1_game_1_1_dice_controller.html" title="Controls the behaviour of the dice." alt="" coords="180,579,376,605"/>
+<area shape="poly" id="edge19_Node000000_Node000013" title=" " alt="" coords="83,489,119,529,141,548,166,564,193,576,191,581,163,569,138,552,115,532,79,493"/>
+<area shape="rect" id="Node000014" href="$class_seacore_1_1_game_1_1_die_visual_handler.html" title="Handles the visual effects and animations for dice, including color changes, outline effects,..." alt="" coords="171,629,384,656"/>
+<area shape="poly" id="edge20_Node000000_Node000014" title=" " alt="" coords="76,492,110,555,135,588,166,615,188,626,185,631,163,620,131,592,106,558,71,495"/>
+<area shape="rect" id="Node000015" href="$class_seacore_1_1_game_1_1_round_manager.html" title="Manages the logic and coordination of a round in the game. This includes starting,..." alt="" coords="178,680,378,707"/>
+<area shape="poly" id="edge21_Node000000_Node000015" title=" " alt="" coords="71,493,83,533,102,580,129,627,147,648,166,666,185,677,182,682,163,670,143,651,125,630,97,582,78,535,66,495"/>
+<area shape="rect" id="Node000016" href="$class_seacore_1_1_game_1_1_u_i_game_controller.html" title=" " alt="" coords="169,731,386,757"/>
+<area shape="poly" id="edge22_Node000000_Node000016" title=" " alt="" coords="68,494,77,543,94,603,123,665,143,693,166,717,184,728,181,732,163,721,139,696,119,667,89,605,72,544,63,495"/>
+<area shape="rect" id="Node000017" href="$class_seacore_1_1_roll_display.html" title=" " alt="" coords="208,781,348,808"/>
+<area shape="poly" id="edge23_Node000000_Node000017" title=" " alt="" coords="66,494,71,551,87,626,100,665,117,702,139,737,166,767,186,780,208,788,206,793,183,785,163,771,135,740,112,705,95,667,82,627,66,552,60,494"/>
+<area shape="rect" id="Node000018" href="$class_seacore_1_1_roll_u_i_creator.html" title=" " alt="" coords="201,832,354,859"/>
+<area shape="poly" id="edge24_Node000000_Node000018" title=" " alt="" coords="64,494,67,561,80,649,93,695,111,740,135,782,166,818,183,830,202,837,200,842,180,834,163,822,131,785,106,742,88,697,75,650,62,561,59,494"/>
+<area shape="rect" id="Node000019" href="$class_static_instance_mono_behaviour.html" title="A static instance is similar to a singleton, but instead of destroying any new instances,..." alt="" coords="165,883,391,909"/>
+<area shape="poly" id="edge25_Node000000_Node000019" title=" " alt="" coords="68,494,80,580,101,693,130,800,147,841,167,869,182,880,179,884,163,873,143,844,125,802,96,694,75,581,63,495"/>
+<area shape="rect" id="Node000005" href="$class_seacore_1_1_smart_game_object_selector.html" title=" " alt="" coords="439,157,668,184"/>
+<area shape="poly" id="edge11_Node000004_Node000005" title=" " alt="" coords="401,168,439,168,439,173,401,173"/>
+<area shape="rect" id="Node000020" href="$class_singleton_monobehaviour.html" title="This transforms the static instance into a basic singleton. This will destroy any new versions create..." alt="" coords="456,883,651,909"/>
+<area shape="poly" id="edge26_Node000019_Node000020" title=" " alt="" coords="407,893,456,893,456,899,407,899"/>
 </map>

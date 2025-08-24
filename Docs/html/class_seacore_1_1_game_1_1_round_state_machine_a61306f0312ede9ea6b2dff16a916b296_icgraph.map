@@ -1,0 +1,5 @@
+<map id="Seacore.Game.RoundStateMachine.Reset" name="Seacore.Game.RoundStateMachine.Reset">
+<area shape="rect" id="Node000001" title=" " alt="" coords="258,5,492,48"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_game_1_1_round_manager.html#acc87233bac1cd43e2374073d65ac38fe" title="Resets the state of the round, clearing or reinitializing round&#45;specific data and components...." alt="" coords="5,5,210,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,29,210,29,210,24,242,24"/>
+</map>

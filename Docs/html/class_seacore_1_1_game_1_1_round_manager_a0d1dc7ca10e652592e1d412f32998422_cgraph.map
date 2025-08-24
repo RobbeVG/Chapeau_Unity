@@ -1,0 +1,5 @@
+<map id="Seacore.Game.RoundManager.StartNewRound" name="Seacore.Game.RoundManager.StartNewRound">
+<area shape="rect" id="Node000001" title="Starts a new round by initializing or resetting round&#45;specific elements. This method might involve se..." alt="" coords="5,5,210,48"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a079a8e962e1a01e6f2750c7d27a63301" title=" " alt="" coords="258,5,472,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,24,242,24,242,29,210,29"/>
+</map>

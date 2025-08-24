@@ -1,12 +1,10 @@
 <map id="Chapeau/Assets/_Project/_Scripts" name="Chapeau/Assets/_Project/_Scripts">
-<area shape="rect" id="node2" href="dir_cf45bec007efd69a7f92ee422948bee2.html" title="Attributes" alt="" coords="131,64,208,91"/>
-<area shape="rect" id="node3" href="dir_1da7cefca29027e00032510c27be21c0.html" title="Common" alt="" coords="232,64,306,91"/>
-<area shape="rect" id="node4" href="dir_f3c909a21769957ba900644dc245dc95.html" title="Core" alt="" coords="330,64,379,91"/>
-<area shape="rect" id="node5" href="dir_d9235bfc0e078b6edba6b7b7ad24085c.html" title="Editor" alt="" coords="403,64,458,91"/>
-<area shape="rect" id="node6" href="dir_506eccecf74322d73900ae7b7cafcacd.html" title="Player" alt="" coords="483,64,541,91"/>
-<area shape="rect" id="node7" href="dir_3558be79abde74d3c9ca785540fe4b6b.html" title="Systems" alt="" coords="565,64,638,91"/>
-<area shape="rect" id="node8" href="dir_ce74563f3829f1cc320b95eb8ab125d7.html" title="UI" alt="" coords="662,64,701,91"/>
-<area shape="rect" id="node9" href="dir_7a256adb92599a7e455255d5b0539814.html" title="X_Archive" alt="" coords="725,64,806,91"/>
-<area shape="rect" id="clust2" href="dir_b79b99bc8fa926136fa929c0d8af2df0.html" alt="" coords="27,53,817,101"/>
-<area shape="rect" id="clust1" href="dir_4949801ae176722078e307646846e63a.html" title="_Project" alt="" coords="16,16,828,112"/>
+<area shape="rect" id="node2" href="dir_1da7cefca29027e00032510c27be21c0.html" title="Common" alt="" coords="131,64,205,91"/>
+<area shape="rect" id="node3" href="dir_f3c909a21769957ba900644dc245dc95.html" title="Core" alt="" coords="229,64,278,91"/>
+<area shape="rect" id="node4" href="dir_d9235bfc0e078b6edba6b7b7ad24085c.html" title="Editor" alt="" coords="302,64,357,91"/>
+<area shape="rect" id="node5" href="dir_1cbf781a940aa9001d49e183167a6ff1.html" title="Services" alt="" coords="381,64,454,91"/>
+<area shape="rect" id="node6" href="dir_ce74563f3829f1cc320b95eb8ab125d7.html" title="UI" alt="" coords="478,64,517,91"/>
+<area shape="rect" id="node7" href="dir_7a256adb92599a7e455255d5b0539814.html" title="X_Archive" alt="" coords="541,64,622,91"/>
+<area shape="rect" id="clust2" href="dir_b79b99bc8fa926136fa929c0d8af2df0.html" alt="" coords="27,53,633,101"/>
+<area shape="rect" id="clust1" href="dir_4949801ae176722078e307646846e63a.html" title="_Project" alt="" coords="16,16,644,112"/>
 </map>

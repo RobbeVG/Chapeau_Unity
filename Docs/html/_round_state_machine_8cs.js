@@ -1,4 +1,4 @@
 var _round_state_machine_8cs =
 [
-    [ "Seacore.RoundStateMachine", "class_seacore_1_1_round_state_machine.html", "class_seacore_1_1_round_state_machine" ]
+    [ "Seacore.Game.RoundStateMachine", "class_seacore_1_1_game_1_1_round_state_machine.html", "class_seacore_1_1_game_1_1_round_state_machine" ]
 ];

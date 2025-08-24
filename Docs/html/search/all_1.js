@@ -5,7 +5,7 @@ var searchData=
   ['alphafadespeed_2',['alphaFadeSpeed',['../class_seacore_1_1_image_dropdown.html#abb58ce4ac30e936a9bb618795932fd2c',1,'Seacore::ImageDropdown']]],
   ['amountrolled_3',['AmountRolled',['../class_round_context.html#af9bb0d5fbc2bab066b033d632523d9ce',1,'RoundContext']]],
   ['asset_4',['asset',['../class_seacore_1_1_chapeau_input_actions.html#a7e2bc6f2f8f3433620d54a9ac7a72f84',1,'Seacore::ChapeauInputActions']]],
-  ['audiomanager_5',['AudioManager',['../class_seacore_1_1_audio_manager.html',1,'Seacore']]],
+  ['audiomanager_5',['AudioManager',['../class_seacore_1_1_common_1_1_services_1_1_audio_manager.html',1,'Seacore::Common::Services']]],
   ['audiomanager_2ecs_6',['AudioManager.cs',['../_audio_manager_8cs.html',1,'']]],
-  ['awake_7',['Awake',['../class_static_instance_mono_behaviour.html#a95ab4af70a2972893aead7d2f30eac50',1,'StaticInstanceMonoBehaviour.Awake()'],['../class_singleton_monobehaviour.html#a4dac1d4f8d00a5963413aa5eb1654225',1,'SingletonMonobehaviour.Awake()'],['../class_seacore_1_1_image_dropdown.html#adb4e9d03d33b9ff1f52502bc16cea778',1,'Seacore.ImageDropdown.Awake()']]]
+  ['awake_7',['Awake',['../class_static_instance_mono_behaviour.html#a95ab4af70a2972893aead7d2f30eac50',1,'StaticInstanceMonoBehaviour.Awake()'],['../class_singleton_monobehaviour.html#a4dac1d4f8d00a5963413aa5eb1654225',1,'SingletonMonobehaviour.Awake()'],['../class_seacore_1_1_game_1_1_die_visual_handler.html#a055fadcede5888ddfd46b20511eadf8f',1,'Seacore.Game.DieVisualHandler.Awake()'],['../class_seacore_1_1_game_1_1_player_input_manager.html#aac6b7a83429e00f575e28c6165b1d96c',1,'Seacore.Game.PlayerInputManager.Awake()'],['../class_seacore_1_1_common_1_1_services_1_1_audio_manager.html#a36563145ff401fccee5205922ad4969f',1,'Seacore.Common.Services.AudioManager.Awake()'],['../class_seacore_1_1_image_dropdown.html#adb4e9d03d33b9ff1f52502bc16cea778',1,'Seacore.ImageDropdown.Awake()']]]
 ];

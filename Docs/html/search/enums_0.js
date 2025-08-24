@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['buttontypes_0',['ButtonTypes',['../class_seacore_1_1_u_i_game_controller.html#a3dbdc24f4d8321584033f1f0528c6372',1,'Seacore::UIGameController']]]
+  ['buttontypes_0',['ButtonTypes',['../class_seacore_1_1_game_1_1_u_i_game_controller.html#a6f95e1ec3e8edfd3635ece05227e34cf',1,'Seacore::Game::UIGameController']]]
 ];

@@ -99,6 +99,7 @@ $(function(){initNavTree('class_seacore_1_1_object_selector.html',''); initResiz
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="class_seacore_1_1_object_selector-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Seacore.ObjectSelector Class Reference</div></div>
 </div><!--header-->
@@ -129,23 +130,28 @@ Collaboration diagram for Seacore.ObjectSelector:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4fbc49620f3adbc48e2c597785ba1501" id="r_a4fbc49620f3adbc48e2c597785ba1501"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fbc49620f3adbc48e2c597785ba1501">SelectObject</a> ()</td></tr>
-<tr class="separator:a4fbc49620f3adbc48e2c597785ba1501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab3990c0bd04b2d02cc9ee2db5d404b6" id="r_aab3990c0bd04b2d02cc9ee2db5d404b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab3990c0bd04b2d02cc9ee2db5d404b6">OnPointerMoveSetHoverObject</a> (Vector2 pointerPosition)</td></tr>
+<tr class="memdesc:aab3990c0bd04b2d02cc9ee2db5d404b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only call this method when you have disabled the gameObject.  <br /></td></tr>
+<tr class="separator:aab3990c0bd04b2d02cc9ee2db5d404b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a38938c3648ea93a95ab6f9ff128771b1" id="r_a38938c3648ea93a95ab6f9ff128771b1"><td class="memItemLeft" align="right" valign="top">Action&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38938c3648ea93a95ab6f9ff128771b1">OnHover</a></td></tr>
-<tr class="memdesc:a38938c3648ea93a95ab6f9ff128771b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes when new Object is hovered.  <br /></td></tr>
-<tr class="separator:a38938c3648ea93a95ab6f9ff128771b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad6086cac224973ff26a8fe17d4cac72" id="r_aad6086cac224973ff26a8fe17d4cac72"><td class="memItemLeft" align="right" valign="top">Action&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad6086cac224973ff26a8fe17d4cac72">OnExit</a></td></tr>
-<tr class="separator:aad6086cac224973ff26a8fe17d4cac72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0fcf017074002215e80146cda6f870c" id="r_af0fcf017074002215e80146cda6f870c"><td class="memItemLeft" align="right" valign="top">Action&lt; GameObject, GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0fcf017074002215e80146cda6f870c">OnObjectChanged</a></td></tr>
+<tr class="memdesc:af0fcf017074002215e80146cda6f870c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the hovered object changes. Takes in two arguments of type GameObject. The first is old hoveredObject, The second is the new hoveredObject.  <br /></td></tr>
+<tr class="separator:af0fcf017074002215e80146cda6f870c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a6769c58954fb82010b151cb6fc2ce655" id="r_a6769c58954fb82010b151cb6fc2ce655"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6769c58954fb82010b151cb6fc2ce655">ObjectOnCursor</a><code> [get]</code></td></tr>
+<tr class="memdesc:a6769c58954fb82010b151cb6fc2ce655"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the hover object.  <br /></td></tr>
+<tr class="separator:a6769c58954fb82010b151cb6fc2ce655"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A component script that allows the user to select an object on the screen, depending on their layerMask. When enabled the script will update every frame so you can retrieve the hovered object. </p>
-<p>Does not handle the input; this should be handled separately. </p>
+<p>You can manually update the script on every pointer moved Does not handle the input; this should be handled separately. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4fbc49620f3adbc48e2c597785ba1501" name="a4fbc49620f3adbc48e2c597785ba1501"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fbc49620f3adbc48e2c597785ba1501">&#9670;&#160;</a></span>SelectObject()</h2>
+<a id="aab3990c0bd04b2d02cc9ee2db5d404b6" name="aab3990c0bd04b2d02cc9ee2db5d404b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab3990c0bd04b2d02cc9ee2db5d404b6">&#9670;&#160;</a></span>OnPointerMoveSetHoverObject()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,9 +160,9 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">GameObject Seacore.ObjectSelector.SelectObject </td>
+          <td class="memname">void Seacore.ObjectSelector.OnPointerMoveSetHoverObject </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">Vector2</td>          <td class="paramname"><span class="paramname"><em>pointerPosition</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -167,37 +173,50 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Only call this method when you have disabled the gameObject. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aad6086cac224973ff26a8fe17d4cac72" name="aad6086cac224973ff26a8fe17d4cac72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad6086cac224973ff26a8fe17d4cac72">&#9670;&#160;</a></span>OnExit</h2>
+<a id="af0fcf017074002215e80146cda6f870c" name="af0fcf017074002215e80146cda6f870c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0fcf017074002215e80146cda6f870c">&#9670;&#160;</a></span>OnObjectChanged</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Action&lt;GameObject&gt; Seacore.ObjectSelector.OnExit</td>
+          <td class="memname">Action&lt;GameObject, GameObject&gt; Seacore.ObjectSelector.OnObjectChanged</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Called when the hovered object changes. Takes in two arguments of type GameObject. The first is old hoveredObject, The second is the new hoveredObject. </p>
+<p>Both arguments can be of type null </p>
+
 </div>
 </div>
-<a id="a38938c3648ea93a95ab6f9ff128771b1" name="a38938c3648ea93a95ab6f9ff128771b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38938c3648ea93a95ab6f9ff128771b1">&#9670;&#160;</a></span>OnHover</h2>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a6769c58954fb82010b151cb6fc2ce655" name="a6769c58954fb82010b151cb6fc2ce655"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6769c58954fb82010b151cb6fc2ce655">&#9670;&#160;</a></span>ObjectOnCursor</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Action&lt;GameObject&gt; Seacore.ObjectSelector.OnHover</td>
+          <td class="memname">GameObject Seacore.ObjectSelector.ObjectOnCursor</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Invokes when new Object is hovered. </p>
-<p>The passed gameObject is always the new object </p>
+<p>Get the hover object. </p>
 
 </div>
 </div>

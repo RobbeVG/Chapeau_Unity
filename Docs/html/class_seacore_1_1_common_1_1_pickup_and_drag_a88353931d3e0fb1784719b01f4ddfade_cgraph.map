@@ -1,0 +1,5 @@
+<map id="Seacore.Common.PickupAndDrag.HandleDrop" name="Seacore.Common.PickupAndDrag.HandleDrop">
+<area shape="rect" id="Node000001" title="Drops the selected object to the ground." alt="" coords="5,5,199,48"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_common_1_1_pickup_and_drag.html#a33b3a1e2abe6e3a5063b580d06784e1c" title="A smooth dropdown of the selected object." alt="" coords="247,5,440,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,24,231,24,231,29,199,29"/>
+</map>

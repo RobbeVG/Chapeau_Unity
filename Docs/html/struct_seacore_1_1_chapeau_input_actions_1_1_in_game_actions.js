@@ -9,6 +9,6 @@ var struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions =
     [ "SetCallbacks", "struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html#a3df78a3c13b54f1357763d6a352a5faa", null ],
     [ "enabled", "struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html#a2bb6b34bc628fb0c1db6254ba59c40bf", null ],
     [ "Hold", "struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html#a92cf3d9fabca5294bfd14b501d165aa1", null ],
-    [ "Location", "struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html#af1b15d0844a12d601c5f90d58d875b8c", null ],
+    [ "Point", "struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html#a177597ae04eb304bfad6f4aeba61015a", null ],
     [ "Tap", "struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html#add815f581adf321fd3e6348bf2dc76f8", null ]
 ];

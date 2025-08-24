@@ -10,6 +10,5 @@ var searchData=
   ['rolluicreator_2ecs_7',['RollUICreator.cs',['../_roll_u_i_creator_8cs.html',1,'']]],
   ['roundcontext_2ecs_8',['RoundContext.cs',['../_round_context_8cs.html',1,'']]],
   ['roundmanager_2ecs_9',['RoundManager.cs',['../_round_manager_8cs.html',1,'']]],
-  ['roundstate_2ecs_10',['RoundState.cs',['../_round_state_8cs.html',1,'']]],
-  ['roundstatemachine_2ecs_11',['RoundStateMachine.cs',['../_round_state_machine_8cs.html',1,'']]]
+  ['roundstatemachine_2ecs_10',['RoundStateMachine.cs',['../_round_state_machine_8cs.html',1,'']]]
 ];

@@ -1,0 +1,5 @@
+<map id="Seacore.Game.RoundManager" name="Seacore.Game.RoundManager">
+<area shape="rect" id="Node000001" title="Manages the logic and coordination of a round in the game. This includes starting,..." alt="" coords="5,80,206,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="50,5,161,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,48,108,80,103,80,103,48"/>
+</map>

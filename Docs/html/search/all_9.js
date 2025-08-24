@@ -10,7 +10,7 @@ var searchData=
   ['index_7',['Index',['../class_seacore_1_1_die_info.html#a62f2d7d422dcdb5e266ede6144248a1d',1,'Seacore::DieInfo']]],
   ['ingame_8',['InGame',['../class_seacore_1_1_chapeau_input_actions.html#af8009967573ce5223ce7a32fab90388d',1,'Seacore.ChapeauInputActions.InGame'],['../class_scene_manager.html#a6b07eecbf60e3719d8afae08a9185327a7f3d370e94c8b1fea09838572013d8ec',1,'SceneManager.InGame']]],
   ['ingameactions_9',['InGameActions',['../struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html',1,'Seacore.ChapeauInputActions.InGameActions'],['../struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html#a5dcad7d2bb8a31cc40a13951e934cecb',1,'Seacore.ChapeauInputActions.InGameActions.InGameActions()']]],
-  ['inside_10',['Inside',['../namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bba9b6d3000134648fc9f1e71094ae0847d',1,'Seacore.Inside'],['../namespace_seacore.html#abe781f2eec405196324b2b1f87da5ecfa9b6d3000134648fc9f1e71094ae0847d',1,'Seacore.Inside']]],
+  ['inside_10',['Inside',['../namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bba9b6d3000134648fc9f1e71094ae0847d',1,'Seacore']]],
   ['instance_11',['Instance',['../class_static_instance_mono_behaviour.html#afd77b65034e4618176295ca59c5755b9',1,'StaticInstanceMonoBehaviour.Instance'],['../class_scene_manager.html#ac05b3b785a4cedf4e2a5943b0fe328cf',1,'SceneManager.Instance']]],
   ['isempty_12',['IsEmpty',['../class_seacore_1_1_roll.html#ad4c360c87fc759725b478b6db69ea277',1,'Seacore::Roll']]],
   ['ispositionincircle_13',['IsPositionInCircle',['../class_seacore_1_1_circle_controller.html#a47a04fa5ddd0f421b58c47c528ccca87',1,'Seacore::CircleController']]],

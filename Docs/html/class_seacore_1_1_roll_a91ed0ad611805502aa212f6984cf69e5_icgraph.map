@@ -1,11 +1,9 @@
 <map id="Seacore.Roll.ChangeValue" name="Seacore.Roll.ChangeValue">
-<area shape="rect" id="Node000001" title=" " alt="" coords="497,64,674,91"/>
-<area shape="rect" id="Node000002" href="$class_seacore_1_1_roll.html#ac178e2dedf016a55924629c1b5addfb9" title=" " alt="" coords="249,5,426,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="513,62,448,47,399,35,401,30,450,41,514,57"/>
-<area shape="rect" id="Node000003" href="$class_seacore_1_1_declare_menu.html#ad2cef061267fe46d86ab44846240a90e" title=" " alt="" coords="226,56,449,99"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="481,80,450,80,450,75,481,75"/>
-<area shape="rect" id="Node000004" href="$class_seacore_1_1_dice_roller.html#a9d2e67cb363687fb16f25c28c892e524" title="Rolls the dice that are located at the current roll location." alt="" coords="243,123,432,149"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="514,98,450,113,401,125,399,120,448,108,513,92"/>
-<area shape="rect" id="Node000005" href="$class_seacore_1_1_dice_roller_editor.html#a0cc380fe897d46bc01d833d44d9fc596" title=" " alt="" coords="5,115,178,157"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="228,139,178,139,178,133,228,133"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="277,64,454,91"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_roll.html#ac178e2dedf016a55924629c1b5addfb9" title=" " alt="" coords="28,5,206,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="293,62,228,47,179,35,180,30,229,41,294,57"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_declare_menu.html#ad2cef061267fe46d86ab44846240a90e" title=" " alt="" coords="5,56,229,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="261,80,229,80,229,75,261,75"/>
+<area shape="rect" id="Node000004" href="$class_seacore_1_1_game_1_1_dice_controller.html#a7f99e5106b58309d89398b9a13d7eea8" title=" " alt="" coords="17,123,217,165"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="298,98,200,125,199,119,297,93"/>
 </map>

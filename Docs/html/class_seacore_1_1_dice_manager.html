@@ -97,6 +97,8 @@ $(function(){initNavTree('class_seacore_1_1_dice_manager.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="class_seacore_1_1_dice_manager-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Seacore.DiceManager Class Reference</div></div>
@@ -126,6 +128,17 @@ Collaboration diagram for Seacore.DiceManager:</div>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aa7dfd43ed91a883e1a3f0b82dc8fad72" id="r_aa7dfd43ed91a883e1a3f0b82dc8fad72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_seacore_1_1_die.html">Die</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7dfd43ed91a883e1a3f0b82dc8fad72">SplitDiceInfoBy</a> (<a class="el" href="namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bb">DieState</a> state)</td></tr>
+<tr class="separator:aa7dfd43ed91a883e1a3f0b82dc8fad72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ab8b8de7a83ba7cefe29a91901273aa2f" id="r_ab8b8de7a83ba7cefe29a91901273aa2f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8b8de7a83ba7cefe29a91901273aa2f">Die</a> []</td></tr>
+<tr class="memdesc:ab8b8de7a83ba7cefe29a91901273aa2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits the dice information into two groups based on the specified state.  <br /></td></tr>
+<tr class="separator:ab8b8de7a83ba7cefe29a91901273aa2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a37e88cb33d676d8d8a2dc3e9c1ab9087" id="r_a37e88cb33d676d8d8a2dc3e9c1ab9087"><td class="memItemLeft" align="right" valign="top">IReadOnlyDictionary&lt; <a class="el" href="class_seacore_1_1_die.html">Die</a>, <a class="el" href="class_seacore_1_1_die_info.html">DieInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37e88cb33d676d8d8a2dc3e9c1ab9087">DiceContainers</a><code> [get]</code></td></tr>
@@ -135,7 +148,63 @@ Properties</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages dice objects, their state, and their interactions. </p>
-</div><h2 class="groupheader">Property Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa7dfd43ed91a883e1a3f0b82dc8fad72" name="aa7dfd43ed91a883e1a3f0b82dc8fad72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7dfd43ed91a883e1a3f0b82dc8fad72">&#9670;&#160;</a></span>SplitDiceInfoBy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_seacore_1_1_die.html">Die</a>[] Seacore.DiceManager.SplitDiceInfoBy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bb">DieState</a></td>          <td class="paramname"><span class="paramname"><em>state</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ab8b8de7a83ba7cefe29a91901273aa2f" name="ab8b8de7a83ba7cefe29a91901273aa2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8b8de7a83ba7cefe29a91901273aa2f">&#9670;&#160;</a></span>Die</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Seacore.DiceManager.Die[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Splits the dice information into two groups based on the specified state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>The <a class="el" href="namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bb">DieState</a> flag used to determine the grouping of dice.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A tuple containing two arrays of <a class="el" href="class_seacore_1_1_die_info.html" title="Holds additional information for each die. Is class because it uses reference semantics.">DieInfo</a> objects: <ul>
+<li>
+The first array contains dice that match the specified state.  </li>
+<li>
+The second array contains dice that do not match the specified state.  </li>
+</ul>
+Both arrays are of fixed size, with unused elements set to <code>null</code>.</dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
 <a id="a975057ac53ede93886bbe98bb106166a" name="a975057ac53ede93886bbe98bb106166a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a975057ac53ede93886bbe98bb106166a">&#9670;&#160;</a></span>Dice</h2>
 

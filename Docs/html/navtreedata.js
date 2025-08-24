@@ -54,8 +54,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_audio_manager_8cs.html",
-"class_seacore_1_1_die.html#a3ba69a442ee520f1e8a55587876a8e80a24db11216549ee55172c33cf3def2f3f",
-"class_seacore_1_1_u_i_game_controller.html#a3dbdc24f4d8321584033f1f0528c6372a9f0b242323e578ebf32677f1e917cca1"
+"class_seacore_1_1_die.html#a3ba69a442ee520f1e8a55587876a8e80a6adf97f83acf6453d4a6a4b1070f3754",
+"class_seacore_1_1_roll.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

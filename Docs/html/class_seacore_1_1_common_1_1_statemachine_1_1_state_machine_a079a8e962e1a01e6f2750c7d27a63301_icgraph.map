@@ -1,5 +1,5 @@
 <map id="Seacore.Common.Statemachine.StateMachine.Start" name="Seacore.Common.Statemachine.StateMachine.Start">
-<area shape="rect" id="Node000001" title=" " alt="" coords="247,5,461,48"/>
-<area shape="rect" id="Node000002" href="$class_seacore_1_1_round_manager.html#a5d82a2f7425277337d9c7e6ad43c2dfd" title="Starts a new round by initializing or resetting round&#45;specific elements. This method might involve se..." alt="" coords="5,5,199,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,29,199,29,199,24,231,24"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="258,5,472,48"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_game_1_1_round_manager.html#a0d1dc7ca10e652592e1d412f32998422" title="Starts a new round by initializing or resetting round&#45;specific elements. This method might involve se..." alt="" coords="5,5,210,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,29,210,29,210,24,242,24"/>
 </map>
