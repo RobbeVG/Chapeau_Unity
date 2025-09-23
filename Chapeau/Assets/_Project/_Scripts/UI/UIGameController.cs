@@ -66,9 +66,9 @@ namespace Seacore.Game
             StartCoroutine(SetInputEvents());
             IEnumerator SetInputEvents()
             {
-                yield return new WaitUntil(() => PlayerInputManager.Instance != null);
-                PlayerInputManager.Instance.OnDieTapped += SetRollButtonInteractable;
-                PlayerInputManager.Instance.OnDieHoldExit += SetRollButtonInteractable;
+                yield return new WaitUntil(() => InputManager.Instance != null);
+                InputManager.Instance.OnDieTapped += SetRollButtonInteractable;
+                InputManager.Instance.OnDieHoldExit += SetRollButtonInteractable;
             }
 
             buttonManager[ButtonTypes.Reveal].onClick.AddListener(OnRevealButtonClick);
@@ -82,7 +82,7 @@ namespace Seacore.Game
         {
             _roundSM.OnStateEnter -= OnRoundStateEnter;
             _roundSM.OnStateExit -= OnRoundStateExit;
-            PlayerInputManager IM = PlayerInputManager.Instance;
+            InputManager IM = InputManager.Instance;
             if (IM)
             {
                 IM.OnDieTapped -= SetRollButtonInteractable;

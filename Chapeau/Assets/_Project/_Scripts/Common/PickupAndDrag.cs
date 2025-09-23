@@ -13,49 +13,32 @@ namespace Seacore.Common
     public class PickupAndDrag : MonoBehaviour
     {
         public GameObject SelectedObject { get; private set; }
-        private Vector3 _offset;
+        [SerializeField] private float _snapSpeed = 10f;
+        [SerializeField] private float _dropDuration = 0.5f;
+        [SerializeField] private float _pickupHeightOffset = 0.4f;
+        public float PickupHeightOffset { get { return _pickupHeightOffset; } }
+
+
         private float _originalHeightvalue;
 
-        [SerializeField]
-        private float _snapSpeed = 10f; // Speed at which the object will snap to the mouse position
-        [SerializeField]
-        private float _dropDuration = 0.5f;
-
-        //Internal
-        private const float _pickupHeightOffset = 0.4f;
-
-        private void FixedUpdate()
-        {
-            HandleDrag();
-        }
-
-        /// <summary>
-        /// Picking up an object and offesting it to the current mouse position.
-        /// </summary>
-        /// <param name="gameObject"></param>
+        // Called by InputManager when an object is picked up
         public void HandlePickup(GameObject gameObject)
-        {            
+        {
             SelectedObject = gameObject;
             _originalHeightvalue = SelectedObject.transform.position.y;
-            _offset = SelectedObject.transform.position - GetMouseWorldPosition();
-            _offset.y += _pickupHeightOffset;
         }
 
-        /// <summary>
-        /// Drags the object around
-        /// </summary>
-        public void HandleDrag()
+        // Called by InputManager every frame with the desired world position
+        public void HandleDrag(Vector3 targetWorldPosition)
         {
             if (SelectedObject != null)
             {
-                Vector3 targetPosition = GetMouseWorldPosition() + _offset;
-                SelectedObject.transform.position = Vector3.Lerp(SelectedObject.transform.position, targetPosition, _snapSpeed * Time.fixedDeltaTime);
+                Vector3 target = targetWorldPosition;
+                target.y = _pickupHeightOffset;
+                SelectedObject.transform.position = Vector3.Lerp( SelectedObject.transform.position, target, _snapSpeed * Time.deltaTime);
             }
         }
 
-        /// <summary>
-        /// Drops the selected object to the ground
-        /// </summary>
         public GameObject HandleDrop()
         {
             GameObject droppedGameObject = SelectedObject;
@@ -67,36 +50,21 @@ namespace Seacore.Common
             return droppedGameObject;
         }
 
-        /// <summary>
-        /// A smooth dropdown of the selected object
-        /// </summary>
-        /// <remarks>This function does not set the selevtedOBject to null </remarks>
-        /// <param name="gameObject"></param>
-        /// <returns></returns>
-        public IEnumerator DropObjectToHeight(GameObject gameObject)
+        private IEnumerator DropObjectToHeight(GameObject gameObject)
         {
             float timeElapsed = 0;
+            float startY = gameObject.transform.position.y;
             while (timeElapsed < _dropDuration)
             {
                 float t = timeElapsed / _dropDuration;
-                float newHeightPos = Mathf.SmoothStep(gameObject.transform.position.y, _originalHeightvalue, t);
+                float newY = Mathf.Lerp(startY, _originalHeightvalue, t);
                 timeElapsed += Time.deltaTime;
-
-                gameObject.transform.position = new Vector3(gameObject.transform.position.x, newHeightPos, gameObject.transform.position.z);
+                gameObject.transform.position = new Vector3(
+                    gameObject.transform.position.x, newY, gameObject.transform.position.z);
                 yield return null;
             }
-        }
-
-        private Vector3 GetMouseWorldPosition()
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Plane _groundPlane = new Plane(Vector3.up, new Vector3(0, _originalHeightvalue + _pickupHeightOffset, 0));
-
-            if (_groundPlane.Raycast(ray, out float enter))
-            {
-                return ray.GetPoint(enter);
-            }
-            return Vector3.zero;
+            gameObject.transform.position = new Vector3(
+                gameObject.transform.position.x, _originalHeightvalue, gameObject.transform.position.z);
         }
     }
 }

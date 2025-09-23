@@ -1,6 +1,7 @@
-using Seacore;
+using Seacore.Common;
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 namespace Seacore
@@ -13,7 +14,7 @@ namespace Seacore
         [Header("Instantiate settings")]        
         [SerializeField]
         [Tooltip("Must have a value between 0 and 31")]
-        private int _spawnInLayer;
+        private int _spawnInLayer = 3;
         [SerializeField]
         private GameObject diePrefab;
         [SerializeField]
@@ -74,10 +75,12 @@ namespace Seacore
                 for (int i = 0; i < _totalDiceToInstantiate; i++)
                 {
                     GameObject dieGameObject = Instantiate(diePrefab, dieSpawnPoints[i], Quaternion.identity, transform);
-                    dieGameObject.name = "Die_" + i.ToString();
+                    dieGameObject.name = diePrefab.name + "_" + i.ToString();
                     dieGameObject.layer = _spawnInLayer;
 
-                    Outline outline = dieGameObject.AddComponent<Outline>();
+                    Outline outline;
+                    if (!dieGameObject.TryGetComponent(out outline))
+                        outline = dieGameObject.AddComponent<Outline>();
                     outline.enabled = false;
                     outline.OutlineMode = Outline.Mode.OutlineVisible;
 
@@ -119,12 +122,15 @@ namespace Seacore
             if (collider == null)
                 return null;
 
-            Vector3[] dieSpawnPoints = new Vector3[Globals.c_amountDie];
+            if (_totalDiceToInstantiate <= 0)
+                return null;
+
+            Vector3[] dieSpawnPoints = new Vector3[_totalDiceToInstantiate];
             Vector3 spawnPosition = transform.position;
-            spawnPosition.x -= (Globals.c_amountDie / 2) * (collider.size.x + paddingBetweenDice);
+            spawnPosition.x -= (_totalDiceToInstantiate / 2) * (collider.size.x + paddingBetweenDice);
             spawnPosition.y += collider.size.y / 2.0f;
 
-            for (int i = 0; i < Globals.c_amountDie; i++)
+            for (int i = 0; i < _totalDiceToInstantiate; i++)
             {
                 dieSpawnPoints[i] = spawnPosition;
                 spawnPosition.x += collider.size.x + paddingBetweenDice;
@@ -133,7 +139,19 @@ namespace Seacore
             return dieSpawnPoints;
         }
 
-        
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.blue;
+            Vector3[] dieSpawnPoints = CalculateStartPositions();
+            if (dieSpawnPoints != null)
+            {
+                foreach (var point in dieSpawnPoints)
+                {
+                    Gizmos.DrawSphere(point, 0.1f);
+                }
+            }
+        }
+
     }
     
     [Flags]

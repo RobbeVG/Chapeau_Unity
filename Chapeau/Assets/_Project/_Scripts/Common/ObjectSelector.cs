@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -30,19 +29,11 @@ namespace Seacore.Common
         [Tooltip("Define a layerMask to select the object in")]
         public LayerMask PickupLayerMask { get; private set; }
 
-        private void Update()
-        {
-            _hoveredObject = GetObjectFromScreen(Input.mousePosition);
-        }
-
         /// <summary>
         /// Only call this method when you have disabled the gameObject
         /// </summary>
         public void SetObjectFromPosition(Vector2 pointerPosition)
         {
-#if UNITY_EDITOR || DEBUG
-            Assert.IsFalse(enabled, "The object is active when invoking on pointer move. Leads to multiple function calls");
-#endif
             _hoveredObject = GetObjectFromScreen(pointerPosition);
         }
 

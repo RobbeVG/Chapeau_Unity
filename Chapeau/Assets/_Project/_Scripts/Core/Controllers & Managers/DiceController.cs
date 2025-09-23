@@ -38,7 +38,7 @@ namespace Seacore.Game
 
         private void OnEnable()
         {
-            PlayerInputManager IM = PlayerInputManager.Instance;
+            InputManager IM = InputManager.Instance;
             IM.OnDieHoldEnter += HandleDieSelecting;
             IM.OnDieHoldExit += HandleDieDeselecting;
             IM.OnDieHoldExit += HandleDieDrop;
@@ -56,7 +56,7 @@ namespace Seacore.Game
 
         private void OnDisable()
         {
-            PlayerInputManager IM = PlayerInputManager.Instance;
+            InputManager IM = InputManager.Instance;
             if (IM)
             {
                 IM.OnDieHoldEnter -= HandleDieSelecting;

@@ -11,14 +11,12 @@ namespace Seacore.Game.RoundStates
 
         public override void EnterState() 
         {
-            PlayerInputManager.Instance.Pointing = true;
-            PlayerInputManager.Instance.Grabbing = true;
+            InputManager.Instance.SetDiceActions(true);
         }
 
         public override void ExitState() 
         {
-            PlayerInputManager.Instance.Pointing = false;
-            PlayerInputManager.Instance.Grabbing = false;  
+            InputManager.Instance.SetDiceActions(false);
         }
 
         //TODO Decide if it stays or it goes

@@ -26,17 +26,26 @@ namespace Seacore
     ""name"": ""ChapeauInputActions"",
     ""maps"": [
         {
-            ""name"": ""In-Game"",
+            ""name"": ""DiceActions"",
             ""id"": ""b6c2b162-ea26-40a8-b80b-9d9a173fabcc"",
             ""actions"": [
                 {
                     ""name"": ""Point"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""359c32ed-fef6-4f15-b213-3d2d0ce762ba"",
+                    ""id"": ""689f0d50-f726-4d23-b6a8-98461ed7f238"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Navigate"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""1485e5bf-70a3-4307-83a6-1fbf1da80f61"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""Tap"",
@@ -104,19 +113,162 @@ namespace Seacore
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f00035eb-6c1f-42f5-82c7-ca4da67123e8"",
-                    ""path"": ""<Pointer>/position"",
+                    ""id"": ""3896ced8-5755-438a-83ec-f5dabff5358b"",
+                    ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Pointer"",
                     ""action"": ""Point"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""adc57d1c-c45b-46e9-aa0c-5af9c9d06101"",
+                    ""path"": ""<Pen>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pointer"",
+                    ""action"": ""Point"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eecf9c8e-382a-4d85-a390-19a5f01b112e"",
+                    ""path"": ""<Touchscreen>/touch*/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Point"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Gamepad"",
+                    ""id"": ""c55bd945-112a-47cc-b34e-7e78367f7395"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""fa818b6e-d41d-4dd9-b9a9-3949e591ab6d"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""6c4d876b-fe88-4a44-acb1-35a361844182"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""290c2efe-013a-4d05-9bc5-00c9f6f166c6"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""0fb2d439-7f35-4918-b6eb-1443a5fb5c73"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""083ee7a7-f102-43fa-9ddb-b2b28ae541e0"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""8b2c3fd6-874f-48c0-9ef4-232ee509eeb2"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""ac920315-26ea-4431-a35e-10b838953409"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""26a6e4f5-1c84-462c-9ba2-cae4d9daac17"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ae046af6-bd9a-4163-af59-5f08829c6d6a"",
+                    ""path"": ""<Gamepad>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Joystick"",
+                    ""id"": ""ac62f542-bbdd-4051-8a22-738a25f051bb"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
         {
-            ""name"": ""UI"",
+            ""name"": ""ScreenActions"",
             ""id"": ""8ac6bb2b-c3ab-454c-a6cc-fec3d1376e3a"",
             ""actions"": [
                 {
@@ -187,24 +339,6 @@ namespace Seacore
                     ""type"": ""PassThrough"",
                     ""id"": ""06ae602a-b2c4-4c2e-a37d-4975090d0100"",
                     ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""TrackedDevicePosition"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""0a15635a-db5a-4ca8-a15b-ff475c578321"",
-                    ""expectedControlType"": ""Vector3"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""TrackedDeviceOrientation"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""89150dad-c92d-4ba3-9789-e28634363683"",
-                    ""expectedControlType"": ""Quaternion"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -580,23 +714,22 @@ namespace Seacore
         }
     ]
 }");
-            // In-Game
-            m_InGame = asset.FindActionMap("In-Game", throwIfNotFound: true);
-            m_InGame_Point = m_InGame.FindAction("Point", throwIfNotFound: true);
-            m_InGame_Tap = m_InGame.FindAction("Tap", throwIfNotFound: true);
-            m_InGame_Hold = m_InGame.FindAction("Hold", throwIfNotFound: true);
-            // UI
-            m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
-            m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
-            m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
-            m_UI_Cancel = m_UI.FindAction("Cancel", throwIfNotFound: true);
-            m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
-            m_UI_Click = m_UI.FindAction("Click", throwIfNotFound: true);
-            m_UI_ScrollWheel = m_UI.FindAction("ScrollWheel", throwIfNotFound: true);
-            m_UI_MiddleClick = m_UI.FindAction("MiddleClick", throwIfNotFound: true);
-            m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
-            m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
-            m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+            // DiceActions
+            m_DiceActions = asset.FindActionMap("DiceActions", throwIfNotFound: true);
+            m_DiceActions_Point = m_DiceActions.FindAction("Point", throwIfNotFound: true);
+            m_DiceActions_Navigate = m_DiceActions.FindAction("Navigate", throwIfNotFound: true);
+            m_DiceActions_Tap = m_DiceActions.FindAction("Tap", throwIfNotFound: true);
+            m_DiceActions_Hold = m_DiceActions.FindAction("Hold", throwIfNotFound: true);
+            // ScreenActions
+            m_ScreenActions = asset.FindActionMap("ScreenActions", throwIfNotFound: true);
+            m_ScreenActions_Navigate = m_ScreenActions.FindAction("Navigate", throwIfNotFound: true);
+            m_ScreenActions_Submit = m_ScreenActions.FindAction("Submit", throwIfNotFound: true);
+            m_ScreenActions_Cancel = m_ScreenActions.FindAction("Cancel", throwIfNotFound: true);
+            m_ScreenActions_Point = m_ScreenActions.FindAction("Point", throwIfNotFound: true);
+            m_ScreenActions_Click = m_ScreenActions.FindAction("Click", throwIfNotFound: true);
+            m_ScreenActions_ScrollWheel = m_ScreenActions.FindAction("ScrollWheel", throwIfNotFound: true);
+            m_ScreenActions_MiddleClick = m_ScreenActions.FindAction("MiddleClick", throwIfNotFound: true);
+            m_ScreenActions_RightClick = m_ScreenActions.FindAction("RightClick", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -655,31 +788,36 @@ namespace Seacore
             return asset.FindBinding(bindingMask, out action);
         }
 
-        // In-Game
-        private readonly InputActionMap m_InGame;
-        private List<IInGameActions> m_InGameActionsCallbackInterfaces = new List<IInGameActions>();
-        private readonly InputAction m_InGame_Point;
-        private readonly InputAction m_InGame_Tap;
-        private readonly InputAction m_InGame_Hold;
-        public struct InGameActions
+        // DiceActions
+        private readonly InputActionMap m_DiceActions;
+        private List<IDiceActionsActions> m_DiceActionsActionsCallbackInterfaces = new List<IDiceActionsActions>();
+        private readonly InputAction m_DiceActions_Point;
+        private readonly InputAction m_DiceActions_Navigate;
+        private readonly InputAction m_DiceActions_Tap;
+        private readonly InputAction m_DiceActions_Hold;
+        public struct DiceActionsActions
         {
             private @ChapeauInputActions m_Wrapper;
-            public InGameActions(@ChapeauInputActions wrapper) { m_Wrapper = wrapper; }
-            public InputAction @Point => m_Wrapper.m_InGame_Point;
-            public InputAction @Tap => m_Wrapper.m_InGame_Tap;
-            public InputAction @Hold => m_Wrapper.m_InGame_Hold;
-            public InputActionMap Get() { return m_Wrapper.m_InGame; }
+            public DiceActionsActions(@ChapeauInputActions wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Point => m_Wrapper.m_DiceActions_Point;
+            public InputAction @Navigate => m_Wrapper.m_DiceActions_Navigate;
+            public InputAction @Tap => m_Wrapper.m_DiceActions_Tap;
+            public InputAction @Hold => m_Wrapper.m_DiceActions_Hold;
+            public InputActionMap Get() { return m_Wrapper.m_DiceActions; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
             public bool enabled => Get().enabled;
-            public static implicit operator InputActionMap(InGameActions set) { return set.Get(); }
-            public void AddCallbacks(IInGameActions instance)
+            public static implicit operator InputActionMap(DiceActionsActions set) { return set.Get(); }
+            public void AddCallbacks(IDiceActionsActions instance)
             {
-                if (instance == null || m_Wrapper.m_InGameActionsCallbackInterfaces.Contains(instance)) return;
-                m_Wrapper.m_InGameActionsCallbackInterfaces.Add(instance);
+                if (instance == null || m_Wrapper.m_DiceActionsActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_DiceActionsActionsCallbackInterfaces.Add(instance);
                 @Point.started += instance.OnPoint;
                 @Point.performed += instance.OnPoint;
                 @Point.canceled += instance.OnPoint;
+                @Navigate.started += instance.OnNavigate;
+                @Navigate.performed += instance.OnNavigate;
+                @Navigate.canceled += instance.OnNavigate;
                 @Tap.started += instance.OnTap;
                 @Tap.performed += instance.OnTap;
                 @Tap.canceled += instance.OnTap;
@@ -688,11 +826,14 @@ namespace Seacore
                 @Hold.canceled += instance.OnHold;
             }
 
-            private void UnregisterCallbacks(IInGameActions instance)
+            private void UnregisterCallbacks(IDiceActionsActions instance)
             {
                 @Point.started -= instance.OnPoint;
                 @Point.performed -= instance.OnPoint;
                 @Point.canceled -= instance.OnPoint;
+                @Navigate.started -= instance.OnNavigate;
+                @Navigate.performed -= instance.OnNavigate;
+                @Navigate.canceled -= instance.OnNavigate;
                 @Tap.started -= instance.OnTap;
                 @Tap.performed -= instance.OnTap;
                 @Tap.canceled -= instance.OnTap;
@@ -701,58 +842,54 @@ namespace Seacore
                 @Hold.canceled -= instance.OnHold;
             }
 
-            public void RemoveCallbacks(IInGameActions instance)
+            public void RemoveCallbacks(IDiceActionsActions instance)
             {
-                if (m_Wrapper.m_InGameActionsCallbackInterfaces.Remove(instance))
+                if (m_Wrapper.m_DiceActionsActionsCallbackInterfaces.Remove(instance))
                     UnregisterCallbacks(instance);
             }
 
-            public void SetCallbacks(IInGameActions instance)
+            public void SetCallbacks(IDiceActionsActions instance)
             {
-                foreach (var item in m_Wrapper.m_InGameActionsCallbackInterfaces)
+                foreach (var item in m_Wrapper.m_DiceActionsActionsCallbackInterfaces)
                     UnregisterCallbacks(item);
-                m_Wrapper.m_InGameActionsCallbackInterfaces.Clear();
+                m_Wrapper.m_DiceActionsActionsCallbackInterfaces.Clear();
                 AddCallbacks(instance);
             }
         }
-        public InGameActions @InGame => new InGameActions(this);
+        public DiceActionsActions @DiceActions => new DiceActionsActions(this);
 
-        // UI
-        private readonly InputActionMap m_UI;
-        private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
-        private readonly InputAction m_UI_Navigate;
-        private readonly InputAction m_UI_Submit;
-        private readonly InputAction m_UI_Cancel;
-        private readonly InputAction m_UI_Point;
-        private readonly InputAction m_UI_Click;
-        private readonly InputAction m_UI_ScrollWheel;
-        private readonly InputAction m_UI_MiddleClick;
-        private readonly InputAction m_UI_RightClick;
-        private readonly InputAction m_UI_TrackedDevicePosition;
-        private readonly InputAction m_UI_TrackedDeviceOrientation;
-        public struct UIActions
+        // ScreenActions
+        private readonly InputActionMap m_ScreenActions;
+        private List<IScreenActionsActions> m_ScreenActionsActionsCallbackInterfaces = new List<IScreenActionsActions>();
+        private readonly InputAction m_ScreenActions_Navigate;
+        private readonly InputAction m_ScreenActions_Submit;
+        private readonly InputAction m_ScreenActions_Cancel;
+        private readonly InputAction m_ScreenActions_Point;
+        private readonly InputAction m_ScreenActions_Click;
+        private readonly InputAction m_ScreenActions_ScrollWheel;
+        private readonly InputAction m_ScreenActions_MiddleClick;
+        private readonly InputAction m_ScreenActions_RightClick;
+        public struct ScreenActionsActions
         {
             private @ChapeauInputActions m_Wrapper;
-            public UIActions(@ChapeauInputActions wrapper) { m_Wrapper = wrapper; }
-            public InputAction @Navigate => m_Wrapper.m_UI_Navigate;
-            public InputAction @Submit => m_Wrapper.m_UI_Submit;
-            public InputAction @Cancel => m_Wrapper.m_UI_Cancel;
-            public InputAction @Point => m_Wrapper.m_UI_Point;
-            public InputAction @Click => m_Wrapper.m_UI_Click;
-            public InputAction @ScrollWheel => m_Wrapper.m_UI_ScrollWheel;
-            public InputAction @MiddleClick => m_Wrapper.m_UI_MiddleClick;
-            public InputAction @RightClick => m_Wrapper.m_UI_RightClick;
-            public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
-            public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
-            public InputActionMap Get() { return m_Wrapper.m_UI; }
+            public ScreenActionsActions(@ChapeauInputActions wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Navigate => m_Wrapper.m_ScreenActions_Navigate;
+            public InputAction @Submit => m_Wrapper.m_ScreenActions_Submit;
+            public InputAction @Cancel => m_Wrapper.m_ScreenActions_Cancel;
+            public InputAction @Point => m_Wrapper.m_ScreenActions_Point;
+            public InputAction @Click => m_Wrapper.m_ScreenActions_Click;
+            public InputAction @ScrollWheel => m_Wrapper.m_ScreenActions_ScrollWheel;
+            public InputAction @MiddleClick => m_Wrapper.m_ScreenActions_MiddleClick;
+            public InputAction @RightClick => m_Wrapper.m_ScreenActions_RightClick;
+            public InputActionMap Get() { return m_Wrapper.m_ScreenActions; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
             public bool enabled => Get().enabled;
-            public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
-            public void AddCallbacks(IUIActions instance)
+            public static implicit operator InputActionMap(ScreenActionsActions set) { return set.Get(); }
+            public void AddCallbacks(IScreenActionsActions instance)
             {
-                if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
-                m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
+                if (instance == null || m_Wrapper.m_ScreenActionsActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_ScreenActionsActionsCallbackInterfaces.Add(instance);
                 @Navigate.started += instance.OnNavigate;
                 @Navigate.performed += instance.OnNavigate;
                 @Navigate.canceled += instance.OnNavigate;
@@ -777,15 +914,9 @@ namespace Seacore
                 @RightClick.started += instance.OnRightClick;
                 @RightClick.performed += instance.OnRightClick;
                 @RightClick.canceled += instance.OnRightClick;
-                @TrackedDevicePosition.started += instance.OnTrackedDevicePosition;
-                @TrackedDevicePosition.performed += instance.OnTrackedDevicePosition;
-                @TrackedDevicePosition.canceled += instance.OnTrackedDevicePosition;
-                @TrackedDeviceOrientation.started += instance.OnTrackedDeviceOrientation;
-                @TrackedDeviceOrientation.performed += instance.OnTrackedDeviceOrientation;
-                @TrackedDeviceOrientation.canceled += instance.OnTrackedDeviceOrientation;
             }
 
-            private void UnregisterCallbacks(IUIActions instance)
+            private void UnregisterCallbacks(IScreenActionsActions instance)
             {
                 @Navigate.started -= instance.OnNavigate;
                 @Navigate.performed -= instance.OnNavigate;
@@ -811,29 +942,23 @@ namespace Seacore
                 @RightClick.started -= instance.OnRightClick;
                 @RightClick.performed -= instance.OnRightClick;
                 @RightClick.canceled -= instance.OnRightClick;
-                @TrackedDevicePosition.started -= instance.OnTrackedDevicePosition;
-                @TrackedDevicePosition.performed -= instance.OnTrackedDevicePosition;
-                @TrackedDevicePosition.canceled -= instance.OnTrackedDevicePosition;
-                @TrackedDeviceOrientation.started -= instance.OnTrackedDeviceOrientation;
-                @TrackedDeviceOrientation.performed -= instance.OnTrackedDeviceOrientation;
-                @TrackedDeviceOrientation.canceled -= instance.OnTrackedDeviceOrientation;
             }
 
-            public void RemoveCallbacks(IUIActions instance)
+            public void RemoveCallbacks(IScreenActionsActions instance)
             {
-                if (m_Wrapper.m_UIActionsCallbackInterfaces.Remove(instance))
+                if (m_Wrapper.m_ScreenActionsActionsCallbackInterfaces.Remove(instance))
                     UnregisterCallbacks(instance);
             }
 
-            public void SetCallbacks(IUIActions instance)
+            public void SetCallbacks(IScreenActionsActions instance)
             {
-                foreach (var item in m_Wrapper.m_UIActionsCallbackInterfaces)
+                foreach (var item in m_Wrapper.m_ScreenActionsActionsCallbackInterfaces)
                     UnregisterCallbacks(item);
-                m_Wrapper.m_UIActionsCallbackInterfaces.Clear();
+                m_Wrapper.m_ScreenActionsActionsCallbackInterfaces.Clear();
                 AddCallbacks(instance);
             }
         }
-        public UIActions @UI => new UIActions(this);
+        public ScreenActionsActions @ScreenActions => new ScreenActionsActions(this);
         private int m_PointerSchemeIndex = -1;
         public InputControlScheme PointerScheme
         {
@@ -852,13 +977,14 @@ namespace Seacore
                 return asset.controlSchemes[m_GamepadSchemeIndex];
             }
         }
-        public interface IInGameActions
+        public interface IDiceActionsActions
         {
             void OnPoint(InputAction.CallbackContext context);
+            void OnNavigate(InputAction.CallbackContext context);
             void OnTap(InputAction.CallbackContext context);
             void OnHold(InputAction.CallbackContext context);
         }
-        public interface IUIActions
+        public interface IScreenActionsActions
         {
             void OnNavigate(InputAction.CallbackContext context);
             void OnSubmit(InputAction.CallbackContext context);
@@ -868,8 +994,6 @@ namespace Seacore
             void OnScrollWheel(InputAction.CallbackContext context);
             void OnMiddleClick(InputAction.CallbackContext context);
             void OnRightClick(InputAction.CallbackContext context);
-            void OnTrackedDevicePosition(InputAction.CallbackContext context);
-            void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
         }
     }
 }

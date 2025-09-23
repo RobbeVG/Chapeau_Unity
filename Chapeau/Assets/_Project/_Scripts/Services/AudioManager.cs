@@ -29,14 +29,14 @@ namespace Seacore.Common.Services
 
         public void OnEnable()
         {
-            PlayerInputManager.Instance.OnDieHoldEnter += OnDieSound;
-            PlayerInputManager.Instance.OnDieHoldExit += OnDieSound;
+            InputManager.Instance.OnDieHoldEnter += OnDieSound;
+            InputManager.Instance.OnDieHoldExit += OnDieSound;
         }
 
 
         public void OnDisable()
         {
-            PlayerInputManager IM = PlayerInputManager.Instance;
+            InputManager IM = InputManager.Instance;
             if (IM)
             {
                 IM.OnDieHoldEnter -= OnDieSound;
@@ -46,7 +46,7 @@ namespace Seacore.Common.Services
 
         IEnumerator WaitUntilSceneLoaded()
         {
-            yield return new WaitUntil(() => PlayerInputManager.Instance != null);
+            yield return new WaitUntil(() => InputManager.Instance != null);
             enabled = true;
         }
 

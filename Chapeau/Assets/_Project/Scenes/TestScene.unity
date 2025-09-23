@@ -1475,6 +1475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b27f34357524dd94e9d75e0f682436b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnInLayer: 0
   diePrefab: {fileID: 171380307}
   paddingBetweenDice: 0
   _totalDiceToInstantiate: 1
@@ -1504,9 +1505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4cc5808077a3e64484dfb5f2ade1da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pickupLayerMask:
-    serializedVersion: 2
-    m_Bits: 8
   _snapSpeed: 10
   _dropDuration: 0.5
 --- !u!114 &1760462976
@@ -1521,8 +1519,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f74e14d8f37464793f4a517e81f1eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pickupDragController: {fileID: 1760462975}
   _circleController: {fileID: 90502555}
+  _dieVisualHandler: {fileID: 0}
 --- !u!1 &1783528685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,7 +1554,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 5f6dafd673598224a8bec959baffffcf, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 65602bdef8d24bd41973b583bf2f313a, type: 2}
 --- !u!4 &1783528687
 Transform:
   m_ObjectHideFlags: 0
@@ -1636,6 +1634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b27f34357524dd94e9d75e0f682436b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnInLayer: 0
   diePrefab: {fileID: 0}
   paddingBetweenDice: 0
   _totalDiceToInstantiate: 5
