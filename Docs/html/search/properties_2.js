@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['cancel_0',['Cancel',['../struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#a1f03008dd62ff968f3181a4fdc4b8e81',1,'Seacore::ChapeauInputActions::UIActions']]],
+  ['cancel_0',['Cancel',['../struct_seacore_1_1_chapeau_input_actions_1_1_screen_actions_actions.html#a7c0acd317881854980fe077a3e713bb1',1,'Seacore::ChapeauInputActions::ScreenActionsActions']]],
   ['captionimage_1',['captionImage',['../class_seacore_1_1_image_dropdown.html#ae7a53bce7368b4152383e1576c85ef6f',1,'Seacore::ImageDropdown']]],
-  ['click_2',['Click',['../struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#acd1de5b6a3cf458b69e937ef03efea70',1,'Seacore::ChapeauInputActions::UIActions']]],
+  ['click_2',['Click',['../struct_seacore_1_1_chapeau_input_actions_1_1_screen_actions_actions.html#afe363c70e3c647234f59c6e8bb938eb1',1,'Seacore::ChapeauInputActions::ScreenActionsActions']]],
   ['context_3',['Context',['../class_seacore_1_1_game_1_1_round_manager.html#aadc8ec66e06cd97e4e7517cd363178c6',1,'Seacore::Game::RoundManager']]],
   ['controlschemes_4',['controlSchemes',['../class_seacore_1_1_chapeau_input_actions.html#a8c1fef4eb80841468ca569c01827e1d3',1,'Seacore::ChapeauInputActions']]],
   ['currentroll_5',['CurrentRoll',['../class_round_context.html#a7164d710a97cc3a15046c3e7dcb52a91',1,'RoundContext']]],

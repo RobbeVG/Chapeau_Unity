@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['minmaxsliderattribute_0',['MinMaxSliderAttribute',['../class_min_max_slider_attribute.html',1,'']]]
+  ['globals_0',['Globals',['../class_seacore_1_1_globals.html',1,'Seacore']]]
 ];

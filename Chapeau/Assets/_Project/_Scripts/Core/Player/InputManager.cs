@@ -1,9 +1,11 @@
-using UnityEngine;
-using UnityEngine.Assertions;
-using UnityEngine.InputSystem;
 using Seacore.Common;
 using System;
+using System.Reflection;
+using UnityEditor.Experimental.GraphView;
+using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace Seacore.Game
@@ -20,6 +22,9 @@ namespace Seacore.Game
     {
         private PickupAndDrag _pickupAndDrag;
         private ObjectSelector _objectSelector;
+        
+        private Selectable[] selectables;
+
         private Vector3 _dragOffset;
         private bool _isDraggingWithController;
         private Vector3 _controllerDragPosition;
@@ -49,7 +54,12 @@ namespace Seacore.Game
             base.Awake();
             _inputActions = new ChapeauInputActions();
 
-            if(!TryGetComponent<PickupAndDrag>(out _pickupAndDrag))
+
+            _inputActions.ScreenActions.Enable();
+
+            selectables = FindObjectsOfType<Selectable>(true);
+
+            if (!TryGetComponent<PickupAndDrag>(out _pickupAndDrag))
             {
                 Debug.LogError("No Pickup and Drag component found on InputController");
             }
@@ -57,23 +67,26 @@ namespace Seacore.Game
             {
                 Debug.LogError("No Object Selector component found on InputController");
             }
+
         }
 
         private void OnEnable()
         {
             _inputActions.DiceActions.Tap.performed += Tap;
             _inputActions.DiceActions.Hold.performed += Hold;
-            _inputActions.DiceActions.Point.performed += Point;
-            _inputActions.DiceActions.Navigate.performed += OnNavigate;
+            _inputActions.ScreenActions.Point.performed += Point;
+            _inputActions.ScreenActions.Navigate.performed += OnNavigate;
         }
 
         private void OnDisable()
         {
             _inputActions.DiceActions.Tap.performed -= Tap;
             _inputActions.DiceActions.Hold.performed -= Hold;
-            _inputActions.DiceActions.Point.performed -= Point;
-            _inputActions.DiceActions.Navigate.performed -= OnNavigate;
+            _inputActions.ScreenActions.Point.performed -= Point;
+            _inputActions.ScreenActions.Navigate.performed -= OnNavigate;
+
         }
+
         private void FixedUpdate()
         {
             if (_pickupAndDrag.SelectedObject == null)
@@ -105,17 +118,15 @@ namespace Seacore.Game
         /// <param name="context"><inheritdoc cref="InputAction.CallbackContext"/> </param>
         private void Tap(InputAction.CallbackContext context)
         {
-            InputDevice device = context.control.device;
-            GameObject selectedObject = GetSelectedGameObject(device);
+            GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
             if (selectedObject == null)
                 return;
 
-            Debug.Log($"Tapped {selectedObject}");
-
             Die die = selectedObject.GetComponent<Die>();
             if (die == null)
-                return; 
+                return;
 
+            Debug.Log($"Tapped {selectedObject}");
             OnDieTapped?.Invoke(die);
         }
 
@@ -129,8 +140,13 @@ namespace Seacore.Game
         private void Hold(InputAction.CallbackContext context)
         {
             InputDevice device = context.control.device;
-            GameObject selectedObject = GetSelectedGameObject(device);
+
+            GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
             if (selectedObject == null)
+                return;
+            Die die = selectedObject.GetComponent<Die>();
+
+            if (die == null)
                 return;
 
             _inputActions.ScreenActions.Disable();
@@ -154,9 +170,8 @@ namespace Seacore.Game
                 _isDraggingWithController = false;
                 _dragOffset = selectedObject.transform.position - GetMouseWorldPosition();
             }
-
-            if (selectedObject.TryGetComponent(out Die die))
-                OnDieHoldEnter?.Invoke(die);
+            
+            OnDieHoldEnter?.Invoke(die);
         }
 
         /// <summary>
@@ -187,6 +202,8 @@ namespace Seacore.Game
         /// <param name="context"></param>
         private void Point(InputAction.CallbackContext context)
         {
+            Cursor.visible = true;
+
             if (_pickupAndDrag.SelectedObject != null)
                 return;
 
@@ -203,19 +220,27 @@ namespace Seacore.Game
                 if (prevGameObject != null)
                 {
                     if (prevGameObject.TryGetComponent(out Die die))
+                    {
+                        EventSystem.current.SetSelectedGameObject(null);
                         OnDieHoverExit?.Invoke(die);
+                    }
                 }
 
                 if (newGameObject != null)
                 {
                     if (newGameObject.TryGetComponent(out Die die))
+                    {
+                        EventSystem.current.SetSelectedGameObject(newGameObject);
                         OnDieHoverEnter?.Invoke(die);
+                    }
                 }
             }
         }
 
         private void OnNavigate(InputAction.CallbackContext context) //Only Controllers
         {
+            Cursor.visible = false;
+
             InputDevice device = context.control.device;
 
             if (_pickupAndDrag.SelectedObject != null && _isDraggingWithController)
@@ -224,18 +249,10 @@ namespace Seacore.Game
                 float moveSpeed = 5f; // Tune as needed
                 _controllerDragPosition += new Vector3(direction.x, 0, direction.y) * moveSpeed * Time.deltaTime;
             }
-
-            //If there is no selected object, try to select a new one
-            if (GetSelectedGameObject(device) == null)
+            else if (EventSystem.current.currentSelectedGameObject == null)
             {
-                NewSelectedObject();
-                return;
+                SelectFirstSelectableObject();
             }
-        }
-
-        private void NewSelectedObject()
-        {
-            Debug.Log("Find new Selected Object");
         }
 
         private Vector3 GetMouseWorldPosition()
@@ -247,19 +264,18 @@ namespace Seacore.Game
             return Vector3.zero;
         }
 
-        private GameObject GetSelectedGameObject(InputDevice device)
+        private void SelectFirstSelectableObject()
         {
-            GameObject selectedObject = null;
-            //If using gamepad get selected object from event system
-            if (ReferenceEquals(device, Gamepad.current))
-                selectedObject = EventSystem.current.currentSelectedGameObject;
-            else
-            {
-                selectedObject = _objectSelector.ObjectOnCursor;
-                EventSystem.current.SetSelectedGameObject(selectedObject);
-            }
 
-            return selectedObject;
+
+            foreach (Selectable selectable in selectables)
+            {
+                if (selectable.interactable && selectable.gameObject.activeInHierarchy)
+                {
+                    EventSystem.current.SetSelectedGameObject(selectable.gameObject);
+                    return;
+                }
+            }
         }
     }
 }

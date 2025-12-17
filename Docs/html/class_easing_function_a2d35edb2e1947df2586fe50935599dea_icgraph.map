@@ -1,0 +1,8 @@
+<map id="EasingFunction.EaseInBounceD" name="EasingFunction.EaseInBounceD">
+<area shape="rect" id="Node000001" title=" " alt="" coords="455,43,665,69"/>
+<area shape="rect" id="Node000002" href="$class_easing_function.html#a7eed7b1a8122fe13fc0c60058385af43" title=" " alt="" coords="230,5,407,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="439,44,407,40,408,35,440,39"/>
+<area shape="rect" id="Node000003" href="$class_easing_function.html#a9fdbd3a302cb95bf83616854a72a39ec" title="Gets the derivative function of the appropriate easing function. If you use an easing function for po..." alt="" coords="5,35,182,77"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="440,62,407,63,230,63,182,62,182,56,230,57,407,57,440,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="214,43,182,47,182,42,214,38"/>
+</map>

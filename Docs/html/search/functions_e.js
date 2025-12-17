@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['uiactions_0',['UIActions',['../struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#aad547efb49cf1e02efd84ddfe1cbd84b',1,'Seacore::ChapeauInputActions::UIActions']]],
-  ['update_1',['Update',['../class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a1d8656356d8b50394779d9b17957ac1f',1,'Seacore::Common::Statemachine::StateMachine']]],
-  ['updatestate_2',['UpdateState',['../class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html#aeb53eb6058fa38b56d8f2be6cd384b1a',1,'Seacore::Common::Statemachine::BaseState']]]
+  ['throw_0',['Throw',['../class_seacore_1_1_die.html#a8dd3ba1a07c49c32a13ef94d97a0532c',1,'Seacore::Die']]],
+  ['tostring_1',['ToString',['../class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html#abd1115d53428e5cf90979874d126af79',1,'Seacore.Common.Statemachine.BaseState.ToString()'],['../class_seacore_1_1_roll.html#a4247721b3540f8a74e4dd665fe8d3e08',1,'Seacore.Roll.ToString()'],['../struct_seacore_1_1_roll_result.html#ad85e2a0820c9b494b20564c923147291',1,'Seacore.RollResult.ToString()']]],
+  ['transitiontostate_2',['TransitionToState',['../class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#af4ad04744ef595a6135caef8a08fa53c',1,'Seacore::Common::Statemachine::StateMachine']]]
 ];

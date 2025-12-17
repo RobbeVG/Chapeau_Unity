@@ -1,0 +1,13 @@
+<map id="Seacore.ChapeauInputActions.DiceActionsActions.SetCallbacks" name="Seacore.ChapeauInputActions.DiceActionsActions.SetCallbacks">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,105,224,148"/>
+<area shape="rect" id="Node000002" href="$struct_seacore_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#a6c23d7ce7ee745016393bd889ad97380" title=" " alt="" coords="272,105,493,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,124,256,124,256,129,224,129"/>
+<area shape="rect" id="Node000003" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_dice_actions_actions.html#a9d2b97eae75cbb58646d99392c1e704a" title=" " alt="" coords="546,5,749,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="431,102,540,58,559,51,561,56,542,62,433,107"/>
+<area shape="rect" id="Node000004" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_dice_actions_actions.html#ae1ea9c44d66c4180dd367f39932a6060" title=" " alt="" coords="541,72,754,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="493,110,525,106,526,111,494,115"/>
+<area shape="rect" id="Node000005" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_dice_actions_actions.html#a75e42391f01530b5f96ef7d56addb9e2" title=" " alt="" coords="546,139,749,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="494,138,531,143,531,148,493,143"/>
+<area shape="rect" id="Node000006" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_dice_actions_actions.html#a4f9032f3c3407b67da5612fc839abd50" title=" " alt="" coords="546,205,749,248"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="433,146,542,191,561,198,559,203,540,196,431,151"/>
+</map>

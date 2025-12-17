@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tap_0',['Tap',['../struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html#add815f581adf321fd3e6348bf2dc76f8',1,'Seacore::ChapeauInputActions::InGameActions']]],
+  ['tap_0',['Tap',['../struct_seacore_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#a0ba4fe61d33b16ee497861d24a35efee',1,'Seacore::ChapeauInputActions::DiceActionsActions']]],
   ['template_1',['template',['../class_seacore_1_1_image_dropdown.html#a95fbbebc58b498571c8ef93c89309592',1,'Seacore::ImageDropdown']]],
   ['ten_2',['Ten',['../class_seacore_1_1_die.html#a3ba69a442ee520f1e8a55587876a8e80aa185c3c138dca5ef46afc33288a67d1f',1,'Seacore::Die']]],
   ['this_5bebuttontype_20key_5d_3',['this[EButtonType key]',['../class_seacore_1_1_u_i_button_manager.html#aa2d605f2831cb0bbacb27759f812d567',1,'Seacore::UIButtonManager']]],
@@ -10,10 +10,8 @@ var searchData=
   ['torollcollor_7',['ToRollCollor',['../class_seacore_1_1_game_1_1_dice_visuals_config.html#a5b86106fa145f25c03685c5d327e5295',1,'Seacore::Game::DiceVisualsConfig']]],
   ['toselectoutline_8',['ToSelectOutline',['../class_seacore_1_1_game_1_1_dice_visuals_config.html#a132963e63f26aad3d49faaab37c70923',1,'Seacore::Game::DiceVisualsConfig']]],
   ['tostring_9',['ToString',['../class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html#abd1115d53428e5cf90979874d126af79',1,'Seacore.Common.Statemachine.BaseState.ToString()'],['../class_seacore_1_1_roll.html#a4247721b3540f8a74e4dd665fe8d3e08',1,'Seacore.Roll.ToString()'],['../struct_seacore_1_1_roll_result.html#ad85e2a0820c9b494b20564c923147291',1,'Seacore.RollResult.ToString()']]],
-  ['trackeddeviceorientation_10',['TrackedDeviceOrientation',['../struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#aa35c6aed9e176d1ffea7624929f84409',1,'Seacore::ChapeauInputActions::UIActions']]],
-  ['trackeddeviceposition_11',['TrackedDevicePosition',['../struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#af4de16dd6b663238504f13feaefbea56',1,'Seacore::ChapeauInputActions::UIActions']]],
-  ['transitiontostate_12',['TransitionToState',['../class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#af4ad04744ef595a6135caef8a08fa53c',1,'Seacore::Common::Statemachine::StateMachine']]],
-  ['tweenrunner_2ecs_13',['TweenRunner.cs',['../_tween_runner_8cs.html',1,'']]],
-  ['twopair_14',['TwoPair',['../namespace_seacore.html#a385dce04599d45f300059cd912a455d5a2971b3edb9bcb3a650781ce9807d2590',1,'Seacore']]],
-  ['type_15',['Type',['../struct_seacore_1_1_roll_result.html#aca31aa3b56fe420cefc9d4875aee5d69',1,'Seacore::RollResult']]]
+  ['transitiontostate_10',['TransitionToState',['../class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#af4ad04744ef595a6135caef8a08fa53c',1,'Seacore::Common::Statemachine::StateMachine']]],
+  ['tweenrunner_2ecs_11',['TweenRunner.cs',['../_tween_runner_8cs.html',1,'']]],
+  ['twopair_12',['TwoPair',['../namespace_seacore.html#a385dce04599d45f300059cd912a455d5a2971b3edb9bcb3a650781ce9807d2590',1,'Seacore']]],
+  ['type_13',['Type',['../struct_seacore_1_1_roll_result.html#aca31aa3b56fe420cefc9d4875aee5d69',1,'Seacore::RollResult']]]
 ];

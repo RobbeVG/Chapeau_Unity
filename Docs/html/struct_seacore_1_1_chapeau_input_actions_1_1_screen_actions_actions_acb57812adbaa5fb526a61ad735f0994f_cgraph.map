@@ -1,0 +1,21 @@
+<map id="Seacore.ChapeauInputActions.ScreenActionsActions.SetCallbacks" name="Seacore.ChapeauInputActions.ScreenActionsActions.SetCallbacks">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,239,238,281"/>
+<area shape="rect" id="Node000002" href="$struct_seacore_1_1_chapeau_input_actions_1_1_screen_actions_actions.html#adaf8ad74fe29bc1b5ec068117d953e77" title=" " alt="" coords="286,239,521,281"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,257,270,257,270,263,238,263"/>
+<area shape="rect" id="Node000003" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_screen_actions_actions.html#ae00288b8c6d05cd8c6ce2d86724328d1" title=" " alt="" coords="584,5,800,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="414,237,438,198,472,150,516,100,567,58,576,53,579,57,571,62,520,104,476,153,442,201,419,240"/>
+<area shape="rect" id="Node000004" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_screen_actions_actions.html#a237766658fdf3598426c3fbf89846dfa" title=" " alt="" coords="589,72,794,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="424,236,485,180,525,150,568,124,580,118,583,123,570,129,528,155,488,185,427,240"/>
+<area shape="rect" id="Node000005" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_screen_actions_actions.html#a0d78fb325656abccbeec26c016aff28b" title=" " alt="" coords="570,139,813,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="453,236,568,191,590,184,592,189,570,196,455,241"/>
+<area shape="rect" id="Node000006" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_screen_actions_actions.html#a7e386680df3e4f96a78d46fb3f52b47b" title=" " alt="" coords="578,205,805,248"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="521,244,562,239,562,244,522,249"/>
+<area shape="rect" id="Node000007" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_screen_actions_actions.html#a044256e91e7cda64d87b1fa9b823657d" title=" " alt="" coords="589,272,794,315"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="522,271,574,277,573,282,521,276"/>
+<area shape="rect" id="Node000008" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_screen_actions_actions.html#ab7a06fa10ca4194b928a414c90fe6137" title=" " alt="" coords="574,339,810,381"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="455,279,570,324,592,331,590,336,568,329,453,284"/>
+<area shape="rect" id="Node000009" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_screen_actions_actions.html#a3d43eb61424ee7e17092e78189c86a96" title=" " alt="" coords="569,405,814,448"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="427,280,488,335,528,365,570,391,583,397,580,402,568,396,525,370,485,340,424,284"/>
+<area shape="rect" id="Node000010" href="$interface_seacore_1_1_chapeau_input_actions_1_1_i_screen_actions_actions.html#ad11eaad898ac75ddd36d3a83ec49c4da" title=" " alt="" coords="584,472,800,515"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="419,280,442,319,476,367,520,416,571,458,579,463,576,467,567,462,516,420,472,370,438,322,414,283"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Seacore.Common.Statemachine.StateMachine&lt; RoundStateMachine.RoundState &gt;::ForcedNewCurrentState" name="Seacore.Common.Statemachine.StateMachine&lt; RoundStateMachine.RoundState &gt;::ForcedNewCurrentState">
+<area shape="rect" id="Node000001" title=" " alt="" coords="540,5,791,64"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_game_1_1_round_state_machine.html#a61306f0312ede9ea6b2dff16a916b296" title=" " alt="" coords="258,13,492,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="524,37,492,37,492,32,524,32"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_game_1_1_round_manager.html#acc87233bac1cd43e2374073d65ac38fe" title="Resets the state of the round, clearing or reinitializing round&#45;specific data and components...." alt="" coords="5,13,210,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="242,37,210,37,210,32,242,32"/>
+</map>

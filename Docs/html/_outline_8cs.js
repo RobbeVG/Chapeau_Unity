@@ -1,4 +1,4 @@
 var _outline_8cs =
 [
-    [ "Outline", "class_outline.html", "class_outline" ]
+    [ "Seacore.Common.Outline", "class_seacore_1_1_common_1_1_outline.html", "class_seacore_1_1_common_1_1_outline" ]
 ];

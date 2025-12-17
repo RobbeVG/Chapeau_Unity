@@ -23,6 +23,7 @@ namespace Seacore
             { Faces.King, Vector3.up},
             { Faces.Ace, Vector3.left}
         }; //All the directions of the die's faces
+        public static readonly int s_numberOfFaces = Enum.GetValues(typeof(Faces)).Length - 1; //Number of faces excluding None
 
         public event Action<Die> OnRolledValue;
 

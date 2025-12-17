@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mode_0',['Mode',['../class_outline.html#a05be0e266b0a319593b0303d40f43592',1,'Outline']]]
+  ['faces_0',['Faces',['../class_seacore_1_1_die.html#a3ba69a442ee520f1e8a55587876a8e80',1,'Seacore::Die']]]
 ];

@@ -1,0 +1,7 @@
+<map id="Seacore.Game.InputManager.SetDiceActions" name="Seacore.Game.InputManager.SetDiceActions">
+<area shape="rect" id="Node000001" title=" " alt="" coords="246,39,441,81"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_game_1_1_round_states_1_1_roll_setup_state.html#a1ecacd1220e34418f048fd9b5847c980" title=" " alt="" coords="5,5,198,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,47,198,43,198,37,230,42"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_game_1_1_round_states_1_1_roll_setup_state.html#a56559001de0ae9bdb22396d16590de89" title=" " alt="" coords="5,72,198,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="230,78,198,83,198,77,230,73"/>
+</map>

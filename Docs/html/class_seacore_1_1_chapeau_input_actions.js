@@ -1,9 +1,9 @@
 var class_seacore_1_1_chapeau_input_actions =
 [
-    [ "IInGameActions", "interface_seacore_1_1_chapeau_input_actions_1_1_i_in_game_actions.html", "interface_seacore_1_1_chapeau_input_actions_1_1_i_in_game_actions" ],
-    [ "InGameActions", "struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions.html", "struct_seacore_1_1_chapeau_input_actions_1_1_in_game_actions" ],
-    [ "IUIActions", "interface_seacore_1_1_chapeau_input_actions_1_1_i_u_i_actions.html", "interface_seacore_1_1_chapeau_input_actions_1_1_i_u_i_actions" ],
-    [ "UIActions", "struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html", "struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions" ],
+    [ "DiceActionsActions", "struct_seacore_1_1_chapeau_input_actions_1_1_dice_actions_actions.html", "struct_seacore_1_1_chapeau_input_actions_1_1_dice_actions_actions" ],
+    [ "IDiceActionsActions", "interface_seacore_1_1_chapeau_input_actions_1_1_i_dice_actions_actions.html", "interface_seacore_1_1_chapeau_input_actions_1_1_i_dice_actions_actions" ],
+    [ "IScreenActionsActions", "interface_seacore_1_1_chapeau_input_actions_1_1_i_screen_actions_actions.html", "interface_seacore_1_1_chapeau_input_actions_1_1_i_screen_actions_actions" ],
+    [ "ScreenActionsActions", "struct_seacore_1_1_chapeau_input_actions_1_1_screen_actions_actions.html", "struct_seacore_1_1_chapeau_input_actions_1_1_screen_actions_actions" ],
     [ "ChapeauInputActions", "class_seacore_1_1_chapeau_input_actions.html#ac09c28914ddcd6d4f405c8b9ad00e380", null ],
     [ "Contains", "class_seacore_1_1_chapeau_input_actions.html#a7d6c117785b95c037282e698011b9925", null ],
     [ "Disable", "class_seacore_1_1_chapeau_input_actions.html#a7906233997d79b182d283606cefd2c76", null ],
@@ -17,8 +17,8 @@ var class_seacore_1_1_chapeau_input_actions =
     [ "bindings", "class_seacore_1_1_chapeau_input_actions.html#aed23becf28a4b91d41206f27574bf13f", null ],
     [ "controlSchemes", "class_seacore_1_1_chapeau_input_actions.html#a8c1fef4eb80841468ca569c01827e1d3", null ],
     [ "devices", "class_seacore_1_1_chapeau_input_actions.html#a9a5b9da19d3b457162a3b685a086b1b5", null ],
+    [ "DiceActions", "class_seacore_1_1_chapeau_input_actions.html#a90f9cb4c05dc30af83aea048941503ec", null ],
     [ "GamepadScheme", "class_seacore_1_1_chapeau_input_actions.html#a7f60b62df7b89deddd0f5da1992acbf7", null ],
-    [ "InGame", "class_seacore_1_1_chapeau_input_actions.html#af8009967573ce5223ce7a32fab90388d", null ],
     [ "PointerScheme", "class_seacore_1_1_chapeau_input_actions.html#ae49978f90c7063a352634a195fe0a410", null ],
-    [ "UI", "class_seacore_1_1_chapeau_input_actions.html#ad5fe38beced853ad98272d5a0a9ce848", null ]
+    [ "ScreenActions", "class_seacore_1_1_chapeau_input_actions.html#afb4522df100701bb94abfcc03d8952d8", null ]
 ];

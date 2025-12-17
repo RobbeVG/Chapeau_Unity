@@ -25,9 +25,9 @@
 var NAVTREE =
 [
   [ "Chapeau_Unity", "index.html", [
-    [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
-      [ "Namespace Members", "namespacemembers.html", [
+    [ "Packages", "namespaces.html", [
+      [ "Package List", "namespaces.html", "namespaces_dup" ],
+      [ "Package Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ]
       ] ]
@@ -38,7 +38,7 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Properties", "functions_prop.html", null ],
@@ -54,8 +54,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_audio_manager_8cs.html",
-"class_seacore_1_1_die.html#a3ba69a442ee520f1e8a55587876a8e80a6adf97f83acf6453d4a6a4b1070f3754",
-"class_seacore_1_1_roll.html"
+"class_seacore_1_1_circle_controller.html#a3b98c4ae46dea36d35aed6c1053939b4",
+"class_seacore_1_1_game_1_1_round_manager.html",
+"class_seacore_1_1_u_i_button_manager.html#a0f0dab399d506b75573cfc7a9a065543"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

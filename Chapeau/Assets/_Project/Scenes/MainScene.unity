@@ -321,8 +321,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080357470d66b754e95492ba5fd5fc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointing: 0
-  _grabbing: 0
 --- !u!114 &161303979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,6 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _snapSpeed: 10
   _dropDuration: 0.5
+  _pickupHeightOffset: 0.4
 --- !u!114 &161303980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,9 +380,9 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: In-Game
+  m_DefaultActionMap: DiceActions
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 963194227}
 --- !u!1001 &213090717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2303,7 +2302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
+  m_SendPointerHoverToParent: 0
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
@@ -2318,7 +2317,7 @@ MonoBehaviour:
   m_ScrollWheelAction: {fileID: 4392277692444149428, guid: 87d1e2deafe81d7438fe7b3753c04f83, type: 3}
   m_TrackedDevicePositionAction: {fileID: 2302053861170706103, guid: 87d1e2deafe81d7438fe7b3753c04f83, type: 3}
   m_TrackedDeviceOrientationAction: {fileID: -4723565219376521677, guid: 87d1e2deafe81d7438fe7b3753c04f83, type: 3}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 1
   m_CursorLockBehavior: 0
 --- !u!1 &1556813752

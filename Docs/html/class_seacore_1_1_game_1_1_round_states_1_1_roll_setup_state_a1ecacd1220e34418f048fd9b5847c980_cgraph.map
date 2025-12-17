@@ -1,0 +1,12 @@
+<map id="Seacore.Game.RoundStates.RollSetupState.EnterState" name="Seacore.Game.RoundStates.RollSetupState.EnterState">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,198,81"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_game_1_1_input_manager.html#a36afbd4b75e5698297cb65bfb2fbabe0" title=" " alt="" coords="246,39,441,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,57,230,57,230,63,198,63"/>
+<area shape="rect" id="Node000003" href="$struct_seacore_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#a2db18f03a9343ae3061c6d14d8a997c3" title=" " alt="" coords="489,5,691,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="441,44,473,40,474,45,442,49"/>
+<area shape="rect" id="Node000005" href="$struct_seacore_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#a1aa2434d455d4f68ff1f4727c3b92fe8" title=" " alt="" coords="489,72,691,115"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="442,71,474,75,473,80,441,76"/>
+<area shape="rect" id="Node000004" href="$struct_seacore_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#a1c07ef0b0fbc3ed3736ca8111207cbd3" title=" " alt="" coords="739,39,942,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="692,38,724,42,724,47,692,43"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="692,77,724,73,724,78,692,82"/>
+</map>

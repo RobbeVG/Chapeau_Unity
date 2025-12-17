@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2bab1b210bee34588ccb0911b1baa9, type: 3}
+  m_Name: DiceDisplayValues
+  m_EditorClassIdentifier: 
+  faceSprites:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 0}
+    - Key: 1
+      Value: {fileID: 21300000, guid: 5d950a6a45ec73a4dbc0072d131a1831, type: 3}
+    - Key: 2
+      Value: {fileID: 21300000, guid: 120e3f90186852544a2b3478d1e1ca1c, type: 3}
+    - Key: 3
+      Value: {fileID: 21300000, guid: d2f68ab4884aa9648a5b9643e1caeb01, type: 3}
+    - Key: 4
+      Value: {fileID: 21300000, guid: 374d303c3f385b74db6f700bc9ad1fc6, type: 3}
+    - Key: 5
+      Value: {fileID: 21300000, guid: 85fa7a702f8793d46b722e59d6d65878, type: 3}
+    - Key: 6
+      Value: {fileID: 21300000, guid: 8558c03ade9b1d64298672ce8054181e, type: 3}

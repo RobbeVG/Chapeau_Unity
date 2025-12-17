@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['s_5ffacedirections_0',['s_facedirections',['../class_seacore_1_1_die.html#a03a1bfb5d4387d6c091e084081a4993c',1,'Seacore::Die']]]
+  ['die_0',['Die',['../class_seacore_1_1_dice_manager.html#ab8b8de7a83ba7cefe29a91901273aa2f',1,'Seacore::DiceManager']]]
 ];

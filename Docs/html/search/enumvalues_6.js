@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['jack_0',['Jack',['../class_seacore_1_1_die.html#a3ba69a442ee520f1e8a55587876a8e80a40687c8206d15373954d8b27c6724f62',1,'Seacore::Die']]]
+  ['ingame_0',['InGame',['../class_scene_manager.html#a6b07eecbf60e3719d8afae08a9185327a7f3d370e94c8b1fea09838572013d8ec',1,'SceneManager']]],
+  ['inside_1',['Inside',['../namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bba9b6d3000134648fc9f1e71094ae0847d',1,'Seacore']]]
 ];

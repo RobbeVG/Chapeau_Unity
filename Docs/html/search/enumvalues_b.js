@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['outlineall_0',['OutlineAll',['../class_outline.html#a05be0e266b0a319593b0303d40f43592ac0443134e99993aa2c6c37302841f1ec',1,'Outline']]],
-  ['outlineandsilhouette_1',['OutlineAndSilhouette',['../class_outline.html#a05be0e266b0a319593b0303d40f43592abdef1f3acaf7fba979f4a599154d8d89',1,'Outline']]],
-  ['outlinehidden_2',['OutlineHidden',['../class_outline.html#a05be0e266b0a319593b0303d40f43592ac09152c3be98a011c43670d80b5699b4',1,'Outline']]],
-  ['outlinevisible_3',['OutlineVisible',['../class_outline.html#a05be0e266b0a319593b0303d40f43592a838c01cea7e6b911706f2f959eb0889a',1,'Outline']]]
+  ['nine_0',['Nine',['../class_seacore_1_1_die.html#a3ba69a442ee520f1e8a55587876a8e80a24db11216549ee55172c33cf3def2f3f',1,'Seacore::Die']]],
+  ['none_1',['None',['../class_seacore_1_1_die.html#a3ba69a442ee520f1e8a55587876a8e80a6adf97f83acf6453d4a6a4b1070f3754',1,'Seacore.Die.None'],['../namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bba6adf97f83acf6453d4a6a4b1070f3754',1,'Seacore.None']]],
+  ['nothing_2',['Nothing',['../namespace_seacore.html#a385dce04599d45f300059cd912a455d5af80a4ad87fee7c9fdc19b7769495fdb5',1,'Seacore']]]
 ];

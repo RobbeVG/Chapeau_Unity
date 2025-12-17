@@ -1,0 +1,17 @@
+<map id="DiceSelectorTweener" name="DiceSelectorTweener">
+<area shape="rect" id="Node000001" title=" " alt="" coords="196,157,341,184"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="21,5,132,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,37,149,42,184,69,216,101,260,155,255,159,212,105,181,73,146,46,138,41"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="23,56,130,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="136,86,149,92,205,124,250,155,247,159,202,129,146,97,134,91"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="25,107,128,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="143,135,216,154,215,159,142,140"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="15,157,138,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="153,168,195,168,195,173,153,173"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,208,148,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="144,201,214,182,216,187,145,206"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="9,259,144,285"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="134,250,146,244,202,212,247,182,250,187,205,217,149,249,136,255"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="6,309,147,336"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="138,300,146,295,181,268,212,237,255,183,260,186,216,240,184,272,149,300,141,305"/>
+</map>

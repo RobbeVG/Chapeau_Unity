@@ -1,8 +1,8 @@
 <map id="Chapeau/Assets/_Project/_Scripts/Core" name="Chapeau/Assets/_Project/_Scripts/Core">
-<area shape="rect" id="node2" href="dir_400a003a7c25955a8dde2f122b0728d0.html" title="Controllers &amp; Managers" alt="" coords="112,64,270,91"/>
-<area shape="rect" id="node3" href="dir_6bf2a7db62052ab0f56c77745ca584b0.html" title="Player" alt="" coords="294,64,352,91"/>
-<area shape="rect" id="node4" href="dir_73bee45ccea3fb79b034be77a5735771.html" title="Roll" alt="" coords="376,64,421,91"/>
-<area shape="rect" id="node5" href="dir_2ac880fe199af5a4dc4f09733bd7bdee.html" title="Round" alt="" coords="445,64,504,91"/>
-<area shape="rect" id="clust2" href="dir_f3c909a21769957ba900644dc245dc95.html" alt="" coords="27,53,515,101"/>
-<area shape="rect" id="clust1" href="dir_b79b99bc8fa926136fa929c0d8af2df0.html" title="_Scripts" alt="" coords="16,16,525,112"/>
+<area shape="rect" id="node2" href="dir_400a003a7c25955a8dde2f122b0728d0.html" title="Controllers &amp; Managers" alt="" coords="157,64,315,91"/>
+<area shape="rect" id="node3" href="dir_6bf2a7db62052ab0f56c77745ca584b0.html" title="Player" alt="" coords="339,64,435,91"/>
+<area shape="rect" id="node4" href="dir_73bee45ccea3fb79b034be77a5735771.html" title="Roll" alt="" coords="459,64,555,91"/>
+<area shape="rect" id="node5" href="dir_2ac880fe199af5a4dc4f09733bd7bdee.html" title="Round" alt="" coords="579,64,675,91"/>
+<area shape="rect" id="clust2" href="dir_f3c909a21769957ba900644dc245dc95.html" alt="" coords="27,53,685,101"/>
+<area shape="rect" id="clust1" href="dir_b79b99bc8fa926136fa929c0d8af2df0.html" title="_Scripts" alt="" coords="16,16,696,112"/>
 </map>

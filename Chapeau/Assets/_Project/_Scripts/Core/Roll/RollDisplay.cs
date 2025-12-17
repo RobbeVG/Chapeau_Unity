@@ -38,7 +38,7 @@ namespace Seacore.UI
             {
                 Image image = images[i];
                 Die.Faces value = roll.Values[i];
-                image.sprite = _diceDisplayValues.FaceSprites[value];
+                image.sprite = _diceDisplayValues.GetFaceSprite(value);
                 if (hideNone && value == Die.Faces.None)
                     image.gameObject.SetActive(false);
                 else

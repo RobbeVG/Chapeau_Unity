@@ -5,6 +5,7 @@ var struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions =
     [ "Disable", "struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#a269a9083821c73901730e17f3053cd07", null ],
     [ "Enable", "struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#a93c0fb5dc8bbb78fa8ddf18af56b0899", null ],
     [ "Get", "struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#ac9ed27899e0232fadc32612ae26ffa13", null ],
+    [ "operator InputActionMap", "struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#ae7e6e27a9263734b37ae04e980d933b2", null ],
     [ "RemoveCallbacks", "struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#ac7483fcc96ea7b5f7ca727c25a627117", null ],
     [ "SetCallbacks", "struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#a3f83d7b2b2f45a19d123db11c52386d7", null ],
     [ "Cancel", "struct_seacore_1_1_chapeau_input_actions_1_1_u_i_actions.html#a1f03008dd62ff968f3181a4fdc4b8e81", null ],

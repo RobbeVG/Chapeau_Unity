@@ -1,0 +1,10 @@
+<map id="Seacore.Game.InputManager.SetDiceActions" name="Seacore.Game.InputManager.SetDiceActions">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,201,81"/>
+<area shape="rect" id="Node000002" href="$struct_seacore_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#a2db18f03a9343ae3061c6d14d8a997c3" title=" " alt="" coords="249,5,451,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,44,233,40,233,45,202,49"/>
+<area shape="rect" id="Node000004" href="$struct_seacore_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#a1aa2434d455d4f68ff1f4727c3b92fe8" title=" " alt="" coords="249,72,451,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="202,71,233,75,233,80,201,76"/>
+<area shape="rect" id="Node000003" href="$struct_seacore_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#a1c07ef0b0fbc3ed3736ca8111207cbd3" title=" " alt="" coords="499,39,701,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="452,38,484,42,483,47,451,43"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="451,77,483,73,484,78,452,82"/>
+</map>
