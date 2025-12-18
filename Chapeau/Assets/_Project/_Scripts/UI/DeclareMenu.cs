@@ -1,38 +1,53 @@
+using Seacore.Common;
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
-namespace Seacore
+namespace Seacore.Game.UI
 {
     public class DeclareMenu : MonoBehaviour
     {
         [SerializeField]
-        Dropdown[] dropdowns = new Dropdown[Globals.c_amountDie];
+        IDieValueGetter<Die.Faces>[] selectors;
 
+        [SerializeField]
         Roll _declaredRoll = null;
 
         public event Action OnEditDeclareRoll;
 
         private void Awake()
         {
-            _declaredRoll = Resources.Load<Roll>("Rolls/DeclaredRoll");
+            if (_declaredRoll == null)
+                _declaredRoll = Resources.Load<Roll>("Rolls/DeclaredRoll");
             Assert.IsNotNull(_declaredRoll, "Declared Roll in the Declare Menu cannot be null");
 
-            foreach (Dropdown item in dropdowns)
+            selectors = gameObject.GetComponentsInChildren<IDieValueGetter<Die.Faces>>(true);
+            if (selectors.Length != Globals.c_amountDie)
             {
-                Assert.IsNotNull(item, "Not all dropdowns are filled in Declare Menu");
+                Debug.LogError($"Declared Roll selectors length {selectors.Length} does not match Globals.c_amountDie {Globals.c_amountDie}");
+                return;
             }
         }
 
-        public void RecalculateDeclaredRoll()
+        private void OnEnable()
         {
-            for (int i = 0; i < Globals.c_amountDie; i++)
-            {
-                _declaredRoll.ChangeValue(i, dropdowns[i].value);
-            }
-            _declaredRoll.CalculateResult();
+            foreach (IDieValueGetter<Die.Faces> selector in selectors)
+                selector.OnEditValue += AdjustDeclaredRoll;
+        }
 
+        private void OnDisable()
+        {
+            foreach (IDieValueGetter<Die.Faces> selector in selectors)
+                selector.OnEditValue -= AdjustDeclaredRoll;
+        }
+
+        public void AdjustDeclaredRoll(IDieValueGetter<Die.Faces> obj)
+        {
+            int index = Array.IndexOf(selectors, obj);
+            _declaredRoll.ChangeValue(index, obj.Value);
+            _declaredRoll.CalculateResult();
             OnEditDeclareRoll?.Invoke();
         } 
     }

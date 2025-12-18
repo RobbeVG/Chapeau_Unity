@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using System;
 using System.Collections.Generic;
+using Seacore.Common;
 
 namespace Seacore
 {
@@ -30,9 +31,12 @@ namespace Seacore
         private bool _isRolling = false; // Value to check if the die is still rolling
 
         //Ful property to show dieValue in the inspector
-        [ReadOnly][SerializeField]
+        [field: ReadOnly][field: SerializeField]
         private Faces _dieValue;
         public Faces DieValue { get => _dieValue; private set => _dieValue = value; }
+
+        //public TypedDieData<Faces> TypedDieData { get; private set; } = new TypedDieData<Faces>(Faces.Nine);
+
 
         private Rigidbody _rigidbody = null;
         public Rigidbody Rigidbody { get => _rigidbody; private set => _rigidbody = value; }

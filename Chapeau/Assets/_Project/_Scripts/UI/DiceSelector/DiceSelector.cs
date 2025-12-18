@@ -5,9 +5,10 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static Seacore.Die;
 
 [RequireComponent(typeof(Selectable))]
-public class DiceSelector : MonoBehaviour, ISelectHandler, IMoveHandler, IDeselectHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class DiceSelector : MonoBehaviour, IDieValueGetter<Faces>, ISelectHandler, IMoveHandler, IDeselectHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [Header("Visual Settings")]
     [SerializeField]
@@ -23,8 +24,11 @@ public class DiceSelector : MonoBehaviour, ISelectHandler, IMoveHandler, IDesele
     [SerializeField]
     private Image imageIcon = null;
 
+
+    public event IDieValueGetter<Faces>.OnEditDeclareRollHandler OnEditValue;
+
     [field: SerializeField]
-    public Die.Faces SelectedFace { get; private set; } = Die.Faces.None;
+    public TypedDieData<Faces> SelectedFace { get; } = new TypedDieData<Faces>(Faces.None, noneExclusive: false);
 
     private Selectable selectable = null;
     
@@ -33,7 +37,7 @@ public class DiceSelector : MonoBehaviour, ISelectHandler, IMoveHandler, IDesele
 
     private void OnValidate()
     {
-        SetIconSprite(SelectedFace);
+        SetIconSprite(SelectedFace.Value);
     }
 
     private void Awake()
@@ -52,6 +56,8 @@ public class DiceSelector : MonoBehaviour, ISelectHandler, IMoveHandler, IDesele
         tweenUpArrow = InitYOffsetTween(upArrow, config.EndYOffset);
         tweenDownArrow = InitYOffsetTween(downArrow, -config.EndYOffset);
     }
+
+    public Faces Value => SelectedFace.Value;
 
     public void OnMove(AxisEventData eventData)
     {
@@ -103,16 +109,14 @@ public class DiceSelector : MonoBehaviour, ISelectHandler, IMoveHandler, IDesele
     private void SwipeUp()
     {
         upArrow.transform.DOPunchPosition(new Vector3(0.0f, config.NudgeAmount, 0.0f), config.NudgeDuration);
-        int faceIndex = (int)SelectedFace;
-        SelectedFace = ++faceIndex > Die.s_numberOfFaces ? 0 : (Die.Faces)faceIndex;
-        SetIconSprite(SelectedFace);
+        SetIconSprite(SelectedFace.Next);
+        OnEditValue?.Invoke(this);
     }
     private void SwipeDown()
     {
         downArrow.transform.DOPunchPosition(new Vector3(0.0f, -config.NudgeAmount, 0.0f), config.NudgeDuration);
-        int faceIndex = (int)SelectedFace;
-        SelectedFace = --faceIndex < 0 ? (Die.Faces)Die.s_numberOfFaces : (Die.Faces)faceIndex;
-        SetIconSprite(SelectedFace);
+        SetIconSprite(SelectedFace.Previous);
+        OnEditValue?.Invoke(this);
     }
     private Tween InitYOffsetTween(GameObject gm, float offset)
     {
@@ -128,11 +132,12 @@ public class DiceSelector : MonoBehaviour, ISelectHandler, IMoveHandler, IDesele
             Debug.LogWarning("No attached icon component", this);
         else
         {
-            imageIcon.sprite = diceValues.GetFaceSprite(SelectedFace);
-            if (SelectedFace == Die.Faces.None)
+            imageIcon.sprite = diceValues.GetFaceSprite(SelectedFace.Value);
+            if (SelectedFace.Value == Die.Faces.None)
                 imageIcon.enabled = false;
             else
                 imageIcon.enabled = true;
         }
     }
+
 }

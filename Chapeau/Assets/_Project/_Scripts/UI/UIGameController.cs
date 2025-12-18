@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Seacore.Game.UI;
 
 namespace Seacore.Game
 {
