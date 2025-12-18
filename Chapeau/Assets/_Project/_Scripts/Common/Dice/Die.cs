@@ -2,9 +2,8 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using System;
 using System.Collections.Generic;
-using Seacore.Common;
 
-namespace Seacore
+namespace Seacore.Common
 {
     [RequireComponent(typeof(Rigidbody))]
     public class Die : MonoBehaviour

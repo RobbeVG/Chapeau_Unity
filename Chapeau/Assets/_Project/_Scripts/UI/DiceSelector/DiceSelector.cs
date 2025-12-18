@@ -5,7 +5,8 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static Seacore.Die;
+
+using static Seacore.Common.Die;
 
 [RequireComponent(typeof(Selectable))]
 public class DiceSelector : MonoBehaviour, IDieValueGetter<Faces>, ISelectHandler, IMoveHandler, IDeselectHandler, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
@@ -77,7 +78,6 @@ public class DiceSelector : MonoBehaviour, IDieValueGetter<Faces>, ISelectHandle
         tweenUpArrow.PlayForward();
         tweenDownArrow.PlayForward();
     }
-
     public void OnDeselect(BaseEventData eventData)
     {
         tweenUpArrow.PlayBackwards();
@@ -89,7 +89,6 @@ public class DiceSelector : MonoBehaviour, IDieValueGetter<Faces>, ISelectHandle
     {
         selectable.Select();
     }
-
     public void OnPointerExit(PointerEventData eventData)
     {
         EventSystem.current.SetSelectedGameObject(null, eventData);

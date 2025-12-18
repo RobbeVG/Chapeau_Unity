@@ -1,6 +1,6 @@
 {
-    "name": "Core",
-    "rootNamespace": "Seacore.Core",
+    "name": "Game",
+    "rootNamespace": "Seacore.Game",
     "references": [
         "GUID:09318e10af0a9fe4dbedd5dcf48d9d96",
         "GUID:8452fd342a2c82f4abbae61da5429b90",

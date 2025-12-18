@@ -1,8 +1,10 @@
 using NUnit.Framework;
-using Seacore;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+
+using Seacore.Game;
+using Seacore.Common;
 
 public class Test_RollStruct
 {

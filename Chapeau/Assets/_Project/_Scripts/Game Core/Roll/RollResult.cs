@@ -1,4 +1,4 @@
-namespace Seacore
+namespace Seacore.Game
 {
     public enum RollType { Nothing, Pair, TwoPair, ThreeOfAKind, LowStraight, FullHouse, HighStraight, FourOfAKind, FiveOfAKind }
 

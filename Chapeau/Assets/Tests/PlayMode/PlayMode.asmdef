@@ -4,8 +4,8 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Core",
-        "Common"
+        "Common",
+        "Game"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

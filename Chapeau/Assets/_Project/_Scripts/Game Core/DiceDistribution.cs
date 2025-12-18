@@ -4,7 +4,9 @@ using UnityEngine;
 using System;
 using UnityEditor;
 
-namespace Seacore
+using Seacore.Common;
+
+namespace Seacore.Game
 {
     /// <summary>
     /// Calculates the density and adjusts the position of dice objects within a defined area, considering border constraints, proximity to other dice, and a central circle.

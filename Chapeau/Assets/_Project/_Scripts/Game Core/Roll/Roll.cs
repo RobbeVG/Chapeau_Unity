@@ -4,8 +4,10 @@ using System.Linq;
 using UnityEngine;
 using System;
 
-namespace Seacore
-{
+using Seacore.Common;
+
+namespace Seacore.Game
+{   
     [CreateAssetMenu(fileName = "Roll", menuName = "ScriptableObjects/Roll")]
     [Serializable]
     public class Roll : ScriptableObject
