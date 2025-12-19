@@ -413,6 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080357470d66b754e95492ba5fd5fc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inputReader: {fileID: 11400000, guid: ef22fb5e167f97c4d992e5e19616292c, type: 2}
 --- !u!1 &440526747
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,14 +719,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 437620207}
     m_Modifications:
-    - target: {fileID: -7203309897141555061, guid: cd3ae248d2e3773499b1806cf627ac57, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7203309897141555061, guid: cd3ae248d2e3773499b1806cf627ac57, type: 3}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 375098663847269277, guid: 95b6da217e9a97a4d8ed676e62439fc3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.19199991
@@ -772,6 +765,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1044640035278113063, guid: 95b6da217e9a97a4d8ed676e62439fc3, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7203309897141555061, guid: cd3ae248d2e3773499b1806cf627ac57, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7203309897141555061, guid: cd3ae248d2e3773499b1806cf627ac57, type: 3}
+      propertyPath: m_Interactable
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

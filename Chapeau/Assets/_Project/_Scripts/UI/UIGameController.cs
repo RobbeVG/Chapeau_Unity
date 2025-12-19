@@ -181,10 +181,12 @@ namespace Seacore.Game
         {
             buttonManager[ButtonTypes.Roll].interactable = _diceManager.DiceContainers.Values.Any(info => info.State.HasFlag(DieState.ToRoll));
         }
-
         private void SetDeclareConfirmButtonInteractable()
         {
             buttonManager[ButtonTypes.DeclareConfirm].interactable = _roundContext.DeclaredRoll > _roundContext.CurrentRoll;
         }
+
+
+
     }
 }

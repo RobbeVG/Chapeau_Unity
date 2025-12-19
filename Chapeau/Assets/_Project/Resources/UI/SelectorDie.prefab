@@ -214,7 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 1
-    m_WrapAround: 0
+    m_WrapAround: 1
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -258,7 +258,6 @@ MonoBehaviour:
   upArrow: {fileID: 2478938203516662847}
   downArrow: {fileID: 5185467793369693559}
   imageIcon: {fileID: 1453410469692627983}
-  <SelectedFace>k__BackingField: 0
 --- !u!1 &2478938203516662847
 GameObject:
   m_ObjectHideFlags: 0

@@ -41,7 +41,7 @@ namespace Seacore.Common
         /// Try to select object from position on screen.
         /// </summary>
         /// <param name="mousePosition"><inheritdoc cref="Input.mousePosition"/></param>
-        private GameObject GetObjectFromScreen(Vector3 mousePosition)
+        private GameObject GetObjectFromScreen(Vector2 mousePosition)
         {
             Ray ray = _mainCamera.ScreenPointToRay(mousePosition);
             RaycastHit hit;
