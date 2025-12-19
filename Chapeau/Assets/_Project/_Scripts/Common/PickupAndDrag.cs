@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -12,12 +13,14 @@ namespace Seacore.Common
     /// </remarks>
     public class PickupAndDrag : MonoBehaviour
     {
-        public GameObject SelectedObject { get; private set; }
-        [SerializeField] private float _snapSpeed = 10f;
-        [SerializeField] private float _dropDuration = 0.5f;
-        [SerializeField] private float _pickupHeightOffset = 0.4f;
-        public float PickupHeightOffset { get { return _pickupHeightOffset; } }
+        public GameObject SelectedObject { get; private set; } = null;
 
+        [SerializeField] 
+        private float _snapSpeed = 10f;
+        [SerializeField] 
+        private float _dropDuration = 0.5f;
+        [SerializeField] 
+        private float _pickupHeightOffset = 0.4f;
 
         private float _originalHeightvalue;
 
@@ -34,8 +37,8 @@ namespace Seacore.Common
             if (SelectedObject != null)
             {
                 Vector3 target = targetWorldPosition;
-                target.y = _pickupHeightOffset;
-                SelectedObject.transform.position = Vector3.Lerp( SelectedObject.transform.position, target, _snapSpeed * Time.deltaTime);
+                target.y = _pickupHeightOffset + _originalHeightvalue;
+                SelectedObject.transform.position = Vector3.Lerp(SelectedObject.transform.position, target, _snapSpeed * Time.deltaTime);
             }
         }
 
@@ -44,27 +47,10 @@ namespace Seacore.Common
             GameObject droppedGameObject = SelectedObject;
             if (SelectedObject != null)
             {
-                StartCoroutine(DropObjectToHeight(SelectedObject));
+                SelectedObject.transform.DOMoveY(_originalHeightvalue, _dropDuration);
                 SelectedObject = null;
             }
             return droppedGameObject;
-        }
-
-        private IEnumerator DropObjectToHeight(GameObject gameObject)
-        {
-            float timeElapsed = 0;
-            float startY = gameObject.transform.position.y;
-            while (timeElapsed < _dropDuration)
-            {
-                float t = timeElapsed / _dropDuration;
-                float newY = Mathf.Lerp(startY, _originalHeightvalue, t);
-                timeElapsed += Time.deltaTime;
-                gameObject.transform.position = new Vector3(
-                    gameObject.transform.position.x, newY, gameObject.transform.position.z);
-                yield return null;
-            }
-            gameObject.transform.position = new Vector3(
-                gameObject.transform.position.x, _originalHeightvalue, gameObject.transform.position.z);
         }
     }
 }

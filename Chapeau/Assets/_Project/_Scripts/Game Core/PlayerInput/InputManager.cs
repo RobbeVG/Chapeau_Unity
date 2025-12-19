@@ -29,7 +29,6 @@ namespace Seacore.Game
         [Tooltip("Define a layerMask to select the object in")]
         public LayerMask DiceLayerMask { get; private set; }
 
-
         private PickupAndDrag _pickupAndDrag;
         private ObjectSelector _objectSelector;
         private Selectable[] selectables;
@@ -41,8 +40,6 @@ namespace Seacore.Game
         public event Action<Die> OnDieHoldEnter; 
         public event Action<Die> OnDieHoldExit;
 
-
-
         private void Start()
         {
             Assert.IsNotNull(_objectSelector, "Object selector was null");
@@ -53,8 +50,6 @@ namespace Seacore.Game
         protected override void Awake()
         {
             base.Awake();
-
-
             selectables = FindObjectsOfType<Selectable>(true);
 
             if (!TryGetComponent<PickupAndDrag>(out _pickupAndDrag))
@@ -65,7 +60,6 @@ namespace Seacore.Game
             {
                 Debug.LogError("No Object Selector component found on InputController");
             }
-
         }
 
         private void OnEnable()
@@ -101,28 +95,8 @@ namespace Seacore.Game
             if (_pickupAndDrag.SelectedObject == null) //Nothing is being dragged
                 return;
 
-            Vector3 origin = _pickupAndDrag.SelectedObject.transform.position;
-            
-            Vector3 target = Vector3.zero;
-            if (!InputReader.Input.ScreenActions.Point.IsInProgress()) // Pointer (mouse/touch)
-            {
-                Plane plane = new Plane(Vector3.up, origin);
-                Ray ray = Camera.main.ScreenPointToRay(InputReader.ScreenPointerLocation);
-                if (plane.Raycast(ray, out float distance))
-                {
-                    target = ray.GetPoint(distance);
-                }
-            }
-            else if (!InputReader.Input.ScreenActions.Navigate.IsInProgress()) // Gamepad stick
-            {
-                Vector2 direction = InputReader.NavigateAxisDirection;
-                origin += new Vector3(direction.x, 0f, direction.y) /* * speed */;
-            }
-
-            _pickupAndDrag.HandleDrag(target);
+            DoDrag();
         }
-
-
 
         private void Tap()
         {
@@ -149,6 +123,29 @@ namespace Seacore.Game
                 if (TryToGetDie(droppedGameObject, out Die die))
                     OnDieHoldExit?.Invoke(die);
             }
+        }
+
+        private void DoDrag()
+        {
+            Vector3 origin = _pickupAndDrag.SelectedObject.transform.position;
+
+            Vector3 target = Vector3.zero;
+            if (!InputReader.Input.ScreenActions.Point.IsInProgress()) // Pointer (mouse/touch)
+            {
+                Plane plane = new Plane(Vector3.up, origin);
+                Ray ray = Camera.main.ScreenPointToRay(InputReader.ScreenPointerLocation);
+                if (plane.Raycast(ray, out float distance))
+                {
+                    target = ray.GetPoint(distance);
+                }
+            }
+            else if (!InputReader.Input.ScreenActions.Navigate.IsInProgress()) // Gamepad stick
+            {
+                Vector2 direction = InputReader.NavigateAxisDirection;
+                origin += new Vector3(direction.x, 0f, direction.y) /* * speed */;
+            }
+
+            _pickupAndDrag.HandleDrag(target);
         }
 
         private bool TryToGetDie(out Die die)
@@ -179,6 +176,8 @@ namespace Seacore.Game
                 return;
 
             Vector2 pointerPosition = context.ReadValue<Vector2>();
+
+
 
             //Edge case where the objects are very close and the raycast might hit a different object
             GameObject currGameObject = EventSystem.current.currentSelectedGameObject;
@@ -214,13 +213,6 @@ namespace Seacore.Game
             selectables.First(
                 (selectable) => { return selectable.interactable && selectable.gameObject.activeInHierarchy; }
                 ).Select();
-        }
-
-        private void OnDrawGizmos()
-        {
-
-            Gizmos.DrawSphere(Vector3.zero, 1f);
-
         }
     }
 }

@@ -22,12 +22,10 @@ namespace Seacore.Game
         public event Action Tap = delegate { };
         public event Action<bool> Hold = delegate { };
 
-        private bool isHolding = false;
-
         public ChapeauInputActions Input { get; private set; }
 
-        public Vector2 ScreenPointerLocation => Input.ScreenActions.Point.ReadValue<Vector2>();
-        public Vector2 NavigateAxisDirection => Input.ScreenActions.Navigate.ReadValue<Vector2>();
+        public Vector2 ScreenPointerLocation => Input.DiceActions.Point.ReadValue<Vector2>();
+        public Vector2 NavigateAxisDirection => Input.DiceActions.Move.ReadValue<Vector2>();
 
         void OnEnable()
         {
@@ -57,7 +55,7 @@ namespace Seacore.Game
         /// <param name="context"><inheritdoc cref="InputAction.CallbackContext"/> </param>
         private void OnHoldPerformed(InputAction.CallbackContext context)
         {
-            Hold.Invoke(isHolding = true);
+            Hold.Invoke(true);
             Input.DiceActions.Hold.canceled += OnHoldCanceled;
         }
         /// <summary>
@@ -66,7 +64,7 @@ namespace Seacore.Game
         /// <param name="context"><inheritdoc cref="InputAction.CallbackContext"/> </param>
         private void OnHoldCanceled(InputAction.CallbackContext context)
         {
-            Hold.Invoke(isHolding = false);
+            Hold.Invoke(false);
             Input.DiceActions.Hold.canceled -= OnHoldCanceled;
         }
 
