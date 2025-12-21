@@ -11,12 +11,12 @@ namespace Seacore.Game.RoundStates
 
         public override void EnterState() 
         {
-            InputManager.Instance.InputReader.EnableDiceActions();
+            InputManager.Instance.EnableDiceActions();
         }
 
         public override void ExitState() 
         {
-            InputManager.Instance.InputReader.DisableDiceActions();
+            InputManager.Instance.DisableDiceActions();
         }
 
         //TODO Decide if it stays or it goes

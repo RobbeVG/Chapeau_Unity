@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 using static UnityEngine.UI.Image;
 
@@ -20,75 +21,59 @@ namespace Seacore.Game
     /// </remarks>
 
     [RequireComponent(typeof(ObjectSelector), typeof(PickupAndDrag))]
-    public class InputManager : SingletonMonobehaviour<InputManager>
+    public class InputManager : SingletonMonobehaviour<InputManager>, IInputActivator
     {
-        [field: SerializeField]
-        public InputReader InputReader { get; private set; } = null;
+        [SerializeField]
+        private InputReader _inputReader = null;
 
         [field: SerializeField]
         [Tooltip("Define a layerMask to select the object in")]
         public LayerMask DiceLayerMask { get; private set; }
 
         private PickupAndDrag _pickupAndDrag;
-        private ObjectSelector _objectSelector;
         private Selectable[] selectables;
+        private PhysicsRaycaster _physicsRaycaster;
 
         // Events for the InputManager
-        public event Action<Die> OnDieHoverEnter;
-        public event Action<Die> OnDieHoverExit;
         public event Action<Die> OnDieTapped; 
         public event Action<Die> OnDieHoldEnter; 
         public event Action<Die> OnDieHoldExit;
-
-        private void Start()
-        {
-            Assert.IsNotNull(_objectSelector, "Object selector was null");
-            Assert.IsNotNull(_pickupAndDrag, "Pick up and drag component was null");
-            Assert.IsTrue(_objectSelector.PickupLayerMask == LayerMask.GetMask("Dice"), "The Object Selector's PickupLayerMask should be set to ONLY the Dice layer");
-        }
+        public event Action<bool> OnDiceActionsToggleChanged;
 
         protected override void Awake()
         {
             base.Awake();
+
             selectables = FindObjectsOfType<Selectable>(true);
 
             if (!TryGetComponent<PickupAndDrag>(out _pickupAndDrag))
             {
                 Debug.LogError("No Pickup and Drag component found on InputController");
             }
-            if(!TryGetComponent<ObjectSelector>(out _objectSelector))
+
+            if (!Camera.main.TryGetComponent<PhysicsRaycaster>(out _physicsRaycaster))
             {
-                Debug.LogError("No Object Selector component found on InputController");
+                Debug.LogError("No Physics Raycaster component found on InputController");
             }
         }
-
-        private void OnEnable()
+        private void Start()
         {
-            if (InputReader == null)
-                Debug.LogWarning("Input Reader is not assigned in Input Manager");
-            else
+            if (_inputReader == null)
             {
-                InputReader.Tap += Tap;
-                InputReader.Hold += Hold;
+                Debug.LogError("Input Reader is not assigned in Input Manager");
+                return;
             }
 
-            InputReader.Input.ScreenActions.Point.performed += Point;
-            InputReader.Input.ScreenActions.Navigate.performed += OnNavigate;
+            _inputReader.OnTap = Tap;
+            _inputReader.OnHold = Hold;
+            _inputReader.OnDeHold = Release;
+            _inputReader.OnPointerInput = PointerMoved;
+            _inputReader.OnNavigateInput = NavigateMoved;
+
+            DisableDiceActions();
+            //This ensures our created inputReader asset (ChapeauInputActions) gets set in the UI Input module
+            EventSystem.current.GetComponent<InputSystemUIInputModule>().actionsAsset = _inputReader.Asset;
         }
-
-        private void OnDisable()
-        {
-            if (InputReader != null)
-            {
-                InputReader.Tap -= Tap;
-                InputReader.Hold -= Hold;
-            }
-
-
-            InputReader.Input.ScreenActions.Point.performed -= Point;
-            InputReader.Input.ScreenActions.Navigate.performed -= OnNavigate;
-        }
-
 
         private void FixedUpdate()
         {
@@ -100,52 +85,72 @@ namespace Seacore.Game
 
         private void Tap()
         {
+            Debug.Log("Tap detected");
+
             if (TryToGetDie(out Die die))
                 OnDieTapped?.Invoke(die);
         }
-
-        private void Hold(bool performed)
+        private void Hold()
         {
-            if (performed)
+            Debug.Log("Hold detected");
+
+            if (TryToGetDie(out Die die))
             {
-                if (TryToGetDie(out Die die))
-                {
-                    InputReader.DisableScreenActions();
-                    GameObject selectedObject = die.gameObject;
-                    _pickupAndDrag.HandlePickup(selectedObject);
-                    OnDieHoldEnter?.Invoke(die);
-                }
-            }
-            else
-            {
-                InputReader.EnableScreenActions();
-                GameObject droppedGameObject = _pickupAndDrag.HandleDrop();
-                if (TryToGetDie(droppedGameObject, out Die die))
-                    OnDieHoldExit?.Invoke(die);
+                _inputReader.DisableScreenActions();
+                _physicsRaycaster.enabled = false;
+
+
+                GameObject selectedObject = die.gameObject;
+                _pickupAndDrag.HandlePickup(selectedObject);
+                OnDieHoldEnter?.Invoke(die);
             }
         }
+        private void Release()
+        {
+            _inputReader.EnableScreenActions();
+            _physicsRaycaster.enabled = true;
 
+            GameObject droppedGameObject = _pickupAndDrag.HandleDrop();
+            if (TryToGetDie(droppedGameObject, out Die die))
+                OnDieHoldExit?.Invoke(die);
+
+        }
         private void DoDrag()
         {
             Vector3 origin = _pickupAndDrag.SelectedObject.transform.position;
 
             Vector3 target = Vector3.zero;
-            if (!InputReader.Input.ScreenActions.Point.IsInProgress()) // Pointer (mouse/touch)
+            if (_inputReader.IsPointerBeingUsed) // Pointer (mouse/touch)
             {
                 Plane plane = new Plane(Vector3.up, origin);
-                Ray ray = Camera.main.ScreenPointToRay(InputReader.ScreenPointerLocation);
+                Ray ray = Camera.main.ScreenPointToRay(_inputReader.DiceScreenPointerLocation);
                 if (plane.Raycast(ray, out float distance))
                 {
                     target = ray.GetPoint(distance);
                 }
             }
-            else if (!InputReader.Input.ScreenActions.Navigate.IsInProgress()) // Gamepad stick
+            else if (_inputReader.IsNavigatorBeingUsed) // Gamepad stick
             {
-                Vector2 direction = InputReader.NavigateAxisDirection;
+                Vector2 direction = _inputReader.DiceNavigateAxisDirection;
                 origin += new Vector3(direction.x, 0f, direction.y) /* * speed */;
             }
 
             _pickupAndDrag.HandleDrag(target);
+        }
+        private void PointerMoved()
+        {
+            Cursor.visible = true;
+        }
+        private void NavigateMoved() //Only Controllers
+        {
+            Cursor.visible = false;
+            if (EventSystem.current.currentSelectedGameObject == null || !EventSystem.current.currentSelectedGameObject.activeInHierarchy)
+            {
+                // Select the first selectable object.
+                selectables.First(
+                    (selectable) => { return selectable.interactable && selectable.gameObject.activeInHierarchy; }
+                ).Select();
+            }
         }
 
         private bool TryToGetDie(out Die die)
@@ -165,54 +170,22 @@ namespace Seacore.Game
             return true;
         }
 
-        /// <summary>
-        /// Invokes when te pointer is moved
-        /// </summary>
-        /// <param name="context"></param>
-        private void Point(InputAction.CallbackContext context)
+        public void EnableDiceActions()
         {
-            Cursor.visible = true;
-            if (_pickupAndDrag.SelectedObject != null)
-                return;
-
-            Vector2 pointerPosition = context.ReadValue<Vector2>();
-
-
-
-            //Edge case where the objects are very close and the raycast might hit a different object
-            GameObject currGameObject = EventSystem.current.currentSelectedGameObject;
-            GameObject newGameObject = Helpers.GetObjectFromScreen(pointerPosition, DiceLayerMask); //Prevents flickering
-
-            // If the object has changed, handle the change
-            if (currGameObject != newGameObject)
-            {
-                if (currGameObject != null)
-                    if (currGameObject.TryGetComponent(out Die die))
-                        OnDieHoverExit?.Invoke(die);
-
-                if (newGameObject != null)
-                {
-                    if (newGameObject.TryGetComponent(out Die die))
-                    {
-                        EventSystem.current.SetSelectedGameObject(newGameObject);
-                        OnDieHoverEnter?.Invoke(die);
-                    }
-                }
-                else EventSystem.current.SetSelectedGameObject(null);
-            }
+            _physicsRaycaster.enabled = true; // pointer events
+            _inputReader.EnableDiceActions();
+            OnDiceActionsToggleChanged?.Invoke(true);
         }
 
-        private void OnNavigate(InputAction.CallbackContext context) //Only Controllers
+        public void DisableDiceActions()
         {
-            Cursor.visible = false;
-            if (EventSystem.current.currentSelectedGameObject == null) SelectFirstSelectableObject();
+            _physicsRaycaster.enabled = false;
+            _inputReader.DisableDiceActions();
+            OnDiceActionsToggleChanged?.Invoke(false);
         }
 
-        private void SelectFirstSelectableObject()
-        {
-            selectables.First(
-                (selectable) => { return selectable.interactable && selectable.gameObject.activeInHierarchy; }
-                ).Select();
-        }
+        public void EnableScreenActions() => _inputReader.EnableScreenActions();
+
+        public void DisableScreenActions() => _inputReader.DisableScreenActions();
     }
 }

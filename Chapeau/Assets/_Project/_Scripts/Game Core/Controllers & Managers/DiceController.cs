@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.EventSystems;
 
 namespace Seacore.Game
 {
@@ -18,7 +19,6 @@ namespace Seacore.Game
     {
         [SerializeField]
         private CircleController _circleController;
-
         [SerializeField]
         private DieVisualHandler _dieVisualHandler = null;
 
@@ -36,22 +36,30 @@ namespace Seacore.Game
 
         }
 
+        private void Start()
+        {
+            _diceManager.SetDieEventDelegates(
+                hoverEnter: (Die die) => { _diceManager.DiceContainers[die].Selectable.Select(); },
+                hoverExit: (Die die) => { EventSystem.current.SetSelectedGameObject(null); },
+                select: (Die die) => { _diceManager.DiceContainers[die].State |= DieState.Selecting; },
+                deselect: (Die die) => { _diceManager.DiceContainers[die].State &= ~DieState.Selecting; }
+                );
+        }
+
         private void OnEnable()
         {
             InputManager IM = InputManager.Instance;
-            IM.OnDieHoldEnter += HandleDieSelecting;
-            IM.OnDieHoldExit += HandleDieDeselecting;
-            IM.OnDieHoldExit += HandleDieDrop;
-            IM.OnDieTapped += HandleDieTappedForRoll;
-            IM.OnDieHoverEnter += HandleDieSelecting;
-            IM.OnDieHoverExit += HandleDieDeselecting;
-            
+            if (IM)
+            {
+                IM.OnDieHoldExit += HandleDieDrop;
+                IM.OnDieTapped += HandleDieTappedForRoll;
+                IM.OnDiceActionsToggleChanged += SetDiceSelectables;
+            }
 
             foreach (Die die in _diceManager.Dice) //Werkt niet want sommige dice moeten nog worden ingesteld
             {
                 die.OnRolledValue += OnDieRolled;
             }
-
         }
 
         private void OnDisable()
@@ -59,12 +67,9 @@ namespace Seacore.Game
             InputManager IM = InputManager.Instance;
             if (IM)
             {
-                IM.OnDieHoldEnter -= HandleDieSelecting;
                 IM.OnDieHoldExit -= HandleDieDrop;
-                IM.OnDieHoldExit -= HandleDieDeselecting;
                 IM.OnDieTapped -= HandleDieTappedForRoll;
-                IM.OnDieHoverEnter -= HandleDieSelecting;
-                IM.OnDieHoverExit -= HandleDieDeselecting;
+                IM.OnDiceActionsToggleChanged -= SetDiceSelectables;
             }
 
             foreach (Die die in _diceManager.Dice)
@@ -190,13 +195,12 @@ namespace Seacore.Game
                 }
             }
         }
-        private void HandleDieSelecting(Die die)
+        private void SetDiceSelectables(bool state)
         {
-            _diceManager.DiceContainers[die].State |= DieState.Selecting;
-        }
-        private void HandleDieDeselecting(Die die)
-        {
-            _diceManager.DiceContainers[die].State &= ~DieState.Selecting;
+            foreach (KeyValuePair<Die, DieInfo> DiePair in _diceManager.DiceContainers)
+            {
+                DiePair.Value.Selectable.enabled = state;
+            }
         }
     }
 }

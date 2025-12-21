@@ -1,15 +1,14 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
 
 namespace Seacore.Game
 {
-    interface IInputReader 
+    using static ChapeauInputActions;
+    interface IInputActivator
     {
-        public Vector2 ScreenPointerLocation { get; }
-        public Vector2 NavigateAxisDirection { get; }
-
         public void EnableDiceActions();
         public void DisableDiceActions();
         public void EnableScreenActions();
@@ -17,60 +16,104 @@ namespace Seacore.Game
     }
 
     [CreateAssetMenu(fileName = "InputReader", menuName = "ScriptableObjects/InputReader")]
-    public class InputReader : ScriptableObject, IInputReader
+    public class InputReader : ScriptableObject, IInputActivator
     {
-        public event Action Tap = delegate { };
-        public event Action<bool> Hold = delegate { };
+        public Action OnTap = delegate { };
+        public Action OnHold = delegate { };
+        public Action OnDeHold = delegate { };
+        public Action OnNavigateInput = delegate { };
+        public Action OnPointerInput = delegate { };
 
         public ChapeauInputActions Input { get; private set; }
+        public InputActionAsset Asset => Input.asset;
 
-        public Vector2 ScreenPointerLocation => Input.DiceActions.Point.ReadValue<Vector2>();
-        public Vector2 NavigateAxisDirection => Input.DiceActions.Move.ReadValue<Vector2>();
+        public Vector2 DiceScreenPointerLocation => Input.DiceActions.MovingPointer.ReadValue<Vector2>();
+        public Vector2 DiceNavigateAxisDirection => Input.DiceActions.Move.ReadValue<Vector2>();
+        public bool IsPointerBeingUsed => Input.DiceActions.MovingPointer.IsInProgress();
+        public bool IsNavigatorBeingUsed => Input.DiceActions.Move.IsInProgress();
 
-        void OnEnable()
+        private void OnEnable()
         {
             if (Input == null)
                 Input = new ChapeauInputActions();
 
             Input.Enable();
-            Input.DiceActions.Tap.performed += OnTap;
-            Input.DiceActions.Hold.performed += OnHoldPerformed;
+            Input.DiceActions.Tap.performed += TapPerformed;
+            Input.DiceActions.Hold.performed += HoldPerformed;
+
+            Input.DiceActions.Move.performed += MovePerformed;
+            Input.UI.Navigate.performed += MovePerformed;
+            Input.DiceActions.MovingPointer.performed += PointPerformed;
+            Input.UI.Point.performed += PointPerformed;
         }
-        void OnDisable()
+        private void OnDisable()
         {
             Input.Disable();
-            Input.DiceActions.Tap.performed -= OnTap;
-            Input.DiceActions.Hold.performed -= OnHoldPerformed;
-            Input.DiceActions.Hold.canceled -= OnHoldCanceled;
+            Input.DiceActions.Tap.performed -= TapPerformed;
+            Input.DiceActions.Hold.performed -= HoldPerformed;
+            Input.DiceActions.Move.performed -= MovePerformed;
+            Input.DiceActions.MovingPointer.performed -= PointPerformed;
+            Input.DiceActions.Hold.canceled -= HoldCanceled;
         }
 
         /// <summary>
         /// The performed method when Tap is performed
         /// </summary>
         /// <param name="context"><inheritdoc cref="InputAction.CallbackContext"/> </param>
-        private void OnTap(InputAction.CallbackContext context) => Tap.Invoke();
+        private void TapPerformed(InputAction.CallbackContext context) => OnTap.Invoke();
         /// <summary>
         /// The performed method when Hold is performed.
         /// </summary>
         /// <param name="context"><inheritdoc cref="InputAction.CallbackContext"/> </param>
-        private void OnHoldPerformed(InputAction.CallbackContext context)
+        private void HoldPerformed(InputAction.CallbackContext context)
         {
-            Hold.Invoke(true);
-            Input.DiceActions.Hold.canceled += OnHoldCanceled;
+            OnHold.Invoke();
+            Input.DiceActions.Hold.canceled += HoldCanceled;
         }
         /// <summary>
         /// The performed method when Hold is canceled once it was performed.
         /// </summary>
         /// <param name="context"><inheritdoc cref="InputAction.CallbackContext"/> </param>
-        private void OnHoldCanceled(InputAction.CallbackContext context)
+        private void HoldCanceled(InputAction.CallbackContext context)
         {
-            Hold.Invoke(false);
-            Input.DiceActions.Hold.canceled -= OnHoldCanceled;
+            OnDeHold.Invoke();
+            Input.DiceActions.Hold.canceled -= HoldCanceled;
+        }
+        /// <summary>
+        /// Handles the performed event for the move input action.
+        /// </summary>
+        /// <param name="context">The callback context containing information about the performed move input, including the current input
+        /// value.</param>
+        private void MovePerformed(InputAction.CallbackContext context) => OnNavigateInput.Invoke();
+        /// <summary>
+        /// Handles the performed event for a pointing input action.
+        /// </summary>
+        /// <param name="context">The callback context containing information about the input action event. The method reads the current <see
+        /// cref="Vector2"/> value from this context and passes it to the <see cref="OnPointerInput"/> event.</param>
+        private void PointPerformed(InputAction.CallbackContext context) => OnPointerInput.Invoke();
+
+        public void EnableScreenActions()
+        {
+            Debug.Log("Enabling screen actions");
+            Input.UI.Enable();
         }
 
-        public void EnableScreenActions() => Input.ScreenActions.Enable();
-        public void DisableScreenActions() => Input.ScreenActions.Disable();
-        public void EnableDiceActions() => Input.DiceActions.Enable();
-        public void DisableDiceActions() => Input.DiceActions.Disable();
+        public void DisableScreenActions()
+        {
+            Debug.Log("Disabling screen actions");
+            Input.UI.Disable();
+        }
+
+        public void EnableDiceActions()
+        {
+            Debug.Log("Enabling dice actions");
+            Input.DiceActions.Enable();
+        }
+
+        public void DisableDiceActions()
+        {
+            Debug.Log("Disabling dice actions");
+            Input.DiceActions.Disable();
+        }
     }
 }

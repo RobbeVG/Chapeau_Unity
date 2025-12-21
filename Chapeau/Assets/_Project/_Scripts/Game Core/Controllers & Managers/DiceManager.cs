@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
 
-namespace Seacore
+namespace Seacore.Game
 {
     /// <summary>
     /// Manages dice objects, their state, and their interactions.
@@ -21,6 +21,7 @@ namespace Seacore
         [Range(0.0f, 10.0f)]
         private float paddingBetweenDice = 0.0f;
 
+        private Dictionary<GameObject, Die> _gameObjectsToDie = new Dictionary<GameObject, Die>(Globals.c_amountDie);
         private Dictionary<Die, DieInfo> _diceContainers = new Dictionary<Die, DieInfo>(Globals.c_amountDie);
 
         public IReadOnlyDictionary<Die, DieInfo> DiceContainers => _diceContainers;
@@ -36,7 +37,31 @@ namespace Seacore
             // Automatically add children with Die components to the dictionary
             AddDiceFromChildren();
         }
-        
+
+        public void SetDieEventDelegates(Action<Die> hoverEnter, Action<Die> hoverExit, Action<Die> select, Action<Die> deselect)
+        {
+            foreach (var die in Dice)
+            {
+                GameObjectEventHandler dieEventHandler = die.GetComponent<GameObjectEventHandler>();
+                if (dieEventHandler != null)
+                {
+                    dieEventHandler.OnHoverEnter = (GameObject gameObject) => hoverEnter(_gameObjectsToDie[gameObject]);
+                    dieEventHandler.OnHoverExit = (GameObject gameObject) => hoverExit(_gameObjectsToDie[gameObject]);
+                    dieEventHandler.OnSelected = (GameObject gameObject) => select(_gameObjectsToDie[gameObject]);
+                    dieEventHandler.OnDeSelected = (GameObject gameObject) => deselect(_gameObjectsToDie[gameObject]);
+                }
+            }
+        }   
+
+        public Die GetDieFrom(GameObject gameObject)
+        {
+            if (_gameObjectsToDie.TryGetValue(gameObject, out Die die))
+            {
+                return die;
+            }
+            return null;
+        }
+
         /// <summary>
         /// Splits the dice information into two groups based on the specified state.
         /// </summary>
@@ -108,9 +133,11 @@ namespace Seacore
                 _diceContainers.Add(die, new DieInfo(
                     index: _diceContainers.Count,
                     meshRenderer: die.GetComponent<MeshRenderer>(),
-                    outline: die.GetComponent<Outline>()
+                    outline: die.GetComponent<Outline>(),
+                    selectable: die.GetComponent<UnityEngine.UI.Selectable>()
                 ));
             }
+            _gameObjectsToDie[die.gameObject] = die;
         }
 
         private Vector3[] CalculateStartPositions()
@@ -173,13 +200,14 @@ namespace Seacore
     public class DieInfo
     {
         private DieInfo() { }
-        public DieInfo(int index, MeshRenderer meshRenderer, Outline outline)
+        public DieInfo(int index, MeshRenderer meshRenderer, Outline outline, UnityEngine.UI.Selectable selectable)
         {
             Index = index;
             State = DieState.ToRoll | DieState.Inside;
             MeshRenderer = meshRenderer;
             MaterialPropertyBlock = new MaterialPropertyBlock();
             Outline = outline;
+            Selectable = selectable;
         }
 
         public int Index { get; private set; }
@@ -189,5 +217,6 @@ namespace Seacore
         public MeshRenderer MeshRenderer { get; private set; }
         public MaterialPropertyBlock MaterialPropertyBlock { get; private set; }
         public Outline Outline { get; private set; }
+        public UnityEngine.UI.Selectable Selectable { get; private set; }
     }
 }
