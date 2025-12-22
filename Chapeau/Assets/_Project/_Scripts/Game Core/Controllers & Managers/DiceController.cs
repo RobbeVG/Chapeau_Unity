@@ -199,7 +199,9 @@ namespace Seacore.Game
         {
             foreach (KeyValuePair<Die, DieInfo> DiePair in _diceManager.DiceContainers)
             {
-                DiePair.Value.Selectable.enabled = state;
+                UnityEngine.UI.Selectable selectable = DiePair.Value.Selectable;
+                selectable.enabled = state;
+                selectable.interactable = state;
             }
         }
     }

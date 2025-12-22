@@ -41,12 +41,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8431796293414424386}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 140cde0cac3589245a3b5fd9ed89aa4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _diePickupSound: {fileID: 8300000, guid: 0ee8afa53a17686419750d32ef22ff69, type: 3}
+  _dieRollingSound: {fileID: 8300000, guid: 9704a09da166fa14fb087ca1590aad0b, type: 3}
 --- !u!114 &8995551863348241787
 MonoBehaviour:
   m_ObjectHideFlags: 0

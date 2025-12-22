@@ -10,27 +10,32 @@ namespace Seacore.Common.Services
     public class AudioManager : MonoBehaviour
     {
         [SerializeField] AudioClip _diePickupSound = null;
+        [SerializeField] AudioClip _dieRollingSound = null;
+
+        private DiceController _diceController = null;
 
         AudioSource _audioSource = null;
 
         public void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
+
             Assert.IsNotNull(_audioSource, "No AudioSource found on AudioManager");
-            StartCoroutine(WaitUntilSceneLoaded());
         }
 
         public void Start()
         {
-            _audioSource.clip = _diePickupSound;
+
             _audioSource.playOnAwake = false;
             _audioSource.loop = false;
+
+            FindObjectOfType<DiceController>().OnAllDiceRolled += OnDieRolled;
         }
 
         public void OnEnable()
         {
-            InputManager.Instance.OnDieHoldEnter += OnDieSound;
-            InputManager.Instance.OnDieHoldExit += OnDieSound;
+            InputManager.Instance.OnDieHoldEnter += OnDiePickupSound;
+            InputManager.Instance.OnDieHoldExit += OnDiePickupSound;
         }
 
 
@@ -39,19 +44,20 @@ namespace Seacore.Common.Services
             InputManager IM = InputManager.Instance;
             if (IM)
             {
-                IM.OnDieHoldEnter -= OnDieSound;
-                IM.OnDieHoldExit -= OnDieSound;
+                IM.OnDieHoldEnter -= OnDiePickupSound;
+                IM.OnDieHoldExit -= OnDiePickupSound;
             }
         }
 
-        IEnumerator WaitUntilSceneLoaded()
+        void OnDieRolled()
         {
-            yield return new WaitUntil(() => InputManager.Instance != null);
-            enabled = true;
+            _audioSource.clip = _dieRollingSound;
+            _audioSource.Play();
         }
 
-        void OnDieSound(Die _)
+        void OnDiePickupSound(Die _)
         {
+            _audioSource.clip = _diePickupSound;
             _audioSource.Play();
         }
     }
