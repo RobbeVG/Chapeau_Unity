@@ -1,7 +1,8 @@
 using DG.Tweening;
+using Reflex.Attributes;
 using Seacore.Common;
+using Seacore.Common.Services;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -17,6 +18,13 @@ namespace Seacore.Game
     [RequireComponent(typeof(DiceManager))]
     public class DiceController : MonoBehaviour
     {
+        [Inject]
+        private readonly AudioManager _audioManager = null;
+
+        [SerializeField]
+        AudioClip diceRollingSound;
+
+
         [SerializeField]
         private CircleController _circleController;
         [SerializeField]
@@ -97,6 +105,7 @@ namespace Seacore.Game
                 }
             }
             OnAllDiceRolled?.Invoke();
+            _audioManager.PlayEffect(diceRollingSound);
         }
         public void RevealDice()
         {
