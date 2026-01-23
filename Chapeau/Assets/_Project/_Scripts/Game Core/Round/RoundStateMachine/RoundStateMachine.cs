@@ -1,9 +1,9 @@
-using System;
-using System.Collections.Generic;
-using UnityEngine;
+using Reflex.Core;
+using Reflex.Extensions;
 using Seacore.Common.Statemachine;
 using Seacore.Game.RoundStates;
-using Seacore.Common;
+using System;
+using System.Collections.Generic;
 
 namespace Seacore.Game
 {
@@ -29,7 +29,11 @@ namespace Seacore.Game
                 { RoundState.Received,  new ReceivedState(context, diceController) },
                 { RoundState.Chapeau,  new ChapeauState() },
             }, currentStateKey: RoundState.Declare)
-        { }
+        {
+
+            Reflex.Injectors.AttributeInjector.Inject((RollSetupState)States[0], diceController.gameObject.scene.GetSceneContainer());
+            
+        }
 
         public void Reset()
         {

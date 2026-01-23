@@ -1,8 +1,6 @@
 using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.UI;
 
 namespace Seacore.Game
 {
@@ -15,8 +13,7 @@ namespace Seacore.Game
         public void DisableScreenActions();
     }
 
-    [CreateAssetMenu(fileName = "InputReader", menuName = "ScriptableObjects/InputReader")]
-    public class InputReader : ScriptableObject, IInputActivator
+    public class InputReader : IInputActivator
     {
         public Action OnTap = delegate { };
         public Action OnHold = delegate { };
@@ -32,28 +29,22 @@ namespace Seacore.Game
         public bool IsPointerBeingUsed => Input.DiceActions.MovingPointer.IsInProgress();
         public bool IsNavigatorBeingUsed => Input.DiceActions.Move.IsInProgress();
 
-        private void OnEnable()
+        public InputReader()
         {
-            if (Input == null)
-                Input = new ChapeauInputActions();
+            Input = new ChapeauInputActions();
 
             Input.Enable();
             Input.DiceActions.Tap.performed += TapPerformed;
             Input.DiceActions.Hold.performed += HoldPerformed;
-
             Input.DiceActions.Move.performed += MovePerformed;
             Input.UI.Navigate.performed += MovePerformed;
             Input.DiceActions.MovingPointer.performed += PointPerformed;
             Input.UI.Point.performed += PointPerformed;
         }
-        private void OnDisable()
+
+        ~InputReader()
         {
-            Input.Disable();
-            Input.DiceActions.Tap.performed -= TapPerformed;
-            Input.DiceActions.Hold.performed -= HoldPerformed;
-            Input.DiceActions.Move.performed -= MovePerformed;
-            Input.DiceActions.MovingPointer.performed -= PointPerformed;
-            Input.DiceActions.Hold.canceled -= HoldCanceled;
+            Input.Dispose();
         }
 
         /// <summary>
@@ -92,6 +83,9 @@ namespace Seacore.Game
         /// cref="Vector2"/> value from this context and passes it to the <see cref="OnPointerInput"/> event.</param>
         private void PointPerformed(InputAction.CallbackContext context) => OnPointerInput.Invoke();
 
+
+        public void Enable() => Input.Enable();
+        public void Disable() => Input.Disable();
         public void EnableScreenActions()
         {
             Debug.Log("Enabling screen actions");

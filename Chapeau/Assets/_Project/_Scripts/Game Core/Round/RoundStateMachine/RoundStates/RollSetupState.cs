@@ -1,3 +1,4 @@
+using Reflex.Attributes;
 using Seacore.Common;
 using Seacore.Common.Statemachine;
 using UnityEngine;
@@ -6,17 +7,20 @@ namespace Seacore.Game.RoundStates
 {
     public sealed class RollSetupState : BaseState<RoundStateMachine.RoundState>
     {
+        [Inject]
+        private readonly InputActionManager _inputManager;
+
         public RollSetupState() : base(RoundStateMachine.RoundState.RollSetup) 
         {}
 
         public override void EnterState() 
         {
-            InputManager.Instance.EnableDiceActions();
+            _inputManager.EnableDiceActions();
         }
 
         public override void ExitState() 
         {
-            InputManager.Instance.DisableDiceActions();
+            _inputManager.DisableDiceActions();
         }
 
         //TODO Decide if it stays or it goes

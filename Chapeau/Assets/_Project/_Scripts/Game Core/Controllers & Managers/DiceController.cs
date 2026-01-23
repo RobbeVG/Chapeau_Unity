@@ -20,15 +20,20 @@ namespace Seacore.Game
     {
         [Inject]
         private readonly AudioManager _audioManager = null;
-
-        [SerializeField]
-        AudioClip diceRollingSound;
+        [Inject]
+        private readonly InputActionManager _inputManager = null;
 
 
         [SerializeField]
         private CircleController _circleController;
         [SerializeField]
         private DieVisualHandler _dieVisualHandler = null;
+
+        [Header("Dice Sounds")]
+        [SerializeField]
+        SoundData _dicePickUpSound = null;
+        [SerializeField]
+        SoundData _diceRollingSound = null;
 
         private DiceManager _diceManager;
         private Roll _physicalRoll;
@@ -37,11 +42,16 @@ namespace Seacore.Game
         private void Awake()
         {
             if (_circleController == null)
-                Debug.LogError("No circle Controller attached");
+                Debug.LogError("No circle Controller attached", this);
+
+            if (_inputManager == null)
+                Debug.LogError("Injected InputManager was null", this);
+
+            if (_audioManager == null)
+                Debug.LogError("Injected AudioManager was null", this);
 
             _diceManager = GetComponent<DiceManager>();
             _physicalRoll = Resources.Load<Roll>("Rolls/PhysicalRoll");
-
         }
 
         private void Start()
@@ -56,13 +66,9 @@ namespace Seacore.Game
 
         private void OnEnable()
         {
-            InputManager IM = InputManager.Instance;
-            if (IM)
-            {
-                IM.OnDieHoldExit += HandleDieDrop;
-                IM.OnDieTapped += HandleDieTappedForRoll;
-                IM.OnDiceActionsToggleChanged += SetDiceSelectables;
-            }
+            _inputManager.OnDieHoldExit += HandleDieDrop;
+            _inputManager.OnDieTapped += HandleDieTappedForRoll;
+            _inputManager.OnDiceActionsToggleChanged += SetDiceSelectables;
 
             foreach (Die die in _diceManager.Dice) //Werkt niet want sommige dice moeten nog worden ingesteld
             {
@@ -72,13 +78,9 @@ namespace Seacore.Game
 
         private void OnDisable()
         {
-            InputManager IM = InputManager.Instance;
-            if (IM)
-            {
-                IM.OnDieHoldExit -= HandleDieDrop;
-                IM.OnDieTapped -= HandleDieTappedForRoll;
-                IM.OnDiceActionsToggleChanged -= SetDiceSelectables;
-            }
+            _inputManager.OnDieHoldExit -= HandleDieDrop;
+            _inputManager.OnDieTapped -= HandleDieTappedForRoll;
+            _inputManager.OnDiceActionsToggleChanged -= SetDiceSelectables;
 
             foreach (Die die in _diceManager.Dice)
             {
@@ -105,7 +107,7 @@ namespace Seacore.Game
                 }
             }
             OnAllDiceRolled?.Invoke();
-            _audioManager.PlayEffect(diceRollingSound);
+            _audioManager.CreateSound(_diceRollingSound).WithRandomPitch().Play();
         }
         public void RevealDice()
         {
@@ -142,6 +144,9 @@ namespace Seacore.Game
         }
         private void HandleDieDrop(Die die)
         {
+            _audioManager.CreateSound(_dicePickUpSound).WithRandomPitch().Play();
+
+
             DieInfo info = _diceManager.DiceContainers[die];
             
             // When a die is dropped, we check if it is inside the circle and update its state accordingly
