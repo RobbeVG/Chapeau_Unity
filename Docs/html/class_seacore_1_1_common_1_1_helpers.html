@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tweaksDoxy.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logoTextONLY.png"/></td>
   <td id="projectalign">
    <div id="projectname">Chapeau_Unity
    </div>
@@ -97,10 +99,127 @@ $(function(){initNavTree('class_seacore_1_1_common_1_1_helpers.html',''); initRe
 
 <div class="header">
   <div class="summary">
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_seacore_1_1_common_1_1_helpers-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Seacore.Common.Helpers Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ab9b124da2cb513f50fdc1f19cccf3593" id="r_ab9b124da2cb513f50fdc1f19cccf3593"><td class="memItemLeft" align="right" valign="top">static IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9b124da2cb513f50fdc1f19cccf3593">NextFrame</a> (Action func)</td></tr>
+<tr class="memdesc:ab9b124da2cb513f50fdc1f19cccf3593"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the specified action on the next frame.  <br /></td></tr>
+<tr class="separator:ab9b124da2cb513f50fdc1f19cccf3593"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d73d4ef917be1e25f275c9939a2970c" id="r_a7d73d4ef917be1e25f275c9939a2970c"><td class="memItemLeft" align="right" valign="top">static IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d73d4ef917be1e25f275c9939a2970c">WaitForSeconds</a> (Action func, float seconds)</td></tr>
+<tr class="separator:a7d73d4ef917be1e25f275c9939a2970c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03605d5c8a0acf94cc7b28cb373fc548" id="r_a03605d5c8a0acf94cc7b28cb373fc548"><td class="memItemLeft" align="right" valign="top">static GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03605d5c8a0acf94cc7b28cb373fc548">GetObjectFromScreen</a> (Vector2 screenPos, LayerMask mask)</td></tr>
+<tr class="memdesc:a03605d5c8a0acf94cc7b28cb373fc548"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GameObject located at the specified screen position, if any, using a raycast against the provided layer mask.  <br /></td></tr>
+<tr class="separator:a03605d5c8a0acf94cc7b28cb373fc548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a03605d5c8a0acf94cc7b28cb373fc548" name="a03605d5c8a0acf94cc7b28cb373fc548"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03605d5c8a0acf94cc7b28cb373fc548">&#9670;&#160;</a></span>GetObjectFromScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static GameObject Seacore.Common.Helpers.GetObjectFromScreen </td>
+          <td>(</td>
+          <td class="paramtype">Vector2</td>          <td class="paramname"><span class="paramname"><em>screenPos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LayerMask</td>          <td class="paramname"><span class="paramname"><em>mask</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the GameObject located at the specified screen position, if any, using a raycast against the provided layer mask. </p>
+<p>Uses the current camera to cast a ray from the specified screen position. If multiple objects overlap at the position, the closest one is returned.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">screenPos</td><td>The screen coordinates, in pixels, from which to cast the ray. Typically corresponds to the mouse or pointer position.</td></tr>
+    <tr><td class="paramname">mask</td><td>A LayerMask that specifies which layers to include in the raycast. Only objects on these layers will be considered.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The GameObject hit by the raycast at the given screen position and layer mask; or <code>null</code> if no object is found.</dd></dl>
+
+</div>
+</div>
+<a id="ab9b124da2cb513f50fdc1f19cccf3593" name="ab9b124da2cb513f50fdc1f19cccf3593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9b124da2cb513f50fdc1f19cccf3593">&#9670;&#160;</a></span>NextFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static IEnumerator Seacore.Common.Helpers.NextFrame </td>
+          <td>(</td>
+          <td class="paramtype">Action</td>          <td class="paramname"><span class="paramname"><em>func</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Executes the specified action on the next frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func</td><td>The action to execute. This parameter cannot be null.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An enumerator that can be used to wait until the next frame before executing the action.</dd></dl>
+
+</div>
+</div>
+<a id="a7d73d4ef917be1e25f275c9939a2970c" name="a7d73d4ef917be1e25f275c9939a2970c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d73d4ef917be1e25f275c9939a2970c">&#9670;&#160;</a></span>WaitForSeconds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static IEnumerator Seacore.Common.Helpers.WaitForSeconds </td>
+          <td>(</td>
+          <td class="paramtype">Action</td>          <td class="paramname"><span class="paramname"><em>func</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>seconds</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Chapeau/Assets/_Project/_Scripts/Common/Utilities/<a class="el" href="_helpers_8cs.html">Helpers.cs</a></li>
 </ul>

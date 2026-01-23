@@ -1,5 +1,19 @@
 var searchData=
 [
-  ['update_0',['Update',['../class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a1d8656356d8b50394779d9b17957ac1f',1,'Seacore::Common::Statemachine::StateMachine']]],
-  ['updatestate_1',['UpdateState',['../class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html#aeb53eb6058fa38b56d8f2be6cd384b1a',1,'Seacore::Common::Statemachine::BaseState']]]
+  ['setcallbacks_0',['SetCallbacks',['../struct_seacore_1_1_game_1_1_chapeau_input_actions_1_1_u_i_actions.html#aa99bd956780ff0a47c64520b55f64b9c',1,'Seacore.Game.ChapeauInputActions.UIActions.SetCallbacks()'],['../struct_seacore_1_1_game_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#a46878dc8b707a51abf62c484f1cf801b',1,'Seacore.Game.ChapeauInputActions.DiceActionsActions.SetCallbacks()']]],
+  ['setdieeventdelegates_1',['SetDieEventDelegates',['../class_seacore_1_1_game_1_1_dice_manager.html#a82160e24f4f57c52cd15e8eac28029ec',1,'Seacore::Game::DiceManager']]],
+  ['setobjectfromposition_2',['SetObjectFromPosition',['../class_seacore_1_1_common_1_1_object_selector.html#a54066999a32b808f948980d1c3da2f52',1,'Seacore::Common::ObjectSelector']]],
+  ['setrandompitch_3',['SetRandomPitch',['../class_seacore_1_1_common_1_1_services_1_1_sound_emitter.html#aeeca66a3b84d587ed48f42490066b370',1,'Seacore::Common::Services::SoundEmitter']]],
+  ['setrolledvalue_4',['SetRolledValue',['../class_seacore_1_1_common_1_1_die.html#a12652b813f6e0d02731c0bb10a5a2aeb',1,'Seacore::Common::Die']]],
+  ['setvolume_5',['SetVolume',['../class_seacore_1_1_common_1_1_services_1_1_sound_settings.html#a2fbc510ef8c770c376d3bf2870bc093b',1,'Seacore::Common::Services::SoundSettings']]],
+  ['sort_6',['Sort',['../class_seacore_1_1_game_1_1_roll.html#a898560a207e9881fa4f1b20d77b08259',1,'Seacore::Game::Roll']]],
+  ['soundbuilder_7',['SoundBuilder',['../class_seacore_1_1_common_1_1_services_1_1_sound_builder.html#a77b2b232334f66e67947a4926e596bb0',1,'Seacore::Common::Services::SoundBuilder']]],
+  ['soundsettings_8',['SoundSettings',['../class_seacore_1_1_common_1_1_services_1_1_sound_settings.html#a4f4e540c5d2d8c944b391aff6fc957b6',1,'Seacore::Common::Services::SoundSettings']]],
+  ['splitdiceinfoby_9',['SplitDiceInfoBy',['../class_seacore_1_1_game_1_1_dice_manager.html#a7c701cb2fc213a81231bb9316012ad7a',1,'Seacore::Game::DiceManager']]],
+  ['spring_10',['Spring',['../class_easing_function.html#a0d2cd8324cc42dfb8559dd2c0111abfa',1,'EasingFunction']]],
+  ['springd_11',['SpringD',['../class_easing_function.html#a558beb755730b0028a9600fd8e9d4112',1,'EasingFunction']]],
+  ['start_12',['Start',['../class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a079a8e962e1a01e6f2750c7d27a63301',1,'Seacore::Common::Statemachine::StateMachine']]],
+  ['startnewround_13',['StartNewRound',['../class_seacore_1_1_game_1_1_round_manager.html#a0d1dc7ca10e652592e1d412f32998422',1,'Seacore::Game::RoundManager']]],
+  ['statemachine_14',['StateMachine',['../class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a951d7f91b4da79d96e092bf98a195326',1,'Seacore::Common::Statemachine::StateMachine']]],
+  ['stop_15',['Stop',['../class_seacore_1_1_common_1_1_services_1_1_sound_emitter.html#a17c3281837a49c923d82933a81d95ba9',1,'Seacore::Common::Services::SoundEmitter']]]
 ];

@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tweaksDoxy.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logoTextONLY.png"/></td>
   <td id="projectalign">
    <div id="projectname">Chapeau_Unity
    </div>
@@ -97,7 +99,8 @@ $(function(){initNavTree('namespace_seacore_1_1_common_1_1_services.html',''); i
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">Seacore.Common.Services Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -106,7 +109,43 @@ $(function(){initNavTree('namespace_seacore_1_1_common_1_1_services.html',''); i
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_services_1_1_audio_manager.html">AudioManager</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_services_1_1_sound_builder.html">SoundBuilder</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_services_1_1_sound_data.html">SoundData</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_services_1_1_sound_emitter.html">SoundEmitter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_common_1_1_services_1_1_sound_settings.html">SoundSettings</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:acbed60b255bc0ec859b58c87193e8fea" id="r_acbed60b255bc0ec859b58c87193e8fea"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbed60b255bc0ec859b58c87193e8fea">SoundType</a> { <a class="el" href="#acbed60b255bc0ec859b58c87193e8feaada101052f6ba998ab41d571a6fff1708">SFX</a> = 1
+, <a class="el" href="#acbed60b255bc0ec859b58c87193e8feaa47dcbd834e669233d7eb8a51456ed217">Music</a> = 2
+, <a class="el" href="#acbed60b255bc0ec859b58c87193e8feaaed8e37bad13d76c6dbeb58152440b41e">Ambient</a> = 3
+ }</td></tr>
+<tr class="separator:acbed60b255bc0ec859b58c87193e8fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="acbed60b255bc0ec859b58c87193e8fea" name="acbed60b255bc0ec859b58c87193e8fea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbed60b255bc0ec859b58c87193e8fea">&#9670;&#160;</a></span>SoundType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#acbed60b255bc0ec859b58c87193e8fea">Seacore.Common.Services.SoundType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acbed60b255bc0ec859b58c87193e8feaada101052f6ba998ab41d571a6fff1708" name="acbed60b255bc0ec859b58c87193e8feaada101052f6ba998ab41d571a6fff1708"></a>SFX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acbed60b255bc0ec859b58c87193e8feaa47dcbd834e669233d7eb8a51456ed217" name="acbed60b255bc0ec859b58c87193e8feaa47dcbd834e669233d7eb8a51456ed217"></a>Music&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acbed60b255bc0ec859b58c87193e8feaaed8e37bad13d76c6dbeb58152440b41e" name="acbed60b255bc0ec859b58c87193e8feaaed8e37bad13d76c6dbeb58152440b41e"></a>Ambient&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

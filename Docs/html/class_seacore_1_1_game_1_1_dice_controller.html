@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tweaksDoxy.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logoTextONLY.png"/></td>
   <td id="projectalign">
    <div id="projectname">Chapeau_Unity
    </div>
@@ -116,16 +118,6 @@ Inheritance diagram for Seacore.Game.DiceController:</div>
 <area shape="poly" title=" " alt="" coords="106,48,106,80,100,80,100,48"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for Seacore.Game.DiceController:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_seacore_1_1_game_1_1_dice_controller__coll__graph.png" border="0" usemap="#a_seacore_8_game_8_dice_controller_coll__map" alt="Collaboration graph"/></div>
-<map name="a_seacore_8_game_8_dice_controller_coll__map" id="a_seacore_8_game_8_dice_controller_coll__map">
-<area shape="rect" title="Controls the behaviour of the dice." alt="" coords="5,80,201,107"/>
-<area shape="rect" title=" " alt="" coords="47,5,159,32"/>
-<area shape="poly" title=" " alt="" coords="106,48,106,80,100,80,100,48"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -135,7 +127,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa52f0bace2656ff0e87f559c7ccfa825"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fc764be6af923c5eb64c8533821e258" id="r_a0fc764be6af923c5eb64c8533821e258"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fc764be6af923c5eb64c8533821e258">HideAllDie</a> ()</td></tr>
 <tr class="separator:a0fc764be6af923c5eb64c8533821e258"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79253d47a1d737e2d75a9e5931300c4b" id="r_a79253d47a1d737e2d75a9e5931300c4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79253d47a1d737e2d75a9e5931300c4b">HideDie</a> (<a class="el" href="class_seacore_1_1_die.html">Die</a> die)</td></tr>
+<tr class="memitem:a79253d47a1d737e2d75a9e5931300c4b" id="r_a79253d47a1d737e2d75a9e5931300c4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79253d47a1d737e2d75a9e5931300c4b">HideDie</a> (<a class="el" href="class_seacore_1_1_common_1_1_die.html">Die</a> die)</td></tr>
 <tr class="separator:a79253d47a1d737e2d75a9e5931300c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
@@ -161,18 +153,6 @@ Events</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_seacore_1_1_game_1_1_dice_controller_a0fc764be6af923c5eb64c8533821e258_cgraph.png" border="0" usemap="#aclass_seacore_1_1_game_1_1_dice_controller_a0fc764be6af923c5eb64c8533821e258_cgraph" alt=""/></div>
-<map name="aclass_seacore_1_1_game_1_1_dice_controller_a0fc764be6af923c5eb64c8533821e258_cgraph" id="aclass_seacore_1_1_game_1_1_dice_controller_a0fc764be6af923c5eb64c8533821e258_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,205,48"/>
-<area shape="rect" href="class_seacore_1_1_game_1_1_dice_controller.html#a79253d47a1d737e2d75a9e5931300c4b" title=" " alt="" coords="253,5,452,48"/>
-<area shape="poly" title=" " alt="" coords="205,24,237,24,237,29,205,29"/>
-<area shape="rect" href="class_seacore_1_1_game_1_1_die_visual_handler.html#a4acd5ebd6b5d84a798d711218e3cff43" title=" " alt="" coords="500,5,717,48"/>
-<area shape="poly" title=" " alt="" coords="452,24,484,24,484,29,452,29"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -185,31 +165,11 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void Seacore.Game.DiceController.HideDie </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_seacore_1_1_die.html">Die</a></td>          <td class="paramname"><span class="paramname"><em>die</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_seacore_1_1_common_1_1_die.html">Die</a></td>          <td class="paramname"><span class="paramname"><em>die</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_seacore_1_1_game_1_1_dice_controller_a79253d47a1d737e2d75a9e5931300c4b_cgraph.png" border="0" usemap="#aclass_seacore_1_1_game_1_1_dice_controller_a79253d47a1d737e2d75a9e5931300c4b_cgraph" alt=""/></div>
-<map name="aclass_seacore_1_1_game_1_1_dice_controller_a79253d47a1d737e2d75a9e5931300c4b_cgraph" id="aclass_seacore_1_1_game_1_1_dice_controller_a79253d47a1d737e2d75a9e5931300c4b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,205,48"/>
-<area shape="rect" href="class_seacore_1_1_game_1_1_die_visual_handler.html#a4acd5ebd6b5d84a798d711218e3cff43" title=" " alt="" coords="253,5,470,48"/>
-<area shape="poly" title=" " alt="" coords="205,24,237,24,237,29,205,29"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_seacore_1_1_game_1_1_dice_controller_a79253d47a1d737e2d75a9e5931300c4b_icgraph.png" border="0" usemap="#aclass_seacore_1_1_game_1_1_dice_controller_a79253d47a1d737e2d75a9e5931300c4b_icgraph" alt=""/></div>
-<map name="aclass_seacore_1_1_game_1_1_dice_controller_a79253d47a1d737e2d75a9e5931300c4b_icgraph" id="aclass_seacore_1_1_game_1_1_dice_controller_a79253d47a1d737e2d75a9e5931300c4b_icgraph">
-<area shape="rect" title=" " alt="" coords="253,5,452,48"/>
-<area shape="rect" href="class_seacore_1_1_game_1_1_dice_controller.html#a0fc764be6af923c5eb64c8533821e258" title=" " alt="" coords="5,5,205,48"/>
-<area shape="poly" title=" " alt="" coords="237,29,205,29,205,24,237,24"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -227,16 +187,6 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_seacore_1_1_game_1_1_dice_controller_aa52f0bace2656ff0e87f559c7ccfa825_cgraph.png" border="0" usemap="#aclass_seacore_1_1_game_1_1_dice_controller_aa52f0bace2656ff0e87f559c7ccfa825_cgraph" alt=""/></div>
-<map name="aclass_seacore_1_1_game_1_1_dice_controller_aa52f0bace2656ff0e87f559c7ccfa825_cgraph" id="aclass_seacore_1_1_game_1_1_dice_controller_aa52f0bace2656ff0e87f559c7ccfa825_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,205,48"/>
-<area shape="rect" href="class_seacore_1_1_game_1_1_die_visual_handler.html#a557a55654b49f0aa5ee6eaf4a6789f02" title=" " alt="" coords="253,5,470,48"/>
-<area shape="poly" title=" " alt="" coords="205,24,237,24,237,29,205,29"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -254,20 +204,6 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_seacore_1_1_game_1_1_dice_controller_a7f99e5106b58309d89398b9a13d7eea8_cgraph.png" border="0" usemap="#aclass_seacore_1_1_game_1_1_dice_controller_a7f99e5106b58309d89398b9a13d7eea8_cgraph" alt=""/></div>
-<map name="aclass_seacore_1_1_game_1_1_dice_controller_a7f99e5106b58309d89398b9a13d7eea8_cgraph" id="aclass_seacore_1_1_game_1_1_dice_controller_a7f99e5106b58309d89398b9a13d7eea8_cgraph">
-<area shape="rect" title=" " alt="" coords="5,23,205,65"/>
-<area shape="rect" href="class_seacore_1_1_roll.html#a91ed0ad611805502aa212f6984cf69e5" title=" " alt="" coords="253,5,430,32"/>
-<area shape="poly" title=" " alt="" coords="205,31,237,27,238,32,205,36"/>
-<area shape="rect" href="class_seacore_1_1_die.html#a614e10abb4c519172c5782043a861651" title="Manual roll function that has nothing todo with physics like the above." alt="" coords="281,56,402,83"/>
-<area shape="poly" title=" " alt="" coords="205,52,266,59,265,64,205,57"/>
-<area shape="rect" href="class_seacore_1_1_die.html#a6d8936238b0d8506dcccfd184ed8c541" title=" " alt="" coords="478,56,664,83"/>
-<area shape="poly" title=" " alt="" coords="402,67,462,67,462,72,402,72"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -287,7 +223,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Chapeau/Assets/_Project/_Scripts/Core/Controllers &amp; Managers/<a class="el" href="_dice_controller_8cs.html">DiceController.cs</a></li>
+<li>Chapeau/Assets/_Project/_Scripts/Game Core/Controllers &amp; Managers/<a class="el" href="_dice_controller_8cs.html">DiceController.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

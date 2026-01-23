@@ -1,0 +1,7 @@
+<map id="Seacore.Game.UI.DeclareMenu.AdjustDeclaredRoll" name="Seacore.Game.UI.DeclareMenu.AdjustDeclaredRoll">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,217,81"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_game_1_1_roll.html#a03f9a5475c4852fc75d67d4acbe4660f" title=" " alt="" coords="265,5,459,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,43,249,39,250,44,218,49"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_game_1_1_roll.html#a652ab0cc73463c045d5ca835bdbb3756" title=" " alt="" coords="270,72,454,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="218,71,255,76,254,82,217,77"/>
+</map>

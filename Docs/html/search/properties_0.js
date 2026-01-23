@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['alphafadespeed_0',['alphaFadeSpeed',['../class_seacore_1_1_image_dropdown.html#abb58ce4ac30e936a9bb618795932fd2c',1,'Seacore::ImageDropdown']]],
-  ['amountrolled_1',['AmountRolled',['../class_round_context.html#af9bb0d5fbc2bab066b033d632523d9ce',1,'RoundContext']]],
-  ['asset_2',['asset',['../class_seacore_1_1_chapeau_input_actions.html#a7e2bc6f2f8f3433620d54a9ac7a72f84',1,'Seacore::ChapeauInputActions']]]
+  ['amountrolled_0',['AmountRolled',['../class_seacore_1_1_game_1_1_round_context.html#ab10bd2cb7408fa56ff7bec81f6ff1e16',1,'Seacore::Game::RoundContext']]],
+  ['asset_1',['Asset',['../class_seacore_1_1_game_1_1_input_reader.html#a84f0524d96b713791d597728dbd2ab3a',1,'Seacore::Game::InputReader']]],
+  ['asset_2',['asset',['../class_seacore_1_1_game_1_1_chapeau_input_actions.html#a154ef007eceb081c373f2f068fcce9ee',1,'Seacore::Game::ChapeauInputActions']]]
 ];

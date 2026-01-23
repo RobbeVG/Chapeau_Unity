@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tweaksDoxy.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logoTextONLY.png"/></td>
   <td id="projectalign">
    <div id="projectname">Chapeau_Unity
    </div>
@@ -116,16 +118,6 @@ Inheritance diagram for Seacore.Common.PickupAndDrag:</div>
 <area shape="poly" title=" " alt="" coords="119,48,119,80,113,80,113,48"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for Seacore.Common.PickupAndDrag:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_seacore_1_1_common_1_1_pickup_and_drag__coll__graph.png" border="0" usemap="#a_seacore_8_common_8_pickup_and_drag_coll__map" alt="Collaboration graph"/></div>
-<map name="a_seacore_8_common_8_pickup_and_drag_coll__map" id="a_seacore_8_common_8_pickup_and_drag_coll__map">
-<area shape="rect" title="A component script that allows the user to pick up objects and drag them around on the screen." alt="" coords="5,80,227,107"/>
-<area shape="rect" title=" " alt="" coords="60,5,172,32"/>
-<area shape="poly" title=" " alt="" coords="119,48,119,80,113,80,113,48"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -138,10 +130,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a111eb41869ec94fa3f6788c3c657d670" id="r_a111eb41869ec94fa3f6788c3c657d670"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a111eb41869ec94fa3f6788c3c657d670">SelectedObject</a><code> [get]</code></td></tr>
+<tr class="memitem:a111eb41869ec94fa3f6788c3c657d670" id="r_a111eb41869ec94fa3f6788c3c657d670"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a111eb41869ec94fa3f6788c3c657d670">SelectedObject</a> = null<code> [get]</code></td></tr>
 <tr class="separator:a111eb41869ec94fa3f6788c3c657d670"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae249390754ba27720e611e9e3425aa98" id="r_ae249390754ba27720e611e9e3425aa98"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae249390754ba27720e611e9e3425aa98">PickupHeightOffset</a><code> [get]</code></td></tr>
-<tr class="separator:ae249390754ba27720e611e9e3425aa98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A component script that allows the user to pick up objects and drag them around on the screen. </p>
@@ -199,28 +189,6 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a id="ae249390754ba27720e611e9e3425aa98" name="ae249390754ba27720e611e9e3425aa98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae249390754ba27720e611e9e3425aa98">&#9670;&#160;</a></span>PickupHeightOffset</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Seacore.Common.PickupAndDrag.PickupHeightOffset</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a111eb41869ec94fa3f6788c3c657d670" name="a111eb41869ec94fa3f6788c3c657d670"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a111eb41869ec94fa3f6788c3c657d670">&#9670;&#160;</a></span>SelectedObject</h2>
 
@@ -231,7 +199,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">GameObject Seacore.Common.PickupAndDrag.SelectedObject</td>
+          <td class="memname">GameObject Seacore.Common.PickupAndDrag.SelectedObject = null</td>
         </tr>
       </table>
   </td>

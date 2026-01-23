@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tweaksDoxy.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logoTextONLY.png"/></td>
   <td id="projectalign">
    <div id="projectname">Chapeau_Unity
    </div>
@@ -116,16 +118,6 @@ Inheritance diagram for Seacore.Game.RoundManager:</div>
 <area shape="poly" title=" " alt="" coords="108,48,108,80,103,80,103,48"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for Seacore.Game.RoundManager:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_seacore_1_1_game_1_1_round_manager__coll__graph.png" border="0" usemap="#a_seacore_8_game_8_round_manager_coll__map" alt="Collaboration graph"/></div>
-<map name="a_seacore_8_game_8_round_manager_coll__map" id="a_seacore_8_game_8_round_manager_coll__map">
-<area shape="rect" title="Manages the logic and coordination of a round in the game. This includes starting,..." alt="" coords="5,80,206,107"/>
-<area shape="rect" title=" " alt="" coords="50,5,161,32"/>
-<area shape="poly" title=" " alt="" coords="108,48,108,80,103,80,103,48"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -133,7 +125,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0d1dc7ca10e652592e1d412f32998422"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a new round by initializing or resetting round-specific elements. This method might involve setting up the dice roller, initializing dice controllers, and preparing any other necessary components.  <br /></td></tr>
 <tr class="separator:a0d1dc7ca10e652592e1d412f32998422"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adabfe884749d85b2d9d33de409101159" id="r_adabfe884749d85b2d9d33de409101159"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adabfe884749d85b2d9d33de409101159">EndRound</a> ()</td></tr>
-<tr class="memdesc:adabfe884749d85b2d9d33de409101159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the current round and performs any necessary cleanup or finalization. This might involve resetting the state of dice, updating the <a class="el" href="namespace_seacore_1_1_u_i.html">UI</a>, or finalizing round results.  <br /></td></tr>
+<tr class="memdesc:adabfe884749d85b2d9d33de409101159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the current round and performs any necessary cleanup or finalization. This might involve resetting the state of dice, updating the <a class="el" href="namespace_seacore_1_1_game_1_1_u_i.html">UI</a>, or finalizing round results.  <br /></td></tr>
 <tr class="separator:adabfe884749d85b2d9d33de409101159"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc87233bac1cd43e2374073d65ac38fe" id="r_acc87233bac1cd43e2374073d65ac38fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc87233bac1cd43e2374073d65ac38fe">ResetRound</a> ()</td></tr>
 <tr class="memdesc:acc87233bac1cd43e2374073d65ac38fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the state of the round, clearing or reinitializing round-specific data and components. This method is typically called at the beginning of a new round or when restarting the game.  <br /></td></tr>
@@ -145,7 +137,7 @@ Properties</h2></td></tr>
 <tr class="separator:a1bd1884b35a8497b4a1d6a681c853305"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cff047a791593020ddacce30a5d99cf" id="r_a8cff047a791593020ddacce30a5d99cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_seacore_1_1_game_1_1_round_state_machine.html">RoundStateMachine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cff047a791593020ddacce30a5d99cf">RoundStateMachine</a><code> [get]</code></td></tr>
 <tr class="separator:a8cff047a791593020ddacce30a5d99cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadc8ec66e06cd97e4e7517cd363178c6" id="r_aadc8ec66e06cd97e4e7517cd363178c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_round_context.html">RoundContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadc8ec66e06cd97e4e7517cd363178c6">Context</a><code> [get]</code></td></tr>
+<tr class="memitem:aadc8ec66e06cd97e4e7517cd363178c6" id="r_aadc8ec66e06cd97e4e7517cd363178c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_seacore_1_1_game_1_1_round_context.html">RoundContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadc8ec66e06cd97e4e7517cd363178c6">Context</a><code> [get]</code></td></tr>
 <tr class="separator:aadc8ec66e06cd97e4e7517cd363178c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -166,7 +158,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ends the current round and performs any necessary cleanup or finalization. This might involve resetting the state of dice, updating the <a class="el" href="namespace_seacore_1_1_u_i.html">UI</a>, or finalizing round results. </p>
+<p>Ends the current round and performs any necessary cleanup or finalization. This might involve resetting the state of dice, updating the <a class="el" href="namespace_seacore_1_1_game_1_1_u_i.html">UI</a>, or finalizing round results. </p>
 
 </div>
 </div>
@@ -186,24 +178,6 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Resets the state of the round, clearing or reinitializing round-specific data and components. This method is typically called at the beginning of a new round or when restarting the game. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_seacore_1_1_game_1_1_round_manager_acc87233bac1cd43e2374073d65ac38fe_cgraph.png" border="0" usemap="#aclass_seacore_1_1_game_1_1_round_manager_acc87233bac1cd43e2374073d65ac38fe_cgraph" alt=""/></div>
-<map name="aclass_seacore_1_1_game_1_1_round_manager_acc87233bac1cd43e2374073d65ac38fe_cgraph" id="aclass_seacore_1_1_game_1_1_round_manager_acc87233bac1cd43e2374073d65ac38fe_cgraph">
-<area shape="rect" title="Resets the state of the round, clearing or reinitializing round&#45;specific data and components...." alt="" coords="5,31,210,73"/>
-<area shape="rect" href="class_round_context.html#afcf5d8f7e7e27dc5e3d6030cfa9dc154" title=" " alt="" coords="305,8,445,35"/>
-<area shape="poly" title=" " alt="" coords="210,38,289,28,290,34,210,43"/>
-<area shape="rect" href="class_seacore_1_1_game_1_1_round_state_machine.html#a61306f0312ede9ea6b2dff16a916b296" title=" " alt="" coords="258,60,492,103"/>
-<area shape="poly" title=" " alt="" coords="210,61,242,64,242,69,210,66"/>
-<area shape="rect" href="class_seacore_1_1_roll.html#a47f041733bd942c3684a8dcfff93649c" title=" " alt="" coords="600,5,731,32"/>
-<area shape="poly" title=" " alt="" coords="446,18,584,17,585,22,446,23"/>
-<area shape="rect" href="struct_seacore_1_1_roll_result.html#a8125289fa3ff2be8aa1831176a8f79c6" title=" " alt="" coords="839,5,1009,32"/>
-<area shape="poly" title=" " alt="" coords="732,16,824,16,824,21,732,21"/>
-<area shape="rect" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a1f625f208767706fbdfe23880e0534c7" title=" " alt="" coords="540,56,791,115"/>
-<area shape="poly" title=" " alt="" coords="493,80,524,81,524,86,493,86"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -223,16 +197,6 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Starts a new round by initializing or resetting round-specific elements. This method might involve setting up the dice roller, initializing dice controllers, and preparing any other necessary components. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_seacore_1_1_game_1_1_round_manager_a0d1dc7ca10e652592e1d412f32998422_cgraph.png" border="0" usemap="#aclass_seacore_1_1_game_1_1_round_manager_a0d1dc7ca10e652592e1d412f32998422_cgraph" alt=""/></div>
-<map name="aclass_seacore_1_1_game_1_1_round_manager_a0d1dc7ca10e652592e1d412f32998422_cgraph" id="aclass_seacore_1_1_game_1_1_round_manager_a0d1dc7ca10e652592e1d412f32998422_cgraph">
-<area shape="rect" title="Starts a new round by initializing or resetting round&#45;specific elements. This method might involve se..." alt="" coords="5,5,210,48"/>
-<area shape="rect" href="class_seacore_1_1_common_1_1_statemachine_1_1_state_machine.html#a079a8e962e1a01e6f2750c7d27a63301" title=" " alt="" coords="258,5,472,48"/>
-<area shape="poly" title=" " alt="" coords="210,24,242,24,242,29,210,29"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -247,7 +211,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_round_context.html">RoundContext</a> Seacore.Game.RoundManager.Context</td>
+          <td class="memname"><a class="el" href="class_seacore_1_1_game_1_1_round_context.html">RoundContext</a> Seacore.Game.RoundManager.Context</td>
         </tr>
       </table>
   </td>
@@ -304,7 +268,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Chapeau/Assets/_Project/_Scripts/Core/Round/<a class="el" href="_round_manager_8cs.html">RoundManager.cs</a></li>
+<li>Chapeau/Assets/_Project/_Scripts/Game Core/Round/<a class="el" href="_round_manager_8cs.html">RoundManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['faces_0',['Faces',['../class_seacore_1_1_die.html#a3ba69a442ee520f1e8a55587876a8e80',1,'Seacore::Die']]]
+  ['faces_0',['Faces',['../class_seacore_1_1_common_1_1_die.html#a0ff687369cb33e788cb48e71408d26f4',1,'Seacore::Common::Die']]]
 ];

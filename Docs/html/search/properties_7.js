@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hold_0',['Hold',['../struct_seacore_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#ab9681ed2e272fc7e7b3ef8363b7d9a2a',1,'Seacore::ChapeauInputActions::DiceActionsActions']]]
+  ['hold_0',['Hold',['../struct_seacore_1_1_game_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#ade3060066dc5cf9dbe6d6e8e4fdb7213',1,'Seacore::Game::ChapeauInputActions::DiceActionsActions']]]
 ];

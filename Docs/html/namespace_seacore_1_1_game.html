@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tweaksDoxy.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logoTextONLY.png"/></td>
   <td id="projectalign">
    <div id="projectname">Chapeau_Unity
    </div>
@@ -98,7 +100,8 @@ $(function(){initNavTree('namespace_seacore_1_1_game.html',''); initResizable(tr
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">Seacore.Game Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -107,23 +110,48 @@ $(function(){initNavTree('namespace_seacore_1_1_game.html',''); initResizable(tr
 Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_seacore_1_1_game_1_1_round_states.html">RoundStates</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_seacore_1_1_game_1_1_u_i.html">UI</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_dice_config.html">DiceConfig</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_chapeau_input_actions.html">ChapeauInputActions</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_dice_controller.html">DiceController</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls the behaviour of the dice.  <a href="class_seacore_1_1_game_1_1_dice_controller.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_dice_distribution.html">DiceDistribution</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the density and adjusts the position of dice objects within a defined area, considering border constraints, proximity to other dice, and a central circle.  <a href="class_seacore_1_1_game_1_1_dice_distribution.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_dice_manager.html">DiceManager</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages dice objects, their state, and their interactions.  <a href="class_seacore_1_1_game_1_1_dice_manager.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_dice_visuals_config.html">DiceVisualsConfig</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_die_info.html">DieInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds additional information for each die. Is class because it uses reference semantics.  <a href="class_seacore_1_1_game_1_1_die_info.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_die_visual_handler.html">DieVisualHandler</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the visual effects and animations for dice, including color changes, outline effects, and reveal animations.  <a href="class_seacore_1_1_game_1_1_die_visual_handler.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_input_manager.html">InputManager</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A specified player controller that handles the input from the input System.  <a href="class_seacore_1_1_game_1_1_input_manager.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_game_object_event_handler.html">GameObjectEventHandler</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_game_scene_installer.html">GameSceneInstaller</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_seacore_1_1_game_1_1_i_input_activator.html">IInputActivator</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_input_action_manager.html">InputActionManager</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A specified player controller that handles the input from the input System.  <a href="class_seacore_1_1_game_1_1_input_action_manager.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_input_reader.html">InputReader</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_received_state.html">ReceivedState</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_roll.html">Roll</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_seacore_1_1_game_1_1_roll_result.html">RollResult</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_round_context.html">RoundContext</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_round_manager.html">RoundManager</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages the logic and coordination of a round in the game. This includes starting, updating, and ending the round, as well as interacting with various game components such as dice rollers and controllers.  <a href="class_seacore_1_1_game_1_1_round_manager.html#details">More...</a><br /></td></tr>
@@ -131,9 +159,86 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_round_state_machine.html">RoundStateMachine</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A child statemachine that specifically is used to progress a round.  <a href="class_seacore_1_1_game_1_1_round_state_machine.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_settings_menu.html">SettingsMenu</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_u_i_game_controller.html">UIGameController</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a390f4f7451dccb5d94ff18a7225c39d7" id="r_a390f4f7451dccb5d94ff18a7225c39d7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a390f4f7451dccb5d94ff18a7225c39d7">RollType</a> { <br />
+&#160;&#160;<a class="el" href="#a390f4f7451dccb5d94ff18a7225c39d7af80a4ad87fee7c9fdc19b7769495fdb5">Nothing</a>
+, <a class="el" href="#a390f4f7451dccb5d94ff18a7225c39d7ad0bd662806a73209a1c6fbe55591fbff">Pair</a>
+, <a class="el" href="#a390f4f7451dccb5d94ff18a7225c39d7a2971b3edb9bcb3a650781ce9807d2590">TwoPair</a>
+, <a class="el" href="#a390f4f7451dccb5d94ff18a7225c39d7ac945075a2d3a657e2fd70320bcfdbff9">ThreeOfAKind</a>
+, <br />
+&#160;&#160;<a class="el" href="#a390f4f7451dccb5d94ff18a7225c39d7a03529010fdc06b3d229b19145db676cb">LowStraight</a>
+, <a class="el" href="#a390f4f7451dccb5d94ff18a7225c39d7a920b516c34c58b9ce69fcc1704bfc00f">FullHouse</a>
+, <a class="el" href="#a390f4f7451dccb5d94ff18a7225c39d7afe915307be2bd02344c01e33a8a4885c">HighStraight</a>
+, <a class="el" href="#a390f4f7451dccb5d94ff18a7225c39d7abba2f14211e2b6eab1232df7905103d0">FourOfAKind</a>
+, <br />
+&#160;&#160;<a class="el" href="#a390f4f7451dccb5d94ff18a7225c39d7ae1549efcfd599977bd920eafebea42e5">FiveOfAKind</a>
+<br />
+ }</td></tr>
+<tr class="separator:a390f4f7451dccb5d94ff18a7225c39d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e6bf1479c2fbef3bedad502e38a47e" id="r_a34e6bf1479c2fbef3bedad502e38a47e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34e6bf1479c2fbef3bedad502e38a47e">DieState</a> : byte { <br />
+&#160;&#160;<a class="el" href="#a34e6bf1479c2fbef3bedad502e38a47ea6adf97f83acf6453d4a6a4b1070f3754">None</a> = 0b_0000_0000
+, <a class="el" href="#a34e6bf1479c2fbef3bedad502e38a47ea5a7dcc9b4276bbab8e0aaa633121a23c">ToRoll</a> = 0b_0000_0001
+, <a class="el" href="#a34e6bf1479c2fbef3bedad502e38a47eaec24d78ce33048dc73a2b6b1a0690192">Visible</a> = 0b_0000_0010
+, <a class="el" href="#a34e6bf1479c2fbef3bedad502e38a47ea7df03dec0845db7d2b8df32c4d3532cb">Selecting</a> = 0b_0000_0100
+, <br />
+&#160;&#160;<a class="el" href="#a34e6bf1479c2fbef3bedad502e38a47ea9b6d3000134648fc9f1e71094ae0847d">Inside</a> = 0b_0001_0000
+<br />
+ }</td></tr>
+<tr class="separator:a34e6bf1479c2fbef3bedad502e38a47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a34e6bf1479c2fbef3bedad502e38a47e" name="a34e6bf1479c2fbef3bedad502e38a47e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34e6bf1479c2fbef3bedad502e38a47e">&#9670;&#160;</a></span>DieState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a34e6bf1479c2fbef3bedad502e38a47e">Seacore.Game.DieState</a> : byte</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a34e6bf1479c2fbef3bedad502e38a47ea6adf97f83acf6453d4a6a4b1070f3754" name="a34e6bf1479c2fbef3bedad502e38a47ea6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a34e6bf1479c2fbef3bedad502e38a47ea5a7dcc9b4276bbab8e0aaa633121a23c" name="a34e6bf1479c2fbef3bedad502e38a47ea5a7dcc9b4276bbab8e0aaa633121a23c"></a>ToRoll&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a34e6bf1479c2fbef3bedad502e38a47eaec24d78ce33048dc73a2b6b1a0690192" name="a34e6bf1479c2fbef3bedad502e38a47eaec24d78ce33048dc73a2b6b1a0690192"></a>Visible&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a34e6bf1479c2fbef3bedad502e38a47ea7df03dec0845db7d2b8df32c4d3532cb" name="a34e6bf1479c2fbef3bedad502e38a47ea7df03dec0845db7d2b8df32c4d3532cb"></a>Selecting&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a34e6bf1479c2fbef3bedad502e38a47ea9b6d3000134648fc9f1e71094ae0847d" name="a34e6bf1479c2fbef3bedad502e38a47ea9b6d3000134648fc9f1e71094ae0847d"></a>Inside&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a390f4f7451dccb5d94ff18a7225c39d7" name="a390f4f7451dccb5d94ff18a7225c39d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a390f4f7451dccb5d94ff18a7225c39d7">&#9670;&#160;</a></span>RollType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a390f4f7451dccb5d94ff18a7225c39d7">Seacore.Game.RollType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a390f4f7451dccb5d94ff18a7225c39d7af80a4ad87fee7c9fdc19b7769495fdb5" name="a390f4f7451dccb5d94ff18a7225c39d7af80a4ad87fee7c9fdc19b7769495fdb5"></a>Nothing&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a390f4f7451dccb5d94ff18a7225c39d7ad0bd662806a73209a1c6fbe55591fbff" name="a390f4f7451dccb5d94ff18a7225c39d7ad0bd662806a73209a1c6fbe55591fbff"></a>Pair&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a390f4f7451dccb5d94ff18a7225c39d7a2971b3edb9bcb3a650781ce9807d2590" name="a390f4f7451dccb5d94ff18a7225c39d7a2971b3edb9bcb3a650781ce9807d2590"></a>TwoPair&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a390f4f7451dccb5d94ff18a7225c39d7ac945075a2d3a657e2fd70320bcfdbff9" name="a390f4f7451dccb5d94ff18a7225c39d7ac945075a2d3a657e2fd70320bcfdbff9"></a>ThreeOfAKind&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a390f4f7451dccb5d94ff18a7225c39d7a03529010fdc06b3d229b19145db676cb" name="a390f4f7451dccb5d94ff18a7225c39d7a03529010fdc06b3d229b19145db676cb"></a>LowStraight&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a390f4f7451dccb5d94ff18a7225c39d7a920b516c34c58b9ce69fcc1704bfc00f" name="a390f4f7451dccb5d94ff18a7225c39d7a920b516c34c58b9ce69fcc1704bfc00f"></a>FullHouse&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a390f4f7451dccb5d94ff18a7225c39d7afe915307be2bd02344c01e33a8a4885c" name="a390f4f7451dccb5d94ff18a7225c39d7afe915307be2bd02344c01e33a8a4885c"></a>HighStraight&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a390f4f7451dccb5d94ff18a7225c39d7abba2f14211e2b6eab1232df7905103d0" name="a390f4f7451dccb5d94ff18a7225c39d7abba2f14211e2b6eab1232df7905103d0"></a>FourOfAKind&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a390f4f7451dccb5d94ff18a7225c39d7ae1549efcfd599977bd920eafebea42e5" name="a390f4f7451dccb5d94ff18a7225c39d7ae1549efcfd599977bd920eafebea42e5"></a>FiveOfAKind&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

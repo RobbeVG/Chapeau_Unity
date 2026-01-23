@@ -1,0 +1,5 @@
+<map id="Seacore.Common.Die.Roll" name="Seacore.Common.Die.Roll">
+<area shape="rect" id="Node000001" title="Manual roll function that has nothing todo with physics like the above." alt="" coords="5,13,183,40"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_common_1_1_die.html#a12652b813f6e0d02731c0bb10a5a2aeb" title=" " alt="" coords="231,5,442,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,24,215,24,215,29,183,29"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Seacore.Game.ChapeauInputActions.DiceActionsActions.Enable" name="Seacore.Game.ChapeauInputActions.DiceActionsActions.Enable">
+<area shape="rect" id="Node000001" title=" " alt="" coords="475,5,703,48"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_game_1_1_input_reader.html#a83cf55c14d94ed5ac34181f187d60d3e" title=" " alt="" coords="240,5,427,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="459,29,427,29,427,24,459,24"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_game_1_1_input_action_manager.html#a0009499799e9a357d24b2639b322fb98" title=" " alt="" coords="5,5,192,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="224,29,192,29,192,24,224,24"/>
+</map>

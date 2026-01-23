@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Chapeau_Unity: Chapeau/Assets/_Project/_Scripts/Core/Controllers &amp; Managers/DiceManager.cs File Reference</title>
+<title>Chapeau_Unity: Chapeau/Assets/_Project/_Scripts/Game Core/Controllers &amp; Managers/DiceManager.cs File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="tweaksDoxy.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logoTextONLY.png"/></td>
   <td id="projectalign">
    <div id="projectname">Chapeau_Unity
    </div>
@@ -106,37 +108,39 @@ $(function(){initNavTree('_dice_manager_8cs.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_dice_manager.html">Seacore.DiceManager</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages dice objects, their state, and their interactions.  <a href="class_seacore_1_1_dice_manager.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_dice_manager.html">Seacore.Game.DiceManager</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages dice objects, their state, and their interactions.  <a href="class_seacore_1_1_game_1_1_dice_manager.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_die_info.html">Seacore.DieInfo</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds additional information for each die. Is class because it uses reference semantics.  <a href="class_seacore_1_1_die_info.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seacore_1_1_game_1_1_die_info.html">Seacore.Game.DieInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds additional information for each die. Is class because it uses reference semantics.  <a href="class_seacore_1_1_game_1_1_die_info.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_seacore.html">Seacore</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_seacore_1_1_game.html">Seacore.Game</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a60ebaf0abef0d35036817eaaea4062bb" id="r_a60ebaf0abef0d35036817eaaea4062bb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bb">Seacore.DieState</a> : byte { <br />
-&#160;&#160;<a class="el" href="namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bba6adf97f83acf6453d4a6a4b1070f3754">Seacore.None</a> = 0b_0000_0000
-, <a class="el" href="namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bba5a7dcc9b4276bbab8e0aaa633121a23c">Seacore.ToRoll</a> = 0b_0000_0001
-, <a class="el" href="namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bbaec24d78ce33048dc73a2b6b1a0690192">Seacore.Visible</a> = 0b_0000_0010
-, <a class="el" href="namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bba7df03dec0845db7d2b8df32c4d3532cb">Seacore.Selecting</a> = 0b_0000_0100
+<tr class="memitem:a34e6bf1479c2fbef3bedad502e38a47e" id="r_a34e6bf1479c2fbef3bedad502e38a47e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_seacore_1_1_game.html#a34e6bf1479c2fbef3bedad502e38a47e">Seacore.Game.DieState</a> : byte { <br />
+&#160;&#160;<a class="el" href="namespace_seacore_1_1_game.html#a34e6bf1479c2fbef3bedad502e38a47ea6adf97f83acf6453d4a6a4b1070f3754">Seacore.Game.None</a> = 0b_0000_0000
+, <a class="el" href="namespace_seacore_1_1_game.html#a34e6bf1479c2fbef3bedad502e38a47ea5a7dcc9b4276bbab8e0aaa633121a23c">Seacore.Game.ToRoll</a> = 0b_0000_0001
+, <a class="el" href="namespace_seacore_1_1_game.html#a34e6bf1479c2fbef3bedad502e38a47eaec24d78ce33048dc73a2b6b1a0690192">Seacore.Game.Visible</a> = 0b_0000_0010
+, <a class="el" href="namespace_seacore_1_1_game.html#a34e6bf1479c2fbef3bedad502e38a47ea7df03dec0845db7d2b8df32c4d3532cb">Seacore.Game.Selecting</a> = 0b_0000_0100
 , <br />
-&#160;&#160;<a class="el" href="namespace_seacore.html#a60ebaf0abef0d35036817eaaea4062bba9b6d3000134648fc9f1e71094ae0847d">Seacore.Inside</a> = 0b_0001_0000
+&#160;&#160;<a class="el" href="namespace_seacore_1_1_game.html#a34e6bf1479c2fbef3bedad502e38a47ea9b6d3000134648fc9f1e71094ae0847d">Seacore.Game.Inside</a> = 0b_0001_0000
 <br />
  }</td></tr>
-<tr class="separator:a60ebaf0abef0d35036817eaaea4062bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a34e6bf1479c2fbef3bedad502e38a47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bf52c49f72cf7a20a0aa6af6f58ba98e.html">Chapeau</a></li><li class="navelem"><a class="el" href="dir_099998a43febc8f074ab127ce3346718.html">Assets</a></li><li class="navelem"><a class="el" href="dir_4949801ae176722078e307646846e63a.html">_Project</a></li><li class="navelem"><a class="el" href="dir_b79b99bc8fa926136fa929c0d8af2df0.html">_Scripts</a></li><li class="navelem"><a class="el" href="dir_f3c909a21769957ba900644dc245dc95.html">Core</a></li><li class="navelem"><a class="el" href="dir_400a003a7c25955a8dde2f122b0728d0.html">Controllers &amp; Managers</a></li><li class="navelem"><a class="el" href="_dice_manager_8cs.html">DiceManager.cs</a></li>
+    <li class="navelem"><a class="el" href="dir_bf52c49f72cf7a20a0aa6af6f58ba98e.html">Chapeau</a></li><li class="navelem"><a class="el" href="dir_099998a43febc8f074ab127ce3346718.html">Assets</a></li><li class="navelem"><a class="el" href="dir_4949801ae176722078e307646846e63a.html">_Project</a></li><li class="navelem"><a class="el" href="dir_b79b99bc8fa926136fa929c0d8af2df0.html">_Scripts</a></li><li class="navelem"><a class="el" href="dir_8fa29861e86354183b0d5f4e436ef644.html">Game Core</a></li><li class="navelem"><a class="el" href="dir_8278411e50e75a6984621dacc0af95bf.html">Controllers &amp; Managers</a></li><li class="navelem"><a class="el" href="_dice_manager_8cs.html">DiceManager.cs</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>

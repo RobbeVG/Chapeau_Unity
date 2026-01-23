@@ -1,0 +1,11 @@
+<map id="Seacore.Game.RollResult.Clear" name="Seacore.Game.RollResult.Clear">
+<area shape="rect" id="Node000001" title=" " alt="" coords="724,35,902,77"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_game_1_1_roll.html#ae8f83998dbbb3b5946b0f1f60a88e426" title=" " alt="" coords="506,43,676,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="709,59,677,59,677,53,709,53"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_game_1_1_round_context.html#a1b2dffb6d5648a5f56f295bd5688ac13" title=" " alt="" coords="258,5,458,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="491,46,458,42,459,37,491,41"/>
+<area shape="rect" id="Node000005" href="$class_seacore_1_1_game_1_1_roll.html#a790e9a2d4a95aa3b0d6099fde645bfdb" title=" " alt="" coords="277,72,439,99"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="491,71,440,78,439,72,491,66"/>
+<area shape="rect" id="Node000004" href="$class_seacore_1_1_game_1_1_round_manager.html#acc87233bac1cd43e2374073d65ac38fe" title="Resets the state of the round, clearing or reinitializing round&#45;specific data and components...." alt="" coords="5,5,210,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="242,29,210,29,210,24,242,24"/>
+</map>

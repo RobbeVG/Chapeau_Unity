@@ -1,7 +1,7 @@
 var class_seacore_1_1_common_1_1_services_1_1_audio_manager =
 [
-    [ "Awake", "class_seacore_1_1_common_1_1_services_1_1_audio_manager.html#a36563145ff401fccee5205922ad4969f", null ],
-    [ "OnDisable", "class_seacore_1_1_common_1_1_services_1_1_audio_manager.html#ac4f57a959460b25ced699ee03cfe7b53", null ],
-    [ "OnEnable", "class_seacore_1_1_common_1_1_services_1_1_audio_manager.html#a3bb727f79de797e7546287d5c9db7ac8", null ],
-    [ "Start", "class_seacore_1_1_common_1_1_services_1_1_audio_manager.html#a1566f5389529cf29a3ef8876f226a4fe", null ]
+    [ "CreateSound", "class_seacore_1_1_common_1_1_services_1_1_audio_manager.html#a93fab508fa430e95554fd30f5c3b7c09", null ],
+    [ "Get", "class_seacore_1_1_common_1_1_services_1_1_audio_manager.html#a91ad77c356310505196cc7a95ea18dd5", null ],
+    [ "Release", "class_seacore_1_1_common_1_1_services_1_1_audio_manager.html#a50a645f3306b45aa529b059342a7dfd2", null ],
+    [ "SoundSettings", "class_seacore_1_1_common_1_1_services_1_1_audio_manager.html#a26300c77abd80b094c071b742b85a7ae", null ]
 ];

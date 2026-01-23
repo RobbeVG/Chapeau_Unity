@@ -1,0 +1,9 @@
+<map id="Seacore.Game.Roll.ChangeValue" name="Seacore.Game.Roll.ChangeValue">
+<area shape="rect" id="Node000001" title=" " alt="" coords="265,72,449,115"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_game_1_1_u_i_1_1_declare_menu.html#a2404597f5486e5b9e65fa88b089f65c7" title=" " alt="" coords="5,5,217,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,70,192,51,193,46,262,65"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_game_1_1_roll.html#ac40ab63283dbd3efba56142d9b6a17c3" title=" " alt="" coords="19,72,203,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="249,96,204,96,204,91,249,91"/>
+<area shape="rect" id="Node000004" href="$class_seacore_1_1_game_1_1_dice_controller.html#a7f99e5106b58309d89398b9a13d7eea8" title=" " alt="" coords="11,139,211,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="262,122,193,141,192,135,260,117"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="Seacore.Game.ChapeauInputActions.UIActions.Get" name="Seacore.Game.ChapeauInputActions.UIActions.Get">
+<area shape="rect" id="Node000001" title=" " alt="" coords="482,39,675,81"/>
+<area shape="rect" id="Node000002" href="$struct_seacore_1_1_game_1_1_chapeau_input_actions_1_1_u_i_actions.html#a4b97d1abc73b9e2571964cd68c4a0e7e" title=" " alt="" coords="241,5,434,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="466,47,434,43,435,37,467,42"/>
+<area shape="rect" id="Node000004" href="$struct_seacore_1_1_game_1_1_chapeau_input_actions_1_1_u_i_actions.html#a80513d971f964a53689d3fc886bdf05c" title=" " alt="" coords="241,72,434,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="467,78,435,83,434,77,466,73"/>
+<area shape="rect" id="Node000003" href="$class_seacore_1_1_game_1_1_input_reader.html#af0ad2a3a49ba2aa61a7540fde9851aa0" title=" " alt="" coords="5,5,193,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="225,29,193,29,193,24,225,24"/>
+<area shape="rect" id="Node000005" href="$class_seacore_1_1_game_1_1_input_reader.html#ae74b78747909b123e2e25128d7334706" title=" " alt="" coords="5,72,193,115"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="225,96,193,96,193,91,225,91"/>
+</map>

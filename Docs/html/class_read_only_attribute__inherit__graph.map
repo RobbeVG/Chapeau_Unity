@@ -1,5 +1,5 @@
 <map id="ReadOnlyAttribute" name="ReadOnlyAttribute">
 <area shape="rect" id="Node000001" title="Read Only attribute. Attribute is use only to mark ReadOnly properties." alt="" coords="5,80,134,107"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="10,5,129,32"/>
+<area shape="rect" id="Node000002" href="$class_property_attribute.html" title=" " alt="" coords="10,5,129,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,48,72,80,67,80,67,48"/>
 </map>

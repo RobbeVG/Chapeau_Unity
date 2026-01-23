@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$struct_seacore_1_1_chapeau_input_actions_1_1_dice_actions_actions.html" title=" " alt="" coords="5,5,208,48"/>
+<area shape="rect" id="Node000000" href="$interface_seacore_1_1_common_1_1_i_die_data.html" title=" " alt="" coords="5,5,219,32"/>
+<area shape="rect" id="Node000001" href="$class_seacore_1_1_common_1_1_typed_die_data.html" title=" " alt="" coords="267,5,511,32"/>
+<area shape="poly" id="edge57_Node000000_Node000001" title=" " alt="" coords="235,16,266,16,266,21,235,21"/>
 </map>

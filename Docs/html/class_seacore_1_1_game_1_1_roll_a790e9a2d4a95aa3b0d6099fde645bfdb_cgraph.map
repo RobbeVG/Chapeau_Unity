@@ -1,0 +1,7 @@
+<map id="Seacore.Game.Roll.Roll" name="Seacore.Game.Roll.Roll">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,13,168,40"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_game_1_1_roll.html#ae8f83998dbbb3b5946b0f1f60a88e426" title=" " alt="" coords="216,13,386,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,24,200,24,200,29,168,29"/>
+<area shape="rect" id="Node000003" href="$struct_seacore_1_1_game_1_1_roll_result.html#a763da56767d5896ea9af7c09fba6aeb4" title=" " alt="" coords="434,5,611,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="386,24,418,24,418,29,386,29"/>
+</map>

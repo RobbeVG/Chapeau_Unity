@@ -1,0 +1,19 @@
+<map id="Seacore.Game.ChapeauInputActions.UIActions.AddCallbacks" name="Seacore.Game.ChapeauInputActions.UIActions.AddCallbacks">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,239,218,281"/>
+<area shape="rect" id="Node000002" href="$interface_seacore_1_1_game_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#ad0edc3bd4a649ff5e045dbd71e726f2c" title=" " alt="" coords="280,5,474,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,237,143,199,174,150,215,101,264,58,271,53,274,58,267,62,219,104,179,153,147,201,126,240"/>
+<area shape="rect" id="Node000003" href="$interface_seacore_1_1_game_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#a7a25aeb435a8132235260e507c736470" title=" " alt="" coords="280,72,474,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="130,236,187,181,224,151,264,124,275,119,277,124,267,129,227,155,190,185,134,240"/>
+<area shape="rect" id="Node000004" href="$interface_seacore_1_1_game_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#a7d9626e93cacb83f92e9477ffc9a29a5" title=" " alt="" coords="267,139,487,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="158,236,265,191,284,184,286,189,267,196,160,241"/>
+<area shape="rect" id="Node000005" href="$interface_seacore_1_1_game_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#a2520729edbd4614cc12899d15f981883" title=" " alt="" coords="275,205,479,248"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="218,244,259,239,260,244,218,249"/>
+<area shape="rect" id="Node000006" href="$interface_seacore_1_1_game_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#a73d6aa4aae1b6c16c063a184b01fd751" title=" " alt="" coords="280,272,474,315"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="218,271,265,277,264,282,218,276"/>
+<area shape="rect" id="Node000007" href="$interface_seacore_1_1_game_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#ae5f21c000ab1f4d178aff7915467d103" title=" " alt="" coords="270,339,484,381"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="160,279,267,324,286,331,284,336,265,329,158,284"/>
+<area shape="rect" id="Node000008" href="$interface_seacore_1_1_game_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#aaf0e9028973c785af47be3151febf572" title=" " alt="" coords="266,405,488,448"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="134,280,190,335,227,365,267,391,277,396,275,401,264,396,224,369,187,339,130,284"/>
+<area shape="rect" id="Node000009" href="$interface_seacore_1_1_game_1_1_chapeau_input_actions_1_1_i_u_i_actions.html#aad8c7b1fa564bfec5df8ee33238ab1c1" title=" " alt="" coords="280,472,474,515"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="126,280,147,319,179,367,219,416,267,458,274,462,271,467,264,462,215,419,174,370,143,321,121,283"/>
+</map>

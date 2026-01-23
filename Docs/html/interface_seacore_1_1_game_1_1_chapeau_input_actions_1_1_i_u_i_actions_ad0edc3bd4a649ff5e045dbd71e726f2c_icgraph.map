@@ -1,0 +1,7 @@
+<map id="Seacore.Game.ChapeauInputActions.IUIActions.OnCancel" name="Seacore.Game.ChapeauInputActions.IUIActions.OnCancel">
+<area shape="rect" id="Node000001" title=" " alt="" coords="523,5,716,48"/>
+<area shape="rect" id="Node000002" href="$struct_seacore_1_1_game_1_1_chapeau_input_actions_1_1_u_i_actions.html#a3ac3d51681122046b155746e394270ec" title=" " alt="" coords="263,5,475,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="507,29,475,29,475,24,507,24"/>
+<area shape="rect" id="Node000003" href="$struct_seacore_1_1_game_1_1_chapeau_input_actions_1_1_u_i_actions.html#aa99bd956780ff0a47c64520b55f64b9c" title=" " alt="" coords="5,5,215,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="247,29,215,29,215,24,247,24"/>
+</map>

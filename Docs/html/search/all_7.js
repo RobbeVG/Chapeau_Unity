@@ -1,12 +1,20 @@
 var searchData=
 [
-  ['gamepadscheme_0',['GamepadScheme',['../class_seacore_1_1_chapeau_input_actions.html#a7f60b62df7b89deddd0f5da1992acbf7',1,'Seacore::ChapeauInputActions']]],
-  ['get_1',['Get',['../struct_seacore_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#a1c07ef0b0fbc3ed3736ca8111207cbd3',1,'Seacore.ChapeauInputActions.DiceActionsActions.Get()'],['../struct_seacore_1_1_chapeau_input_actions_1_1_screen_actions_actions.html#a80f2bae921ce46c7f764ece3d89b0442',1,'Seacore.ChapeauInputActions.ScreenActionsActions.Get()']]],
-  ['geteasingfunction_2',['GetEasingFunction',['../class_easing_function.html#a5de9163b81b9064a28963211644ba579',1,'EasingFunction']]],
-  ['geteasingfunctionderivative_3',['GetEasingFunctionDerivative',['../class_easing_function.html#a9fdbd3a302cb95bf83616854a72a39ec',1,'EasingFunction']]],
-  ['getenumerator_4',['GetEnumerator',['../class_seacore_1_1_chapeau_input_actions.html#a34254f1a631890d55dfcda21235f39a1',1,'Seacore::ChapeauInputActions']]],
-  ['gethashcode_5',['GetHashCode',['../class_seacore_1_1_roll.html#a7337f355106a8f0ed70a35ed1fc6babc',1,'Seacore::Roll']]],
-  ['getnextstate_6',['GetNextState',['../class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html#aaddd0a834e2976aa3d78d471db83ef20',1,'Seacore.Common.Statemachine.BaseState.GetNextState()'],['../class_seacore_1_1_game_1_1_round_states_1_1_chapeau_state.html#a7a52ae18550a278a7b3cd74fa466b902',1,'Seacore.Game.RoundStates.ChapeauState.GetNextState()'],['../class_seacore_1_1_game_1_1_round_states_1_1_declare_state.html#ad06d5140143097765c6e242e11d19c01',1,'Seacore.Game.RoundStates.DeclareState.GetNextState()'],['../class_seacore_1_1_game_1_1_received_state.html#a6d03d9298ecb3412c23fa0ac9cbbe290',1,'Seacore.Game.ReceivedState.GetNextState()'],['../class_seacore_1_1_game_1_1_round_states_1_1_roll_setup_state.html#acf2516d340511d8f04d167d74ee944eb',1,'Seacore.Game.RoundStates.RollSetupState.GetNextState()']]],
-  ['globals_7',['Globals',['../class_seacore_1_1_globals.html',1,'Seacore']]],
-  ['globalvariables_2ecs_8',['GlobalVariables.cs',['../_global_variables_8cs.html',1,'']]]
+  ['gameobjecteventhandler_0',['GameObjectEventHandler',['../class_seacore_1_1_game_1_1_game_object_event_handler.html',1,'Seacore::Game']]],
+  ['gameobjecteventhandler_2ecs_1',['GameObjectEventHandler.cs',['../_game_object_event_handler_8cs.html',1,'']]],
+  ['gamepadscheme_2',['GamepadScheme',['../class_seacore_1_1_game_1_1_chapeau_input_actions.html#a84660e04689a007cca9db2b8a8237dc3',1,'Seacore::Game::ChapeauInputActions']]],
+  ['gamesceneinstaller_3',['GameSceneInstaller',['../class_seacore_1_1_game_1_1_game_scene_installer.html',1,'Seacore::Game']]],
+  ['gamesceneinstaller_2ecs_4',['GameSceneInstaller.cs',['../_game_scene_installer_8cs.html',1,'']]],
+  ['get_5',['Get',['../class_seacore_1_1_common_1_1_services_1_1_audio_manager.html#a91ad77c356310505196cc7a95ea18dd5',1,'Seacore.Common.Services.AudioManager.Get()'],['../struct_seacore_1_1_game_1_1_chapeau_input_actions_1_1_u_i_actions.html#aec7352ce880707ec5f61ba2b550bc260',1,'Seacore.Game.ChapeauInputActions.UIActions.Get()'],['../struct_seacore_1_1_game_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#a41d2edb2ba88a698e461b136bd657c0f',1,'Seacore.Game.ChapeauInputActions.DiceActionsActions.Get()']]],
+  ['getdiefrom_6',['GetDieFrom',['../class_seacore_1_1_game_1_1_dice_manager.html#ab31503217cbaeaaac65fc990a3085870',1,'Seacore::Game::DiceManager']]],
+  ['geteasingfunction_7',['GetEasingFunction',['../class_easing_function.html#a5de9163b81b9064a28963211644ba579',1,'EasingFunction']]],
+  ['geteasingfunctionderivative_8',['GetEasingFunctionDerivative',['../class_easing_function.html#a9fdbd3a302cb95bf83616854a72a39ec',1,'EasingFunction']]],
+  ['getenumerator_9',['GetEnumerator',['../class_seacore_1_1_game_1_1_chapeau_input_actions.html#a6d10190f2d28dca6ab0a52214561eb4b',1,'Seacore::Game::ChapeauInputActions']]],
+  ['getfacesprite_10',['GetFaceSprite',['../class_seacore_1_1_common_1_1_dice_display_values.html#ab1d48614b8ea7832968c6ed80673cb73',1,'Seacore::Common::DiceDisplayValues']]],
+  ['gethashcode_11',['GetHashCode',['../class_seacore_1_1_game_1_1_roll.html#a6cb19bc66a4cb9a9a16f4f5143fc3e82',1,'Seacore::Game::Roll']]],
+  ['getnextstate_12',['GetNextState',['../class_seacore_1_1_common_1_1_statemachine_1_1_base_state.html#aaddd0a834e2976aa3d78d471db83ef20',1,'Seacore.Common.Statemachine.BaseState.GetNextState()'],['../class_seacore_1_1_game_1_1_round_states_1_1_chapeau_state.html#a7a52ae18550a278a7b3cd74fa466b902',1,'Seacore.Game.RoundStates.ChapeauState.GetNextState()'],['../class_seacore_1_1_game_1_1_round_states_1_1_declare_state.html#ad06d5140143097765c6e242e11d19c01',1,'Seacore.Game.RoundStates.DeclareState.GetNextState()'],['../class_seacore_1_1_game_1_1_received_state.html#a6d03d9298ecb3412c23fa0ac9cbbe290',1,'Seacore.Game.ReceivedState.GetNextState()'],['../class_seacore_1_1_game_1_1_round_states_1_1_roll_setup_state.html#acf2516d340511d8f04d167d74ee944eb',1,'Seacore.Game.RoundStates.RollSetupState.GetNextState()']]],
+  ['getobjectfromscreen_13',['GetObjectFromScreen',['../class_seacore_1_1_common_1_1_helpers.html#a03605d5c8a0acf94cc7b28cb373fc548',1,'Seacore::Common::Helpers']]],
+  ['getvolume_14',['GetVolume',['../class_seacore_1_1_common_1_1_services_1_1_sound_settings.html#a6222ba5f5b4e1cb87d76bc6f990323a8',1,'Seacore::Common::Services::SoundSettings']]],
+  ['globals_15',['Globals',['../class_seacore_1_1_globals.html',1,'Seacore']]],
+  ['globalvariables_2ecs_16',['GlobalVariables.cs',['../_global_variables_8cs.html',1,'']]]
 ];

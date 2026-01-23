@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gamepadscheme_0',['GamepadScheme',['../class_seacore_1_1_chapeau_input_actions.html#a7f60b62df7b89deddd0f5da1992acbf7',1,'Seacore::ChapeauInputActions']]]
+  ['gamepadscheme_0',['GamepadScheme',['../class_seacore_1_1_game_1_1_chapeau_input_actions.html#a84660e04689a007cca9db2b8a8237dc3',1,'Seacore::Game::ChapeauInputActions']]]
 ];

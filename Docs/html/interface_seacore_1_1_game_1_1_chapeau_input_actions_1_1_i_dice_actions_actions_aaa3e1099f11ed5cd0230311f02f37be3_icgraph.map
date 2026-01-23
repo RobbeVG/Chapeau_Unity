@@ -1,0 +1,7 @@
+<map id="Seacore.Game.ChapeauInputActions.IDiceActionsActions.OnMovingPointer" name="Seacore.Game.ChapeauInputActions.IDiceActionsActions.OnMovingPointer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="521,5,730,64"/>
+<area shape="rect" id="Node000002" href="$struct_seacore_1_1_game_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#a5d792ca8c9bca846663b353a4c19a503" title=" " alt="" coords="262,5,473,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="505,37,473,37,473,32,505,32"/>
+<area shape="rect" id="Node000003" href="$struct_seacore_1_1_game_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#a46878dc8b707a51abf62c484f1cf801b" title=" " alt="" coords="5,5,214,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="246,37,214,37,214,32,246,32"/>
+</map>

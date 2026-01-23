@@ -1,0 +1,9 @@
+<map id="Seacore.Game.InputActionManager.DisableDiceActions" name="Seacore.Game.InputActionManager.DisableDiceActions">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,196,48"/>
+<area shape="rect" id="Node000002" href="$class_seacore_1_1_game_1_1_input_reader.html#a65de47a0797b954497765ca7d1df5646" title=" " alt="" coords="244,5,431,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,24,228,24,228,29,196,29"/>
+<area shape="rect" id="Node000003" href="$struct_seacore_1_1_game_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#a06259742a5a3847b263bf4c0ebdc2b38" title=" " alt="" coords="479,5,711,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="432,24,463,24,463,29,432,29"/>
+<area shape="rect" id="Node000004" href="$struct_seacore_1_1_game_1_1_chapeau_input_actions_1_1_dice_actions_actions.html#a41d2edb2ba88a698e461b136bd657c0f" title=" " alt="" coords="759,5,969,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="712,24,744,24,744,29,712,29"/>
+</map>
