@@ -3,29 +3,43 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Seacore.Common.Services
 {
     public class SoundSettings
     {
-        private Dictionary<int, float> _soundVolumes;
-        public float MasterVolume { get { return _soundVolumes[0]; } set { _soundVolumes[0] = value; } }
-
-        public SoundSettings(float masterVolume = 1.0f)
+        private Dictionary<AudioMixerGroup, string> _soundVolumeVariables;
+        
+        public SoundSettings(AudioMixer mixer)
         {
-            _soundVolumes = new Dictionary<int, float>(Enum.GetValues(typeof(SoundType)).Cast<SoundType>().Select(e => new KeyValuePair<int, float>((int)e, 1.0f)).ToArray())
+            if (mixer == null)
             {
-                { 0, 1.0f } // Reserved for MasterVolume
-            };
+                throw new ArgumentNullException(nameof(mixer), "AudioMixer cannot be null when initializing SoundSettings.");
+            }
+
+            _soundVolumeVariables = new Dictionary<AudioMixerGroup, string>(mixer.FindMatchingGroups(string.Empty).Select(group => new KeyValuePair<AudioMixerGroup, string>(group, group.name + "Volume")));
         }
 
-        public float GetVolume(SoundType type)
+        public float GetdBVolume(AudioMixerGroup mixerGroup)
         {
-            return MasterVolume * _soundVolumes[(int)type];
+            mixerGroup.audioMixer.GetFloat(_soundVolumeVariables[mixerGroup], out float volume);
+            return volume;
         }
-        public void SetVolume(SoundType type, float volume)
+        public float GetVolume(AudioMixerGroup mixerGroup)
         {
-            _soundVolumes[(int)type] = volume;
+            return Mathf.Pow(10f, GetdBVolume(mixerGroup) / 20f);
+        }
+
+        public void SetdBVolume(AudioMixerGroup mixerGroup, float dBvolume)
+        {
+            mixerGroup.audioMixer.SetFloat(_soundVolumeVariables[mixerGroup], dBvolume);
+        }
+
+        public void SetVolume(AudioMixerGroup mixerGroup, float volume)
+        {
+            float dBvolume = Mathf.Log10(Mathf.Clamp(volume, 0.00001f, 1f)) * 20f;
+            SetdBVolume(mixerGroup, dBvolume);
         }
     }
 }

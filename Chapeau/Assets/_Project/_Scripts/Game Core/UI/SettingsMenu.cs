@@ -10,84 +10,73 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+//using UnityEngine.UIElements;
 
 
 namespace Seacore.Game
 {
+    [DisallowMultipleComponent]
     public class SettingsMenu : MonoBehaviour, ICancelHandler
     {
         [Inject]
         AudioManager audioManager = null;
 
+        [SerializeField]
+        Button _menuButton = null;
+
         [Serializable]
-        struct VolumeUIElements
+        class VolumeUIElements
         {
             public Slider slider;
             public TMP_Text textPercentage;
+            public AudioMixerGroup mixerGroupTarget;
+
             public bool Validate()
             {
-                return slider != null && textPercentage != null;
+                return slider != null && textPercentage != null && mixerGroupTarget != null;
             }
         }
 
-
         [SerializeField]
-        private VolumeUIElements _MasterSettings;
-        [SerializeField]
-        private SerializedDictionary<SoundType, VolumeUIElements> _AudioSettings = new SerializedDictionary<SoundType, VolumeUIElements>(Enum.GetValues(typeof(SoundType)).Cast<SoundType>().Select(e => new KeyValuePair<SoundType, VolumeUIElements>(e, new VolumeUIElements())).ToArray());
+        private List<VolumeUIElements> _AudioSettings = new List<VolumeUIElements>();
 
         private void Awake()
         {
-            if (!_MasterSettings.Validate())
+            if (_menuButton == null)
             {
-                Debug.LogError("Master VolumeSetting in settingsMenu is not setup correctly", this);
+                Debug.LogError("Menu Button is not assigned in Settings Menu", this);
             }
 
+            // Set up button to open settings menu
+            _menuButton.onClick.AddListener(Toggle);
 
-
-
-            SetPercentage(_MasterSettings.textPercentage, audioManager.SoundSettings.MasterVolume);
-            _MasterSettings.slider.value = audioManager.SoundSettings.MasterVolume;
-
-            foreach (KeyValuePair<SoundType, VolumeUIElements> pair in _AudioSettings)
+            // Initialize UI with current settings
+            foreach (VolumeUIElements volumeSettings in _AudioSettings)
             {
-                VolumeUIElements settings = pair.Value;
-                SoundType soundType = pair.Key;
-
-                if (!settings.Validate())
+                if (!volumeSettings.Validate())
                 {
                     Debug.LogError("VolumeSetting in settingsMenu is not setup correctly", this);
                 }
-
-
-                SetPercentage(settings.textPercentage, audioManager.SoundSettings.GetVolume(soundType));
-                settings.slider.value = audioManager.SoundSettings.GetVolume(soundType);
+                SetUI(volumeSettings);
             }
         }
 
         void Start()
         {
-            _MasterSettings.slider.onValueChanged.AddListener((value) => { audioManager.SoundSettings.MasterVolume = value; SetPercentage(_MasterSettings.textPercentage, value); });
-
-            foreach (KeyValuePair<SoundType, VolumeUIElements> pair in _AudioSettings)
+            foreach (VolumeUIElements volumeSettings in _AudioSettings)
             {
-                SoundType soundType = pair.Key;
-                VolumeUIElements settings = pair.Value;
-                settings.slider.onValueChanged.AddListener((value) => { audioManager.SoundSettings.SetVolume(soundType, value); SetPercentage(settings.textPercentage, value); });
+                volumeSettings.slider.onValueChanged.AddListener((value) => { audioManager.SoundSettings.SetVolume(volumeSettings.mixerGroupTarget, value); SetUIPercentage(volumeSettings.textPercentage, value); });
             }
         }
 
-        private void SetPercentage(TMP_Text textComponent, float value) => textComponent.text = Mathf.RoundToInt(value * 100).ToString() + " %";
-
-
-        public void Toggle()
+        private void SetUI(VolumeUIElements Settings)
         {
-            gameObject.SetActive(!gameObject.activeSelf);
+            float volume = audioManager.SoundSettings.GetVolume(Settings.mixerGroupTarget);
+            SetUIPercentage(Settings.textPercentage, volume);
+            Settings.slider.value = volume;
         }
-
-        public void OnCancel(BaseEventData eventData)
-        {
-            gameObject.SetActive(false);
-        }
+        private void SetUIPercentage(TMP_Text textComponent, float value) => textComponent.text = Mathf.RoundToInt(value * 100).ToString() + " %";
+        public void Toggle() => gameObject.SetActive(!gameObject.activeSelf);
+        public void OnCancel(BaseEventData eventData) => Toggle();
     }
 }

@@ -11,6 +11,6 @@ namespace Seacore.Common.Services
         public AudioClip audioClip;
         public AudioMixerGroup mixerGroup = null;
         public bool loop = false;
-        public SoundType soundType = SoundType.SFX;
+        public float volume = 1.0f;
     }
 }

@@ -58,7 +58,7 @@ namespace Seacore.Common.Services
         {
             audioSource.clip = data.audioClip;
             audioSource.outputAudioMixerGroup = data.mixerGroup;
-            audioSource.volume = _audioManager.SoundSettings.GetVolume(data.soundType);
+            audioSource.volume = data.volume;
             audioSource.loop = data.loop;
         }
 

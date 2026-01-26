@@ -121,3 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140cde0cac3589245a3b5fd9ed89aa4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxPoolSoundEmitters: 10
+  defaultCapacityPool: 10
+  masterMixer: {fileID: 24100000, guid: c0df11b556689da44a95777efb4c0cc5, type: 2}

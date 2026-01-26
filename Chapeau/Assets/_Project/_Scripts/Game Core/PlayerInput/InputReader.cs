@@ -20,6 +20,7 @@ namespace Seacore.Game
         public Action OnDeHold = delegate { };
         public Action OnNavigateInput = delegate { };
         public Action OnPointerInput = delegate { };
+        public Action OnWindowCancel = delegate { };
 
         public ChapeauInputActions Input { get; private set; }
         public InputActionAsset Asset => Input.asset;
@@ -37,9 +38,9 @@ namespace Seacore.Game
             Input.DiceActions.Tap.performed += TapPerformed;
             Input.DiceActions.Hold.performed += HoldPerformed;
             Input.DiceActions.Move.performed += MovePerformed;
-            Input.UI.Navigate.performed += MovePerformed;
             Input.DiceActions.MovingPointer.performed += PointPerformed;
-            Input.UI.Point.performed += PointPerformed;
+
+            Input.UI.Cancel.performed += CancelPerformed;
         }
 
         ~InputReader()
@@ -82,7 +83,12 @@ namespace Seacore.Game
         /// <param name="context">The callback context containing information about the input action event. The method reads the current <see
         /// cref="Vector2"/> value from this context and passes it to the <see cref="OnPointerInput"/> event.</param>
         private void PointPerformed(InputAction.CallbackContext context) => OnPointerInput.Invoke();
-
+        /// <summary>
+        /// Handles the cancel input action and triggers the window cancel event.
+        /// </summary>
+        /// <param name="context">The context information associated with the input action callback. Provides details about the input event
+        /// that triggered the cancel action.</param>
+        private void CancelPerformed(InputAction.CallbackContext context) => OnWindowCancel.Invoke();
 
         public void Enable() => Input.Enable();
         public void Disable() => Input.Disable();

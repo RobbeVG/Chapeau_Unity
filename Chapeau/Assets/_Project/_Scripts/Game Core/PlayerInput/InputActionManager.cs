@@ -31,6 +31,9 @@ namespace Seacore.Game
         public event Action<Die> OnDieHoldEnter; 
         public event Action<Die> OnDieHoldExit;
         public event Action<bool> OnDiceActionsToggleChanged;
+
+        public event Action OnWindowCancel;
+
         private InputReader _inputReader = null;
 
         protected void Awake()
@@ -61,6 +64,8 @@ namespace Seacore.Game
             _inputReader.OnDeHold = Release;
             _inputReader.OnPointerInput = PointerMoved;
             _inputReader.OnNavigateInput = NavigateMoved;
+
+            _inputReader.OnWindowCancel = () => OnWindowCancel?.Invoke();
 
             DisableDiceActions();
 
