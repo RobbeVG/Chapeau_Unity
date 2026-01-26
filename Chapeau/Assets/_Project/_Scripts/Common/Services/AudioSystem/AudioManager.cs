@@ -12,6 +12,7 @@ namespace Seacore.Common.Services
         private IObjectPool<SoundEmitter> _soundEmittersPool;
         readonly List<SoundEmitter> _activeEmitters = new List<SoundEmitter>();
 
+        [field: SerializeField]
         public SoundSettings SoundSettings { get; private set; } = null;
 
         [SerializeField]
@@ -19,16 +20,12 @@ namespace Seacore.Common.Services
         [SerializeField]
         private int defaultCapacityPool = 10;
 
-        [SerializeField]
-        private AudioMixer masterMixer = null;
-
         public SoundEmitter Get() => _soundEmittersPool.Get();
         public void Release(SoundEmitter emitter) => _soundEmittersPool.Release(emitter);
         public SoundBuilder CreateSound(SoundData data) => new SoundBuilder(this, data);
 
         private void Awake()
         {
-            SoundSettings = new SoundSettings(masterMixer);
 
             _soundEmittersPool = new ObjectPool<SoundEmitter>(
                 createFunc: () => 
@@ -54,6 +51,11 @@ namespace Seacore.Common.Services
                 defaultCapacity: defaultCapacityPool,
                 maxSize: maxPoolSoundEmitters
             );
+        }
+
+        private void Start()
+        {
+            SoundSettings.ApplySettings();
         }
     }
 }

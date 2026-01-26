@@ -44,6 +44,7 @@ namespace Seacore.Common
     [Serializable]
     public class TypedDieData<T> : IDieData<T> where T : Enum
     {
+        [field: SerializeField]
         private DieData _diceValue;
         public TypedDieData(T typedValue, bool noneExclusive = false)
         {
@@ -51,7 +52,6 @@ namespace Seacore.Common
             _diceValue = new DieData(sides, (int)(object)typedValue, noneExclusive);
         }
 
-        [field: SerializeField]
         public T Value { get => (T)(object)_diceValue.Value; set => _diceValue.Value = (int)(object)value; }
         public int Sides => _diceValue.Sides;
         

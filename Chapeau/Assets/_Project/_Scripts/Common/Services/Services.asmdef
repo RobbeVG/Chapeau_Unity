@@ -2,7 +2,8 @@
     "name": "Services",
     "rootNamespace": "Seacore.Common.Services",
     "references": [
-        "GUID:1530a967b84cfb44dbdd5e8a1989764f"
+        "GUID:1530a967b84cfb44dbdd5e8a1989764f",
+        "GUID:d525ad6bd40672747bde77962f1c401e"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
