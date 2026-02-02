@@ -9,7 +9,8 @@ namespace Seacore.Game
         InputActionManager _inputActionManager = null;
 
         [SerializeField]
-        GameObject _defaultActiveWindow = null;
+        GameObject _defaultWindow = null;
+
         GameObject[] _children;
 
         private void Awake()
@@ -24,14 +25,14 @@ namespace Seacore.Game
             {
                 _children[i] = transform.GetChild(i).gameObject;
                 
-                if (_children[i] == _defaultActiveWindow)
+                if (_children[i] == _defaultWindow)
                 {
                     defaultActiveWindowIsChild = true;
                 }
             }
 
             //Check if default active window is set and activate it
-            if (_defaultActiveWindow != null && defaultActiveWindowIsChild)
+            if (_defaultWindow != null && defaultActiveWindowIsChild)
             {
                 Debug.LogError("Default Active Window is not a child of the Window Manager", this);
             }
@@ -41,19 +42,17 @@ namespace Seacore.Game
         {
             foreach (GameObject child in _children)
             {
-                if (child != _defaultActiveWindow)
-                {
-                    child.SetActive(false);
-                }
+                child.SetActive(false);
             }
         }
 
         private void OnWindowCancel()
         {
-            foreach (GameObject child in _children)
+            if (_defaultWindow != null)
             {
-                child.SetActive(false);
+                _defaultWindow.SetActive(!_defaultWindow.activeSelf);
             }
+            
         }
     }
 }

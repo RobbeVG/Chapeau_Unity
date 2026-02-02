@@ -31,6 +31,9 @@ namespace Seacore.UI
 
         private void Update()
         {
+            if (_rectOfContent == null)
+                return;
+
             if (Selection.activeGameObject == null)
                 return;
 
@@ -38,10 +41,18 @@ namespace Seacore.UI
                 return;
 
             RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-            rectTransform.sizeDelta = new Vector2(
-                Mathf.Max(minSize.x, _rectOfContent.rect.width),
-                Mathf.Max(minSize.y, _rectOfContent.rect.height)
-            );
+            if (_rectOfContent.gameObject.activeInHierarchy == false)
+            {
+                rectTransform.sizeDelta = minSize;
+                return;
+            }
+            else
+            {
+                rectTransform.sizeDelta = new Vector2(
+                    Mathf.Max(minSize.x, _rectOfContent.rect.width),
+                    Mathf.Max(minSize.y, _rectOfContent.rect.height)
+                );
+            }
         }
     }
 }

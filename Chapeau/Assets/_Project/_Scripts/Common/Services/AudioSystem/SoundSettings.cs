@@ -49,11 +49,6 @@ namespace Seacore.Common.Services
             }
         }
 
-        private void Awake()
-        {
-            Debug.LogWarning("SoundSettings: Awake called on ScriptableObject. This is unexpected behavior.");
-        }
-
         public void ApplySettings()
         {
             if (_mixerVariables == null)

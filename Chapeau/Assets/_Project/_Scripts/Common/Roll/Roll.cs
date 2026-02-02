@@ -5,6 +5,7 @@ using UnityEngine;
 using System;
 
 using Seacore.Common;
+using System.Text;
 
 namespace Seacore.Game
 {   
@@ -206,7 +207,110 @@ namespace Seacore.Game
             }
             temp += '\n' + "Result = " + result.ToString();
             return temp;
+        }
 
+        public string ToLongString()
+        {
+            StringBuilder stringBuilder = new StringBuilder(50);
+
+            //Get which faces are involved in the result
+            List<Die.Faces> involvedFaces = new List<Die.Faces>();
+            Dictionary<Die.Faces, int> faceCounts = new Dictionary<Die.Faces, int>();
+            foreach (Die.Faces face in Values)
+            {
+                if (face == Die.Faces.None)
+                    continue;
+                if (faceCounts.ContainsKey(face))
+                    faceCounts[face]++;
+                else
+                    faceCounts[face] = 1;
+            }
+
+            switch (result.Type)
+            {
+                case RollType.Nothing:
+                    stringBuilder.Append("");
+                    break;
+                case RollType.Pair:
+                    stringBuilder.Append("Pair");
+                    break;
+                case RollType.TwoPair:
+                    stringBuilder.Append("Two Pair");
+                    break;
+                case RollType.ThreeOfAKind:
+                    stringBuilder.Append("Three of a Kind");
+                    break;
+                case RollType.LowStraight:
+                    stringBuilder.Append("Low Straight");
+                    break;
+                case RollType.FullHouse:
+                    stringBuilder.Append("Full House");
+                    break;
+                case RollType.HighStraight:
+                    stringBuilder.Append("High Straight");
+                    break;
+                case RollType.FourOfAKind:
+                    stringBuilder.Append("Four of a Kind");
+                    break;
+                case RollType.FiveOfAKind:
+                    stringBuilder.Append("Five of a Kind");
+                    break;
+            }
+
+
+
+            switch (result.Type)
+            {
+                case RollType.Pair:
+                    involvedFaces.AddRange(faceCounts.Where(kv => kv.Value == 2).Select(kv => kv.Key));
+                    break;
+                case RollType.TwoPair:
+                    involvedFaces.AddRange(faceCounts.Where(kv => kv.Value == 2).Select(kv => kv.Key));
+                    break;
+                case RollType.ThreeOfAKind:
+                    involvedFaces.AddRange(faceCounts.Where(kv => kv.Value == 3).Select(kv => kv.Key));
+                    break;
+                case RollType.FullHouse:
+                    involvedFaces.AddRange(faceCounts.Where(kv => kv.Value == 3).Select(kv => kv.Key));
+                    involvedFaces.AddRange(faceCounts.Where(kv => kv.Value == 2).Select(kv => kv.Key));
+                    break;
+                case RollType.FourOfAKind:
+                    involvedFaces.AddRange(faceCounts.Where(kv => kv.Value == 4).Select(kv => kv.Key));
+                    break;
+                case RollType.FiveOfAKind:
+                    involvedFaces.AddRange(faceCounts.Where(kv => kv.Value == 5).Select(kv => kv.Key));
+                    break;
+            }
+
+            if (involvedFaces.Count > 0)
+            {
+                stringBuilder.Append(" of ");
+                for (int i = 0; i < involvedFaces.Count; i++)
+                {
+                    stringBuilder.Append(involvedFaces[i].ToString());
+                    if (i < involvedFaces.Count - 1)
+                        stringBuilder.Append(" and ");
+                }
+            }
+
+            if (result.Type == RollType.Nothing)
+            {
+                stringBuilder.Append("A ");
+            }
+            else if (faceCounts.Any(kv => kv.Value == 1))
+            {
+                stringBuilder.Append(" with a ");
+            }
+
+            List<Die.Faces> highCards = faceCounts.Where(kv => kv.Value == 1).Select(kv => kv.Key).OrderByDescending(face => (int)face).ToList();
+            for (int i = 0; i < highCards.Count; i++)
+            {
+                stringBuilder.Append(highCards[i].ToString());
+                if (i < highCards.Count - 1)
+                    stringBuilder.Append(" and ");
+            }
+
+            return stringBuilder.ToString();
         }
     }
 }

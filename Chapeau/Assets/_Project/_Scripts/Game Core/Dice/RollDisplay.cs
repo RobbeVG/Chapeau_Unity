@@ -4,6 +4,7 @@ using UnityEngine.Assertions;
 
 using Seacore.Common;
 using Seacore.Game;
+using TMPro;
 
 namespace Seacore.UI
 {
@@ -17,6 +18,9 @@ namespace Seacore.UI
 
         [SerializeField]
         private DiceDisplayValues _diceDisplayValues = null;
+
+        [SerializeField]
+        private TMP_Text _textComponent;
 
         private Image _parentContentBackgground = null;
 
@@ -39,6 +43,7 @@ namespace Seacore.UI
         private void Update()
         {
             _parentContentBackgground.enabled = roll.IsEmpty() ? false : true; 
+            _textComponent.text = roll.IsEmpty() ? string.Empty : roll.ToLongString();
             
             for (int i = 0; i < roll.Values.Length; i++)
             {
