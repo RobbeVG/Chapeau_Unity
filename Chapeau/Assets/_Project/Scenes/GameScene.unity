@@ -1427,7 +1427,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &792539544
 MonoBehaviour:
@@ -3586,7 +3586,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -4561,34 +4561,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 76493262550280625, guid: bacf30417bf6bb34387c3809b052b845, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 547494548489284632, guid: bacf30417bf6bb34387c3809b052b845, type: 3}
-      propertyPath: m_PreferredWidth
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 547494548489284632, guid: bacf30417bf6bb34387c3809b052b845, type: 3}
-      propertyPath: m_PreferredHeight
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 4696568515303941957, guid: bacf30417bf6bb34387c3809b052b845, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5926799433827169720, guid: bacf30417bf6bb34387c3809b052b845, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5926799433827169720, guid: bacf30417bf6bb34387c3809b052b845, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7649228800320218015, guid: bacf30417bf6bb34387c3809b052b845, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2073357924276165733, guid: de33f3df61d11e944a34c04a5e41f1cd, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -4728,6 +4700,34 @@ PrefabInstance:
     - target: {fileID: 4847497416251378042, guid: de33f3df61d11e944a34c04a5e41f1cd, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 76493262550280625, guid: bacf30417bf6bb34387c3809b052b845, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547494548489284632, guid: bacf30417bf6bb34387c3809b052b845, type: 3}
+      propertyPath: m_PreferredWidth
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 547494548489284632, guid: bacf30417bf6bb34387c3809b052b845, type: 3}
+      propertyPath: m_PreferredHeight
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696568515303941957, guid: bacf30417bf6bb34387c3809b052b845, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926799433827169720, guid: bacf30417bf6bb34387c3809b052b845, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926799433827169720, guid: bacf30417bf6bb34387c3809b052b845, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7649228800320218015, guid: bacf30417bf6bb34387c3809b052b845, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1,4 +1,5 @@
 using Reflex.Attributes;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Seacore.Game
@@ -6,53 +7,70 @@ namespace Seacore.Game
     public class WindowManager : MonoBehaviour
     {
         [Inject]
-        InputActionManager _inputActionManager = null;
+        InputActionManager _inputActionManager = null; //On cancel event
 
         [SerializeField]
-        GameObject _defaultWindow = null;
+        [Tooltip("If no window is present, open this on cancel event - [escape]")]
+        private Window _defaultWindow = null;
+        
+        private IWindow[] _windows = null;
+        private Stack<IWindow> _activeWindows = new Stack<IWindow>();
 
-        GameObject[] _children;
 
         private void Awake()
         {
-            _inputActionManager.OnWindowCancel += OnWindowCancel;
-            //loop over all children of the GameObject to create array
-
-            bool defaultActiveWindowIsChild = false;
-            int childCount = transform.childCount;
-            _children = new GameObject[childCount];
-            for (int i = 0; i < childCount; i++)
-            {
-                _children[i] = transform.GetChild(i).gameObject;
-                
-                if (_children[i] == _defaultWindow)
-                {
-                    defaultActiveWindowIsChild = true;
-                }
-            }
-
-            //Check if default active window is set and activate it
-            if (_defaultWindow != null && defaultActiveWindowIsChild)
-            {
-                Debug.LogError("Default Active Window is not a child of the Window Manager", this);
-            }
+            _inputActionManager.OnWindowCancel += OnCancel;
+            _windows = GetComponentsInChildren<IWindow>(true);
+            if (_windows.Length == 0)
+                Debug.LogError("No windows found on Window Manager", this);
         }
 
         private void Start()
         {
-            foreach (GameObject child in _children)
+            foreach (IWindow window in _windows)
             {
-                child.SetActive(false);
+                if (window.Active)
+                {
+                    _activeWindows.Push(window);
+                }
             }
         }
 
-        private void OnWindowCancel()
+        private void OnCancel()
         {
-            if (_defaultWindow != null)
+            //Check if there is activewindow
+            if (_activeWindows.Count > 0)
             {
-                _defaultWindow.SetActive(!_defaultWindow.activeSelf);
+                CloseActiveWindow(_activeWindows.Peek());
             }
-            
+            //If not open default window
+            else
+            {
+                if (_defaultWindow == null)
+                    return;
+                
+                OpenWindow(_defaultWindow);
+            }
+        }
+
+        public void OpenWindow(IWindow window)
+        {
+            _activeWindows.Push(window);
+            window.Active = true;
+        }
+
+        public void CloseWindow(IWindow window)
+        {
+            if (_activeWindows.Contains(window))
+                CloseActiveWindow(window);
+        }
+
+        private void CloseActiveWindow(IWindow window)
+        {
+            IWindow _topWindow = _activeWindows.Pop();
+            if (_topWindow != window)
+                CloseActiveWindow(_topWindow);
+            _topWindow.Active = false;
         }
     }
 }

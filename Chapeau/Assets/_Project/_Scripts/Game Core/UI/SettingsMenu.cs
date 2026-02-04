@@ -16,13 +16,10 @@ using UnityEngine.UI;
 namespace Seacore.Game
 {
     [DisallowMultipleComponent]
-    public class SettingsMenu : MonoBehaviour, ICancelHandler
+    public class SettingsMenu : MonoBehaviour
     {
         [Inject]
         AudioManager audioManager = null;
-
-        [SerializeField]
-        Button _menuButton = null;
 
         [Serializable]
         class VolumeUIElements
@@ -42,14 +39,6 @@ namespace Seacore.Game
 
         private void Awake()
         {
-            if (_menuButton == null)
-            {
-                Debug.LogError("Menu Button is not assigned in Settings Menu", this);
-            }
-
-            // Set up button to open settings menu
-            _menuButton.onClick.AddListener(Toggle);
-
             // Initialize UI with current settings
             foreach (VolumeUIElements volumeSettings in _AudioSettings)
             {
@@ -76,7 +65,5 @@ namespace Seacore.Game
             Settings.slider.value = volume;
         }
         private void SetUIPercentage(TMP_Text textComponent, float value) => textComponent.text = Mathf.RoundToInt(value * 100).ToString() + " %";
-        public void Toggle() => gameObject.SetActive(!gameObject.activeSelf);
-        public void OnCancel(BaseEventData eventData) => Toggle();
     }
 }
