@@ -1,3 +1,4 @@
+using Reflex.Extensions;
 using Seacore.Common.Statemachine;
 using Seacore.Game.RoundStates;
 using System.Collections.Generic;
@@ -21,9 +22,7 @@ namespace Seacore.Game
         public IStateMachineEvents<RoundState> StateMachineEvents => _stateMachine;
         public IStateMachineTransitions<RoundState> StateMachineTransitions => _stateMachine;
         public RoundState CurrentState => _stateMachine.CurrentStateKey;
-
-
-        public RoundContext Context { get { return _context; } }
+        public IRoundRolls RoundRolls => _context;
 
 
         //private RoundStateMachine _stateMachine;
@@ -35,35 +34,15 @@ namespace Seacore.Game
                 Resources.Load<Roll>("Rolls/DeclaredRoll"),
                 Resources.Load<Roll>("Rolls/PhysicalRoll")
             );
-
+            _context.ListenToDiceRollEvents(_diceController);
 
             _stateMachine = new StateMachine<RoundState>(new Dictionary<RoundState, BaseState<RoundState>>()
             {
-                { RoundState.RollSetup,  new RollSetupState(Reflex.Core.Container.RootContainer.Resolve<InputActionManager>()) },
+                { RoundState.RollSetup,  new RollSetupState(gameObject.scene.GetSceneContainer().Resolve<InputActionManager>()) },
                 { RoundState.Declare,  new DeclareState(_context, _diceController) },
                 { RoundState.Received,  new ReceivedState(_context, _diceController) },
                 { RoundState.Chapeau,  new ChapeauState() },
             }, currentStateKey: RoundState.Declare);
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GameRoundManager"/> class with the specified context.
-        /// </summary>
-        /// <param name="context">The <see cref="RoundContext"/> containing dependencies for the round.</param>
-        private void Start()
-        {
-            _context.Clear();
-            StartNewRound();
-        }
-
-        private void OnEnable()
-        {
-            _diceController.OnAllDiceRolled += _context.IncrementAmountRolled;
-        }
-
-        private void OnDisable()
-        {
-            _diceController.OnAllDiceRolled -= _context.IncrementAmountRolled;
         }
 
         private void OnDestroy()
@@ -76,11 +55,14 @@ namespace Seacore.Game
         /// This method might involve setting up the dice roller, initializing dice controllers,
         /// and preparing any other necessary components.
         /// </summary>
-        public void StartNewRound()
+        public void StartNewRound(int playerCount)
         {
-            _stateMachine.Start();
-
             // Additional round-start logic
+            _context.Clear();
+            _context.PlayerTotal = playerCount;
+
+            _stateMachine.ForcedNewCurrentState(RoundState.Declare, true);
+            _stateMachine.Start();
         }
 
         /// <summary>
@@ -91,17 +73,5 @@ namespace Seacore.Game
         {
             // Cleanup or finalize round
         }
-
-        /// <summary>
-        /// Resets the state of the round, clearing or reinitializing round-specific data and components.
-        /// This method is typically called at the beginning of a new round or when restarting the game.
-        /// </summary>
-        public void ResetRound()
-        {
-            _context.Clear();
-            _stateMachine.ForcedNewCurrentState(RoundState.Declare, true);
-        }
-
-        // Additional methods to manage round logic can be added here.
     }
 }

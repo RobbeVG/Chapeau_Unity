@@ -10,6 +10,9 @@ namespace Seacore.Game
 {
     public class UIStartController : MonoBehaviour
     {
+        [Inject]
+        GameRoundManager gameRoundManager;
+
         [SerializeField]
         Button playButton;
         [SerializeField]
@@ -35,13 +38,8 @@ namespace Seacore.Game
                 if (!Int32.TryParse(textComponent.text, out count))
                     Debug.LogError("Parsed text of button was not a number");
 
-                button.onClick.AddListener(() => { StartRound(count); });
+                button.onClick.AddListener(() => { gameRoundManager.StartNewRound(count); gameObject.SetActive(false); });
             }
-        }
-
-        private void StartRound(int playerCount)
-        {
-            Debug.Log("Start round with: " + playerCount);
         }
     }
 }

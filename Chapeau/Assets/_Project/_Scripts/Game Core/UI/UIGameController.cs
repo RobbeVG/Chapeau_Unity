@@ -43,13 +43,6 @@ namespace Seacore.Game
         [SerializeField]
         private RollDisplay _rollDisplay = null;
 
-        private RoundContext _roundContext = null;
-
-        private void Awake()
-        {
-            _roundContext = roundManager.Context;
-        }
-
         private void Start()
         {
             Debug.Log("Start");
@@ -183,7 +176,7 @@ namespace Seacore.Game
         }
         private void SetDeclareConfirmButtonInteractable()
         {
-            buttonManager[ButtonTypes.DeclareConfirm].interactable = _roundContext.DeclaredRoll > _roundContext.CurrentRoll;
+            buttonManager[ButtonTypes.DeclareConfirm].interactable = roundManager.RoundRolls.DeclaredRoll > roundManager.RoundRolls.CurrentRoll;
         }
     }
 }
