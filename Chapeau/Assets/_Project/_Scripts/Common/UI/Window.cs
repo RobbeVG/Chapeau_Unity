@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Seacore.Game
+namespace Seacore.Common
 {
     public interface IWindow
     {
@@ -9,6 +9,7 @@ namespace Seacore.Game
 
         public void OpenWindow(WindowManager windowManager);
         public void CloseWindow(WindowManager windowManager);
+        public void ToggleWindow(WindowManager windowManager);
     }
 
     public class Window : MonoBehaviour, IWindow
@@ -16,6 +17,13 @@ namespace Seacore.Game
         public string WindowName { get { return gameObject.name; } }
         public bool Active { get { return gameObject.activeInHierarchy; } set { gameObject.SetActive(value); } }
 
+        public void ToggleWindow(WindowManager windowManager)
+        {
+            if (Active)
+                CloseWindow(windowManager);
+            else
+                OpenWindow(windowManager);
+        }
         public void OpenWindow(WindowManager windowManager) => windowManager.OpenWindow(this);
         public void CloseWindow(WindowManager windowManager) => windowManager.CloseWindow(this);
     }

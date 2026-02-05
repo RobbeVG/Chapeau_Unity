@@ -1,6 +1,6 @@
 using Reflex.Core;
-using UnityEngine;
 using Seacore.Common.Services;
+using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace Seacore.Common
@@ -25,7 +25,9 @@ namespace Seacore.Common
 
                 builder.RegisterValue(component);
             }
-            //builder.RegisterType(typeof(AudioManager), Reflex.Enums.Lifetime.Singleton, Reflex.Enums.Resolution.Eager);
+
+            //Service Locators
+            builder.RegisterValue(new QuitService());
         }
     }
 }

@@ -1,33 +1,21 @@
 using Reflex.Attributes;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Seacore.Game
+namespace Seacore.Common
 {
     public class WindowManager : MonoBehaviour
     {
-        [Inject]
-        InputActionManager _inputActionManager = null; //On cancel event
-
         [SerializeField]
         [Tooltip("If no window is present, open this on cancel event - [escape]")]
         private Window _defaultWindow = null;
-        
-        private IWindow[] _windows = null;
+
         private Stack<IWindow> _activeWindows = new Stack<IWindow>();
-
-
-        private void Awake()
-        {
-            _inputActionManager.OnWindowCancel += OnCancel;
-            _windows = GetComponentsInChildren<IWindow>(true);
-            if (_windows.Length == 0)
-                Debug.LogError("No windows found on Window Manager", this);
-        }
 
         private void Start()
         {
-            foreach (IWindow window in _windows)
+            foreach (IWindow window in GetComponentsInChildren<IWindow>(true))
             {
                 if (window.Active)
                 {
@@ -36,7 +24,7 @@ namespace Seacore.Game
             }
         }
 
-        private void OnCancel()
+        public void OnCancel()
         {
             //Check if there is activewindow
             if (_activeWindows.Count > 0)

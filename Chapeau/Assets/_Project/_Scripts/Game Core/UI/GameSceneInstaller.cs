@@ -14,6 +14,7 @@ namespace Seacore.Game
         [SerializeField]
         UIGameController _UIGameController = null;
 
+
         public void InstallBindings(ContainerBuilder builder)
         {
             if (_inputActionManager != null)
