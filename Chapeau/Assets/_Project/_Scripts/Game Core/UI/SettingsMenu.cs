@@ -1,5 +1,6 @@
 using AYellowpaper.SerializedCollections;
 using Reflex.Attributes;
+using Seacore.Common;
 using Seacore.Common.Services;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,9 @@ namespace Seacore.Game
         [SerializeField]
         private List<VolumeUIElements> _AudioSettings = new List<VolumeUIElements>();
 
+        [SerializeField]
+        private Button _quitButton = null;
+
         private void Awake()
         {
             // Initialize UI with current settings
@@ -47,6 +51,11 @@ namespace Seacore.Game
                     Debug.LogError("VolumeSetting in settingsMenu is not setup correctly", this);
                 }
                 SetUI(volumeSettings);
+            }
+
+            if (_quitButton != null)
+            {
+                _quitButton.onClick.AddListener(() => { Reflex.Core.Container.RootContainer.Single<GameState>().Value = EGameState.MainMenu; gameObject.SetActive(false); });
             }
         }
 

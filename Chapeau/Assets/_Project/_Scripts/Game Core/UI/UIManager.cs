@@ -8,6 +8,7 @@ namespace Seacore.Game
     {
         [Inject]
         private InputActionManager _inputActionManager = null;
+
         [SerializeField]
         private WindowManager _windowManager = null;
 
@@ -22,10 +23,30 @@ namespace Seacore.Game
         void Start()
         {
             _inputActionManager.OnWindowCancel += _windowManager.OnCancel;
-            if (_inGameUI != null)
-                _inGameUI.SetActive(false);
-            if (_startMenuUI != null)
-                _startMenuUI.SetActive(true);
+            GameState gameState = Reflex.Core.Container.RootContainer.Resolve<GameState>();
+            gameState.OnGameStateChange += SwitchUI;
+            SwitchUI(gameState.Value);
+        }
+
+        private void SwitchUI(EGameState state)
+        {
+            switch (state)
+            {
+                case EGameState.MainMenu:
+                    if (_inGameUI != null)
+                        _inGameUI.SetActive(false);
+                    if (_startMenuUI != null)
+                        _startMenuUI.SetActive(true);
+                    break;
+                case EGameState.InGame:
+                    if (_inGameUI != null)
+                        _inGameUI.SetActive(true);
+                    if (_startMenuUI != null)
+                        _startMenuUI.SetActive(false);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

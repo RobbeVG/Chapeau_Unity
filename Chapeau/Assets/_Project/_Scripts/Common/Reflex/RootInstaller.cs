@@ -1,4 +1,5 @@
 using Reflex.Core;
+using Seacore.Common;
 using Seacore.Common.Services;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -10,6 +11,9 @@ namespace Seacore.Common
         [SerializeField]
         [Tooltip("System Object Prefab")]
         GameObject _systems = null;
+
+        [SerializeField]
+        EGameState _startingGameState = EGameState.MainMenu;
         
         public void InstallBindings(ContainerBuilder builder)
         {
@@ -28,6 +32,8 @@ namespace Seacore.Common
 
             //Service Locators
             builder.RegisterValue(new QuitService());
+
+            builder.RegisterValue(new GameState(_startingGameState));
         }
     }
 }

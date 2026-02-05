@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Seacore.Common;
 
 
 namespace Seacore.Game
@@ -25,8 +26,10 @@ namespace Seacore.Game
         private void Awake()
         {
             quitButton.onClick.AddListener(Reflex.Core.Container.RootContainer.Single<QuitService>().QuitApplication);
-
             playButton.onClick.AddListener(() => PlayerAmountButtons.SetActive(true));
+
+
+            GameState gameState = Reflex.Core.Container.RootContainer.Resolve<GameState>();
 
             foreach (Button button in PlayerAmountButtons.GetComponentsInChildren<Button>(true))
             {
@@ -38,7 +41,7 @@ namespace Seacore.Game
                 if (!Int32.TryParse(textComponent.text, out count))
                     Debug.LogError("Parsed text of button was not a number");
 
-                button.onClick.AddListener(() => { gameRoundManager.StartNewRound(count); gameObject.SetActive(false); });
+                button.onClick.AddListener(() => { gameRoundManager.StartNewRound(count); gameState.Value = EGameState.InGame; });
             }
         }
     }

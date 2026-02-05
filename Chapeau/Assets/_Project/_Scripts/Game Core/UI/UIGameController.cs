@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using UnityEngine;
-
 using Seacore.Game.UI;
 using Seacore.Common;
 using Seacore.Common.Statemachine;
