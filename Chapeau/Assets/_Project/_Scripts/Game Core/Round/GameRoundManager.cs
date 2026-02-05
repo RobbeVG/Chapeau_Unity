@@ -1,4 +1,6 @@
-using Seacore.Common;
+using Seacore.Common.Statemachine;
+using Seacore.Game.RoundStates;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Seacore.Game
@@ -8,17 +10,21 @@ namespace Seacore.Game
     /// This includes starting, updating, and ending the round, as well as interacting with
     /// various game components such as dice rollers and controllers.
     /// </summary>
-    public class RoundManager : MonoBehaviour
+    public class GameRoundManager : MonoBehaviour
     {
         private RoundContext _context;
-        private RoundStateMachine _stateMachine;
+        private StateMachine<RoundState> _stateMachine;
 
         [SerializeField]
         private DiceController _diceController = null;
 
-        public RoundStateMachine.RoundState CurrentState => _stateMachine.CurrentStateKey;
-        public RoundStateMachine RoundStateMachine { get { return _stateMachine; } }
+        public IStateMachineEvents<RoundState> StateMachineEvents => _stateMachine;
+        public IStateMachineTransitions<RoundState> StateMachineTransitions => _stateMachine;
+        public RoundState CurrentState => _stateMachine.CurrentStateKey;
+
+
         public RoundContext Context { get { return _context; } }
+
 
         //private RoundStateMachine _stateMachine;
 
@@ -30,11 +36,18 @@ namespace Seacore.Game
                 Resources.Load<Roll>("Rolls/PhysicalRoll")
             );
 
-            _stateMachine = new RoundStateMachine(_context, _diceController);
+
+            _stateMachine = new StateMachine<RoundState>(new Dictionary<RoundState, BaseState<RoundState>>()
+            {
+                { RoundState.RollSetup,  new RollSetupState(Reflex.Core.Container.RootContainer.Resolve<InputActionManager>()) },
+                { RoundState.Declare,  new DeclareState(_context, _diceController) },
+                { RoundState.Received,  new ReceivedState(_context, _diceController) },
+                { RoundState.Chapeau,  new ChapeauState() },
+            }, currentStateKey: RoundState.Declare);
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RoundManager"/> class with the specified context.
+        /// Initializes a new instance of the <see cref="GameRoundManager"/> class with the specified context.
         /// </summary>
         /// <param name="context">The <see cref="RoundContext"/> containing dependencies for the round.</param>
         private void Start()
@@ -86,7 +99,7 @@ namespace Seacore.Game
         public void ResetRound()
         {
             _context.Clear();
-            _stateMachine.Reset();
+            _stateMachine.ForcedNewCurrentState(RoundState.Declare, true);
         }
 
         // Additional methods to manage round logic can be added here.

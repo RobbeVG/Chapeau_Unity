@@ -1,13 +1,13 @@
 using System;
-using System.Collections;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 using Seacore.Game.UI;
 using Seacore.Common;
+using Seacore.Common.Statemachine;
 using Reflex.Attributes;
 using Seacore.UI;
+
 
 namespace Seacore.Game
 {
@@ -26,7 +26,7 @@ namespace Seacore.Game
         [Inject]
         private InputActionManager _inputManager = null;
         [Inject]
-        private RoundManager roundManager = null;
+        private GameRoundManager roundManager = null;
 
         [SerializeField]
         private DeclareMenu _declareMenu = null;
@@ -43,14 +43,11 @@ namespace Seacore.Game
         [SerializeField]
         private RollDisplay _rollDisplay = null;
 
-        private RoundStateMachine _roundSM;
         private RoundContext _roundContext = null;
 
         private void Awake()
         {
-            _roundSM = roundManager.RoundStateMachine;
             _roundContext = roundManager.Context;
-            Assert.IsNotNull(_roundSM, "Round State Machine Controller in the UIManager cannot be null");
         }
 
         private void Start()
@@ -70,8 +67,9 @@ namespace Seacore.Game
 
         private void OnEnable()
         {
-            _roundSM.OnStateEnter += OnRoundStateEnter;
-            _roundSM.OnStateExit += OnRoundStateExit;
+            IStateMachineEvents<RoundState> stateEvents = roundManager.StateMachineEvents;
+            stateEvents.OnStateEnter += OnRoundStateEnter;
+            stateEvents.OnStateExit += OnRoundStateExit;
             
             _inputManager.OnDieTapped += SetRollButtonInteractable;
             _inputManager.OnDieHoldExit += SetRollButtonInteractable;
@@ -86,8 +84,9 @@ namespace Seacore.Game
 
         private void OnDisable()
         {
-            _roundSM.OnStateEnter -= OnRoundStateEnter;
-            _roundSM.OnStateExit -= OnRoundStateExit;
+            IStateMachineEvents<RoundState> stateEvents = roundManager.StateMachineEvents;
+            stateEvents.OnStateEnter -= OnRoundStateEnter;
+            stateEvents.OnStateExit -= OnRoundStateExit;
             
             _inputManager.OnDieTapped -= SetRollButtonInteractable;
             _inputManager.OnDieHoldExit -= SetRollButtonInteractable;
@@ -101,11 +100,11 @@ namespace Seacore.Game
             _declareMenu.OnEditDeclareRoll -= SetDeclareConfirmButtonInteractable;
         }
 
-        private void OnRoundStateExit(RoundStateMachine.RoundState stateType)
+        private void OnRoundStateExit(RoundState stateType)
         {
             switch (stateType)
             {
-                case RoundStateMachine.RoundState.Received:
+                case RoundState.Received:
                     buttonManager[ButtonTypes.Reveal].onClick.RemoveListener(ToStateRollSetup); //Exception has to be added
                     break;
                 default:
@@ -113,7 +112,7 @@ namespace Seacore.Game
             }
         }
 
-        private void OnRoundStateEnter(RoundStateMachine.RoundState stateType)
+        private void OnRoundStateEnter(RoundState stateType)
         {
             //Declare visble
             buttonManager[ButtonTypes.DeclareConfirm].gameObject.SetActive(true);
@@ -122,25 +121,25 @@ namespace Seacore.Game
             SetDeclareConfirmButtonInteractable(); //You need to readjust the button because of new state!
             switch (stateType)
             {
-                case RoundStateMachine.RoundState.Declare:
+                case RoundState.Declare:
                     buttonManager[ButtonTypes.Reveal].gameObject.SetActive(true);
 
                     //If comming from receive (Pressed Roll)
                     buttonManager[ButtonTypes.Chapeau].gameObject.SetActive(false);
                     buttonManager[ButtonTypes.Roll].gameObject.SetActive(false);
                     break;
-                case RoundStateMachine.RoundState.Received:
+                case RoundState.Received:
                     buttonManager[ButtonTypes.Reveal].onClick.AddListener(ToStateRollSetup);
 
                     buttonManager[ButtonTypes.Reveal].gameObject.SetActive(true);
                     buttonManager[ButtonTypes.Chapeau].gameObject.SetActive(true);
                     buttonManager[ButtonTypes.Roll].gameObject.SetActive(true);
                     break;
-                case RoundStateMachine.RoundState.RollSetup:
+                case RoundState.RollSetup:
                     buttonManager[ButtonTypes.Reveal].gameObject.SetActive(false);
                     buttonManager[ButtonTypes.Chapeau].gameObject.SetActive(false);
                     break;
-                case RoundStateMachine.RoundState.Chapeau:
+                case RoundState.Chapeau:
                     break;
                 default:
                     break;
@@ -157,7 +156,7 @@ namespace Seacore.Game
         {
             _diceController.RevealDice();
             buttonManager[ButtonTypes.Reveal].gameObject.SetActive(false);
-            if (roundManager.CurrentState.HasFlag(RoundStateMachine.RoundState.Received))
+            if (roundManager.CurrentState.HasFlag(RoundState.Received))
             {
                 buttonManager[ButtonTypes.Roll].gameObject.SetActive(true); 
                 buttonManager[ButtonTypes.Roll].interactable = false; 
@@ -166,16 +165,16 @@ namespace Seacore.Game
 
         private void ToStateRollSetup()
         {
-            _roundSM.TransitionToState(RoundStateMachine.RoundState.RollSetup);
+            roundManager.StateMachineTransitions.TransitionToState(RoundState.RollSetup);
         }
         private void ToStateReceived()
         {
-            _roundSM.TransitionToState(RoundStateMachine.RoundState.Received);
+            roundManager.StateMachineTransitions.TransitionToState(RoundState.Received);
             buttonManager[ButtonTypes.Roll].gameObject.SetActive(false); 
         }
         private void ToStateDeclare()
         {
-            _roundSM.TransitionToState(RoundStateMachine.RoundState.Declare);
+            roundManager.StateMachineTransitions.TransitionToState(RoundState.Declare);
         }
 
         private void SetRollButtonInteractable(Die _)
@@ -186,8 +185,5 @@ namespace Seacore.Game
         {
             buttonManager[ButtonTypes.DeclareConfirm].interactable = _roundContext.DeclaredRoll > _roundContext.CurrentRoll;
         }
-
-
-
     }
 }

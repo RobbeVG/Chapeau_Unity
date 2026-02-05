@@ -3,13 +3,13 @@ using Seacore.Common.Statemachine;
 
 namespace Seacore.Game.RoundStates
 {
-    public class DeclareState : BaseState<RoundStateMachine.RoundState>
+    public class DeclareState : BaseState<RoundState>
     {
         private readonly Roll _physicalRoll;
         private readonly DiceController _diceController;
 
         public DeclareState(RoundContext context, DiceController diceRoller) 
-            : base(RoundStateMachine.RoundState.Declare) 
+            : base(RoundState.Declare) 
         {
             _physicalRoll = context.PhysicalRoll;
             _diceController = diceRoller;
@@ -35,9 +35,9 @@ namespace Seacore.Game.RoundStates
 
         }
 
-        public override RoundStateMachine.RoundState GetNextState()
+        public override RoundState GetNextState()
         {
-            return RoundStateMachine.RoundState.Declare;
+            return RoundState.Declare;
         }
 
         //public override IEnumerator Exit(RoundStateMachine roundSM)

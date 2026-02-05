@@ -10,6 +10,7 @@ namespace Seacore.Game
         public Roll PhysicalRoll { get; }
         public int AmountRolled { get; private set; }
 
+
         public RoundContext(Roll current, Roll declare, Roll physical)
         {
             CurrentRoll = current;

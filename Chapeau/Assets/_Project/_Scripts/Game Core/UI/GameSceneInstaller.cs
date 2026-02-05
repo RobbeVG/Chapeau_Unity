@@ -9,7 +9,7 @@ namespace Seacore.Game
         InputActionManager _inputActionManager = null;
 
         [SerializeField]
-        RoundManager _roundManager = null;
+        GameRoundManager _roundManager = null;
 
         [SerializeField]
         UIGameController _UIGameController = null;

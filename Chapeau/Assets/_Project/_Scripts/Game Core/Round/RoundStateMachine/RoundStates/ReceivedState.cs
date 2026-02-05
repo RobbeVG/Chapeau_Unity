@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Seacore.Game
 {
-    public class ReceivedState : BaseState<RoundStateMachine.RoundState>
+    public class ReceivedState : BaseState<RoundState>
     {
         private readonly RoundContext _roundContext;
         private readonly DiceController _diceController;
 
         public ReceivedState(RoundContext context, DiceController diceController) 
-            : base(RoundStateMachine.RoundState.Received) 
+            : base(RoundState.Received) 
         {
             _roundContext = context;
             _diceController = diceController;
@@ -24,7 +24,7 @@ namespace Seacore.Game
 
         public override void ExitState() {}
 
-        public override RoundStateMachine.RoundState GetNextState()
+        public override RoundState GetNextState()
         {
             return StateKey;
         }

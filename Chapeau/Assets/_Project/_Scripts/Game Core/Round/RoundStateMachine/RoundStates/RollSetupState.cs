@@ -5,13 +5,14 @@ using UnityEngine;
 
 namespace Seacore.Game.RoundStates
 {
-    public sealed class RollSetupState : BaseState<RoundStateMachine.RoundState>
+    public sealed class RollSetupState : BaseState<RoundState>
     {
-        [Inject]
         private readonly InputActionManager _inputManager;
 
-        public RollSetupState() : base(RoundStateMachine.RoundState.RollSetup) 
-        {}
+        public RollSetupState(InputActionManager inputActionManager) : base(RoundState.RollSetup) 
+        {
+            _inputManager = inputActionManager;
+        }
 
         public override void EnterState() 
         {
@@ -24,10 +25,10 @@ namespace Seacore.Game.RoundStates
         }
 
         //TODO Decide if it stays or it goes
-        public override RoundStateMachine.RoundState GetNextState()
+        public override RoundState GetNextState()
         {
             //Check if dice are rolled (physicaly)
-            return RoundStateMachine.RoundState.RollSetup;  
+            return RoundState.RollSetup;  
         }
     }
 }
