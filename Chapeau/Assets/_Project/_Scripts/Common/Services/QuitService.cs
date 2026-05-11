@@ -2,12 +2,7 @@ using UnityEngine;
 
 namespace Seacore.Common.Services
 {
-    public interface IQuitService : IService
-    {
-        void QuitApplication();
-    }
-
-    public class QuitService : IQuitService
+    public class QuitService : IService
     {
         public void QuitApplication()
         {
