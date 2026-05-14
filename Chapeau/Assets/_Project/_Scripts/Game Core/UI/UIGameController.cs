@@ -6,6 +6,7 @@ using Seacore.Common;
 using Seacore.Common.Statemachine;
 using Reflex.Attributes;
 using Seacore.UI;
+using TMPro;
 
 
 namespace Seacore.Game
@@ -42,10 +43,11 @@ namespace Seacore.Game
         [SerializeField]
         private RollDisplay _rollDisplay = null;
 
+        [SerializeField]
+        private TextMeshProUGUI _tmpPlayer = null;
+
         private void Start()
         {
-            Debug.Log("Start");
-
             DisableAll();
             OnRoundStateEnter(roundManager.CurrentState);
             SetDeclareConfirmButtonInteractable();
@@ -106,6 +108,10 @@ namespace Seacore.Game
 
         private void OnRoundStateEnter(RoundState stateType)
         {
+            //Update player name
+            _tmpPlayer.text = "Current Player: " + roundManager.PlayerContext.CurrentPlayerNr;
+
+
             //Declare visble
             buttonManager[ButtonTypes.DeclareConfirm].gameObject.SetActive(true);
             _declareMenu.gameObject.SetActive(true);

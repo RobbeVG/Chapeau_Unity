@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Seacore.Logger;
+
 
 namespace Seacore.Common.Statemachine
 {
@@ -62,7 +64,8 @@ namespace Seacore.Common.Statemachine
         public void Start()
         {
             _currentState.EnterState();
-            Debug.Log("Starting " + _currentState);
+            
+            SCLogger.Log("Starting " + _currentState);
         }
 
         public void Update()
@@ -87,7 +90,7 @@ namespace Seacore.Common.Statemachine
             }
             _isTransitioningState = false;
 
-            Debug.Log("Transitioned to " + _currentState);
+            SCLogger.Log("Transitioned to " + _currentState);
         }
 
         public void ForcedNewCurrentState(EState stateKey,  bool invokePreviousExit = false)

@@ -3,6 +3,7 @@ using Seacore.Common.Statemachine;
 using Seacore.Game.RoundStates;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking.PlayerConnection;
 
 namespace Seacore.Game
 {
@@ -23,7 +24,7 @@ namespace Seacore.Game
         public IStateMachineTransitions<RoundState> StateMachineTransitions => _stateMachine;
         public RoundState CurrentState => _stateMachine.CurrentStateKey;
         public IRoundRolls RoundRolls => _context;
-
+        public IPlayerContext PlayerContext => _context;
 
         //private RoundStateMachine _stateMachine;
 
@@ -47,7 +48,7 @@ namespace Seacore.Game
 
         private void OnDestroy()
         {
-            _context.Clear();
+            _context.Reset(0);
         }
 
         /// <summary>
@@ -58,9 +59,7 @@ namespace Seacore.Game
         public void StartNewRound(int playerCount)
         {
             // Additional round-start logic
-            _context.Clear();
-            _context.PlayerTotal = playerCount;
-
+            _context.Reset(playerCount);
             _stateMachine.ForcedNewCurrentState(RoundState.Declare, true);
             _stateMachine.Start();
         }

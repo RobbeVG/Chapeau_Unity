@@ -39,9 +39,9 @@ namespace Seacore.Game
                 LayoutElement layoutelement = playTypeButtons.GetComponent<LayoutElement>();
                 Sequence sequence = DOTween.Sequence();
                 sequence
-                .Append(playButton.transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InExpo))
+                .Append(playButton.transform.DOScale(Vector3.zero, 0.35f).SetEase(Ease.InExpo))
                 .AppendInterval(0.05f)
-                .Join(playTypeButtons.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.InExpo))
+                .Join(playTypeButtons.transform.DOScale(Vector3.one, 0.35f).SetEase(Ease.InExpo))
                 .OnStart(() => { playTypeButtons.SetActive(true); })
                 .OnComplete(() => { 
                     playButton.gameObject.SetActive(false);
@@ -67,7 +67,10 @@ namespace Seacore.Game
                 if (!Int32.TryParse(textComponent.text, out count))
                     Debug.LogError("Parsed text of button was not a number");
 
-                button.onClick.AddListener(() => { gameRoundManager.StartNewRound(count); gameState.Value = EGameState.InGame; });
+                button.onClick.AddListener(() => { 
+                    gameRoundManager.StartNewRound(count); 
+                    gameState.Value = EGameState.InGame; 
+                });
             }
         }
     }

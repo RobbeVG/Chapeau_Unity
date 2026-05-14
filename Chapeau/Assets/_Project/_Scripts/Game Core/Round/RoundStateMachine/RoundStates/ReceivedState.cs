@@ -19,6 +19,7 @@ namespace Seacore.Game
         public override void EnterState()
         {
             _roundContext.CurrentRoll.ChangeValueTo(_roundContext.DeclaredRoll);
+            _roundContext.CurrentPlayerNr++;
             _diceController.HideAllDie();
         }
 

@@ -94,25 +94,25 @@ namespace Seacore.Game
         public void Disable() => Input.Disable();
         public void EnableScreenActions()
         {
-            Debug.Log("Enabling screen actions");
+            //Debug.Log("Enabling screen actions");
             Input.UI.Enable();
         }
 
         public void DisableScreenActions()
         {
-            Debug.Log("Disabling screen actions");
+            //Debug.Log("Disabling screen actions");
             Input.UI.Disable();
         }
 
         public void EnableDiceActions()
         {
-            Debug.Log("Enabling dice actions");
+            //Debug.Log("Enabling dice actions");
             Input.DiceActions.Enable();
         }
 
         public void DisableDiceActions()
         {
-            Debug.Log("Disabling dice actions");
+            //Debug.Log("Disabling dice actions");
             Input.DiceActions.Disable();
         }
     }
