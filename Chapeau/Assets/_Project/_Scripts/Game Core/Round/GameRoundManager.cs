@@ -48,7 +48,7 @@ namespace Seacore.Game
 
         private void OnDestroy()
         {
-            _context.Reset(0);
+            _context.Reset();
         }
 
         /// <summary>
@@ -56,13 +56,18 @@ namespace Seacore.Game
         /// This method might involve setting up the dice roller, initializing dice controllers,
         /// and preparing any other necessary components.
         /// </summary>
-        public void StartNewRound(int playerCount)
+        public void StartNewRound(LinkedList<Player> players)
         {
             // Additional round-start logic
-            _context.Reset(playerCount);
+            _context.Reset();
+            _context.Players = players;
+            _context.CurrentPlayer = players.First;
+
             _stateMachine.ForcedNewCurrentState(RoundState.Declare, true);
             _stateMachine.Start();
         }
+
+
 
         /// <summary>
         /// Ends the current round and performs any necessary cleanup or finalization.

@@ -1,3 +1,4 @@
+using Seacore.Game;
 using Seacore.Logger;
 using System;
 using TMPro;

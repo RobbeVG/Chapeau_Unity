@@ -1,4 +1,5 @@
 using Seacore;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -21,21 +22,24 @@ namespace Seacore.Game
 
     public interface IPlayerContext
     {
-        int PlayerTotal { get; set; }
-        int CurrentPlayerNr { get; set; }
+        public LinkedList<Player> Players { get; }
+        public LinkedListNode<Player> CurrentPlayer { get; }
         int AmountRolled { get; }
     }
 
     public class RoundContext : IRoundRolls, IPlayerContext
     {
-        private int _currentPlayerNr;
 
         public Roll CurrentRoll { get; }
         public Roll DeclaredRoll { get; }
         public Roll PhysicalRoll { get; }
-        public int PlayerTotal {  get; set; }
-        public int CurrentPlayerNr { get => _currentPlayerNr; set => _currentPlayerNr = ((value - 1 + PlayerTotal) % PlayerTotal) + 1; }
+
+
+
         public int AmountRolled { get; private set; }
+
+        public LinkedList<Player> Players { get; set; } = null;
+        public LinkedListNode<Player> CurrentPlayer { get; set; }
 
         public RoundContext(Roll current, Roll declare, Roll physical)
         {
@@ -43,6 +47,7 @@ namespace Seacore.Game
             DeclaredRoll = declare;
             PhysicalRoll = physical;
         }
+
 
 
         public void ListenToDiceRollEvents(DiceController diceController)
@@ -55,15 +60,12 @@ namespace Seacore.Game
             AmountRolled++;
         }
 
-        public void Reset(int playerTotal)
+        public void Reset()
         {
             CurrentRoll.Clear();
             DeclaredRoll.Clear();
             PhysicalRoll.Clear();
-
-            CurrentPlayerNr = 1;
             AmountRolled = 0;
-            PlayerTotal = playerTotal;
         }
     }
 }

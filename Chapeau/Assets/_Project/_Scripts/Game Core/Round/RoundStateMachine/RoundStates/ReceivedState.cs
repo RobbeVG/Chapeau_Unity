@@ -9,6 +9,8 @@ namespace Seacore.Game
         private readonly RoundContext _roundContext;
         private readonly DiceController _diceController;
 
+        bool counterclockwise = true;
+
         public ReceivedState(RoundContext context, DiceController diceController) 
             : base(RoundState.Received) 
         {
@@ -19,7 +21,16 @@ namespace Seacore.Game
         public override void EnterState()
         {
             _roundContext.CurrentRoll.ChangeValueTo(_roundContext.DeclaredRoll);
-            _roundContext.CurrentPlayerNr++;
+
+            if (counterclockwise) 
+            {                 
+                _roundContext.CurrentPlayer = _roundContext.CurrentPlayer.Previous ?? _roundContext.Players.Last;
+            }
+            else
+            {
+                _roundContext.CurrentPlayer = _roundContext.CurrentPlayer.Next ?? _roundContext.Players.First;
+            }
+
             _diceController.HideAllDie();
         }
 

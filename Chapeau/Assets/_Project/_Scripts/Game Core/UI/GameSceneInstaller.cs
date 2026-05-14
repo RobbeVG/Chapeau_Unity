@@ -1,4 +1,5 @@
 using Reflex.Core;
+using Seacore.Common;
 using UnityEngine;
 
 namespace Seacore.Game
@@ -14,6 +15,8 @@ namespace Seacore.Game
         [SerializeField]
         UIGameController _UIGameController = null;
 
+        [SerializeField]
+        WindowManager _windowManager = null;
 
         public void InstallBindings(ContainerBuilder builder)
         {
@@ -28,6 +31,10 @@ namespace Seacore.Game
             if (_UIGameController != null)
             {
                 builder.RegisterValue(_UIGameController);
+            }
+            if (_windowManager != null)
+            {
+                builder.RegisterValue(_windowManager);
             }
         }
     }

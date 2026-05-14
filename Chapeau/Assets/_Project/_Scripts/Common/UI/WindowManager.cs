@@ -1,4 +1,5 @@
 using Reflex.Attributes;
+using Seacore.Logger;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,16 +44,25 @@ namespace Seacore.Common
 
         public void OpenWindow(IWindow window)
         {
+            SCLogger.Log($"Opening window: {window.WindowName}");
             _activeWindows.Push(window);
             window.Active = true;
         }
 
         public void CloseWindow(IWindow window)
         {
+            SCLogger.Log($"Closing window: {window.WindowName}");
             if (_activeWindows.Contains(window))
                 CloseActiveWindow(window);
         }
-
+        
+        /// <summary>
+        /// Closes the specified window if it is currently active.
+        /// </summary>
+        /// <remarks>If the specified window is not the topmost active window, this method will
+        /// recursively close windows above it until the specified window is reached. After closing, the window's active
+        /// state is set to false.</remarks>
+        /// <param name="window">The window to close. Must be an active window managed by the current context.</param>
         private void CloseActiveWindow(IWindow window)
         {
             IWindow _topWindow = _activeWindows.Pop();

@@ -15,6 +15,12 @@ namespace Seacore.Common
     public class Window : MonoBehaviour, IWindow
     {
         public string WindowName { get { return gameObject.name; } }
+        /// <summary>
+        /// Gets or sets a value indicating whether the GameObject is active in the scene hierarchy.
+        /// </summary>
+        /// <remarks>Setting this property enables or disables the GameObject and all its children in the
+        /// hierarchy. When set to false, the GameObject and its children will not receive update calls or be rendered.
+        /// Changing this property at runtime can affect component behavior and event execution.</remarks>
         public bool Active { get { return gameObject.activeInHierarchy; } set { gameObject.SetActive(value); } }
 
         public void ToggleWindow(WindowManager windowManager)

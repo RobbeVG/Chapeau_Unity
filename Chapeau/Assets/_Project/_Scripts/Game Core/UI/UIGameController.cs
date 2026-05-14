@@ -109,7 +109,7 @@ namespace Seacore.Game
         private void OnRoundStateEnter(RoundState stateType)
         {
             //Update player name
-            _tmpPlayer.text = "Current Player: " + roundManager.PlayerContext.CurrentPlayerNr;
+            _tmpPlayer.text = "Current Player: " + roundManager.PlayerContext.CurrentPlayer.Value.Name;
 
 
             //Declare visble
