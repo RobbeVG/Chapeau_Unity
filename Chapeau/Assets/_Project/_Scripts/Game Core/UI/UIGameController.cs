@@ -1,12 +1,16 @@
-using System;
-using System.Linq;
-using UnityEngine;
-using Seacore.Game.UI;
+using Reflex.Attributes;
 using Seacore.Common;
 using Seacore.Common.Statemachine;
-using Reflex.Attributes;
+using Seacore.Game.UI;
+using Seacore.Logger;
 using Seacore.UI;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using Unity.Collections.LowLevel.Unsafe;
+using UnityEngine;
+using UnityEngine.Assertions;
 
 
 namespace Seacore.Game
@@ -19,7 +23,8 @@ namespace Seacore.Game
         {
             Reveal,
             Chapeau,
-            DeclareConfirm, 
+            DeclareConfirmCW, 
+            DeclareConfirmCCW, 
             Roll
         }
 
@@ -29,7 +34,7 @@ namespace Seacore.Game
         private GameRoundManager roundManager = null;
 
         [SerializeField]
-        private DeclareMenu _declareMenu = null;
+        private DeclareRollUIController _declareMenu = null;
 
         [SerializeField]
         public UIButtonManager<ButtonTypes> buttonManager = new UIButtonManager<ButtonTypes>();
@@ -67,10 +72,18 @@ namespace Seacore.Game
             
             _inputManager.OnDieTapped += SetRollButtonInteractable;
             _inputManager.OnDieHoldExit += SetRollButtonInteractable;
-            
 
+           
             buttonManager[ButtonTypes.Reveal].onClick.AddListener(OnRevealButtonClick);
-            buttonManager[ButtonTypes.DeclareConfirm].onClick.AddListener(ToStateReceived); 
+            buttonManager[ButtonTypes.DeclareConfirmCW].onClick.AddListener(() => {
+                roundManager.Context.Direction = RoundDirection.Right;
+                ToStateReceived(); 
+            }); 
+            buttonManager[ButtonTypes.DeclareConfirmCCW].onClick.AddListener(() =>
+            {
+                roundManager.Context.Direction = RoundDirection.Left;
+                ToStateReceived();
+            }); 
             buttonManager[ButtonTypes.Roll].onClick.AddListener(ToStateDeclare);
 
             _declareMenu.OnEditDeclareRoll += SetDeclareConfirmButtonInteractable;
@@ -84,13 +97,9 @@ namespace Seacore.Game
             
             _inputManager.OnDieTapped -= SetRollButtonInteractable;
             _inputManager.OnDieHoldExit -= SetRollButtonInteractable;
-            
 
 
-            buttonManager[ButtonTypes.Reveal].onClick.RemoveListener(OnRevealButtonClick);
-
-            buttonManager[ButtonTypes.DeclareConfirm].onClick.RemoveListener(ToStateReceived);
-            buttonManager[ButtonTypes.Roll].onClick.RemoveListener(ToStateDeclare);
+            buttonManager.RemoveAllListeners();
             _declareMenu.OnEditDeclareRoll -= SetDeclareConfirmButtonInteractable;
         }
 
@@ -106,14 +115,46 @@ namespace Seacore.Game
             }
         }
 
+        private void SetDeclareButtonText(TextMeshProUGUI text, RoundDirection direction)
+        {
+            LinkedListNode<Player> nextPlayerNode;
+            if (direction == RoundDirection.Right)
+                nextPlayerNode = roundManager.PlayerContext.GetNextRightPlayer;
+            else
+                nextPlayerNode = roundManager.PlayerContext.GetNextLeftPlayer;
+            text.text = "Declare Roll to " + nextPlayerNode.Value.Name;
+        }
+
         private void OnRoundStateEnter(RoundState stateType)
         {
             //Update player name
             _tmpPlayer.text = "Current Player: " + roundManager.PlayerContext.CurrentPlayer.Value.Name;
 
 
+            if (roundManager.Context.Direction == null)
+            {
+                SetDeclareButtonText(buttonManager[ButtonTypes.DeclareConfirmCW].GetComponentInChildren<TextMeshProUGUI>(true), RoundDirection.Right);
+                SetDeclareButtonText(buttonManager[ButtonTypes.DeclareConfirmCCW].GetComponentInChildren<TextMeshProUGUI>(true), RoundDirection.Left);
+                buttonManager[ButtonTypes.DeclareConfirmCW].gameObject.SetActive(true);
+                buttonManager[ButtonTypes.DeclareConfirmCCW].gameObject.SetActive(true);
+            }
+            else
+            {
+                switch (roundManager.Context.Direction)
+                {
+                    case RoundDirection.Right:
+                        SetDeclareButtonText(buttonManager[ButtonTypes.DeclareConfirmCW].GetComponentInChildren<TextMeshProUGUI>(true), RoundDirection.Right);
+                        buttonManager[ButtonTypes.DeclareConfirmCW].gameObject.SetActive(true);
+                        buttonManager[ButtonTypes.DeclareConfirmCCW].gameObject.SetActive(false);
+                        break;
+                    case RoundDirection.Left:
+                        SetDeclareButtonText(buttonManager[ButtonTypes.DeclareConfirmCCW].GetComponentInChildren<TextMeshProUGUI>(true), RoundDirection.Left);
+                        buttonManager[ButtonTypes.DeclareConfirmCCW].gameObject.SetActive(true);
+                        buttonManager[ButtonTypes.DeclareConfirmCW].gameObject.SetActive(false);
+                        break;
+                }
+            }
             //Declare visble
-            buttonManager[ButtonTypes.DeclareConfirm].gameObject.SetActive(true);
             _declareMenu.gameObject.SetActive(true);
 
             SetDeclareConfirmButtonInteractable(); //You need to readjust the button because of new state!
@@ -181,7 +222,9 @@ namespace Seacore.Game
         }
         private void SetDeclareConfirmButtonInteractable()
         {
-            buttonManager[ButtonTypes.DeclareConfirm].interactable = roundManager.RoundRolls.DeclaredRoll > roundManager.RoundRolls.CurrentRoll;
+            buttonManager[ButtonTypes.DeclareConfirmCW].interactable = roundManager.RoundRolls.DeclaredRoll > roundManager.RoundRolls.CurrentRoll;
+            buttonManager[ButtonTypes.DeclareConfirmCCW].interactable = roundManager.RoundRolls.DeclaredRoll > roundManager.RoundRolls.CurrentRoll;
         }
+        
     }
 }

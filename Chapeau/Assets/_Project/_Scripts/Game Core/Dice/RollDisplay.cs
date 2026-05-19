@@ -34,7 +34,7 @@ namespace Seacore.UI
 
         private void Start()
         {
-            images = GetComponentsInChildren<Image>();
+            images = transform.GetChild(0).GetComponentsInChildren<Image>();
             Assert.IsTrue(images.Length == roll.Values.Length, $"Roll display: images found = { images.Length } and roll values = { roll.Values.Length }");
 
             _parentContentBackgground = GetComponentInParent<Image>();

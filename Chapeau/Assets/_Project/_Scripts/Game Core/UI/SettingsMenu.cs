@@ -14,6 +14,8 @@ using UnityEngine.UI;
 //using UnityEngine.UIElements;
 
 
+
+
 namespace Seacore.Game
 {
     [DisallowMultipleComponent]
@@ -50,7 +52,7 @@ namespace Seacore.Game
                 {
                     Debug.LogError("VolumeSetting in settingsMenu is not setup correctly", this);
                 }
-                SetUI(volumeSettings);
+                SetUI(volumeSettings); // Set the UI to match the current audio settings which are automatically saved in the mixer. 
             }
 
             if (_quitButton != null)
@@ -63,7 +65,10 @@ namespace Seacore.Game
         {
             foreach (VolumeUIElements volumeSettings in _AudioSettings)
             {
-                volumeSettings.slider.onValueChanged.AddListener((value) => { audioManager.SoundSettings.SetVolume(volumeSettings.mixerGroupTarget, value); SetUIPercentage(volumeSettings.textPercentage, value); });
+                volumeSettings.slider.onValueChanged.AddListener((value) => { 
+                    audioManager.SoundSettings.SetVolume(volumeSettings.mixerGroupTarget, value); 
+                    SetUIPercentage(volumeSettings.textPercentage, value); 
+                });
             }
         }
 

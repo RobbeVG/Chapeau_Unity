@@ -25,6 +25,8 @@ namespace Seacore.Game
         public RoundState CurrentState => _stateMachine.CurrentStateKey;
         public IRoundRolls RoundRolls => _context;
         public IPlayerContext PlayerContext => _context;
+        public RoundContext Context => _context;
+
 
         //private RoundStateMachine _stateMachine;
 
@@ -35,7 +37,8 @@ namespace Seacore.Game
                 Resources.Load<Roll>("Rolls/DeclaredRoll"),
                 Resources.Load<Roll>("Rolls/PhysicalRoll")
             );
-            _context.ListenToDiceRollEvents(_diceController);
+
+            _diceController.OnAllDiceRolled += () => _context.AmountRolled++;
 
             _stateMachine = new StateMachine<RoundState>(new Dictionary<RoundState, BaseState<RoundState>>()
             {
@@ -61,13 +64,17 @@ namespace Seacore.Game
             // Additional round-start logic
             _context.Reset();
             _context.Players = players;
-            _context.CurrentPlayer = players.First;
+            SetStartPlayer();
 
             _stateMachine.ForcedNewCurrentState(RoundState.Declare, true);
             _stateMachine.Start();
         }
 
-
+        private void SetStartPlayer()
+        {
+            // Logic to determine and set the starting player for the round
+            _context.CurrentPlayer = _context.Players.First;
+        }
 
         /// <summary>
         /// Ends the current round and performs any necessary cleanup or finalization.

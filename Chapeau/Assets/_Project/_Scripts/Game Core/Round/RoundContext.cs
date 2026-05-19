@@ -24,22 +24,33 @@ namespace Seacore.Game
     {
         public LinkedList<Player> Players { get; }
         public LinkedListNode<Player> CurrentPlayer { get; }
-        int AmountRolled { get; }
+
+        public LinkedListNode<Player> GetNextLeftPlayer { get; }
+        public LinkedListNode<Player> GetNextRightPlayer { get; }
+    }
+
+    public enum RoundDirection : byte
+    {
+        Left,
+        Right
     }
 
     public class RoundContext : IRoundRolls, IPlayerContext
     {
-
         public Roll CurrentRoll { get; }
         public Roll DeclaredRoll { get; }
         public Roll PhysicalRoll { get; }
 
+        public RoundDirection? Direction { get; set; } = null; 
 
-
-        public int AmountRolled { get; private set; }
+        public int AmountRolled { get; set; }
 
         public LinkedList<Player> Players { get; set; } = null;
         public LinkedListNode<Player> CurrentPlayer { get; set; }
+
+        public LinkedListNode<Player> GetNextLeftPlayer => CurrentPlayer.Previous ?? Players.Last;
+
+        public LinkedListNode<Player> GetNextRightPlayer => CurrentPlayer.Next ?? Players.First;
 
         public RoundContext(Roll current, Roll declare, Roll physical)
         {
@@ -48,24 +59,13 @@ namespace Seacore.Game
             PhysicalRoll = physical;
         }
 
-
-
-        public void ListenToDiceRollEvents(DiceController diceController)
-        {
-            diceController.OnAllDiceRolled += IncrementAmountRolled;
-        }
-
-        public void IncrementAmountRolled()
-        {
-            AmountRolled++;
-        }
-
         public void Reset()
         {
             CurrentRoll.Clear();
             DeclaredRoll.Clear();
             PhysicalRoll.Clear();
             AmountRolled = 0;
+            Direction = null;
         }
     }
 }

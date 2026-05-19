@@ -29,5 +29,13 @@ namespace Seacore
                 button.gameObject.SetActive(false);
             }
         }
+
+        public void RemoveAllListeners()
+        {
+            foreach (var button in _buttons.Values)
+            {
+                button.onClick.RemoveAllListeners();
+            }
+        }
     }
 }

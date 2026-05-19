@@ -1,20 +1,20 @@
 using Seacore.Common;
+using Seacore.Logger;
 using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
+using static Seacore.Game.UIGameController;
 
 namespace Seacore.Game.UI
 {
-    public class DeclareMenu : MonoBehaviour
+    public class DeclareRollUIController : MonoBehaviour
     {
-        [SerializeField]
-        IDieValueGetter<Die.Faces>[] selectors;
-
         [SerializeField]
         Roll _declaredRoll = null;
 
+        private IDieValueGetter<Die.Faces>[] selectors;
         public event Action OnEditDeclareRoll;
 
         private void Awake()
@@ -26,11 +26,11 @@ namespace Seacore.Game.UI
             selectors = gameObject.GetComponentsInChildren<IDieValueGetter<Die.Faces>>(true);
             if (selectors.Length != Globals.c_amountDie)
             {
-                Debug.LogError($"Declared Roll selectors length {selectors.Length} does not match Globals.c_amountDie {Globals.c_amountDie}");
+                SCLogger.LogError($"Declared Roll selectors length {selectors.Length} does not match Globals.c_amountDie {Globals.c_amountDie}");
                 return;
             }
-        }
 
+        }
         private void OnEnable()
         {
             foreach (IDieValueGetter<Die.Faces> selector in selectors)
@@ -49,6 +49,6 @@ namespace Seacore.Game.UI
             _declaredRoll.ChangeValue(index, obj.Value);
             _declaredRoll.CalculateResult();
             OnEditDeclareRoll?.Invoke();
-        } 
+        }
     }
 }

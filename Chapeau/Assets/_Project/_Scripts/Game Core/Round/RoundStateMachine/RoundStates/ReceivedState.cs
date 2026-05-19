@@ -1,6 +1,7 @@
 using Seacore.Common.Statemachine;
 using Seacore.Game.RoundStates;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Seacore.Game
 {
@@ -8,8 +9,6 @@ namespace Seacore.Game
     {
         private readonly RoundContext _roundContext;
         private readonly DiceController _diceController;
-
-        bool counterclockwise = true;
 
         public ReceivedState(RoundContext context, DiceController diceController) 
             : base(RoundState.Received) 
@@ -22,13 +21,15 @@ namespace Seacore.Game
         {
             _roundContext.CurrentRoll.ChangeValueTo(_roundContext.DeclaredRoll);
 
-            if (counterclockwise) 
+            Assert.IsTrue(_roundContext.Direction.HasValue, "Direction of play must be set before entering Received State");
+
+            if (_roundContext.Direction == RoundDirection.Right) 
             {                 
-                _roundContext.CurrentPlayer = _roundContext.CurrentPlayer.Previous ?? _roundContext.Players.Last;
+                _roundContext.CurrentPlayer = _roundContext.GetNextRightPlayer;
             }
             else
             {
-                _roundContext.CurrentPlayer = _roundContext.CurrentPlayer.Next ?? _roundContext.Players.First;
+                _roundContext.CurrentPlayer = _roundContext.GetNextLeftPlayer;
             }
 
             _diceController.HideAllDie();
